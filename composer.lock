@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "38df25054ec4a8d681316122b6e36760",
+    "content-hash": "04df7f9db6f82cdf42505a8db5990ae1",
     "packages": [
         {
             "name": "composer/installers",
@@ -898,16 +898,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v7.111.0",
+            "version": "v7.114.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "374647b1079203ed7278ad4b58afc0fae3faaab9"
+                "reference": "63be231686c6874befb5b3a47fb8effb4c30b78b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/374647b1079203ed7278ad4b58afc0fae3faaab9",
-                "reference": "374647b1079203ed7278ad4b58afc0fae3faaab9",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/63be231686c6874befb5b3a47fb8effb4c30b78b",
+                "reference": "63be231686c6874befb5b3a47fb8effb4c30b78b",
                 "shasum": ""
             },
             "require": {
@@ -952,9 +952,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v7.111.0"
+                "source": "https://github.com/stripe/stripe-php/tree/v7.114.0"
             },
-            "time": "2022-01-20T17:30:55+00:00"
+            "time": "2022-02-15T22:48:31+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
