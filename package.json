@@ -19,7 +19,7 @@
     "newspack-scripts": "^4.3.8",
     "postcss-scss": "^4.0.5",
     "prettier": "npm:wp-prettier@^2.6.2-beta-1",
-    "stylelint": "^14.9.1"
+    "stylelint": "^14.15.0"
   },
   "browserslist": [
     "extends @wordpress/browserslist-config"
