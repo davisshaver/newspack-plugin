@@ -61,7 +61,7 @@
     "react": "^17.0.2",
     "react-daterange-picker": "^2.0.1",
     "react-google-charts": "^4.0.0",
-    "react-router-dom": "^5.3.4",
+    "react-router-dom": "^6.8.1",
     "recursive-copy": "^2.0.14",
     "tachyons": "^4.12.0"
   }
