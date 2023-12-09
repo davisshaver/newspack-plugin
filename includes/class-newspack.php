@@ -60,6 +60,7 @@ final class Newspack {
 		define( 'NEWSPACK_ABSPATH', dirname( NEWSPACK_PLUGIN_FILE ) . '/' );
 		define( 'NEWSPACK_ACTIVATION_TRANSIENT', '_newspack_activation_redirect' );
 		define( 'NEWSPACK_NRH_CONFIG', 'newspack_nrh_config' );
+		define( 'NEWSPACK_MP_CONFIG', 'newspack_mp_config' );
 		define( 'NEWSPACK_CLIENT_ID_COOKIE_NAME', 'newspack-cid' );
 	}
 
@@ -160,6 +161,10 @@ final class Newspack {
 
 		if ( Donations::is_platform_nrh() ) {
 			include_once NEWSPACK_ABSPATH . 'includes/class-nrh.php';
+		}
+
+		if ( Donations::is_platform_mp() ) {
+			include_once NEWSPACK_ABSPATH . 'includes/class-mp.php';
 		}
 
 		include_once NEWSPACK_ABSPATH . 'includes/configuration_managers/class-configuration-managers.php';

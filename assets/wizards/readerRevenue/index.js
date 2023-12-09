@@ -16,7 +16,7 @@ import { __ } from '@wordpress/i18n';
  */
 import { Wizard, Notice } from '../../components/src';
 import * as Views from './views';
-import { READER_REVENUE_WIZARD_SLUG, NEWSPACK, NRH, STRIPE, OTHER } from './constants';
+import { READER_REVENUE_WIZARD_SLUG, NEWSPACK, NRH, MP, STRIPE, OTHER } from './constants';
 
 const ReaderRevenueWizard = () => {
 	const { platform_data, plugin_status, donation_data } = Wizard.useWizardData( 'reader-revenue' );
@@ -73,6 +73,12 @@ const ReaderRevenueWizard = () => {
 			path: '/settings',
 			render: Views.NRHSettings,
 			isHidden: usedPlatform !== NRH,
+		},
+		{
+			label: __( 'Memberpress Settings', 'newspack' ),
+			path: '/settings',
+			render: Views.MPSettings,
+			isHidden: usedPlatform !== MP,
 		},
 		platformSection,
 	];

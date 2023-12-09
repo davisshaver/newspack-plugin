@@ -482,6 +482,16 @@ final class Reader_Data {
 		if ( empty( $data['user_id'] ) || empty( $data['email'] ) ) {
 			return;
 		}
+		
+		if ( class_exists( 'MeprUtils' ) && function_exists( '\MeprUtils::get_currentuserinfo' ) ) {
+			$user = \MeprUtils::get_currentuserinfo();
+			if ( false !== $user ) {
+				$active_memberships = $user->active_product_subscriptions( 'ids' );
+				if ( ! empty( $active_memberships ) ) {
+					self::update_item( $data['user_id'], 'active_memberships', $active_memberships );
+				}
+			}
+		}
 
 		if ( ! class_exists( 'WC_Memberships' ) || ! function_exists( 'wc_memberships_get_user_memberships' ) ) {
 			return;

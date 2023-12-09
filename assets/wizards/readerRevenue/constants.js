@@ -6,5 +6,6 @@ export const NRH = 'nrh';
 export const NEWSPACK = 'wc';
 export const STRIPE = 'stripe';
 export const OTHER = 'other';
+export const MP = 'mp';
 
 export const READER_REVENUE_WIZARD_SLUG = 'newspack-reader-revenue-wizard';

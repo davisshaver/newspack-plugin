@@ -574,6 +574,13 @@ class Donations {
 	}
 
 	/**
+	 * Is Memberpress the donation platform?
+	 */
+	public static function is_platform_mp() {
+		return 'mp' === self::get_platform_slug();
+	}
+
+	/**
 	 * Is WooCommerce the donation platform?
 	 */
 	public static function is_platform_wc() {

@@ -106,6 +106,9 @@ class Reader_Revenue_Wizard extends Wizard {
 					'donor_landing_page'         => [
 						'sanitize_callback' => 'Newspack\newspack_clean',
 					],
+					'mp_membership_id' => [
+						'sanitize_callback' => 'Newspack\newspack_clean',
+					],
 				],
 			]
 		);
@@ -293,6 +296,11 @@ class Reader_Revenue_Wizard extends Wizard {
 		// Update NRH settings.
 		if ( 'nrh' === $platform ) {
 			NRH::update_settings( $params );
+		}
+
+		// Update MP settings.
+		if ( 'mp' === $platform ) {
+			MP::update_settings( $params );
 		}
 
 		// Ensure that any Reader Revenue settings changed while the platform wasn't WC are persisted to WC products .
@@ -504,6 +512,9 @@ class Reader_Revenue_Wizard extends Wizard {
 		} elseif ( Donations::is_platform_nrh() ) {
 			$nrh_config            = NRH::get_settings();
 			$args['platform_data'] = wp_parse_args( $nrh_config, $args['platform_data'] );
+		} elseif ( Donations::is_platform_mp() ) {
+			$mp_config             = MP::get_settings();
+			$args['platform_data'] = wp_parse_args( $mp_config, $args['platform_data'] );
 		} elseif ( Donations::is_platform_stripe() ) {
 			$are_webhooks_valid = Stripe_Webhooks::validate_or_create_webhooks();
 			if ( is_wp_error( $are_webhooks_valid ) ) {
@@ -590,6 +601,6 @@ class Reader_Revenue_Wizard extends Wizard {
 	 * @return bool
 	 */
 	public function api_validate_platform( $value ) {
-		return in_array( $value, [ 'nrh', 'wc', 'stripe', 'other' ] );
+		return in_array( $value, [ 'mp', 'nrh', 'wc', 'stripe', 'other' ] );
 	}
 }

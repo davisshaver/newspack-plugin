@@ -9,7 +9,7 @@ import { __ } from '@wordpress/i18n';
  * Internal dependencies
  */
 import { Card, PluginInstaller, SelectControl, Wizard } from '../../../../components/src';
-import { NEWSPACK, NRH, STRIPE, OTHER } from '../../constants';
+import { NEWSPACK, NRH, STRIPE, OTHER, MP } from '../../constants';
 
 /**
  * Platform Selection  Screen Component
@@ -27,6 +27,10 @@ const Platform = () => {
 						{
 							label: __( 'Other', 'newspack' ),
 							value: OTHER,
+						},
+						{
+							label: __( 'Memberpress', 'newspack' ),
+							value: MP,
 						},
 						{
 							label: __( 'Newspack', 'newspack' ),

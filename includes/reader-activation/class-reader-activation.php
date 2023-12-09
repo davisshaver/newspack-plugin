@@ -349,7 +349,10 @@ final class Reader_Activation {
 			$ready = true;
 		} elseif ( Donations::is_platform_nrh() && NRH::get_setting( 'nrh_organization_id' ) && method_exists( '\Newspack_Popups_Settings', 'donor_landing_page' ) && \Newspack_Popups_Settings::donor_landing_page() ) {
 			$ready = true;
+		} elseif ( Donations::is_platform_mp() ) {
+			$ready = true;
 		}
+
 
 		return $ready;
 	}
