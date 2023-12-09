@@ -43,7 +43,10 @@ class WooCommerce_Connection {
 		include_once __DIR__ . '/class-woocommerce-cover-fees.php';
 
 		\add_action( 'admin_init', [ __CLASS__, 'disable_woocommerce_setup' ] );
-		\add_filter( 'option_woocommerce_subscriptions_allow_switching_nyp_price', [ __CLASS__, 'force_allow_switching_subscription_amount' ] );
+		\add_filter( 'option_woocommerce_subscriptions_allow_switching', [ __CLASS__, 'force_allow_subscription_switching' ], 10, 2 );
+		\add_filter( 'option_woocommerce_subscriptions_allow_switching_nyp_price', [ __CLASS__, 'force_allow_subscription_switching' ], 10, 2 );
+		\add_filter( 'default_option_woocommerce_subscriptions_allow_switching', [ __CLASS__, 'force_allow_subscription_switching' ], 10, 2 );
+		\add_filter( 'default_option_woocommerce_subscriptions_allow_switching_nyp_price', [ __CLASS__, 'force_allow_subscription_switching' ], 10, 2 );
 		\add_filter( 'woocommerce_email_enabled_customer_completed_order', [ __CLASS__, 'send_customizable_receipt_email' ], 10, 3 );
 
 		// WooCommerce Subscriptions.
@@ -169,7 +172,9 @@ class WooCommerce_Connection {
 			return;
 		}
 
-		self::sync_reader_from_order( $customer->get_last_order() );
+		$last_order = $customer->get_last_order();
+
+		self::sync_reader_from_order( $last_order );
 	}
 
 	/**
@@ -218,9 +223,6 @@ class WooCommerce_Connection {
 		}
 
 		$customer = new \WC_Customer( $user_id );
-		$metadata = [
-			'registration_method' => 'woocommerce-order',
-		];
 
 		$metadata[ Newspack_Newsletters::get_metadata_key( 'account' ) ]           = $order->get_customer_id();
 		$metadata[ Newspack_Newsletters::get_metadata_key( 'registration_date' ) ] = $customer->get_date_created()->date( Newspack_Newsletters::METADATA_DATE_FORMAT );
@@ -243,11 +245,14 @@ class WooCommerce_Connection {
 		}
 
 		$order_subscriptions = wcs_get_subscriptions_for_order( $order->get_id(), [ 'order_type' => 'any' ] );
+		$is_donation_order   = Donations::is_donation_order( $order );
 
-		// One-time donation.
+		// One-time transaction.
 		if ( empty( $order_subscriptions ) ) {
-			$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = 'Donor';
-			$metadata[ Newspack_Newsletters::get_metadata_key( 'total_paid' ) ]        = (float) $customer->get_total_spent();
+			if ( $is_donation_order ) {
+				$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = 'Donor';
+			}
+			$metadata[ Newspack_Newsletters::get_metadata_key( 'total_paid' ) ] = (float) $customer->get_total_spent();
 
 			if ( 'pending' === $order->get_status() ) {
 				$metadata[ Newspack_Newsletters::get_metadata_key( 'total_paid' ) ] += (float) $order->get_total();
@@ -264,26 +269,28 @@ class WooCommerce_Connection {
 				$metadata[ Newspack_Newsletters::get_metadata_key( 'last_payment_date' ) ] = $order_date_paid->date( Newspack_Newsletters::METADATA_DATE_FORMAT );
 			}
 
-			// Subscription donation.
+			// Subscription transaction.
 		} else {
 			$current_subscription = reset( $order_subscriptions );
 
-			$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = 'Donor';
-			if ( 'active' === $current_subscription->get_status() || 'pending' === $current_subscription->get_status() ) {
-				if ( 'month' === $current_subscription->get_billing_period() ) {
-					$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = 'Monthly Donor';
-				}
+			if ( $is_donation_order ) {
+				$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = 'Donor';
+				if ( 'active' === $current_subscription->get_status() || 'pending' === $current_subscription->get_status() ) {
+					if ( 'month' === $current_subscription->get_billing_period() ) {
+						$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = 'Monthly Donor';
+					}
 
-				if ( 'year' === $current_subscription->get_billing_period() ) {
-					$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = 'Yearly Donor';
-				}
-			} else {
-				if ( 'month' === $current_subscription->get_billing_period() ) {
-					$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = 'Ex-Monthly Donor';
-				}
+					if ( 'year' === $current_subscription->get_billing_period() ) {
+						$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = 'Yearly Donor';
+					}
+				} else {
+					if ( 'month' === $current_subscription->get_billing_period() ) {
+						$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = 'Ex-Monthly Donor';
+					}
 
-				if ( 'year' === $current_subscription->get_billing_period() ) {
-					$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = 'Ex-Yearly Donor';
+					if ( 'year' === $current_subscription->get_billing_period() ) {
+						$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = 'Ex-Yearly Donor';
+					}
 				}
 			}
 
@@ -318,11 +325,12 @@ class WooCommerce_Connection {
 
 		$first_name = $order->get_billing_first_name();
 		$last_name  = $order->get_billing_last_name();
-		return [
+		$contact    = [
 			'email'    => $order->get_billing_email(),
-			'name'     => "$first_name $last_name",
-			'metadata' => $metadata,
+			'name'     => trim( "$first_name $last_name" ),
+			'metadata' => array_filter( $metadata ),
 		];
+		return array_filter( $contact );
 	}
 
 	/**
@@ -346,6 +354,28 @@ class WooCommerce_Connection {
 		if ( ! $contact ) {
 			return;
 		}
+
+		return self::sync_contact_to_esp( $contact );
+	}
+
+	/**
+	 * Upsert reader data to the ESP connected via Newspack Newsletters.
+	 * 
+	 * @param array $contact Reader data to sync.
+	 * @return bool|WP_Error Contact data if it was added, WP_Error otherwise.
+	 */
+	public static function sync_contact_to_esp( $contact ) {
+		if ( ! method_exists( 'Newspack_Newsletters', 'service_provider' ) ) {
+			return;
+		}
+
+		// If syncing to Mailchimp, we need to use its special method to add contacts which handles transactional contacts.
+		if ( 'mailchimp' === \Newspack_Newsletters::service_provider() ) {
+			// Normalize contact data, since this won't be passed through \Newspack_Newsletters_Subscription::add_contact().
+			$contact = \Newspack\Newspack_Newsletters::normalize_contact_data( $contact );
+			return \Newspack\Data_Events\Connectors\Mailchimp::put( $contact['email'], $contact['metadata'] );
+		}
+
 		if ( ! method_exists( 'Newspack_Newsletters_Subscription', 'add_contact' ) ) {
 			return;
 		}
@@ -1098,23 +1128,42 @@ class WooCommerce_Connection {
 	public static function sync_reader_on_subscription_update( $subscription, $new_status, $old_status ) {
 		$order = $subscription->get_last_order( 'all' );
 
-		if ( $order && self::can_sync_customers() ) {
-			if ( ! $order->get_customer_id() ) {
-				return;
-			}
-			self::sync_reader_from_order( $order );
+		if ( ! $order || ! self::can_sync_customers() ) {
+			return;
 		}
+
+		if ( ! $order->get_customer_id() ) {
+			return;
+		}
+
+		self::sync_reader_from_order( $order );
 	}
 
 	/**
-	 * Force allow switching the subscription amount unless the NEWSPACK_PREVENT_WC_SUBS_ALLOW_SWITCHING_OVERRIDE constant is set
+	 * Force values for subscription switching options to ON unless the
+	 * NEWSPACK_PREVENT_WC_SUBS_ALLOW_SWITCHING_OVERRIDE constant is set.
+	 * This affects the following "Allow Switching" options:
+	 * 
+	 * - Between Subscription Variations 
+	 * - Between Grouped Subscriptions 
+	 * - Change Name Your Price subscription amount
 	 *
-	 * @param bool $can_switch Whether the subscription amount can be switched.
+	 * @param bool   $can_switch Whether the subscription amount can be switched.
+	 * @param string $option_name The name of the option.
+	 * 
+	 * @return string Option value.
 	 */
-	public static function force_allow_switching_subscription_amount( $can_switch ) {
+	public static function force_allow_subscription_switching( $can_switch, $option_name ) {
 		if ( defined( 'NEWSPACK_PREVENT_WC_SUBS_ALLOW_SWITCHING_OVERRIDE' ) && NEWSPACK_PREVENT_WC_SUBS_ALLOW_SWITCHING_OVERRIDE ) {
 			return $can_switch;
 		}
+
+		// Subscriptions' default switching options are combined into a single options row with possible values 'no', 'variable', 'grouped', or 'variable_grouped'.
+		if ( 'woocommerce_subscriptions_allow_switching' === $option_name ) {
+			return 'variable_grouped';
+		}
+
+		// Other options added by the woocommerce_subscriptions_allow_switching_options filter are either 'yes' or 'no'.
 		return 'yes';
 	}
 
