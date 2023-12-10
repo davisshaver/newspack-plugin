@@ -74,6 +74,7 @@ class Donations {
 			add_filter( 'amp_skip_post', [ __CLASS__, 'should_skip_amp' ], 10, 2 );
 			add_filter( 'newspack_blocks_donate_billing_fields_keys', [ __CLASS__, 'get_billing_fields' ] );
 			add_action( 'woocommerce_checkout_create_order_line_item', [ __CLASS__, 'checkout_create_order_line_item' ], 10, 4 );
+			add_action( 'woocommerce_coupons_enabled', [ __CLASS__, 'disable_coupons' ] );
 		}
 	}
 
@@ -260,13 +261,28 @@ class Donations {
 
 	/**
 	 * Check whether the given product ID is a donation product.
-	 * 
+	 *
 	 * @param int $product_id Product ID to check.
 	 * @return boolean True if a donation product, false if not.
 	 */
 	public static function is_donation_product( $product_id ) {
 		$donation_product_ids = array_values( self::get_donation_product_child_products_ids() );
 		return in_array( $product_id, $donation_product_ids, true );
+	}
+
+	/**
+	 * Whether the order is a donation.
+	 *
+	 * @param \WC_Order $order Order object.
+	 * @return boolean True if a donation, false if not.
+	 */
+	public static function is_donation_order( $order ) {
+		foreach ( $order->get_items() as $item ) {
+			if ( self::is_donation_product( $item->get_product_id() ) ) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -708,7 +724,7 @@ class Donations {
 			$query_args['modal_checkout'] = 1;
 		}
 		foreach ( [ 'after_success_behavior', 'after_success_button_label', 'after_success_url' ] as $attribute_name ) {
-			$value = filter_input( INPUT_GET, $attribute_name, FILTER_SANITIZE_STRING );
+			$value = filter_input( INPUT_GET, $attribute_name, FILTER_SANITIZE_FULL_SPECIAL_CHARS );
 			if ( ! empty( $value ) ) {
 				$query_args[ $attribute_name ] = $value;
 			}
@@ -1027,6 +1043,24 @@ class Donations {
 	public static function update_billing_fields( $billing_fields ) {
 		update_option( self::DONATION_BILLING_FIELDS_OPTION, $billing_fields );
 		return $billing_fields;
+	}
+
+	/**
+	 * Disable coupons for donation checkouts.
+	 *
+	 * @param bool $enabled Whether coupons are enabled.
+	 *
+	 * @return bool
+	 */
+	public static function disable_coupons( $enabled ) {
+		$cart = WC()->cart;
+		if ( ! $cart ) {
+			return $enabled;
+		}
+		if ( ! self::is_donation_cart( $cart ) ) {
+			return $enabled;
+		}
+		return false;
 	}
 }
 Donations::init();
