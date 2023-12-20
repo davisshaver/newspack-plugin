@@ -247,7 +247,7 @@ class Donations {
 			foreach ( $product->get_children() as $child_id ) {
 				$child_product = wc_get_product( $child_id );
 				if ( ! $child_product || 'trash' === $child_product->get_status() || ! (bool) WC_Name_Your_Price_Helpers::is_nyp( $child_id ) ) {
-					continue; 
+					continue;
 				}
 				if ( 'subscription' === $child_product->get_type() ) {
 					if ( 'year' === $child_product->get_meta( '_subscription_period', true ) ) {
