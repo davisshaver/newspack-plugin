@@ -65,7 +65,12 @@ class Donations {
 	 */
 	public static function init() {
 		self::$donation_product_name = __( 'Donate', 'newspack' );
-		if ( ! is_admin() ) {
+		if (
+			! is_admin() &&
+			class_exists( 'WC_Name_Your_Price_Helpers' ) &&
+			function_exists( 'WC' ) &&
+			class_exists( 'WC_Subscriptions_Product' )
+		) {
 			add_action( 'wp_loaded', [ __CLASS__, 'process_donation_form' ], 99 );
 			add_action( 'woocommerce_checkout_update_order_meta', [ __CLASS__, 'woocommerce_checkout_update_order_meta' ] );
 			add_filter( 'woocommerce_billing_fields', [ __CLASS__, 'woocommerce_billing_fields' ] );
@@ -242,7 +247,7 @@ class Donations {
 			foreach ( $product->get_children() as $child_id ) {
 				$child_product = wc_get_product( $child_id );
 				if ( ! $child_product || 'trash' === $child_product->get_status() || ! (bool) WC_Name_Your_Price_Helpers::is_nyp( $child_id ) ) {
-					continue;
+					continue; 
 				}
 				if ( 'subscription' === $child_product->get_type() ) {
 					if ( 'year' === $child_product->get_meta( '_subscription_period', true ) ) {
