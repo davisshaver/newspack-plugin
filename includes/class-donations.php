@@ -246,7 +246,7 @@ class Donations {
 			// Add the product IDs for each frequency.
 			foreach ( $product->get_children() as $child_id ) {
 				$child_product = wc_get_product( $child_id );
-				if ( ! $child_product || 'trash' === $child_product->get_status() || ! (bool) WC_Name_Your_Price_Helpers::is_nyp( $child_id ) ) {
+				if ( ! $child_product || 'trash' === $child_product->get_status() || ! class_exists( 'WC_Name_Your_Price_Helpers' ) || ! (bool) WC_Name_Your_Price_Helpers::is_nyp( $child_id ) ) {
 					continue;
 				}
 				if ( 'subscription' === $child_product->get_type() ) {
