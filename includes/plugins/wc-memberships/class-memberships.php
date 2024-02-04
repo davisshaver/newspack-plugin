@@ -64,6 +64,8 @@ class Memberships {
 		add_filter( 'newspack_gate_content', 'wp_replace_insecure_home_url' );
 		add_filter( 'newspack_gate_content', 'do_shortcode', 11 ); // AFTER wpautop().
 
+		add_filter( 'newspack_editable_posts', [ __CLASS__, 'newspack_editable_posts' ] );
+
 		include __DIR__ . '/class-block-patterns.php';
 		include __DIR__ . '/class-metering.php';
 	}
@@ -120,7 +122,7 @@ class Memberships {
 				'show_ui'      => true,
 				'show_in_menu' => false,
 				'show_in_rest' => true,
-				'supports'     => [ 'editor', 'custom-fields' ],
+				'supports'     => [ 'editor', 'custom-fields', 'revisions' ],
 			]
 		);
 	}
@@ -452,7 +454,7 @@ class Memberships {
 		if ( ! function_exists( 'wc_memberships_is_post_content_restricted' ) || ! \wc_memberships_is_post_content_restricted( $post_id ) ) {
 			return false;
 		}
-		return ! is_user_logged_in() || ! current_user_can( 'wc_memberships_view_restricted_post_content', $post_id );
+		return ! is_user_logged_in() || ! current_user_can( 'wc_memberships_view_restricted_post_content', $post_id ); // phpcs:ignore WordPress.WP.Capabilities.Unknown
 	}
 
 	/**
@@ -469,13 +471,32 @@ class Memberships {
 	}
 
 	/**
+	 * Allow users with the to edit the custom gate.
+	 *
+	 * @param array $post_ids Editable post IDs.
+	 */
+	public static function newspack_editable_posts( $post_ids ) {
+		if ( self::can_current_user_edit_gate() ) {
+			$post_ids[] = self::get_gate_post_id();
+		}
+		return $post_ids;
+	}
+
+	/**
+	 * Can the current user edit the content gate post?
+	 */
+	private static function can_current_user_edit_gate() {
+		return Wizards::can_access_wizard( 'engagement' );
+	}
+
+	/**
 	 * Create a post for the custom gate.
 	 */
 	public static function handle_edit_gate() {
 		if ( ! isset( $_GET['action'] ) || 'newspack_edit_memberships_gate' !== $_GET['action'] ) {
 			return;
 		}
-		if ( ! current_user_can( 'manage_options' ) ) {
+		if ( ! self::can_current_user_edit_gate() ) {
 			return;
 		}
 		check_admin_referer( 'newspack_edit_memberships_gate' );

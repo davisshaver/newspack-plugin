@@ -145,7 +145,7 @@ class Salesforce {
 				'methods'             => \WP_REST_Server::READABLE,
 				'callback'            => [ __CLASS__, 'api_get_order_status' ],
 				'permission_callback' => function() {
-					return current_user_can( 'edit_others_shop_orders' );
+					return current_user_can( 'edit_others_shop_orders' ); // phpcs:ignore WordPress.WP.Capabilities.Unknown
 				},
 			]
 		);
@@ -179,7 +179,7 @@ class Salesforce {
 	 * @return bool|WP_Error
 	 */
 	public static function api_permissions_check() {
-		if ( ! current_user_can( 'manage_options' ) ) {
+		if ( ! Wizards::can_access_wizard( 'reader-revenue' ) ) {
 			return new \WP_Error(
 				'newspack_rest_forbidden',
 				esc_html__( 'You cannot use this resource.', 'newspack' ),
