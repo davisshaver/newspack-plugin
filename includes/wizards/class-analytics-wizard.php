@@ -10,7 +10,7 @@ namespace Newspack;
 use Google\Site_Kit_Dependencies\Google\Service\Analytics as Google_Service_Analytics;
 use Google\Site_Kit_Dependencies\Google\Service\Analytics\CustomDimension as Google_Service_Analytics_CustomDimension;
 
-use WP_Error, WP_Query;
+use \WP_Error, \WP_Query;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -26,7 +26,14 @@ class Analytics_Wizard extends Wizard {
 	 *
 	 * @var string
 	 */
-	public $slug = 'newspack-analytics-wizard';
+	protected $slug = 'newspack-analytics-wizard';
+
+	/**
+	 * The capability required to access this wizard.
+	 *
+	 * @var string
+	 */
+	protected $capability = 'manage_options';
 
 	/**
 	 * Constructor.

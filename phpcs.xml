@@ -16,6 +16,7 @@
 		<exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed" />
 		<exclude name="Universal.NamingConventions.NoReservedKeywordParameterNames" />
 		<exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.Found" />
+		<exclude name="Universal.UseStatements.NoLeadingBackslash.LeadingBackslashFound" />
 	</rule>
 
 	<rule ref="PHPCompatibilityWP"/>
