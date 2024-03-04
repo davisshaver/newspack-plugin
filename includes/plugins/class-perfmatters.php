@@ -20,7 +20,11 @@ class Perfmatters {
 		add_filter( 'option_perfmatters_options', [ __CLASS__, 'set_defaults' ] );
 		add_action( 'admin_notices', [ __CLASS__, 'admin_notice' ] );
 		add_filter( 'perfmatters_lazyload_youtube_thumbnail_resolution', [ __CLASS__, 'maybe_serve_high_res_youtube_thumbs' ] );
-		add_filter( 'perfmatters_rucss_excluded_stylesheets', [ __CLASS__, 'add_rucss_excluded_stylesheets' ] );
+		// phpcs:disable Squiz.PHP.CommentedOutCode.Found
+		// phpcs:disable Squiz.Commenting.InlineComment.InvalidEndChar
+		// add_filter( 'perfmatters_rucss_excluded_stylesheets', [ __CLASS__, 'add_rucss_excluded_stylesheets' ] );
+		// phpcs:enable Squiz.PHP.CommentedOutCode.Found
+		// phpcs:enable Squiz.Commenting.InlineComment.InvalidEndChar
 	}
 
 	/**
