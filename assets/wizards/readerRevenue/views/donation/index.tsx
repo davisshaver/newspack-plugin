@@ -1,5 +1,3 @@
-/* globals newspack_reader_revenue */
-
 /**
  * WordPress dependencies.
  */
@@ -106,7 +104,7 @@ export const DonationAmounts = () => {
 	const minimumDonationFloat = parseFloat( minimumDonation );
 
 	// Whether we can use the Name Your Price extension. If not, layout is forced to Tiered.
-	const canUseNameYourPrice = newspack_reader_revenue?.can_use_name_your_price;
+	const canUseNameYourPrice = window.newspack_reader_revenue?.can_use_name_your_price;
 
 	return (
 		<>
@@ -210,24 +208,44 @@ export const DonationAmounts = () => {
 			) : (
 				<Card isMedium>
 					<Grid columns={ 3 } rowGap={ 16 }>
-						{ availableFrequencies.map( section => (
-							<MoneyInput
-								currencySymbol={ currencySymbol }
-								label={ section.staticLabel }
-								value={ amounts[ section.key ][ 3 ] }
-								min={ minimumDonationFloat }
-								error={
-									amounts[ section.key ][ 3 ] < minimumDonationFloat
-										? __(
-												'Warning: suggested donations should be at least the minimum donation amount.',
-												'newspack'
-										  )
-										: null
-								}
-								onChange={ changeHandler( [ 'amounts', section.key, 3 ] ) }
-								key={ section.key }
-							/>
-						) ) }
+						{ availableFrequencies.map( section => {
+							const isFrequencyDisabled = disabledFrequencies[ section.key ];
+							const isOneFrequencyActive =
+								Object.values( disabledFrequencies ).filter( Boolean ).length ===
+								FREQUENCY_SLUGS.length - 1;
+							return (
+								<Grid columns={ 1 } gutter={ 16 } key={ section.key }>
+									<ToggleControl
+										checked={ ! isFrequencyDisabled }
+										onChange={ () =>
+											changeHandler( [ 'disabledFrequencies', section.key ] )(
+												! isFrequencyDisabled
+											)
+										}
+										label={ section.tieredLabel }
+										disabled={ ! isFrequencyDisabled && isOneFrequencyActive }
+									/>
+									{ ! isFrequencyDisabled && (
+										<MoneyInput
+											currencySymbol={ currencySymbol }
+											label={ section.staticLabel }
+											value={ amounts[ section.key ][ 3 ] }
+											min={ minimumDonationFloat }
+											error={
+												amounts[ section.key ][ 3 ] < minimumDonationFloat
+													? __(
+															'Warning: suggested donations should be at least the minimum donation amount.',
+															'newspack'
+													  )
+													: null
+											}
+											onChange={ changeHandler( [ 'amounts', section.key, 3 ] ) }
+											key={ section.key }
+										/>
+									) }
+								</Grid>
+							);
+						} ) }
 					</Grid>
 				</Card>
 			) }

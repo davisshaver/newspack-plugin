@@ -75,6 +75,7 @@ final class Newspack {
 		include_once NEWSPACK_ABSPATH . 'includes/class-plugin-manager.php';
 		include_once NEWSPACK_ABSPATH . 'includes/class-theme-manager.php';
 		include_once NEWSPACK_ABSPATH . 'includes/class-admin-plugins-screen.php';
+		include_once NEWSPACK_ABSPATH . 'includes/data-events/class-utils.php';
 		include_once NEWSPACK_ABSPATH . 'includes/data-events/class-data-events.php';
 		include_once NEWSPACK_ABSPATH . 'includes/data-events/class-webhooks.php';
 		include_once NEWSPACK_ABSPATH . 'includes/data-events/class-api.php';
@@ -137,6 +138,7 @@ final class Newspack {
 
 		include_once NEWSPACK_ABSPATH . 'includes/class-handoff-banner.php';
 		include_once NEWSPACK_ABSPATH . 'includes/class-donations.php';
+		include_once NEWSPACK_ABSPATH . 'includes/class-category-pager.php';
 		include_once NEWSPACK_ABSPATH . 'includes/class-salesforce.php';
 		include_once NEWSPACK_ABSPATH . 'includes/class-pwa.php';
 		include_once NEWSPACK_ABSPATH . 'includes/class-starter-content.php';
