@@ -10,7 +10,7 @@ namespace Newspack;
 use Google\Site_Kit_Dependencies\Google\Service\Analytics as Google_Service_Analytics;
 use Google\Site_Kit_Dependencies\Google\Service\Analytics\CustomDimension as Google_Service_Analytics_CustomDimension;
 
-use \WP_Error, \WP_Query;
+use WP_Error, WP_Query;
 
 defined( 'ABSPATH' ) || exit;
 

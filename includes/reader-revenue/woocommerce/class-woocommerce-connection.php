@@ -35,12 +35,17 @@ class WooCommerce_Connection {
 		\add_filter( 'woocommerce_email_enabled_customer_completed_order', [ __CLASS__, 'send_customizable_receipt_email' ], 10, 3 );
 		\add_action( 'woocommerce_order_status_completed', [ __CLASS__, 'maybe_update_reader_display_name' ], 10, 2 );
 		\add_action( 'option_woocommerce_feature_order_attribution_enabled', [ __CLASS__, 'force_disable_order_attribution' ] );
+		\add_filter( 'woocommerce_related_products', [ __CLASS__, 'disable_related_products' ] );
 		\add_action( 'cli_init', [ __CLASS__, 'register_cli_commands' ] );
 
 		// WooCommerce Subscriptions.
 		\add_filter( 'wc_stripe_generate_payment_request', [ __CLASS__, 'stripe_gateway_payment_request_data' ], 10, 2 );
 
+		// woocommerce-memberships-for-teams plugin.
+		\add_filter( 'wc_memberships_for_teams_product_team_user_input_fields', [ __CLASS__, 'wc_memberships_for_teams_product_team_user_input_fields' ] );
+
 		\add_action( 'woocommerce_payment_complete', [ __CLASS__, 'order_paid' ], 101 );
+		\add_action( 'wc_stripe_save_to_subs_checked', '__return_true' );
 
 		\add_filter( 'page_template', [ __CLASS__, 'page_template' ] );
 		\add_filter( 'get_post_metadata', [ __CLASS__, 'get_post_metadata' ], 10, 3 );
@@ -65,6 +70,20 @@ class WooCommerce_Connection {
 				$task_list->hide();
 			}
 		}
+	}
+
+	/**
+	 * Disable related products on product pages.
+	 *
+	 * @param array $related_products Related products.
+	 *
+	 * @return array
+	 */
+	public static function disable_related_products( $related_products ) {
+		if ( defined( 'NEWSPACK_ALLOW_RELATED_PRODUCTS' ) && NEWSPACK_ALLOW_RELATED_PRODUCTS ) {
+			return $related_products;
+		}
+		return [];
 	}
 
 	/**
@@ -131,7 +150,7 @@ class WooCommerce_Connection {
 	 */
 	public static function get_contact_order_metadata( $order, $payment_page_url = false, $is_new = false ) {
 		if ( ! is_a( $order, 'WC_Order' ) ) {
-			$order = new \WC_Order( $order );
+			$order = \wc_get_order( $order );
 		}
 
 		if ( ! self::should_sync_order( $order ) ) {
@@ -158,13 +177,20 @@ class WooCommerce_Connection {
 			}
 		}
 
-		$order_subscriptions = \wcs_get_subscriptions_for_order( $order->get_id(), [ 'order_type' => 'any' ] );
+		$order_subscriptions = \wcs_is_subscription( $order ) ? [ $order ] : \wcs_get_subscriptions_for_order( $order->get_id(), [ 'order_type' => 'any' ] );
 		$is_donation_order   = Donations::is_donation_order( $order );
 
 		// One-time transaction.
 		if ( empty( $order_subscriptions ) ) {
+
+			/**
+			 * For donation-type products, use donation membership status as defined by BlueLena.
+			 * For non-donation-type products, we just need to know that the reader is a customer.
+			 */
 			if ( $is_donation_order ) {
 				$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = 'Donor';
+			} else {
+				$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = 'customer';
 			}
 
 			$metadata[ Newspack_Newsletters::get_metadata_key( 'product_name' ) ] = '';
@@ -182,6 +208,10 @@ class WooCommerce_Connection {
 		} else {
 			$current_subscription = reset( $order_subscriptions );
 
+			/**
+			 * For donation-type products, use donation membership status as defined by BlueLena.
+			 * For non-donation-type products, use the subscription's current status.
+			 */
 			if ( $is_donation_order ) {
 				$donor_status = 'Donor';
 				if ( 'month' === $current_subscription->get_billing_period() ) {
@@ -196,6 +226,8 @@ class WooCommerce_Connection {
 					$donor_status = 'Ex-' . $donor_status;
 				}
 				$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = $donor_status;
+			} else {
+				$metadata[ Newspack_Newsletters::get_metadata_key( 'membership_status' ) ] = $current_subscription->get_status();
 			}
 
 			$metadata[ Newspack_Newsletters::get_metadata_key( 'sub_start_date' ) ]    = $current_subscription->get_date( 'start' );
@@ -286,7 +318,7 @@ class WooCommerce_Connection {
 	 */
 	public static function get_contact_from_order( $order, $payment_page_url = false, $is_new = false ) {
 		if ( ! is_a( $order, 'WC_Order' ) ) {
-			$order = new \WC_Order( $order );
+			$order = \wc_get_order( $order );
 		}
 
 		if ( ! self::should_sync_order( $order ) ) {
@@ -580,7 +612,7 @@ class WooCommerce_Connection {
 	 */
 	public static function page_template( $template ) {
 		if ( self::should_override_template() ) {
-			return get_stylesheet_directory() . '/single-wide.php';
+			return get_theme_file_path( '/single-wide.php' );
 		}
 		return $template;
 	}
@@ -597,6 +629,30 @@ class WooCommerce_Connection {
 			return 'single-wide';
 		}
 		return $value;
+	}
+
+	/**
+	 * Fix woocommerce-memberships-for-teams when on /order-pay page. This page is available
+	 * from edit order screen -> "Customer payment page" link when the order is pending payment.
+	 * It allows the customer to pay for the order.
+	 * If woocommerce-memberships-for-teams is used, a cart validation error prevents the customer from
+	 * paying for the order because the team name is not set. This filter sets the team name from the order item.
+	 *
+	 * @param array $fields associative array of user input fields.
+	 */
+	public static function wc_memberships_for_teams_product_team_user_input_fields( $fields ) {
+		global $wp;
+		if ( ! isset( $wp->query_vars['order-pay'] ) || ! class_exists( 'WC_Order' ) || ! function_exists( 'wc_memberships_for_teams_get_team_for_order_item' ) ) {
+			return $fields;
+		}
+		$order = new \WC_Order( $wp->query_vars['order-pay'] );
+		foreach ( $order->get_items( 'line_item' ) as $id => $item ) {
+			$team = wc_memberships_for_teams_get_team_for_order_item( $item );
+			if ( $team ) {
+				$_REQUEST['team_name'] = $team->get_name();
+			}
+		}
+		return $fields;
 	}
 }
 
