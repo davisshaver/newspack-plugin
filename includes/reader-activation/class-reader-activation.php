@@ -158,6 +158,7 @@ final class Reader_Activation {
 				'invalid_email'    => __( 'Please enter a valid email address.', 'newspack-plugin' ),
 				'invalid_password' => __( 'Please enter a password.', 'newspack-plugin' ),
 				'blocked_popup'    => __( 'The popup has been blocked. Allow popups for the site and try again.', 'newspack-plugin' ),
+				'login_canceled'   => __( 'Login canceled.', 'newspack-plugin' ),
 			]
 		);
 		\wp_script_add_data( self::AUTH_SCRIPT_HANDLE, 'async', true );
@@ -407,7 +408,7 @@ final class Reader_Activation {
 	 * TODO: Make this dynamic once the third UI screen to generate the prompts is built.
 	 */
 	public static function is_ras_campaign_configured() {
-		return self::is_enabled();
+		return self::is_enabled() || get_option( Engagement_Wizard::SKIP_CAMPAIGN_SETUP_OPTION, '' ) === '1';
 	}
 
 	/**
@@ -500,6 +501,7 @@ final class Reader_Activation {
 			],
 			'ras_campaign'     => [
 				'active'         => self::is_ras_campaign_configured(),
+				'is_skipped'     => get_option( Engagement_Wizard::SKIP_CAMPAIGN_SETUP_OPTION, '' ) === '1',
 				'plugins'        => [
 					'newspack-popups' => class_exists( '\Newspack_Popups_Model' ),
 				],
@@ -1556,6 +1558,10 @@ final class Reader_Activation {
 			return null;
 		}
 
+		if ( defined( 'NEWSPACK_ALLOW_MY_ACCOUNT_ACCESS_WITHOUT_VERIFICATION' ) && NEWSPACK_ALLOW_MY_ACCOUNT_ACCESS_WITHOUT_VERIFICATION ) {
+			return true;
+		}
+
 		return (bool) \get_user_meta( $user->ID, self::EMAIL_VERIFIED, true );
 	}
 
@@ -1721,7 +1727,7 @@ final class Reader_Activation {
 			return $user_data;
 		}
 
-		$user_login      = str_replace( '+', '_', \sanitize_user( $user_data['user_email'] ) ); // Matches the email address, but replace + with _ to allow for Gmail aliases.
+		$user_login      = str_replace( '+', '_', \sanitize_user( $user_data['user_email'], true ) ); // Matches the email address, but replace + with _ to allow for Gmail aliases.
 		$random_password = \wp_generate_password();
 		$user_nicename   = self::generate_user_nicename( ! empty( $user_data['display_name'] ) ? $user_data['display_name'] : $user_data['user_email'] );
 

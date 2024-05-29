@@ -96,7 +96,9 @@ export default withWizardScreen( ( { wizardApiFetch } ) => {
 		const _allReady =
 			! missingPlugins.length &&
 			prerequisites &&
-			Object.keys( prerequisites ).every( key => prerequisites[ key ]?.active );
+			Object.keys( prerequisites ).every(
+				key => prerequisites[ key ]?.active || prerequisites[ key ]?.skipped
+			);
 
 		setAllReady( _allReady );
 
@@ -263,6 +265,17 @@ export default withWizardScreen( ( { wizardApiFetch } ) => {
 									toggleChecked={ membershipsConfig.require_all_plans }
 								/>
 							) }
+							<ActionCard
+								title={ __( 'Display memberships on the subscriptions tab', 'newspack-plugin' ) }
+								description={ __(
+									"Display memberships that don't have active subscriptions on the My Account Subscriptions tab, so readers can see information like expiration dates.",
+									'newspack-plugin'
+								) }
+								toggleOnChange={ value =>
+									setMembershipsConfig( { ...membershipsConfig, show_on_subscription_tab: value } )
+								}
+								toggleChecked={ membershipsConfig.show_on_subscription_tab }
+							/>
 							<hr />
 						</>
 					) : null }
@@ -384,6 +397,7 @@ export default withWizardScreen( ( { wizardApiFetch } ) => {
 									mailchimp_reader_default_status: config.mailchimp_reader_default_status,
 									active_campaign_master_list: config.active_campaign_master_list,
 									memberships_require_all_plans: membershipsConfig.require_all_plans,
+									memberships_show_on_subscription_tab: membershipsConfig.show_on_subscription_tab,
 									use_custom_lists: config.use_custom_lists,
 									newsletter_lists: config.newsletter_lists,
 									sync_esp: config.sync_esp,
