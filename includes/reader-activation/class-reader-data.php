@@ -271,6 +271,9 @@ final class Reader_Data {
 	 * @param array $data      Data.
 	 */
 	public static function update_newsletter_subscribed_lists( $timestamp, $data ) {
+		if ( ! isset( $data['user_id'] ) ) {
+			return;
+		}
 		if ( ! empty( $data['lists'] ) ) {
 			self::update_item( $data['user_id'], 'is_newsletter_subscriber', true );
 			self::update_item( $data['user_id'], 'newsletter_subscribed_lists', wp_json_encode( $data['lists'] ) );
@@ -430,7 +433,7 @@ final class Reader_Data {
 		$active_subscriptions = \wcs_get_subscriptions(
 			[
 				'customer_id'         => $data['user_id'],
-				'subscription_status' => WooCommerce_Connection::$active_subscription_statuses,
+				'subscription_status' => WooCommerce_Connection::ACTIVE_SUBSCRIPTION_STATUSES,
 			]
 		);
 
