@@ -90,6 +90,8 @@ final class Reader_Activation {
 			\add_action( 'lostpassword_post', [ __CLASS__, 'set_password_reset_mail_content_type' ] );
 			\add_filter( 'lostpassword_errors', [ __CLASS__, 'rate_limit_lost_password' ], 10, 2 );
 		}
+
+		\add_filter( 'newspack_reader_activation_setting', [ __CLASS__, 'disable_esp_sync_on_staging_sites' ], 10, 2 );
 	}
 
 	/**
@@ -241,7 +243,7 @@ final class Reader_Activation {
 		if ( is_bool( $config[ $name ] ) ) {
 			$value = (bool) $value;
 		}
-		return $value;
+		return apply_filters( 'newspack_reader_activation_setting', $value, $name );
 	}
 
 	/**
@@ -1727,9 +1729,7 @@ final class Reader_Activation {
 			return $user_data;
 		}
 
-		$user_login      = str_replace( '+', '_', \sanitize_user( $user_data['user_email'], true ) ); // Matches the email address, but replace + with _ to allow for Gmail aliases.
-		$random_password = \wp_generate_password();
-		$user_nicename   = self::generate_user_nicename( ! empty( $user_data['display_name'] ) ? $user_data['display_name'] : $user_data['user_email'] );
+		$user_nicename = self::generate_user_nicename( ! empty( $user_data['display_name'] ) ? $user_data['display_name'] : $user_data['user_email'] );
 
 		// If we don't have a display name, make it match the nicename.
 		if ( empty( $user_data['display_name'] ) ) {
@@ -1739,9 +1739,10 @@ final class Reader_Activation {
 		$user_data = array_merge(
 			$user_data,
 			[
-				'user_login'    => $user_login,
+				'user_login'    => $user_nicename,
 				'user_nicename' => $user_nicename,
-				'user_pass'     => $random_password,
+				'display_name'  => $user_nicename,
+				'user_pass'     => \wp_generate_password(),
 			]
 		);
 
@@ -2002,6 +2003,42 @@ final class Reader_Activation {
 			\update_user_meta( $user_data->ID, self::LAST_EMAIL_DATE, time() );
 		}
 		return $errors;
+	}
+
+	/**
+	 * Automatically force deactivate the ESP sync on staging sites to prevent polluting the data in ESPs.
+	 *
+	 * @param mixed  $value Setting value.
+	 * @param string $setting Setting name.
+	 * @return mixed Possibly modified $value.
+	 */
+	public static function disable_esp_sync_on_staging_sites( $value, $setting ) {
+		if ( 'sync_esp' !== $setting ) {
+			return $value;
+		}
+
+		if ( defined( 'NEWSPACK_FORCE_ALLOW_ESP_SYNC' ) && NEWSPACK_FORCE_ALLOW_ESP_SYNC ) {
+			return $value;
+		}
+
+		$site_url = strtolower( \untrailingslashit( \get_site_url() ) );
+		if ( false !== stripos( $site_url, '.newspackstaging.com' ) ) {
+			return false;
+		}
+
+		// Neither WCS_Staging::is_duplicate_site() nor is_plugin_active() are initialized early enough for all situations.
+		// So we need to re-create the logic from both.
+		if ( in_array( 'woocommerce-subscriptions/woocommerce-subscriptions.php', (array) \get_option( 'active_plugins', [] ), true ) ) {
+			$subscriptions_site_url = \get_option( 'wc_subscriptions_siteurl', false );
+			if ( $subscriptions_site_url ) {
+				$cleaned_subscriptions_site_url = strtolower( untrailingslashit( str_ireplace( '_[wc_subscriptions_siteurl]_', '', $subscriptions_site_url ) ) );
+				if ( $cleaned_subscriptions_site_url !== $site_url ) {
+					return false;
+				}
+			}
+		}
+
+		return $value;
 	}
 }
 Reader_Activation::init();
