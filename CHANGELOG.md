@@ -1,3 +1,42 @@
+# [4.6.0](https://github.com/Automattic/newspack-plugin/compare/v4.5.0...v4.6.0) (2024-07-15)
+
+
+### Bug Fixes
+
+* display transaction fee as an amount instead of a percentage ([#3206](https://github.com/Automattic/newspack-plugin/issues/3206)) ([b977c01](https://github.com/Automattic/newspack-plugin/commit/b977c018b6ae8004aa96e78dd73141a4e05fe5c8))
+* **js:** skip regenerator-runtime fix for some files ([#3205](https://github.com/Automattic/newspack-plugin/issues/3205)) ([0a7d5c5](https://github.com/Automattic/newspack-plugin/commit/0a7d5c5e18fbd420dcd04497804af19bfbcc1c63))
+
+
+### Features
+
+* add support for reCAPTCHA v2 ([#3126](https://github.com/Automattic/newspack-plugin/issues/3126)) ([1a1bd30](https://github.com/Automattic/newspack-plugin/commit/1a1bd30682366c2546789bba94c0b8a8de1cb608))
+* **cli:** cap-migration tweaks ([#3198](https://github.com/Automattic/newspack-plugin/issues/3198)) ([9b372e9](https://github.com/Automattic/newspack-plugin/commit/9b372e9e866c9584c62e9aec04c250ce3396486d))
+* **cli:** setup - set permalinks to pretty unless already set ([f0c44d9](https://github.com/Automattic/newspack-plugin/commit/f0c44d90b91f7cb64f4067859a322365bb86c59a))
+* **ras:** don't require WC Subscriptions for displaying auth link ([b6d6589](https://github.com/Automattic/newspack-plugin/commit/b6d65890d76586d3fc57d329319e9db6e810397d))
+* update membership patterns ([#3193](https://github.com/Automattic/newspack-plugin/issues/3193)) ([c595329](https://github.com/Automattic/newspack-plugin/commit/c5953294b16df0ed813796b52bfceb238c3442f8))
+* **wc-memberships:** update two and three tiers patterns with checkout-button border radius ([#3208](https://github.com/Automattic/newspack-plugin/issues/3208)) ([c57b58b](https://github.com/Automattic/newspack-plugin/commit/c57b58ba6601b449b4666ae96dc3303725f6b701))
+
+# [4.5.0](https://github.com/Automattic/newspack-plugin/compare/v4.4.2...v4.5.0) (2024-07-11)
+
+
+### Features
+
+* remove 'Patterns' link from Appearance menu ([#3236](https://github.com/Automattic/newspack-plugin/issues/3236)) ([b1150f5](https://github.com/Automattic/newspack-plugin/commit/b1150f54eee24b07ecc9d083b64b787cefa8e414))
+
+## [4.4.2](https://github.com/Automattic/newspack-plugin/compare/v4.4.1...v4.4.2) (2024-07-10)
+
+
+### Bug Fixes
+
+* add credits meta attributes check and dependencies to image block effect hook ([#3230](https://github.com/Automattic/newspack-plugin/issues/3230)) ([b257d2b](https://github.com/Automattic/newspack-plugin/commit/b257d2bfcd6127908c015963c467c596a7cbc89b))
+
+## [4.4.1](https://github.com/Automattic/newspack-plugin/compare/v4.4.0...v4.4.1) (2024-07-08)
+
+
+### Bug Fixes
+
+* update text domain ([#3222](https://github.com/Automattic/newspack-plugin/issues/3222)) ([ac9da56](https://github.com/Automattic/newspack-plugin/commit/ac9da56d80d1362cc8cc6c5ab0264ce55c2e2ed4))
+
 # [4.4.0](https://github.com/Automattic/newspack-plugin/compare/v4.3.4...v4.4.0) (2024-07-01)
 
 
