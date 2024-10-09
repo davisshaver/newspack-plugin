@@ -1,3 +1,4 @@
+/* globals newspack_memberships_gate */
 /**
  * Internal dependencies
  */
@@ -31,7 +32,10 @@ function domReady( callback ) {
  * @param {HTMLElement} gate The gate element.
  */
 function addFormInputs( gate ) {
-	const forms = gate.querySelectorAll( 'form' );
+	const forms = [
+		...gate.querySelectorAll( 'form' ),
+		...document.querySelectorAll( '.newspack-reader-auth form' ),
+	];
 	forms.forEach( form => {
 		const input = document.createElement( 'input' );
 		input.type = 'hidden';
@@ -42,15 +46,32 @@ function addFormInputs( gate ) {
 }
 
 /**
- * Push gate 'seen' event to Google Analytics.
+ * Get the full event payload for GA4.
+ *
+ * @param {Array} payload The event payload.
+ *
+ * @return {Array} The full event payload
  */
-function pushSeenEvent() {
+function getEventPayload( payload ) {
+	return {
+		...newspack_memberships_gate.metadata,
+		...payload,
+	}
+}
+
+/**
+ * Handle when the gate is seen.
+ */
+function handleSeen( gate ) {
+	// Add form inputs.
+	addFormInputs( gate );
+	// Push gate 'seen' event to Google Analytics.
 	const eventName = 'np_gate_interaction';
 	const payload = {
 		action: 'seen',
 	};
 	if ( 'function' === typeof window.gtag && payload ) {
-		window.gtag( 'event', eventName, payload );
+		window.gtag( 'event', eventName, getEventPayload( payload ) );
 	}
 }
 
@@ -72,7 +93,7 @@ function initOverlay( gate ) {
 		if ( delta < 0 ) {
 			visible = true;
 			if ( ! seen ) {
-				pushSeenEvent();
+				handleSeen( gate );
 			}
 			seen = true;
 		}
@@ -87,16 +108,17 @@ domReady( function () {
 	if ( ! gate ) {
 		return;
 	}
-	addFormInputs( gate );
 
 	if ( gate.classList.contains( 'newspack-memberships__overlay-gate' ) ) {
 		initOverlay( gate );
 	} else {
 		// Seen event for inline gate.
 		const detectSeen = () => {
-			const delta = ( gate?.getBoundingClientRect().top || 0 ) - window.innerHeight / 2;
+			const delta =
+				( gate?.getBoundingClientRect().top || 0 ) -
+				window.innerHeight / 2;
 			if ( delta < 0 ) {
-				pushSeenEvent();
+				handleSeen( gate );
 				document.removeEventListener( 'scroll', detectSeen );
 			}
 		};

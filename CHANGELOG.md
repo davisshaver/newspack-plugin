@@ -1,3 +1,183 @@
+# [5.5.0](https://github.com/Automattic/newspack-plugin/compare/v5.4.1...v5.5.0) (2024-10-08)
+
+
+### Bug Fixes
+
+* cancelled subscriptions sync ([#3466](https://github.com/Automattic/newspack-plugin/issues/3466)) ([b605a7f](https://github.com/Automattic/newspack-plugin/commit/b605a7f621e33f0f7d7bf4be44311cc477274da6))
+* change the current product criteria for sync ([#3416](https://github.com/Automattic/newspack-plugin/issues/3416)) ([28a84bc](https://github.com/Automattic/newspack-plugin/commit/28a84bc81260adb4fcbffc54f384692a6fa6f50c))
+* **esp-meta:** handle state of the 'Woo Team' meta ([#3352](https://github.com/Automattic/newspack-plugin/issues/3352)) ([ba5ea1e](https://github.com/Automattic/newspack-plugin/commit/ba5ea1e2562d511e1e57e8abe158b043ba283bdb))
+* **esp-sync:** sync Connected Account field ([#3414](https://github.com/Automattic/newspack-plugin/issues/3414)) ([61c02bc](https://github.com/Automattic/newspack-plugin/commit/61c02bc861a850eee93519b6ae49b309272286bc))
+* **esp-wc-metadata:** last payment date & amount handling ([#3363](https://github.com/Automattic/newspack-plugin/issues/3363)) ([d1abbfe](https://github.com/Automattic/newspack-plugin/commit/d1abbfea06dcc6803a0ddce36d595692ec6280a1))
+* **guest-author:** enqueue the guest author admin script selectively ([0bf37af](https://github.com/Automattic/newspack-plugin/commit/0bf37af11279c4c5a662ac93fb76bd8bd92a2acf))
+* hide My Account links if not relevant ([#3394](https://github.com/Automattic/newspack-plugin/issues/3394)) ([0d039d8](https://github.com/Automattic/newspack-plugin/commit/0d039d86e101f718cc75095204a867321dc239bd))
+* make email template fetching deterministic ([#3341](https://github.com/Automattic/newspack-plugin/issues/3341)) ([ace91aa](https://github.com/Automattic/newspack-plugin/commit/ace91aa72a65dd582b705b38c037a75e029aa643))
+* **phpcs:** specify path in custom ruleset ref ([#3384](https://github.com/Automattic/newspack-plugin/issues/3384)) ([b143e74](https://github.com/Automattic/newspack-plugin/commit/b143e74aae1792578de8d713c67356a8f040e7f3))
+* prevent PHP notice while checking my-account page ([#3435](https://github.com/Automattic/newspack-plugin/issues/3435)) ([146a26f](https://github.com/Automattic/newspack-plugin/commit/146a26ffa89198823e0bc097c8f1e48364f1c042))
+* **ras-sync:** deprecate redundant Signup_Page meta field ([#3439](https://github.com/Automattic/newspack-plugin/issues/3439)) ([61d6de8](https://github.com/Automattic/newspack-plugin/commit/61d6de83c8572be91690e856bef657630df8718d))
+* **reader-registration-block:** fix initial newsletter checkbox state ([1890efe](https://github.com/Automattic/newspack-plugin/commit/1890efee2870ca1cf4012518f7153787562107f7))
+* replace `newspack_image_credits_placeholder` default value ([#3433](https://github.com/Automattic/newspack-plugin/issues/3433)) ([c754fc2](https://github.com/Automattic/newspack-plugin/commit/c754fc251d874ebbc2733d144ddd31c8eeece12b))
+* **sync:** method name for `membership_saved` handler ([#3399](https://github.com/Automattic/newspack-plugin/issues/3399)) ([2c0bf26](https://github.com/Automattic/newspack-plugin/commit/2c0bf26f81a28fd2ca43ba394ded77246a44e8c4))
+* **sync:** place esp sync admin features behind a constant ([#3438](https://github.com/Automattic/newspack-plugin/issues/3438)) ([20a0970](https://github.com/Automattic/newspack-plugin/commit/20a09705b0cc98c52b4da6d5d6d338187b673919))
+* **sync:** remove localized number format ([#3434](https://github.com/Automattic/newspack-plugin/issues/3434)) ([2243a5d](https://github.com/Automattic/newspack-plugin/commit/2243a5d175f3387adc193371024fa2710288517c))
+* wizards - update type check conditional for `custom_logo` ([#3442](https://github.com/Automattic/newspack-plugin/issues/3442)) ([125f756](https://github.com/Automattic/newspack-plugin/commit/125f7562f9e85eb7205325669debde7c9ef95dfa))
+* woocommerce connection tests ([#3372](https://github.com/Automattic/newspack-plugin/issues/3372)) ([5cea128](https://github.com/Automattic/newspack-plugin/commit/5cea128bbc250d39a942a19b464fa1dd8dce3cd1))
+* **woocommerce-connection:** handle explicit UTM meta fields meta ([#3371](https://github.com/Automattic/newspack-plugin/issues/3371)) ([bf9e997](https://github.com/Automattic/newspack-plugin/commit/bf9e9978d76cd3e99a2fb2774d80e3a65f8369ca))
+
+
+### Features
+
+* add a new action to when a ras setting is updated ([#3357](https://github.com/Automattic/newspack-plugin/issues/3357)) ([35d3492](https://github.com/Automattic/newspack-plugin/commit/35d3492c849c238c09552a632ecde12a458e4841))
+* **esp-sync:** sync membership data regardless of subscription ([#3353](https://github.com/Automattic/newspack-plugin/issues/3353)) ([9f7d1de](https://github.com/Automattic/newspack-plugin/commit/9f7d1def5d786e565b2cccb019e1ed0fcc90360c))
+* **ga4:** detect gate interaction blocks ([#3408](https://github.com/Automattic/newspack-plugin/issues/3408)) ([e14913c](https://github.com/Automattic/newspack-plugin/commit/e14913c56222e8c842de4d5212072755c01860da))
+* **ga:** disable tracking for editors regardless of RA status ([81323c3](https://github.com/Automattic/newspack-plugin/commit/81323c3fe4135dee3adba045b56679161aaeb793))
+* media kit page handling ([#3358](https://github.com/Automattic/newspack-plugin/issues/3358)) ([4454850](https://github.com/Automattic/newspack-plugin/commit/4454850ccdec38b052599c09a7847714498f9388))
+* **memberships:** add memberships-related body classes ([b56b9d8](https://github.com/Automattic/newspack-plugin/commit/b56b9d84aec54b4b927b1386e1528b18bc3c9bb5))
+* **ras:** esp sync tools ([#3359](https://github.com/Automattic/newspack-plugin/issues/3359)) ([d7dd754](https://github.com/Automattic/newspack-plugin/commit/d7dd754b16430e005e576e4f9397457c5a5343a6))
+* **ras:** helper method for ESP master list ([#3355](https://github.com/Automattic/newspack-plugin/issues/3355)) ([ec56d5b](https://github.com/Automattic/newspack-plugin/commit/ec56d5bc62b887659ba4ec6e8c76b8922983e690))
+* **ras:** sync class ([#3362](https://github.com/Automattic/newspack-plugin/issues/3362)) ([88acbee](https://github.com/Automattic/newspack-plugin/commit/88acbeec177490dd0194eff8c7185e05d7096b2d))
+* **ras:** unify ESP connector strategy for data events ([#3360](https://github.com/Automattic/newspack-plugin/issues/3360)) ([7080864](https://github.com/Automattic/newspack-plugin/commit/70808642116689518e24e6661917120de4bb706b))
+* **reader-activation:** ESP-related tweaks ([#3381](https://github.com/Automattic/newspack-plugin/issues/3381)) ([ac68b67](https://github.com/Automattic/newspack-plugin/commit/ac68b67de4dd0f5ca26fefa6da4d8da0b6e96555))
+* remove Woo Membersip sync fields ([#3411](https://github.com/Automattic/newspack-plugin/issues/3411)) ([28052e8](https://github.com/Automattic/newspack-plugin/commit/28052e8e3f396e17c80b6c331ace747cbabf3fa6))
+* **sync:** add ESP sync notice to RAS wizard ([#3400](https://github.com/Automattic/newspack-plugin/issues/3400)) ([f9acd56](https://github.com/Automattic/newspack-plugin/commit/f9acd569db43e3612960beeff9e8627c9516fb28))
+
+## [5.4.1](https://github.com/Automattic/newspack-plugin/compare/v5.4.0...v5.4.1) (2024-10-07)
+
+
+### Bug Fixes
+
+* remove Newspack Elections requirement from patterns ([049c9b6](https://github.com/Automattic/newspack-plugin/commit/049c9b6a3a23f92f9f34a1b15a3037adb29eb26f))
+
+# [5.4.0](https://github.com/Automattic/newspack-plugin/compare/v5.3.14...v5.4.0) (2024-10-03)
+
+
+### Bug Fixes
+
+* update community placeholder and add help docs ([26dfda2](https://github.com/Automattic/newspack-plugin/commit/26dfda218ca876c5379cbb6cc4d28eba2f5b982a))
+
+
+### Features
+
+* add elections block patterns ([de84fee](https://github.com/Automattic/newspack-plugin/commit/de84fee4c11184bda2a5ccbdc7a9f563fbec16fc))
+
+## [5.3.14](https://github.com/Automattic/newspack-plugin/compare/v5.3.13...v5.3.14) (2024-10-03)
+
+
+### Bug Fixes
+
+* cache bust the /login/google API request ([ee92ded](https://github.com/Automattic/newspack-plugin/commit/ee92dedfdd365c7c69b877cd98cad15f976b6627))
+
+## [5.3.13](https://github.com/Automattic/newspack-plugin/compare/v5.3.12...v5.3.13) (2024-10-02)
+
+
+### Bug Fixes
+
+* **oauth:** tweak precision of success google auth log ([#3453](https://github.com/Automattic/newspack-plugin/issues/3453)) ([bed1e67](https://github.com/Automattic/newspack-plugin/commit/bed1e673be1e48444ad09680647f9f0fd80472ba))
+
+## [5.3.12](https://github.com/Automattic/newspack-plugin/compare/v5.3.11...v5.3.12) (2024-10-01)
+
+
+### Bug Fixes
+
+* handle zero cover fee percentage ([#3452](https://github.com/Automattic/newspack-plugin/issues/3452)) ([742b378](https://github.com/Automattic/newspack-plugin/commit/742b378d0399ab9359e82ad7aa4d999d78566ebd))
+
+## [5.3.11](https://github.com/Automattic/newspack-plugin/compare/v5.3.10...v5.3.11) (2024-10-01)
+
+
+### Bug Fixes
+
+* **oauth:** validate ID, prevent early deletion and improve logs ([#3450](https://github.com/Automattic/newspack-plugin/issues/3450)) ([763848e](https://github.com/Automattic/newspack-plugin/commit/763848e38f3eec3dbc6107cbed29277cdba4c040))
+
+## [5.3.10](https://github.com/Automattic/newspack-plugin/compare/v5.3.9...v5.3.10) (2024-09-17)
+
+
+### Bug Fixes
+
+* **my-account:** check if `is_account_page()` exists ([#3427](https://github.com/Automattic/newspack-plugin/issues/3427)) ([d115641](https://github.com/Automattic/newspack-plugin/commit/d115641a03a3bed4197b5d6281536cfc40725da2))
+
+## [5.3.9](https://github.com/Automattic/newspack-plugin/compare/v5.3.8...v5.3.9) (2024-09-16)
+
+
+### Bug Fixes
+
+* required billing fields in My Account ([#3389](https://github.com/Automattic/newspack-plugin/issues/3389)) ([eb58c6b](https://github.com/Automattic/newspack-plugin/commit/eb58c6b6b4cac568d27f088cdd4d95663b4aed08))
+
+## [5.3.8](https://github.com/Automattic/newspack-plugin/compare/v5.3.7...v5.3.8) (2024-09-16)
+
+
+### Bug Fixes
+
+* **onboarding:** add expected localized variable for GAM setup ([#3420](https://github.com/Automattic/newspack-plugin/issues/3420)) ([ed29b2b](https://github.com/Automattic/newspack-plugin/commit/ed29b2ba19912dff7dc427ebc3d22180e4956113))
+
+## [5.3.7](https://github.com/Automattic/newspack-plugin/compare/v5.3.6...v5.3.7) (2024-09-10)
+
+
+### Bug Fixes
+
+* **esp-wc-metadata:** last payment date & amount handling ([#3363](https://github.com/Automattic/newspack-plugin/issues/3363)) ([#3409](https://github.com/Automattic/newspack-plugin/issues/3409)) ([155fd65](https://github.com/Automattic/newspack-plugin/commit/155fd65e7a4fb59e8da4292a489e09bf2756e420))
+
+## [5.3.6](https://github.com/Automattic/newspack-plugin/compare/v5.3.5...v5.3.6) (2024-09-09)
+
+
+### Bug Fixes
+
+* woo subs vs memberships expiration ([#3393](https://github.com/Automattic/newspack-plugin/issues/3393)) ([96e57e0](https://github.com/Automattic/newspack-plugin/commit/96e57e06e4c4ea03a5dec78fb01d35662995d9ea))
+
+## [5.3.5](https://github.com/Automattic/newspack-plugin/compare/v5.3.4...v5.3.5) (2024-09-07)
+
+
+### Bug Fixes
+
+* expedite email template fix ([#3403](https://github.com/Automattic/newspack-plugin/issues/3403)) ([92c57a9](https://github.com/Automattic/newspack-plugin/commit/92c57a9b10daf64b01bee52271938ec0dabb0d1f))
+
+## [5.3.4](https://github.com/Automattic/newspack-plugin/compare/v5.3.3...v5.3.4) (2024-09-03)
+
+
+### Bug Fixes
+
+* **woocommerce-memberships:** membership status check with post status instead of type ([#3380](https://github.com/Automattic/newspack-plugin/issues/3380)) ([39e67f7](https://github.com/Automattic/newspack-plugin/commit/39e67f798550f8a76b3dbda135faabce90656662))
+
+## [5.3.3](https://github.com/Automattic/newspack-plugin/compare/v5.3.2...v5.3.3) (2024-08-29)
+
+
+### Bug Fixes
+
+* hide dummy guest author email address ([#3375](https://github.com/Automattic/newspack-plugin/issues/3375)) ([3d899cc](https://github.com/Automattic/newspack-plugin/commit/3d899cc19d8091e6a79f7e60a7bd1ddddf506c79))
+
+## [5.3.2](https://github.com/Automattic/newspack-plugin/compare/v5.3.1...v5.3.2) (2024-08-28)
+
+
+### Reverts
+
+* Revert "fix: hide dummy guest author email on archives & posts (#3370)" (#3374) ([01c0c24](https://github.com/Automattic/newspack-plugin/commit/01c0c2426ea8023d38f2186bd48029933fe1ec82)), closes [#3370](https://github.com/Automattic/newspack-plugin/issues/3370) [#3374](https://github.com/Automattic/newspack-plugin/issues/3374)
+
+## [5.3.1](https://github.com/Automattic/newspack-plugin/compare/v5.3.0...v5.3.1) (2024-08-28)
+
+
+### Bug Fixes
+
+* hide dummy guest author email on archives & posts ([#3370](https://github.com/Automattic/newspack-plugin/issues/3370)) ([3dcd1ec](https://github.com/Automattic/newspack-plugin/commit/3dcd1ecaca5c9cb5ad3b595ed883132b57456cd7))
+
+# [5.3.0](https://github.com/Automattic/newspack-plugin/compare/v5.2.1...v5.3.0) (2024-08-26)
+
+
+### Bug Fixes
+
+* **data-events:** gate interaction for registration form ([#3327](https://github.com/Automattic/newspack-plugin/issues/3327)) ([eb06194](https://github.com/Automattic/newspack-plugin/commit/eb0619470beb2a3765a4d7fac67169c85f260bf2))
+* **ras:** destroy sessions on account verification ([#3328](https://github.com/Automattic/newspack-plugin/issues/3328)) ([ab6efeb](https://github.com/Automattic/newspack-plugin/commit/ab6efebe21493b2f4a2bb28dbc4d996ec3580eff))
+
+
+### Features
+
+* add phpcs sniff for newsletter methods ([#3337](https://github.com/Automattic/newspack-plugin/issues/3337)) ([15f237c](https://github.com/Automattic/newspack-plugin/commit/15f237cd6b34c496e1ebd838e2e0609f0e167539))
+* add woo team sync metadata (WIP) ([#3325](https://github.com/Automattic/newspack-plugin/issues/3325)) ([e5cc5e3](https://github.com/Automattic/newspack-plugin/commit/e5cc5e37e3b7955794f9e92e058cc3fced575fd1))
+
+## [5.2.1](https://github.com/Automattic/newspack-plugin/compare/v5.2.0...v5.2.1) (2024-08-21)
+
+
+### Bug Fixes
+
+* **membership-status-check:** add property check ([3fae988](https://github.com/Automattic/newspack-plugin/commit/3fae988af64602c8fe1daa1f37ecffbd4819857e))
+
 # [5.2.0](https://github.com/Automattic/newspack-plugin/compare/v5.1.0...v5.2.0) (2024-08-16)
 
 

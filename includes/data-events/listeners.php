@@ -31,6 +31,23 @@ Data_Events::register_listener(
 );
 
 /**
+ * For when a reader is deleted.
+ */
+Data_Events::register_listener(
+	'delete_user',
+	'reader_deleted',
+	function( $user_id, $reassign, $user ) {
+		if ( ! Reader_Activation::is_user_reader( $user ) ) {
+			return;
+		}
+		return [
+			'user_id' => $user_id,
+			'user'    => $user,
+		];
+	}
+);
+
+/**
  * For when a reader registers via Woo.
  */
 Data_Events::register_listener(
@@ -80,16 +97,13 @@ Data_Events::register_listener(
  * For when a new contact is added to newsletter lists for the first time.
  */
 Data_Events::register_listener(
-	'newspack_newsletters_add_contact',
+	'newspack_newsletters_contact_subscribed',
 	'newsletter_subscribed',
-	function( $provider, $contact, $lists, $result, $is_updating ) {
+	function( $provider, $contact, $lists, $result ) {
 		if ( empty( $lists ) ) {
 			return;
 		}
 		if ( is_wp_error( $result ) ) {
-			return;
-		}
-		if ( $is_updating ) {
 			return;
 		}
 		$user = get_user_by( 'email', $contact['email'] );
@@ -323,6 +337,30 @@ Data_Events::register_listener(
 			'plan_id'       => $membership->get_plan_id(),
 			'status_before' => $old_status,
 			'status_after'  => $new_status,
+		];
+	}
+);
+
+/**
+ * When a membership is created or updated.
+ */
+Data_Events::register_listener(
+	'wc_memberships_user_membership_saved',
+	'membership_saved',
+	function( $membership_plan, $args ) {
+		if ( ! $membership_plan ) {
+			return;
+		}
+		$membership = \wc_memberships_get_user_membership( $args['user_membership_id'] );
+		$user       = \get_user_by( 'id', $args['user_id'] );
+		$user_email = $user ? $user->user_email : '';
+		return [
+			'user_id'               => $args['user_id'],
+			'email'                 => $user_email,
+			'membership_plan'       => $membership_plan->get_name(),
+			'membership_status'     => $membership->get_status(),
+			'membership_start_date' => $membership->get_start_date(),
+			'membership_end_date'   => $membership->get_end_date(),
 		];
 	}
 );
