@@ -422,7 +422,8 @@ class Newspack_Image_Credits {
 					return $setting['key'] === $key;
 				}
 			);
-			return reset( array_values( $setting ) );
+			$setting_values = array_values( $setting );
+			return reset( $setting_values );
 		}
 
 		return $default_settings;
@@ -561,7 +562,7 @@ class Newspack_Image_Credits {
 	 */
 	public static function register_meta() {
 		foreach ( [
-			static::MEDIA_CREDIT_META, 
+			static::MEDIA_CREDIT_META,
 			static::MEDIA_CREDIT_URL_META,
 			static::MEDIA_CREDIT_ORG_META,
 			static::MEDIA_CREDIT_CAN_DISTRIBUTE_META,
