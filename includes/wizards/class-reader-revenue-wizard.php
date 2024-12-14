@@ -288,6 +288,16 @@ class Reader_Revenue_Wizard extends Wizard {
 				'permission_callback' => [ $this, 'api_permissions_check' ],
 			]
 		);
+
+		register_rest_route(
+			NEWSPACK_API_NAMESPACE,
+			'/wizard/' . $this->slug . '/donations/emails/(?P<id>\d+)',
+			[
+				'methods'             => \WP_REST_Server::DELETABLE,
+				'callback'            => [ $this, 'api_reset_donation_email' ],
+				'permission_callback' => [ $this, 'api_permissions_check' ],
+			]
+		);
 	}
 
 	/**
@@ -382,14 +392,14 @@ class Reader_Revenue_Wizard extends Wizard {
 	 */
 	public function update_additional_settings( $settings ) {
 		if ( isset( $settings['allow_covering_fees'] ) ) {
-			update_option( 'newspack_donations_allow_covering_fees', $settings['allow_covering_fees'] );
+			update_option( 'newspack_donations_allow_covering_fees', intval( $settings['allow_covering_fees'] ) );
 		}
 		if ( isset( $settings['allow_covering_fees_default'] ) ) {
 			update_option( 'newspack_donations_allow_covering_fees_default', $settings['allow_covering_fees_default'] );
 		}
 
 		if ( isset( $settings['allow_covering_fees_label'] ) ) {
-			update_option( 'newspack_donations_allow_covering_fees_label', $settings['allow_covering_fees_label'] );
+			update_option( 'newspack_donations_allow_covering_fees_label', intval( $settings['allow_covering_fees_label'] ) );
 		}
 		if ( isset( $settings['fee_multiplier'] ) ) {
 			update_option( 'newspack_blocks_donate_fee_multiplier', $settings['fee_multiplier'] );
@@ -487,12 +497,17 @@ class Reader_Revenue_Wizard extends Wizard {
 		$wc_installed             = 'active' === Plugin_Manager::get_managed_plugin_status( 'woocommerce' );
 		$stripe_data              = Stripe_Connection::get_stripe_data();
 
-		$billing_fields = [];
+		$billing_fields    = null;
+		$order_notes_field = [];
 		if ( $wc_installed && Donations::is_platform_wc() ) {
-			$checkout = new \WC_Checkout();
-			$fields   = $checkout->get_checkout_fields();
+			$checkout        = new \WC_Checkout();
+			$fields          = $checkout->get_checkout_fields();
+			$checkout_fields = $fields;
 			if ( ! empty( $fields['billing'] ) ) {
 				$billing_fields = $fields['billing'];
+			}
+			if ( ! empty( $fields['order']['order_comments'] ) ) {
+				$order_notes_field = $fields['order']['order_comments'];
 			}
 		}
 
@@ -505,8 +520,8 @@ class Reader_Revenue_Wizard extends Wizard {
 				'woopayments' => $wc_configuration_manager->woopayments_data(),
 			],
 			'additional_settings'      => [
-				'allow_covering_fees'         => get_option( 'newspack_donations_allow_covering_fees', true ),
-				'allow_covering_fees_default' => get_option( 'newspack_donations_allow_covering_fees_default', false ),
+				'allow_covering_fees'         => boolval( get_option( 'newspack_donations_allow_covering_fees', false ) ),
+				'allow_covering_fees_default' => boolval( get_option( 'newspack_donations_allow_covering_fees_default', false ) ),
 				'allow_covering_fees_label'   => get_option( 'newspack_donations_allow_covering_fees_label', '' ),
 				'fee_multiplier'              => get_option( 'newspack_blocks_donate_fee_multiplier', '2.9' ),
 				'fee_static'                  => get_option( 'newspack_blocks_donate_fee_static', '0.3' ),
@@ -514,6 +529,7 @@ class Reader_Revenue_Wizard extends Wizard {
 			'donation_data'            => Donations::get_donation_settings(),
 			'donation_page'            => Donations::get_donation_page_info(),
 			'available_billing_fields' => $billing_fields,
+			'order_notes_field'        => $order_notes_field,
 			'salesforce_settings'      => [],
 			'platform_data'            => [
 				'platform' => $platform,
@@ -563,6 +579,46 @@ class Reader_Revenue_Wizard extends Wizard {
 		return rest_ensure_response( Donations::get_donation_settings() );
 	}
 
+
+	/**
+	 * Reset donation email template.
+	 * We acheive this by trashing the email template post.
+	 *
+	 * @param WP_REST_Request $request Request object.
+	 *
+	 * @return WP_Error|WP_REST_Response
+	 */
+	public function api_reset_donation_email( $request ) {
+		$params = $request->get_params();
+		$id     = $params['id'];
+		$email  = get_post( $id );
+
+		if ( $email === null || $email->post_type !== Emails::POST_TYPE ) {
+			return new WP_Error(
+				'newspack_reset_donation_email_invalid_arg',
+				esc_html__( 'Invalid argument: no email template matches the provided id.', 'newspack-plugin' ),
+				[
+					'status' => 400,
+					'level'  => 'notice',
+				]
+			);
+		}
+
+		if ( ! \wp_trash_post( $id ) ) {
+			return new WP_Error(
+				'newspack_reset_donation_email_reset_failed',
+				esc_html__( 'Reset failed: unable to reset email template.', 'newspack-plugin' ),
+				[
+					'status' => 400,
+					'level'  => 'notice',
+				]
+			);
+		}
+
+		return rest_ensure_response( Emails::get_emails( array_values( Reader_Revenue_Emails::EMAIL_TYPES ), false ) );
+	}
+
+
 	/**
 	 * Check whether WooCommerce is installed and active.
 	 *
@@ -603,7 +659,7 @@ class Reader_Revenue_Wizard extends Wizard {
 			'newspack-reader-revenue-wizard',
 			'newspack_reader_revenue',
 			[
-				'emails'                  => Emails::get_emails( [ Reader_Revenue_Emails::EMAIL_TYPES['RECEIPT'] ], false ),
+				'emails'                  => Emails::get_emails( array_values( Reader_Revenue_Emails::EMAIL_TYPES ), false ),
 				'email_cpt'               => Emails::POST_TYPE,
 				'salesforce_redirect_url' => Salesforce::get_redirect_url(),
 				'can_use_name_your_price' => Donations::can_use_name_your_price(),
