@@ -9,7 +9,17 @@
 }
 
 // Hide reCAPTCHA badge
+.grecaptcha-container,
 .grecaptcha-badge {
 	inset: 0 !important; // Prevents an odd side-scroll issue in the registration modal & block.
+	width: 0 !important;
+	height: 0 !important;
+	display: none !important;
 	visibility: hidden !important;
+}
+
+.newspack-recaptcha-error {
+	&.newspack-ui__notice--error {
+		margin-top: 0 !important;
+	}
 }
