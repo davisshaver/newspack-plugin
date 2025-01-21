@@ -1,3 +1,79 @@
+# [5.12.0](https://github.com/Automattic/newspack-plugin/compare/v5.11.3...v5.12.0) (2025-01-20)
+
+
+### Bug Fixes
+
+* **cli:** verify-reader CLI command ([#3660](https://github.com/Automattic/newspack-plugin/issues/3660)) ([c639af7](https://github.com/Automattic/newspack-plugin/commit/c639af78b9ba7cf73ef01e7f499a2389e0626343))
+* **recaptcha:** replace alerts with generic errors ([#3627](https://github.com/Automattic/newspack-plugin/issues/3627)) ([44ef2d2](https://github.com/Automattic/newspack-plugin/commit/44ef2d2a4b38483bce979a4c68b0aa2afb4d0a9a))
+* remove newspack_corrections_ids meta ([#3675](https://github.com/Automattic/newspack-plugin/issues/3675)) ([dad258b](https://github.com/Automattic/newspack-plugin/commit/dad258b2e113310fd312e345f80fc54bb84cf928))
+* **wcs:** migrate-expired-subscriptions handle manual subscriptions ([#3663](https://github.com/Automattic/newspack-plugin/issues/3663)) ([e0f32e8](https://github.com/Automattic/newspack-plugin/commit/e0f32e87eba3e9562f6f7b40d185c9308d86ae84))
+
+
+### Features
+
+* **corrections:** add corrections and clarifications behind feature flag ([#3638](https://github.com/Automattic/newspack-plugin/issues/3638)) ([ea745cf](https://github.com/Automattic/newspack-plugin/commit/ea745cff1a77bf422bb6f1c77b4dd2ca83e8ff69))
+
+
+### Performance Improvements
+
+* **data-events:** queue dispatches to execute on shutdown ([#3616](https://github.com/Automattic/newspack-plugin/issues/3616)) ([510a1a0](https://github.com/Automattic/newspack-plugin/commit/510a1a04881c9bccf3389ecd6dbf6b82a13d461b))
+
+## [5.11.3](https://github.com/Automattic/newspack-plugin/compare/v5.11.2...v5.11.3) (2025-01-17)
+
+
+### Bug Fixes
+
+* **esp-sync:** sync non-donation subscription data even if no completed orders ([#3680](https://github.com/Automattic/newspack-plugin/issues/3680)) ([dd0898f](https://github.com/Automattic/newspack-plugin/commit/dd0898fe92c851631687f78a24c42b4b74d2f0b1))
+
+## [5.11.2](https://github.com/Automattic/newspack-plugin/compare/v5.11.1...v5.11.2) (2025-01-16)
+
+
+### Bug Fixes
+
+* **mc:** handle standard MC merge fields when fixing duplicates ([#3637](https://github.com/Automattic/newspack-plugin/issues/3637)) ([80248a2](https://github.com/Automattic/newspack-plugin/commit/80248a235c6aa295bc38fe77e0ab489ac39ed46c))
+
+## [5.11.1](https://github.com/Automattic/newspack-plugin/compare/v5.11.0...v5.11.1) (2025-01-14)
+
+
+### Bug Fixes
+
+* **recaptcha:** remove modal checkout restriction from v2 ([#3674](https://github.com/Automattic/newspack-plugin/issues/3674)) ([66bd2c8](https://github.com/Automattic/newspack-plugin/commit/66bd2c8df79f94b8ed1aca943e3081c1bd4e7529))
+
+# [5.11.0](https://github.com/Automattic/newspack-plugin/compare/v5.10.6...v5.11.0) (2025-01-13)
+
+
+### Features
+
+* **my-account:** reCAPTCHA check on add payment method ([#3673](https://github.com/Automattic/newspack-plugin/issues/3673)) ([4a46c8e](https://github.com/Automattic/newspack-plugin/commit/4a46c8e77f4b785bf5317812f8390cb7accddbc2))
+
+## [5.10.6](https://github.com/Automattic/newspack-plugin/compare/v5.10.5...v5.10.6) (2025-01-09)
+
+
+### Bug Fixes
+
+* **esp-sync:** get inactive subscriptions with failed or pending orders ([#3658](https://github.com/Automattic/newspack-plugin/issues/3658)) ([cca29d3](https://github.com/Automattic/newspack-plugin/commit/cca29d31d4b489a0c23fcb1dfbc50ae10e4bdc85))
+
+## [5.10.5](https://github.com/Automattic/newspack-plugin/compare/v5.10.4...v5.10.5) (2025-01-07)
+
+
+### Bug Fixes
+
+* **recaptcha:** verify v2 on all modal checkout requests ([#3644](https://github.com/Automattic/newspack-plugin/issues/3644)) ([88277e9](https://github.com/Automattic/newspack-plugin/commit/88277e9b77151b8dc176cae09b2a92989ac4ddf4))
+
+## [5.10.4](https://github.com/Automattic/newspack-plugin/compare/v5.10.3...v5.10.4) (2024-12-23)
+
+
+### Bug Fixes
+
+* dont try to get orders if Woo is not active ([#3649](https://github.com/Automattic/newspack-plugin/issues/3649)) ([608f017](https://github.com/Automattic/newspack-plugin/commit/608f017000b59e8b3bdcd81b14d81969bc72b379))
+
+## [5.10.3](https://github.com/Automattic/newspack-plugin/compare/v5.10.2...v5.10.3) (2024-12-20)
+
+
+### Bug Fixes
+
+* **stripe:** when adding new card, update subs of all statuses ([#3643](https://github.com/Automattic/newspack-plugin/issues/3643)) ([62fe022](https://github.com/Automattic/newspack-plugin/commit/62fe02231e891fa7a9bc9d5f573ba336b6cb03f3))
+
 ## [5.10.2](https://github.com/Automattic/newspack-plugin/compare/v5.10.1...v5.10.2) (2024-12-17)
 
 
