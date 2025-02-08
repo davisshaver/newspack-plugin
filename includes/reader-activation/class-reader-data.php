@@ -486,6 +486,20 @@ final class Reader_Data {
 			return;
 		}
 
+		// Check if user is a member.
+		if ( class_exists( '\MeprUser' ) ) {
+			$mepr_user            = new \MeprUser( $data['user_id'] );
+			$subscriptions        = $mepr_user->active_product_subscriptions( 'ids' );
+			$member_subscriptions = [ 54021, 20210, 204936, 17230, 1414 ];
+			// Check if any of the subscription IDs in $subscriptions match the IDs in $member_subscriptions.
+			if ( array_intersect( $subscriptions, $member_subscriptions ) ) {
+				self::update_item( $data['user_id'], 'is_donor', true );
+				self::update_item( $data['user_id'], 'is_newsletter_subscriber', true );
+			} else {
+				self::update_item( $data['user_id'], 'is_donor', false );
+			}
+		}
+
 		if ( ! class_exists( 'WC_Memberships' ) || ! function_exists( 'wc_memberships_get_user_memberships' ) ) {
 			return;
 		}
