@@ -218,11 +218,14 @@ class WooCommerce_Products {
 	 * @param WC_Product $product The product associated with this order item.
 	 */
 	public static function require_order_processing( $needs_proccessing, $product ) {
-		$config = self::get_custom_option_config( 'newspack_autocomplete_orders' );
-		if ( ! $config || ( isset( $config['product_types'] ) && ! in_array( $product->get_type(), $config['product_types'], true ) ) ) {
-			return $needs_proccessing;
-		}
-		return self::get_custom_option_value( $product, 'newspack_autocomplete_orders' ) ? false : $needs_proccessing;
+		return $needs_proccessing;
+		// @TODO: Uncomment this when we start using Newspack orders, but it's not working yet.
+		// $config = self::get_custom_option_config( 'newspack_autocomplete_orders' );
+		// if ( ! $config || ( isset( $config['product_types'] ) && ! in_array( $product->get_type(), $config['product_types'], true ) ) ) {
+		// phpcs:disable
+		// 	return $needs_proccessing;
+		// }
+		// return self::get_custom_option_value( $product, 'newspack_autocomplete_orders' ) ? false : $needs_proccessing;
 	}
 }
 
