@@ -90,6 +90,14 @@ class RSS {
 			'custom_tracking_snippet' => '',
 		];
 
+		/**
+		 * Filter the default RSS feed settings.
+		 *
+		 * @param array $default_settings The default settings for RSS feeds.
+		 * @return array Modified default settings.
+		 */
+		$default_settings = apply_filters( 'newspack_rss_feed_settings', $default_settings );
+
 		if ( ! $feed_post ) {
 			$query_feed = filter_input( INPUT_GET, self::FEED_QUERY_ARG, FILTER_SANITIZE_FULL_SPECIAL_CHARS );
 			if ( ! $query_feed ) {
@@ -107,6 +115,15 @@ class RSS {
 		if ( ! is_array( $saved_settings ) ) {
 			return $default_settings;
 		}
+
+		/**
+		 * Filter the saved RSS feed settings.
+		 *
+		 * @param array $saved_settings The saved settings for this feed.
+		 * @param int   $feed_post_id   The post ID of the feed.
+		 * @return array Modified saved settings.
+		 */
+		$saved_settings = apply_filters( 'newspack_rss_saved_settings', $saved_settings, $feed_post_id );
 
 		return shortcode_atts( $default_settings, $saved_settings );
 	}
@@ -379,6 +396,15 @@ class RSS {
 					<input type="checkbox" name="use_post_id_as_guid" value="1" <?php checked( $settings['use_post_id_as_guid'] ); ?> />
 				</td>
 			</tr>
+			<?php
+				/**
+				 * Action for plugins to add their own content settings to the RSS feed settings UI.
+				 *
+				 * @param array $settings Current feed settings.
+				 * @param WP_Post $feed_post The feed post object.
+				 */
+				do_action( 'newspack_rss_render_content_settings', $settings, $feed_post );
+			?>
 
 			<?php
 			// Only show this new option if the Republication Tracker Tool plugin is active.
@@ -475,6 +501,15 @@ class RSS {
 					<textarea name="custom_tracking_snippet" rows="4" cols="50"><?php echo esc_textarea( $settings['custom_tracking_snippet'] ); ?></textarea>
 				</td>
 			</tr>
+			<?php
+				/**
+				 * Action for plugins to add their own technical settings to the RSS feed settings UI.
+				 *
+				 * @param array $settings Current feed settings.
+				 * @param WP_Post $feed_post The feed post object.
+				 */
+				do_action( 'newspack_rss_render_technical_settings', $settings, $feed_post );
+			?>
 			<?php if ( defined( 'WPSEO_VERSION' ) && WPSEO_VERSION ) : ?>
 				<tr>
 					<th>
@@ -607,6 +642,15 @@ class RSS {
 
 		}
 
+		/**
+		 * Filter the feed settings before they are saved.
+		 *
+		 * @param array $settings      The feed settings to be saved.
+		 * @param int   $feed_post_id  The post ID of the feed.
+		 * @return array Modified feed settings.
+		 */
+		$settings = apply_filters( 'newspack_rss_modify_save_settings', $settings, $feed_post_id );
+
 		update_post_meta( $feed_post_id, self::FEED_SETTINGS_META, $settings );
 		// @todo flush feed cache here.
 	}
@@ -682,6 +726,14 @@ class RSS {
 			];
 			$query->set( 'meta_query', $meta_query );
 		}
+
+		/**
+		 * Modify the RSS feed query.
+		 *
+		 * @param WP_Query $query    The WP_Query object for the feed.
+		 * @param array    $settings The current feed settings.
+		 */
+		do_action( 'newspack_rss_modify_feed_query', $query, $settings );
 	}
 
 	/**
@@ -816,6 +868,16 @@ class RSS {
 		);
 
 		$content .= $attribution . $custom_tracking_content;
+
+		/**
+		 * Filter the feed content after tracking snippets have been added.
+		 *
+		 * @param string $content  The feed content with tracking snippets applied.
+		 * @param int    $post_id  The ID of the current post.
+		 * @param array  $settings The current feed settings.
+		 * @return string Modified feed content.
+		 */
+		$content = apply_filters( 'newspack_rss_after_tracking_snippet', $content, $post_id, $settings );
 
 		return $content;
 	}
