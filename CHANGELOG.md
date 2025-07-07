@@ -1,3 +1,10 @@
+## [6.11.3](https://github.com/Automattic/newspack-plugin/compare/v6.11.2...v6.11.3) (2025-07-07)
+
+
+### Bug Fixes
+
+* update custom byline markup to match regular bylines in theme ([#4070](https://github.com/Automattic/newspack-plugin/issues/4070)) ([ef5ce7d](https://github.com/Automattic/newspack-plugin/commit/ef5ce7d9e977e37f9f47267a7038c888467c03ba))
+
 ## [6.11.2](https://github.com/Automattic/newspack-plugin/compare/v6.11.1...v6.11.2) (2025-07-02)
 
 
