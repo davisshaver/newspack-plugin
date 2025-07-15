@@ -116,7 +116,7 @@ class Post_Type {
 				'slug' => Settings::get_collection_slug(),
 			],
 			'menu_icon'    => 'dashicons-portfolio',
-			'supports'     => [ 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes' ],
+			'supports'     => [ 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes', 'newspack_blocks' ],
 			'has_archive'  => true,
 		];
 
