@@ -1,3 +1,10 @@
+## [6.12.2](https://github.com/Automattic/newspack-plugin/compare/v6.12.1...v6.12.2) (2025-07-16)
+
+
+### Bug Fixes
+
+* user deletion w/out WC ([#4080](https://github.com/Automattic/newspack-plugin/issues/4080)) ([4b7ad7f](https://github.com/Automattic/newspack-plugin/commit/4b7ad7fa45c7730c98fa7e5ba039007313f07fbd))
+
 ## [6.12.1](https://github.com/Automattic/newspack-plugin/compare/v6.12.0...v6.12.1) (2025-07-15)
 
 
