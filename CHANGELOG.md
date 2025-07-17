@@ -1,3 +1,10 @@
+# [6.13.0](https://github.com/Automattic/newspack-plugin/compare/v6.12.3...v6.13.0) (2025-07-17)
+
+
+### Features
+
+* remove http og url override ([#4032](https://github.com/Automattic/newspack-plugin/issues/4032)) ([c97d41d](https://github.com/Automattic/newspack-plugin/commit/c97d41d7f8fea7e3db78a0f4fcff2fa92495c015))
+
 ## [6.12.3](https://github.com/Automattic/newspack-plugin/compare/v6.12.2...v6.12.3) (2025-07-16)
 
 
