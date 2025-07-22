@@ -25,6 +25,11 @@ class Settings {
 	public const POSTS_PER_PAGE_OPTIONS = [ 12, 18, 24 ];
 
 	/**
+	 * Post indicator style options.
+	 */
+	public const POST_INDICATOR_STYLE_OPTIONS = [ 'default', 'card' ];
+
+	/**
 	 * Get fields definitions to be used in the REST API.
 	 *
 	 * @param string $return_type Whether to return only the default values, keys, or all. Returns all the configuration by default.
@@ -32,6 +37,7 @@ class Settings {
 	 */
 	public static function get_rest_args( $return_type = 'all' ) {
 		$fields = [
+			// Custom Naming section.
 			'custom_naming_enabled' => [
 				'required'          => false,
 				'default'           => false,
@@ -54,6 +60,7 @@ class Settings {
 					return sanitize_title( is_string( $value ) ? $value : '' );
 				},
 			],
+			// Global CTAs section.
 			'subscribe_link'        => [
 				'required'          => false,
 				'default'           => '',
@@ -64,16 +71,7 @@ class Settings {
 				'default'           => '',
 				'sanitize_callback' => 'esc_url_raw',
 			],
-			'post_indicator_style'  => [
-				'required'          => false,
-				'default'           => 'default',
-				'sanitize_callback' => 'sanitize_text_field',
-			],
-			'card_message'          => [
-				'required'          => false,
-				'default'           => '',
-				'sanitize_callback' => 'sanitize_text_field',
-			],
+			// Collections Archive section.
 			'posts_per_page'        => [
 				'required'          => false,
 				'default'           => 12,
@@ -82,10 +80,28 @@ class Settings {
 					return in_array( $value, self::POSTS_PER_PAGE_OPTIONS, true ) ? $value : 12;
 				},
 			],
+			'category_filter_label' => [
+				'required'          => false,
+				'default'           => '',
+				'sanitize_callback' => 'sanitize_text_field',
+			],
 			'highlight_latest'      => [
 				'required'          => false,
 				'default'           => false,
 				'sanitize_callback' => 'rest_sanitize_boolean',
+			],
+			// Collection Posts section.
+			'post_indicator_style'  => [
+				'required'          => false,
+				'default'           => 'default',
+				'sanitize_callback' => function ( $value ) {
+					return in_array( $value, self::POST_INDICATOR_STYLE_OPTIONS, true ) ? $value : 'default';
+				},
+			],
+			'card_message'          => [
+				'required'          => false,
+				'default'           => '',
+				'sanitize_callback' => 'sanitize_text_field',
 			],
 		];
 
@@ -199,7 +215,7 @@ class Settings {
 	 * @return string
 	 */
 	public static function get_collection_slug() {
-		return self::get_custom_name( 'custom_slug', 'collection' );
+		return self::get_custom_name( 'custom_slug', 'collections' );
 	}
 
 	/**

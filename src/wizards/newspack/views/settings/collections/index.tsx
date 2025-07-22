@@ -16,16 +16,21 @@ const COLLECTIONS_PER_PAGE_OPTIONS = [ 12, 18, 24 ];
 
 // Default values for collections settings.
 const DEFAULT_COLLECTIONS_SETTINGS: CollectionsSettingsData = {
+	// Custom Naming section
 	custom_naming_enabled: false,
 	custom_name: '',
 	custom_singular_name: '',
 	custom_slug: '',
+	// Global CTAs section
 	subscribe_link: '',
 	order_link: '',
+	// Collections Archive section
+	posts_per_page: 12,
+	category_filter_label: '',
+	highlight_latest: false,
+	// Collection Posts section
 	post_indicator_style: 'default',
 	card_message: __( "Keep reading. There's plenty more to discover.", 'newspack-plugin' ),
-	posts_per_page: 12,
-	highlight_latest: false,
 };
 
 // Helper function to extract collection settings from API data with defaults.
@@ -140,6 +145,16 @@ function Collections() {
 									value: option,
 								} ) ) }
 							/>
+							<TextControl
+								label={ __( 'Category Filter Label', 'newspack-plugin' ) }
+								help={ __(
+									'Custom label for the category filter dropdown (e.g., "Collection:", "Type:", "Series:"). Leave empty to use the default "Publication:".',
+									'newspack-plugin'
+								) }
+								value={ settings.category_filter_label }
+								onChange={ ( value: string ) => updateSetting( 'category_filter_label', value ) }
+								placeholder={ __( 'Publication:', 'newspack-plugin' ) }
+							/>
 							<ToggleControl
 								label={ __( 'Highlight Most Recent Collection', 'newspack-plugin' ) }
 								help={ __(
@@ -164,7 +179,7 @@ function Collections() {
 									'newspack-plugin'
 								) }
 								value={ settings.post_indicator_style }
-								onChange={ ( value: string ) => updateSetting( 'post_indicator_style', value ) }
+								onChange={ ( value: 'default' | 'card' ) => updateSetting( 'post_indicator_style', value ) }
 								buttonOptions={ [
 									{ label: __( 'Default', 'newspack-plugin' ), value: 'default' },
 									{ label: __( 'Card', 'newspack-plugin' ), value: 'card' },
