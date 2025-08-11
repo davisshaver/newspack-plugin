@@ -1,3 +1,10 @@
+## [6.15.1](https://github.com/Automattic/newspack-plugin/compare/v6.15.0...v6.15.1) (2025-08-11)
+
+
+### Bug Fixes
+
+* **emails:** handle magic link error ([#4137](https://github.com/Automattic/newspack-plugin/issues/4137)) ([f3157ad](https://github.com/Automattic/newspack-plugin/commit/f3157add8382fd29ea750a68f81e31782b5b84a2))
+
 # [6.15.0](https://github.com/Automattic/newspack-plugin/compare/v6.14.4...v6.15.0) (2025-08-11)
 
 
