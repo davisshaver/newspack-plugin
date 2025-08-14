@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-14T18:00:36+00:00\n"
+"POT-Creation-Date: 2025-08-14T18:45:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -1891,7 +1891,8 @@ msgstr ""
 #: dist/newspack-wizards.db355696d5e46d4a3312.js:31
 #: dist/setup.js:7
 #: src/wizards/advertising/views/ad-unit/index.js:167
-#: src/wizards/advertising/views/ad-units/index.js:161
+#: src/wizards/advertising/views/ad-units/index.js:137
+#: src/wizards/advertising/views/ad-units/index.js:190
 #: src/wizards/advertising/views/placements/index.js:226
 #: src/wizards/advertising/views/providers/index.js:111
 #: src/wizards/audience/components/settings-modal/index.js:179
@@ -4311,11 +4312,11 @@ msgstr ""
 msgid "Advertising"
 msgstr ""
 
-#: includes/wizards/advertising/class-advertising-display-ads.php:531
+#: includes/wizards/advertising/class-advertising-display-ads.php:540
 msgid "Ad Units failed to fetch."
 msgstr ""
 
-#: includes/wizards/advertising/class-advertising-display-ads.php:675
+#: includes/wizards/advertising/class-advertising-display-ads.php:689
 #: dist/billboard.js:12
 #: src/wizards/advertising/index.js:168
 #: src/wizards/advertising/index.js:179
@@ -4323,7 +4324,7 @@ msgstr ""
 msgid "Advertising / Display Ads"
 msgstr ""
 
-#: includes/wizards/advertising/class-advertising-display-ads.php:676
+#: includes/wizards/advertising/class-advertising-display-ads.php:690
 #: includes/wizards/newspack/class-newspack-dashboard.php:118
 msgid "Display Ads"
 msgstr ""
@@ -6144,7 +6145,7 @@ msgstr ""
 
 #: dist/audience-wizards.465ef24dd7707013533a.js:38
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:90
+#: src/wizards/advertising/views/ad-units/index.js:106
 #: src/wizards/audience/views/setup/campaign.js:89
 #: src/wizards/audience/views/setup/complete.js:176
 msgid "Back"
@@ -6566,14 +6567,14 @@ msgstr ""
 
 #: dist/billboard.js:1
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:137
+#: src/wizards/advertising/views/ad-units/index.js:166
 #: src/wizards/advertising/views/providers/index.js:48
 msgid "Created custom targeting keys:"
 msgstr ""
 
 #: dist/billboard.js:1
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:143
+#: src/wizards/advertising/views/ad-units/index.js:172
 #: src/wizards/advertising/views/providers/index.js:55
 msgid "Visit your GAM dashboard"
 msgstr ""
@@ -6855,83 +6856,88 @@ msgid "Google Ad Manager Error"
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:75
+#: src/wizards/advertising/views/ad-units/index.js:91
 msgid "None (all ad units will be used)"
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:97
+#: src/wizards/advertising/views/ad-units/index.js:113
 msgid "Connected GAM network code"
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:107
+#: src/wizards/advertising/views/ad-units/index.js:122
+msgid "Parent network code (optional)"
+msgstr ""
+
+#: dist/billboard.js:12
+#: src/wizards/advertising/views/ad-units/index.js:128
 msgid "Set parent ad unit for the site inventory"
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:117
+#: src/wizards/advertising/views/ad-units/index.js:146
 msgid "The current parent ad unit is inactive or archived. Please select a different parent ad unit."
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:126
+#: src/wizards/advertising/views/ad-units/index.js:155
 msgid "Your GAM network code is different than the network code the site was configured with. Legacy ad units are likely to not load."
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:151
+#: src/wizards/advertising/views/ad-units/index.js:180
 msgid "Currently operating in legacy mode."
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:154
+#: src/wizards/advertising/views/ad-units/index.js:183
 msgid "Network Code"
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:168
+#: src/wizards/advertising/views/ad-units/index.js:197
 msgid "Set up multiple ad units to use on your homepage, articles and other places throughout your site."
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:170
+#: src/wizards/advertising/views/ad-units/index.js:199
 msgid "You can place ads through our Newspack Ad Block in the Editor, Newspack Ad widget, and using the global placements."
 msgstr ""
 
 #: dist/billboard.js:12
 #: src/wizards/advertising/index.js:211
-#: src/wizards/advertising/views/ad-units/index.js:178
+#: src/wizards/advertising/views/ad-units/index.js:207
 msgid "Add New Ad Unit"
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:200
+#: src/wizards/advertising/views/ad-units/index.js:229
 msgid "Code:"
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:206
+#: src/wizards/advertising/views/ad-units/index.js:235
 msgid "Sizes:"
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:210
+#: src/wizards/advertising/views/ad-units/index.js:239
 msgid "Fluid"
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:216
+#: src/wizards/advertising/views/ad-units/index.js:245
 msgid "Legacy ad unit."
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:222
+#: src/wizards/advertising/views/ad-units/index.js:251
 msgid "Default ad unit."
 msgstr ""
 
 #: dist/billboard.js:12
-#: src/wizards/advertising/views/ad-units/index.js:228
+#: src/wizards/advertising/views/ad-units/index.js:257
 msgid "Disconnected from GAM."
 msgstr ""
 
