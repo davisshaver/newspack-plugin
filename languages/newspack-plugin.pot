@@ -282,12 +282,20 @@ msgstr ""
 msgid "Open Menu"
 msgstr ""
 
-#: includes/class-patches.php:118
+#: includes/class-patches.php:122
 msgid "Pattern Categories"
 msgstr ""
 
-#: includes/class-patches.php:303
+#: includes/class-patches.php:202
+msgid "All Pattern Categories"
+msgstr ""
+
+#: includes/class-patches.php:374
 msgid "Please choose a new homepage before attempting to unpublish this page."
+msgstr ""
+
+#: includes/class-patches.php:531
+msgid "Patterns Count"
 msgstr ""
 
 #: includes/class-plugin-manager.php:44
