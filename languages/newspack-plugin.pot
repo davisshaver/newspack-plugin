@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Newspack 6.15.1\n"
+"Project-Id-Version: Newspack 6.15.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-14T18:49:30+00:00\n"
+"POT-Creation-Date: 2025-08-14T20:13:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -286,15 +286,19 @@ msgstr ""
 msgid "Pattern Categories"
 msgstr ""
 
-#: includes/class-patches.php:202
+#: includes/class-patches.php:201
+msgid "Filter by Pattern Category"
+msgstr ""
+
+#: includes/class-patches.php:203
 msgid "All Pattern Categories"
 msgstr ""
 
-#: includes/class-patches.php:374
+#: includes/class-patches.php:375
 msgid "Please choose a new homepage before attempting to unpublish this page."
 msgstr ""
 
-#: includes/class-patches.php:531
+#: includes/class-patches.php:532
 msgid "Patterns Count"
 msgstr ""
 
@@ -1002,13 +1006,13 @@ msgid "Use global setting"
 msgstr ""
 
 #: includes/collections/class-collection-meta.php:123
-#: dist/audience-wizards.465ef24dd7707013533a.js:10
+#: dist/audience-wizards.4742c1dac6d81c3c353c.js:10
 #: src/wizards/audience/components/settings-modal/index.js:134
 msgid "Show"
 msgstr ""
 
 #: includes/collections/class-collection-meta.php:127
-#: dist/audience-wizards.465ef24dd7707013533a.js:10
+#: dist/audience-wizards.4742c1dac6d81c3c353c.js:10
 #: src/wizards/audience/components/settings-modal/index.js:134
 msgid "Hide"
 msgstr ""
@@ -5278,21 +5282,7 @@ msgstr ""
 msgid "%s Advanced Settings"
 msgstr ""
 
-<<<<<<< HEAD
-#: dist/audience-wizards.465ef24dd7707013533a.js:10
-=======
 #: dist/audience-wizards.4742c1dac6d81c3c353c.js:10
-#: src/wizards/audience/components/settings-modal/index.js:134
-msgid "Hide"
-msgstr ""
-
-#: dist/audience-wizards.4742c1dac6d81c3c353c.js:10
-#: src/wizards/audience/components/settings-modal/index.js:134
-msgid "Show"
-msgstr ""
-
-#: dist/audience-wizards.4742c1dac6d81c3c353c.js:10
->>>>>>> origin/alpha
 #: src/wizards/audience/components/settings-modal/index.js:141
 msgid "Category Exclusions"
 msgstr ""
@@ -5514,13 +5504,8 @@ msgstr ""
 msgid "(archived)"
 msgstr ""
 
-<<<<<<< HEAD
-#: dist/audience-wizards.465ef24dd7707013533a.js:16
-#: dist/newspack-wizards.db355696d5e46d4a3312.js:26
-=======
 #: dist/audience-wizards.4742c1dac6d81c3c353c.js:16
-#: dist/newspack-wizards.3d38b7c2696efc78d038.js:26
->>>>>>> origin/alpha
+#: dist/newspack-wizards.db355696d5e46d4a3312.js:26
 #: src/wizards/audience/views/campaigns/campaigns/index.js:222
 msgid "Actions"
 msgstr ""
@@ -5798,32 +5783,18 @@ msgstr ""
 #. translators: %s: Prerequisite status
 #. Translators: Status of the prompt.
 #. Translators: %s: Plugin status
-<<<<<<< HEAD
-#: dist/audience-wizards.465ef24dd7707013533a.js:20
-#: dist/audience-wizards.465ef24dd7707013533a.js:35
-#: dist/newspack-wizards.db355696d5e46d4a3312.js:14
-=======
 #: dist/audience-wizards.4742c1dac6d81c3c353c.js:20
 #: dist/audience-wizards.4742c1dac6d81c3c353c.js:35
-#: dist/newspack-wizards.3d38b7c2696efc78d038.js:14
->>>>>>> origin/alpha
+#: dist/newspack-wizards.db355696d5e46d4a3312.js:14
 #, js-format
 msgid "Status: %s"
 msgstr ""
 
-<<<<<<< HEAD
-#: dist/audience-wizards.465ef24dd7707013533a.js:20
-#: dist/audience-wizards.465ef24dd7707013533a.js:32
-#: dist/audience-wizards.465ef24dd7707013533a.js:38
-#: dist/audience-wizards.465ef24dd7707013533a.js:41
-#: dist/newspack-wizards.db355696d5e46d4a3312.js:14
-=======
 #: dist/audience-wizards.4742c1dac6d81c3c353c.js:20
 #: dist/audience-wizards.4742c1dac6d81c3c353c.js:32
 #: dist/audience-wizards.4742c1dac6d81c3c353c.js:38
 #: dist/audience-wizards.4742c1dac6d81c3c353c.js:41
-#: dist/newspack-wizards.3d38b7c2696efc78d038.js:14
->>>>>>> origin/alpha
+#: dist/newspack-wizards.db355696d5e46d4a3312.js:14
 #: src/wizards/audience/components/payment-methods/index.js:39
 #: src/wizards/audience/components/payment-methods/index.js:54
 #: src/wizards/audience/components/payment-methods/payment-gateway.js:70
@@ -5835,17 +5806,10 @@ msgstr ""
 msgid "Learn more"
 msgstr ""
 
-<<<<<<< HEAD
-#: dist/audience-wizards.465ef24dd7707013533a.js:20
-#: dist/audience-wizards.465ef24dd7707013533a.js:35
-#: dist/audience-wizards.465ef24dd7707013533a.js:41
-#: dist/newspack-wizards.db355696d5e46d4a3312.js:31
-=======
 #: dist/audience-wizards.4742c1dac6d81c3c353c.js:20
 #: dist/audience-wizards.4742c1dac6d81c3c353c.js:35
 #: dist/audience-wizards.4742c1dac6d81c3c353c.js:41
-#: dist/newspack-wizards.3d38b7c2696efc78d038.js:31
->>>>>>> origin/alpha
+#: dist/newspack-wizards.db355696d5e46d4a3312.js:31
 #: dist/other-scripts/corrections-modal.js:7
 #: src/other-scripts/corrections-modal/index.js:391
 msgid "Saving…"
@@ -6367,17 +6331,10 @@ msgstr ""
 msgid "Connected - test mode"
 msgstr ""
 
-<<<<<<< HEAD
-#: dist/audience-wizards.465ef24dd7707013533a.js:38
-#: dist/audience-wizards.465ef24dd7707013533a.js:41
-#: dist/newspack-wizards.db355696d5e46d4a3312.js:1
-#: dist/newspack-wizards.db355696d5e46d4a3312.js:30
-=======
 #: dist/audience-wizards.4742c1dac6d81c3c353c.js:38
 #: dist/audience-wizards.4742c1dac6d81c3c353c.js:41
-#: dist/newspack-wizards.3d38b7c2696efc78d038.js:1
-#: dist/newspack-wizards.3d38b7c2696efc78d038.js:30
->>>>>>> origin/alpha
+#: dist/newspack-wizards.db355696d5e46d4a3312.js:1
+#: dist/newspack-wizards.db355696d5e46d4a3312.js:30
 #: src/wizards/audience/components/payment-methods/payment-gateway.js:47
 #: src/wizards/audience/components/payment-methods/stripe.js:51
 #: src/wizards/audience/components/payment-methods/woopayments.js:47
