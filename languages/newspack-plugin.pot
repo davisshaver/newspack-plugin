@@ -1957,7 +1957,7 @@ msgid "No RSS feeds found."
 msgstr ""
 
 #: includes/optional-modules/class-rss.php:165
-msgid "No RSS seeds found in Trash."
+msgid "No RSS feeds found in Trash."
 msgstr ""
 
 #: includes/optional-modules/class-rss.php:166
