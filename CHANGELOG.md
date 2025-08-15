@@ -1,3 +1,10 @@
+## [6.15.3](https://github.com/Automattic/newspack-plugin/compare/v6.15.2...v6.15.3) (2025-08-15)
+
+
+### Bug Fixes
+
+* byline network support release ([3a8bd7a](https://github.com/Automattic/newspack-plugin/commit/3a8bd7abc6f3e74d7373eb704fd451258cf0ac5a))
+
 ## [6.15.2](https://github.com/Automattic/newspack-plugin/compare/v6.15.1...v6.15.2) (2025-08-14)
 
 
