@@ -162,7 +162,7 @@ class RSS {
 			'search_items'       => __( 'Search RSS Feeds', 'newspack-plugin' ),
 			'parent_item_colon'  => __( 'Parent RSS Feeds:', 'newspack-plugin' ),
 			'not_found'          => __( 'No RSS feeds found.', 'newspack-plugin' ),
-			'not_found_in_trash' => __( 'No RSS seeds found in Trash.', 'newspack-plugin' ),
+			'not_found_in_trash' => __( 'No RSS feeds found in Trash.', 'newspack-plugin' ),
 			'item_published'     => __( 'RSS Feed published', 'newspack-plugin' ),
 			'item_updated'       => __( 'RSS Feed updated', 'newspack-plugin' ),
 		);
@@ -817,29 +817,37 @@ class RSS {
 			$custom_tracking_snippet,
 			[
 				'script'   => [
-					'id'    => true,
-					'src'   => true,
-					'type'  => true,
-					'async' => true,
-					'defer' => true,
-					'class' => true,
+					'id'          => true,
+					'src'         => true,
+					'type'        => true,
+					'async'       => true,
+					'defer'       => true,
+					'class'       => true,
+					'crossorigin' => true,
+					'data-*'      => true,
 				],
 				'img'      => [
-					'id'     => true,
-					'style'  => true,
-					'src'    => true,
-					'alt'    => true,
-					'class'  => true,
-					'width'  => true,
-					'height' => true,
+					'id'          => true,
+					'style'       => true,
+					'src'         => true,
+					'alt'         => true,
+					'class'       => true,
+					'width'       => true,
+					'height'      => true,
+					'data-*'      => true,
+					'crossorigin' => true,
+					'loading'     => true,
 				],
 				'iframe'   => [
-					'id'     => true,
-					'style'  => true,
-					'src'    => true,
-					'class'  => true,
-					'width'  => true,
-					'height' => true,
+					'id'          => true,
+					'style'       => true,
+					'src'         => true,
+					'class'       => true,
+					'width'       => true,
+					'height'      => true,
+					'crossorigin' => true,
+					'data-*'      => true,
+					'loading'     => true,
 				],
 				'noscript' => true,
 				'div'      => true,
@@ -1122,10 +1130,10 @@ class RSS {
 		$post = get_post();
 
 		if ( $settings['use_image_tags'] ) {
-			$thumbnail_url = get_the_post_thumbnail_url( $post, 'full' );
+			$thumbnail_url = get_the_post_thumbnail_url( $post, RSS_Add_Image::RSS_IMAGE_SIZE );
 			if ( $thumbnail_url ) :
 				?>
-				<image><?php echo esc_url( $thumbnail_url, null, 'db' ); ?></image>
+				<image><?php echo esc_url( $thumbnail_url ); ?></image>
 				<?php
 			endif;
 		}
@@ -1151,15 +1159,15 @@ class RSS {
 		if ( $settings['use_media_tags'] ) {
 			$thumbnail_id = get_post_thumbnail_id();
 			if ( $thumbnail_id ) {
-				$thumbnail_data = wp_get_attachment_image_src( $thumbnail_id, 'full' );
+				$thumbnail_data = wp_get_attachment_image_src( $thumbnail_id, RSS_Add_Image::RSS_IMAGE_SIZE );
 				if ( $thumbnail_data ) {
 					$caption = get_the_post_thumbnail_caption();
 					?>
-					<media:content type="<?php echo esc_attr( get_post_mime_type( $thumbnail_id ) ); ?>" url="<?php echo esc_url( $thumbnail_data[0], null, 'db' ); ?>">
+					<media:content type="<?php echo esc_attr( get_post_mime_type( $thumbnail_id ) ); ?>" url="<?php echo esc_url( $thumbnail_data[0] ); ?>">
 						<?php if ( ! empty( $caption ) ) : ?>
 						<media:description><?php echo esc_html( $caption ); ?></media:description>
 						<?php endif; ?>
-						<media:thumbnail url="<?php echo esc_url( $thumbnail_data[0], null, 'db' ); ?>" width="<?php echo esc_attr( $thumbnail_data[1] ); ?>" height="<?php echo esc_attr( $thumbnail_data[2] ); ?>" />
+						<media:thumbnail url="<?php echo esc_url( $thumbnail_data[0] ); ?>" width="<?php echo esc_attr( $thumbnail_data[1] ); ?>" height="<?php echo esc_attr( $thumbnail_data[2] ); ?>" />
 					</media:content>
 					<?php
 				}

@@ -8,9 +8,10 @@
 		"issues": "https://github.com/Automattic/newspack-plugin/issues"
 	},
 	"require": {
-		"composer/installers": "^1",
-		"joshtronic/php-loremipsum": "^1.0",
-		"google/auth": "^1.15"
+		"composer/installers": "~2.0",
+		"joshtronic/php-loremipsum": "^2.1",
+		"google/auth": "^1.15",
+		"woocommerce/action-scheduler": "^3.9"
 	},
 	"require-dev": {
 		"brainmaestro/composer-git-hooks": "^3.0",
@@ -40,6 +41,11 @@
 			"pre-push": "./.hooks/pre-push",
 			"commit-msg": [
 				"cat $1 | ./node_modules/.bin/newspack-scripts commitlint"
+			]
+		},
+		"installer-paths": {
+			"vendor/{$vendor}/{$name}": [
+				"woocommerce/action-scheduler"
 			]
 		}
 	},
