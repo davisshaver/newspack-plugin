@@ -29,10 +29,11 @@ if ( ! defined( 'NEWSPACK_PLUGIN_BASEDIR' ) ) {
 if ( ! defined( 'NEWSPACK_COMPOSER_ABSPATH' ) ) {
 	define( 'NEWSPACK_COMPOSER_ABSPATH', dirname( NEWSPACK_PLUGIN_FILE ) . '/vendor/' );
 }
+
 require_once NEWSPACK_COMPOSER_ABSPATH . 'autoload.php';
 
-// Action Scheduler.
-require_once __DIR__ . '/vendor/woocommerce/action-scheduler/action-scheduler.php';
+// In our current case we know Action Scheduler is installed already.
+// We might need to add back the composer import in the future.
 
 // Include the main Newspack class.
 if ( ! class_exists( 'Newspack' ) ) {
