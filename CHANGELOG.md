@@ -1,3 +1,10 @@
+## [6.16.1](https://github.com/Automattic/newspack-plugin/compare/v6.16.0...v6.16.1) (2025-08-26)
+
+
+### Bug Fixes
+
+* dont do any checks before init ([#4159](https://github.com/Automattic/newspack-plugin/issues/4159)) ([930e6c6](https://github.com/Automattic/newspack-plugin/commit/930e6c69ee8154f57d6932fcde77a2f45ac78f0a))
+
 # [6.16.0](https://github.com/Automattic/newspack-plugin/compare/v6.15.3...v6.16.0) (2025-08-25)
 
 
