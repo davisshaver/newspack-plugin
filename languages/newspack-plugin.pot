@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-28T19:35:48+00:00\n"
+"POT-Creation-Date: 2025-08-29T07:19:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -2415,72 +2415,72 @@ msgstr ""
 msgid "Transaction fee (%s)"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:205
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:206
 #: includes/reader-activation/class-reader-activation.php:2515
 msgid "Please wait a moment before trying again."
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:247
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:248
 msgid "Please wait a moment before trying to complete this transaction again."
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:258
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:259
 #: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:318
 msgid "Please wait a moment before trying to add a new payment method."
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:388
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:482
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:389
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:483
 msgid "Monthly"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:389
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:483
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:390
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:484
 msgid "Yearly"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:418
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:514
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:419
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:515
 msgid "One-time"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:434
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:435
 #: dist/newspack-wizards.0a4509dfaf8cd7a2c37f.js:31
 msgid "Card"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:438
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:439
 #: includes/reader-activation/class-reader-activation.php:293
 #: src/blocks/reader-registration/index.php:105
 msgid "My Account"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:526
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:527
 msgid "Restart Donation"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:526
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:527
 msgid "Restart Subscription"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:534
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:535
 msgid "Donation Cancelled"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:534
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:535
 msgid "Subscription Cancelled"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:538
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:539
 msgid "recurring donation"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:538
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:539
 msgid "subscription"
 msgstr ""
 
 #. Translators: %s is the user's billing first and last name – or company name.
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:779
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:780
 #, php-format
 msgid "%s's Team"
 msgstr ""
@@ -2493,6 +2493,14 @@ msgstr ""
 #: includes/plugins/woocommerce/class-woocommerce-cover-fees.php:177
 #, php-format
 msgid "I’d like to cover the %1$s transaction fee to ensure my full donation goes towards %2$s mission."
+msgstr ""
+
+#: includes/plugins/woocommerce/class-woocommerce-custom-currency-symbol.php:40
+msgid "Custom currency symbol"
+msgstr ""
+
+#: includes/plugins/woocommerce/class-woocommerce-custom-currency-symbol.php:41
+msgid "Enter a custom symbol to override the default currency symbol."
 msgstr ""
 
 #: includes/plugins/woocommerce/class-woocommerce-duplicate-orders.php:174
