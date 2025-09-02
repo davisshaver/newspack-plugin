@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Newspack 6.16.1\n"
+"Project-Id-Version: Newspack 6.16.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-08-29T07:19:43+00:00\n"
+"POT-Creation-Date: 2025-09-02T13:32:30+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -8453,6 +8453,16 @@ msgstr ""
 #: dist/handoff-banner.js:1
 #: src/wizards/handoff-banner/index.js:21
 msgid "Back to Newspack"
+msgstr ""
+
+#: dist/indesign-export.js:1
+#: src/indesign-export/index.js:34
+msgid "InDesign Exporter Tag Name"
+msgstr ""
+
+#: dist/indesign-export.js:1
+#: src/indesign-export/index.js:35
+msgid "Define a custom tag name to be used in the Tagged Text export."
 msgstr ""
 
 #. translators: Overlay Position
