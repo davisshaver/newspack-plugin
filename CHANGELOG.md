@@ -1,3 +1,17 @@
+# [6.17.0](https://github.com/Automattic/newspack-plugin/compare/v6.16.5...v6.17.0) (2025-09-08)
+
+
+### Features
+
+* **indesign-export:** photo caption and credit ([#4167](https://github.com/Automattic/newspack-plugin/issues/4167)) ([26839fe](https://github.com/Automattic/newspack-plugin/commit/26839fe55878bd4aed375c8d9e6c39d93f3f9e4c))
+
+## [6.16.5](https://github.com/Automattic/newspack-plugin/compare/v6.16.4...v6.16.5) (2025-09-02)
+
+
+### Bug Fixes
+
+* **collections:** update all category/year url params ([#4168](https://github.com/Automattic/newspack-plugin/issues/4168)) ([e829dfb](https://github.com/Automattic/newspack-plugin/commit/e829dfb68033c026a2c72be65a41f558a909e9f2)), closes [#4153](https://github.com/Automattic/newspack-plugin/issues/4153)
+
 ## [6.16.4](https://github.com/Automattic/newspack-plugin/compare/v6.16.3...v6.16.4) (2025-09-02)
 
 
