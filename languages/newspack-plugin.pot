@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-12T16:17:24+00:00\n"
+"POT-Creation-Date: 2025-09-12T16:57:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -1026,7 +1026,7 @@ msgstr ""
 #: includes/collections/class-post-meta.php:37
 #: includes/collections/class-post-type.php:72
 #: includes/collections/class-query-helper.php:205
-#: src/blocks/collections/class-collections-block.php:353
+#: src/blocks/collections/class-collections-block.php:354
 #: dist/blocks.js:4
 #: src/blocks/collections/components/CollectionItem.jsx:61
 msgid "Order"
@@ -1237,7 +1237,7 @@ msgid "View Collections"
 msgstr ""
 
 #: includes/collections/class-post-type.php:103
-#: src/blocks/collections/class-collections-block.php:106
+#: src/blocks/collections/class-collections-block.php:107
 msgid "No collections found."
 msgstr ""
 
@@ -1266,41 +1266,41 @@ msgid "Collection Details"
 msgstr ""
 
 #: includes/collections/class-query-helper.php:204
-#: src/blocks/collections/class-collections-block.php:349
+#: src/blocks/collections/class-collections-block.php:350
 #: dist/blocks.js:4
 #: src/blocks/collections/components/CollectionItem.jsx:57
 msgid "Subscribe"
 msgstr ""
 
 #. translators: %s is the volume number of a collection
-#: includes/collections/class-template-helper.php:269
-#: src/blocks/collections/class-collections-block.php:304
+#: includes/collections/class-template-helper.php:253
+#: src/blocks/collections/class-collections-block.php:305
 #, php-format
 msgctxt "collection volume number"
 msgid "Vol. %s"
 msgstr ""
 
 #. translators: %s is the issue number of a collection
-#: includes/collections/class-template-helper.php:274
-#: src/blocks/collections/class-collections-block.php:312
+#: includes/collections/class-template-helper.php:258
+#: src/blocks/collections/class-collections-block.php:313
 #, php-format
 msgctxt "collection issue number"
 msgid "No. %s"
 msgstr ""
 
 #. translators: %s is the block name
-#: includes/collections/class-template-helper.php:382
+#: includes/collections/class-template-helper.php:366
 #, php-format
 msgid "The %s block is required but not available. Please install and activate the Newspack Blocks plugin."
 msgstr ""
 
-#: includes/collections/class-template-helper.php:429
+#: includes/collections/class-template-helper.php:413
 msgctxt "see all collections link"
 msgid "See all"
 msgstr ""
 
 #. translators: %s is the collection name (e.g., "Collections", "Issues")
-#: includes/collections/class-template-helper.php:432
+#: includes/collections/class-template-helper.php:416
 #, php-format
 msgctxt "see all collections link aria-label"
 msgid "See all %s"
@@ -3526,7 +3526,7 @@ msgid "Sign in by entering the code we sent to %s, or clicking the magic link in
 msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:1680
-#: src/blocks/collections/class-collections-block.php:135
+#: src/blocks/collections/class-collections-block.php:136
 #: dist/blocks.js:4
 #: src/blocks/collections/components/InspectorPanel.jsx:147
 #: src/blocks/collections/components/InspectorPanel.jsx:149
