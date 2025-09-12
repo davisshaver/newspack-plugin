@@ -320,9 +320,7 @@ class Template_Helper {
 		$target_attributes = self::should_cta_open_in_new_tab( $cta ) ? ' target="_blank" rel="noopener noreferrer"' : '';
 
 		$html = sprintf(
-			'<div class="collection-cta %1$s">
-				<a class="wp-block-button__link has-dark-gray-color has-light-gray-background-color has-text-color has-background has-link-color wp-element-button" href="%2$s"%4$s>%3$s</a>
-			</div>',
+			'<a class="wp-block-button__link %1$s has-dark-gray-color has-light-gray-background-color has-text-color has-background has-link-color wp-element-button" href="%2$s"%4$s>%3$s</a>',
 			esc_attr( $cta['class'] ?? '' ),
 			esc_url( $cta['url'] ?? '' ),
 			esc_html( $cta['label'] ?? '' ),
@@ -548,5 +546,153 @@ class Template_Helper {
 		}
 
 		return false;
+	}
+
+	/**
+	 * Render collections grid using the Collections block.
+	 *
+	 * @param array $collections Array of WP_Post collection objects.
+	 * @return string The rendered collections grid HTML.
+	 */
+	public static function render_collections_grid( $collections ) {
+		if ( empty( $collections ) ) {
+			return '';
+		}
+
+		$attrs = [
+			'selectedCollections' => $collections,
+			'columns'             => 6,
+			'showCategory'        => false,
+			'showSeeAllLink'      => false,
+		];
+
+		/**
+		 * Filters the attributes before rendering the collections grid block.
+		 *
+		 * @param array $attrs       The attributes for the collections block.
+		 * @param array $collections The collection posts being rendered.
+		 */
+		$attrs = apply_filters( 'newspack_collections_render_grid_attrs', $attrs, $collections );
+
+		return render_block(
+			[
+				'blockName' => 'newspack/collections',
+				'attrs'     => $attrs,
+			]
+		);
+	}
+
+	/**
+	 * Render collections intro using the Collections block.
+	 *
+	 * @param int|WP_Post $post Post ID or post object.
+	 * @param array       $args Optional arguments for the intro section.
+	 * @return string The rendered collections intro HTML.
+	 */
+	public static function render_collections_intro( $post, $args = [] ) {
+		$collection = $post instanceof \WP_Post ? $post : get_post( $post );
+		if ( ! $collection instanceof \WP_Post ) {
+			return '';
+		}
+
+		$attrs = wp_parse_args(
+			$args,
+			[
+				'selectedCollections' => [ $collection ],
+				'layout'              => 'list',
+				'imageSize'           => 'small',
+				'showExcerpt'         => true,
+				'showCategory'        => false,
+				'numberOfCTAs'        => -1,
+				'showSeeAllLink'      => false,
+				'headingText'         => '',
+				'noPermalinks'        => false,
+			]
+		);
+
+		/**
+		 * Filters the attributes before rendering the collections intro block.
+		 *
+		 * @param array   $attrs      The attributes for the collections block.
+		 * @param WP_Post $collection The collection being rendered.
+		 * @param array   $args       The original arguments passed to the function.
+		 */
+		$attrs = apply_filters( 'newspack_collections_render_intro_attrs', $attrs, $collection, $args );
+
+		/**
+		 * Fires before the collection intro section.
+		 *
+		 * @param WP_Post $collection The collection post.
+		 */
+		do_action( 'newspack_collections_intro_before', $collection );
+
+		$output = render_block(
+			[
+				'blockName' => 'newspack/collections',
+				'attrs'     => $attrs,
+			]
+		);
+
+		/**
+		 * Fires after the collection intro section.
+		 *
+		 * @param WP_Post $collection The collection post.
+		 */
+		do_action( 'newspack_collections_intro_after', $collection );
+
+		return $output;
+	}
+
+	/**
+	 * Normalize an array that may contain WP_Post objects, IDs, or mixed.
+	 *
+	 * Rules:
+	 * - If every element is a WP_Post: return them unchanged with type 'objects'.
+	 * - Otherwise: return IDs only (objects converted to IDs, numeric strings cast,
+	 *   discard invalid values) with type 'ids'.
+	 *
+	 * @param array $items Input array of WP_Post objects, IDs, or mixed.
+	 * @return array {
+	 *     Array of items.
+	 *
+	 *     @type string $type  The type of the items.
+	 *     @type array  $items The items.
+	 * }
+	 */
+	public static function normalize_post_list( $items ) {
+		if ( empty( $items ) ) {
+			return [
+				'type'  => 'ids',
+				'items' => [],
+			];
+		}
+
+		$type = 'objects';
+		$ids  = [];
+
+		foreach ( $items as $item ) {
+			if ( $item instanceof \WP_Post ) {
+				$ids[] = absint( $item->ID );
+			} elseif ( is_int( $item ) || ( is_string( $item ) && is_numeric( $item ) ) ) {
+				$type  = 'ids';
+				$ids[] = absint( $item );
+			} else {
+				$type = 'ids'; // Unknown type, skip and force IDs mode.
+			}
+		}
+
+		// Return input if it was all WP_Post objects.
+		if ( 'objects' === $type ) {
+			return [
+				'type'  => 'objects',
+				'items' => $items,
+			];
+		}
+
+		// Return cleaned ID list.
+		return [
+			'type'  => 'ids',
+			'items' => array_values( array_unique( array_filter( $ids ) ) ),
+		];
 	}
 }
