@@ -23,14 +23,14 @@ do_action( 'newspack_collections_archive_start' );
 
 <section id="primary" class="content-area">
 	<header class="page-header">
-		<h1 class="page-title"><?php echo esc_html( Settings::get_collection_label() ); ?></h1>
+		<h1 class="page-title"><span class="page-description"><?php echo esc_html( Settings::get_collection_label() ); ?></span></h1>
 	</header><!-- .page-header -->
 
 	<main id="main" class="site-main">
 
 		<?php
 		if ( have_posts() ) :
-			$selected_year = isset( $_GET['year'] ) ? sanitize_text_field( $_GET['year'] ) : '';
+			$selected_year = isset( $_GET['np_collections_year'] ) ? sanitize_text_field( $_GET['np_collections_year'] ) : '';
 
 			// Render the intro section only if no year filter is applied, it's the first page of results and "Highlight Most Recent Collection" setting is enabled.
 			if ( empty( $selected_year ) && ! is_paged() && Settings::get_setting( 'highlight_latest' ) ) :
@@ -52,7 +52,7 @@ do_action( 'newspack_collections_archive_start' );
 			<!-- Filter controls -->
 			<form class="collections-filter" method="get">
 				<?php
-				$selected_category = isset( $_GET['category'] ) ? sanitize_text_field( $_GET['category'] ) : '';
+				$selected_category = isset( $_GET['np_collections_category'] ) ? sanitize_text_field( $_GET['np_collections_category'] ) : '';
 				$available_years   = Query_Helper::get_available_years( $selected_category );
 				?>
 

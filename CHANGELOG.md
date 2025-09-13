@@ -1,3 +1,67 @@
+# [6.18.0](https://github.com/Automattic/newspack-plugin/compare/v6.17.1...v6.18.0) (2025-09-08)
+
+
+### Bug Fixes
+
+* correctly filter sync mailchimp audience ([#4147](https://github.com/Automattic/newspack-plugin/issues/4147)) ([6eb019e](https://github.com/Automattic/newspack-plugin/commit/6eb019e7af5e176de4161d3ad4647a4badd8d34e))
+* correctly identify lists by id ([#4160](https://github.com/Automattic/newspack-plugin/issues/4160)) ([ffbb8ed](https://github.com/Automattic/newspack-plugin/commit/ffbb8ed733f2d4cf04c2a597b95c2960fe184fd2))
+
+
+### Features
+
+* add feed support to custom bylines ([#4152](https://github.com/Automattic/newspack-plugin/issues/4152)) ([ea7b6fb](https://github.com/Automattic/newspack-plugin/commit/ea7b6fba6d4487ddfd220b6fb838c6f87bbb312b))
+* add guardrails to distributed bylines ([#4151](https://github.com/Automattic/newspack-plugin/issues/4151)) ([59e7fdf](https://github.com/Automattic/newspack-plugin/commit/59e7fdf7288f8399cadd033c837384028c502a6e))
+* **pwa:** display mode setting ([#4154](https://github.com/Automattic/newspack-plugin/issues/4154)) ([bfba20f](https://github.com/Automattic/newspack-plugin/commit/bfba20f7c64afb76cfef1607c5d600031e9da0e0))
+
+## [6.17.1](https://github.com/Automattic/newspack-plugin/compare/v6.17.0...v6.17.1) (2025-09-08)
+
+
+### Bug Fixes
+
+* make sure settingsTabs exists before checking for setup wizard ([#4170](https://github.com/Automattic/newspack-plugin/issues/4170)) ([7a5db33](https://github.com/Automattic/newspack-plugin/commit/7a5db339634f3c5ba4ab1a434c533093765f7671))
+
+# [6.17.0](https://github.com/Automattic/newspack-plugin/compare/v6.16.5...v6.17.0) (2025-09-08)
+
+
+### Features
+
+* **indesign-export:** photo caption and credit ([#4167](https://github.com/Automattic/newspack-plugin/issues/4167)) ([26839fe](https://github.com/Automattic/newspack-plugin/commit/26839fe55878bd4aed375c8d9e6c39d93f3f9e4c))
+
+## [6.16.5](https://github.com/Automattic/newspack-plugin/compare/v6.16.4...v6.16.5) (2025-09-02)
+
+
+### Bug Fixes
+
+* **collections:** update all category/year url params ([#4168](https://github.com/Automattic/newspack-plugin/issues/4168)) ([e829dfb](https://github.com/Automattic/newspack-plugin/commit/e829dfb68033c026a2c72be65a41f558a909e9f2)), closes [#4153](https://github.com/Automattic/newspack-plugin/issues/4153)
+
+## [6.16.4](https://github.com/Automattic/newspack-plugin/compare/v6.16.3...v6.16.4) (2025-09-02)
+
+
+### Bug Fixes
+
+* **collections:** make filter params unique ([#4153](https://github.com/Automattic/newspack-plugin/issues/4153)) ([87bb14c](https://github.com/Automattic/newspack-plugin/commit/87bb14c22ab97ac3fccfc3a5b823be1cc057f266))
+
+## [6.16.3](https://github.com/Automattic/newspack-plugin/compare/v6.16.2...v6.16.3) (2025-09-01)
+
+
+### Bug Fixes
+
+* **indesign:** exporter formatting fixes ([#4158](https://github.com/Automattic/newspack-plugin/issues/4158)) ([a680c21](https://github.com/Automattic/newspack-plugin/commit/a680c21964ccec5facab4ebedcdb718d711cd94d))
+
+## [6.16.2](https://github.com/Automattic/newspack-plugin/compare/v6.16.1...v6.16.2) (2025-08-29)
+
+
+### Bug Fixes
+
+* update markup around Collections header ([#4157](https://github.com/Automattic/newspack-plugin/issues/4157)) ([aa88c76](https://github.com/Automattic/newspack-plugin/commit/aa88c76392b160b0385d3629323ed5655583f498))
+
+## [6.16.1](https://github.com/Automattic/newspack-plugin/compare/v6.16.0...v6.16.1) (2025-08-26)
+
+
+### Bug Fixes
+
+* dont do any checks before init ([#4159](https://github.com/Automattic/newspack-plugin/issues/4159)) ([930e6c6](https://github.com/Automattic/newspack-plugin/commit/930e6c69ee8154f57d6932fcde77a2f45ac78f0a))
+
 # [6.16.0](https://github.com/Automattic/newspack-plugin/compare/v6.15.3...v6.16.0) (2025-08-25)
 
 
