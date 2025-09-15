@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-15T21:03:00+00:00\n"
+"POT-Creation-Date: 2025-09-15T21:08:46+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -2328,7 +2328,7 @@ msgid "Allow this user to be assigned as a co-author of a post."
 msgstr ""
 
 #: includes/plugins/co-authors-plus/class-guest-contributor-role.php:500
-msgid "If this option is checked, the \"Non Editing Contributor\" role will be added to the user and they will be able to be assigned as a co-author of a post even if they are not allowed to edit posts. For users with edit access, this option has no effect."
+msgid "If this option is checked, the \"Guest Contributor\" role will be added to the user (on top of their current role) and they will be able to be assigned as a co-author of a post even if they are not allowed to edit posts. For users with edit access, this option has no effect."
 msgstr ""
 
 #: includes/plugins/co-authors-plus/class-nicename-change-ui.php:64
