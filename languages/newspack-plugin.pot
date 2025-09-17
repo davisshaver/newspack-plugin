@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Newspack 6.18.0\n"
+"Project-Id-Version: Newspack 6.18.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-15T21:08:46+00:00\n"
+"POT-Creation-Date: 2025-09-17T15:39:45+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -263,6 +263,7 @@ msgstr ""
 #: includes/class-newspack-ui.php:1071
 #: includes/class-newspack-ui.php:1108
 #: includes/class-newspack-ui.php:1162
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:275
 #: includes/reader-activation/class-reader-activation.php:1599
 #: includes/reader-activation/class-reader-activation.php:1714
 #: dist/audience-wizards.c76845edf1a317c1a2e2.js:16
@@ -2083,6 +2084,7 @@ msgid "Every 3 hours"
 msgstr ""
 
 #: includes/optional-modules/class-rss.php:384
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:77
 msgid "Daily"
 msgstr ""
 
@@ -2428,6 +2430,73 @@ msgstr ""
 msgid "You must agree to the Terms & Conditions before proceeding."
 msgstr ""
 
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:156
+msgid "Current"
+msgstr ""
+
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:211
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:273
+msgid "Complete your transaction"
+msgstr ""
+
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:212
+msgid "Purchase"
+msgstr ""
+
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:251
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1-passwords.php:239
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:299
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:385
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:523
+#: dist/audience-wizards.c76845edf1a317c1a2e2.js:10
+#: dist/audience-wizards.c76845edf1a317c1a2e2.js:16
+#: dist/billboard.js:1
+#: dist/billboard.js:12
+#: dist/commons.js:13
+#: dist/newspack-wizards.ccef7f3383dcb0735b9a.js:5
+#: dist/newspack-wizards.ccef7f3383dcb0735b9a.js:26
+#: dist/newspack-wizards.ccef7f3383dcb0735b9a.js:30
+#: dist/other-scripts/corrections-modal.js:7
+#: src/components/src/with-wizard/index.js:261
+#: src/other-scripts/corrections-modal/index.js:410
+#: src/wizards/advertising/views/ad-unit/index.js:170
+#: src/wizards/advertising/views/placements/index.js:216
+#: src/wizards/advertising/views/providers/index.js:108
+#: src/wizards/audience/components/prompt-action-card/index.js:165
+#: src/wizards/audience/components/settings-modal/index.js:176
+#: src/wizards/audience/views/campaigns/campaigns/index.js:291
+#: src/wizards/audience/views/campaigns/segments/single-segment.js:258
+msgid "Cancel"
+msgstr ""
+
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:78
+msgid "Weekly"
+msgstr ""
+
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:79
+msgid "Bi-Weekly"
+msgstr ""
+
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:80
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:389
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:483
+msgid "Monthly"
+msgstr ""
+
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:81
+msgid "Quarterly"
+msgstr ""
+
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:82
+msgid "Semi-Annually"
+msgstr ""
+
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:83
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:390
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:484
+msgid "Yearly"
+msgstr ""
+
 #. Translators: %s is the fee percentage.
 #: includes/plugins/woocommerce/class-woocommerce-cli.php:143
 #: includes/plugins/woocommerce/class-woocommerce-cover-fees.php:81
@@ -2447,16 +2516,6 @@ msgstr ""
 #: includes/plugins/woocommerce/class-woocommerce-connection.php:259
 #: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:318
 msgid "Please wait a moment before trying to add a new payment method."
-msgstr ""
-
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:389
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:483
-msgid "Monthly"
-msgstr ""
-
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:390
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:484
-msgid "Yearly"
 msgstr ""
 
 #: includes/plugins/woocommerce/class-woocommerce-connection.php:419
@@ -2646,31 +2705,6 @@ msgstr ""
 
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1-passwords.php:235
 msgid "Save password"
-msgstr ""
-
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1-passwords.php:239
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:299
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:385
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:523
-#: dist/audience-wizards.c76845edf1a317c1a2e2.js:10
-#: dist/audience-wizards.c76845edf1a317c1a2e2.js:16
-#: dist/billboard.js:1
-#: dist/billboard.js:12
-#: dist/commons.js:13
-#: dist/newspack-wizards.ccef7f3383dcb0735b9a.js:5
-#: dist/newspack-wizards.ccef7f3383dcb0735b9a.js:26
-#: dist/newspack-wizards.ccef7f3383dcb0735b9a.js:30
-#: dist/other-scripts/corrections-modal.js:7
-#: src/components/src/with-wizard/index.js:261
-#: src/other-scripts/corrections-modal/index.js:410
-#: src/wizards/advertising/views/ad-unit/index.js:170
-#: src/wizards/advertising/views/placements/index.js:216
-#: src/wizards/advertising/views/providers/index.js:108
-#: src/wizards/audience/components/prompt-action-card/index.js:165
-#: src/wizards/audience/components/settings-modal/index.js:176
-#: src/wizards/audience/views/campaigns/campaigns/index.js:291
-#: src/wizards/audience/views/campaigns/segments/single-segment.js:258
-msgid "Cancel"
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:97
