@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-25T14:10:00+00:00\n"
+"POT-Creation-Date: 2025-09-25T15:46:16+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -2386,23 +2386,23 @@ msgstr ""
 msgid "Another active subscription for this product was found (Subscription ID: %s). Expiry prevented."
 msgstr ""
 
-#: includes/plugins/wc-memberships/class-memberships.php:979
+#: includes/plugins/wc-memberships/class-memberships.php:1002
 msgid "Skip content restriction in RSS feeds"
 msgstr ""
 
-#: includes/plugins/wc-memberships/class-memberships.php:981
+#: includes/plugins/wc-memberships/class-memberships.php:1004
 msgid "If enabled, full content will be available in RSS feeds."
 msgstr ""
 
-#: includes/plugins/wc-memberships/class-memberships.php:1088
+#: includes/plugins/wc-memberships/class-memberships.php:1111
 msgid "Reevaluate status"
 msgstr ""
 
-#: includes/plugins/wc-memberships/class-memberships.php:1090
+#: includes/plugins/wc-memberships/class-memberships.php:1113
 msgid "Reevaluate status based on subscription status."
 msgstr ""
 
-#: includes/plugins/wc-memberships/class-memberships.php:1324
+#: includes/plugins/wc-memberships/class-memberships.php:1347
 msgid "Bulk edit changes were reverted because this membership is linked to a subscription."
 msgstr ""
 
@@ -4903,6 +4903,25 @@ msgstr ""
 
 #: src/blocks/avatar/class-avatar-block.php:39
 msgid "Stacked"
+msgstr ""
+
+#. translators: 1: current number of metered views, 2: total metered views.
+#: src/blocks/content-gate-countdown/class-content-gate-countdown-block.php:76
+#: dist/blocks.js:5
+#: dist/content-gate-countdown-block.js:1
+#: src/blocks/content-gate-countdown/edit.jsx:100
+#: src/blocks/content-gate-countdown/view.js:33
+#, php-format,js-format
+msgid "%1$d/%2$d"
+msgstr ""
+
+#. translators: %s - metered content period (week, month, etc.
+#. translators: %s is the metered period, e.g. "month" or "week".
+#: src/blocks/content-gate-countdown/class-content-gate-countdown-block.php:84
+#: dist/blocks.js:5
+#: src/blocks/content-gate-countdown/edit.jsx:55
+#, php-format,js-format
+msgid "free articles this %s"
 msgstr ""
 
 #. Translators: %s is a link to My Account.
@@ -7590,6 +7609,56 @@ msgstr ""
 #: dist/blocks.js:4
 #: src/blocks/collections/edit.jsx:120
 msgid "No collections found"
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/content-gate-countdown/index.js:16
+msgid "Content Gate Countdown"
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/content-gate-countdown/index.js:28
+msgid "countdown"
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/content-gate-countdown/index.js:28
+msgid "content gate"
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/content-gate-countdown/index.js:29
+msgid "A countdown for content gate metering functionality."
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/content-gate-countdown/edit.jsx:28
+msgid "Get unlimited access."
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/content-gate-countdown/edit.jsx:35
+msgid "Subscribe now"
+msgstr ""
+
+#: dist/blocks.js:5
+#: src/blocks/content-gate-countdown/edit.jsx:84
+msgid "Countdown Settings"
+msgstr ""
+
+#: dist/blocks.js:5
+#: src/blocks/content-gate-countdown/edit.jsx:86
+msgid "Countdown text"
+msgstr ""
+
+#: dist/blocks.js:5
+#: src/blocks/content-gate-countdown/edit.jsx:88
+msgid "The text that appears next to the countdown."
+msgstr ""
+
+#: dist/blocks.js:5
+#: src/blocks/content-gate-countdown/edit.jsx:71
+msgid "The content gate countdown block will only display in restricted content when metering is enabled."
 msgstr ""
 
 #: dist/bylines.js:1
