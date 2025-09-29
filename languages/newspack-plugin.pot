@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-09-29T15:52:27+00:00\n"
+"POT-Creation-Date: 2025-09-29T20:18:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -86,8 +86,8 @@ msgstr ""
 #: includes/class-magic-link.php:550
 #: includes/class-magic-link.php:620
 #: includes/class-magic-link.php:703
-#: includes/class-magic-link.php:949
-#: includes/class-magic-link.php:1077
+#: includes/class-magic-link.php:954
+#: includes/class-magic-link.php:1082
 #: includes/cli/class-ras.php:74
 #: includes/plugins/co-authors-plus/class-nicename-change-ui.php:127
 #: includes/reader-activation/sync/class-esp-sync-admin.php:169
@@ -157,43 +157,43 @@ msgstr ""
 msgid "Unable to authenticate, try again."
 msgstr ""
 
-#: includes/class-magic-link.php:907
+#: includes/class-magic-link.php:912
 #: includes/reader-activation/class-reader-activation.php:273
 msgid "Login successful!"
 msgstr ""
 
 #. translators: %s is the email address of the user.
-#: includes/class-magic-link.php:959
+#: includes/class-magic-link.php:964
 #, php-format
 msgid "Email sent to %s."
 msgstr ""
 
-#: includes/class-magic-link.php:965
+#: includes/class-magic-link.php:970
 msgid "Send a magic link to a reader."
 msgstr ""
 
-#: includes/class-magic-link.php:1009
+#: includes/class-magic-link.php:1014
 msgid "Send authentication link"
 msgstr ""
 
-#: includes/class-magic-link.php:1030
+#: includes/class-magic-link.php:1035
 msgid "Authentication link sent."
 msgstr ""
 
-#: includes/class-magic-link.php:1033
+#: includes/class-magic-link.php:1038
 msgid "All authentication link tokens were removed."
 msgstr ""
 
-#: includes/class-magic-link.php:1036
+#: includes/class-magic-link.php:1041
 msgid "Authentication links are now disabled."
 msgstr ""
 
-#: includes/class-magic-link.php:1039
+#: includes/class-magic-link.php:1044
 msgid "Authentication links are now enabled."
 msgstr ""
 
-#: includes/class-magic-link.php:1061
-#: includes/class-magic-link.php:1065
+#: includes/class-magic-link.php:1066
+#: includes/class-magic-link.php:1070
 #: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:537
 #: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:557
 #: includes/reader-activation/class-reader-activation.php:2016
@@ -201,54 +201,54 @@ msgstr ""
 msgid "Invalid request."
 msgstr ""
 
-#: includes/class-magic-link.php:1071
+#: includes/class-magic-link.php:1076
 #: includes/reader-activation/sync/class-esp-sync-admin.php:125
 #: includes/reader-activation/sync/class-esp-sync-admin.php:163
 msgid "You do not have permission to do that."
 msgstr ""
 
-#: includes/class-magic-link.php:1121
+#: includes/class-magic-link.php:1126
 msgid "Passwordless Authentication Management"
 msgstr ""
 
-#: includes/class-magic-link.php:1124
+#: includes/class-magic-link.php:1129
 msgid "Authentication Link Support"
 msgstr ""
 
 #. translators: %1$s: Disabled or enabled. %2$s: User's display name.
-#: includes/class-magic-link.php:1135
+#: includes/class-magic-link.php:1140
 #, php-format
 msgid "Authentication links support is currently %1$s for %2$s."
 msgstr ""
 
-#: includes/class-magic-link.php:1136
+#: includes/class-magic-link.php:1141
 #: dist/blocks.js:4
 #: src/blocks/reader-registration/edit.js:204
 msgid "disabled"
 msgstr ""
 
-#: includes/class-magic-link.php:1136
+#: includes/class-magic-link.php:1141
 #: dist/blocks.js:4
 #: src/blocks/reader-registration/edit.js:204
 msgid "enabled"
 msgstr ""
 
-#: includes/class-magic-link.php:1145
+#: includes/class-magic-link.php:1150
 msgid "Send Authentication Link"
 msgstr ""
 
 #. translators: %1$s: User's display name. %2$d is the expiration period in minutes.
-#: includes/class-magic-link.php:1152
+#: includes/class-magic-link.php:1157
 #, php-format
 msgid "Generate and send a new link to %1$s, which will authenticate them instantly. The link will be valid for %2$d minutes after its creation."
 msgstr ""
 
-#: includes/class-magic-link.php:1161
+#: includes/class-magic-link.php:1166
 msgid "Clear All Tokens"
 msgstr ""
 
 #. translators: %s: User's display name.
-#: includes/class-magic-link.php:1168
+#: includes/class-magic-link.php:1173
 #, php-format
 msgid "Clear all existing authentication link tokens for %s."
 msgstr ""
@@ -263,7 +263,7 @@ msgstr ""
 #: includes/class-newspack-ui.php:1072
 #: includes/class-newspack-ui.php:1109
 #: includes/class-newspack-ui.php:1163
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:433
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:434
 #: includes/reader-activation/class-reader-activation.php:1599
 #: includes/reader-activation/class-reader-activation.php:1714
 #: dist/audience-wizards.c76845edf1a317c1a2e2.js:16
@@ -1796,22 +1796,22 @@ msgstr ""
 msgid "%1$s | Details: %2$s"
 msgstr ""
 
-#: includes/oauth/class-google-login.php:293
+#: includes/oauth/class-google-login.php:292
 #: src/blocks/reader-registration/index.php:346
 msgid "Thank you for registering!"
 msgstr ""
 
-#: includes/oauth/class-google-login.php:307
+#: includes/oauth/class-google-login.php:308
 msgid "Thank you for signing in!"
 msgstr ""
 
 #. translators: %s is a unique user id
-#: includes/oauth/class-google-login.php:324
+#: includes/oauth/class-google-login.php:327
 #, php-format
 msgid "Missing email for unique id: %s"
 msgstr ""
 
-#: includes/oauth/class-google-login.php:325
+#: includes/oauth/class-google-login.php:328
 msgid "Failed to retrieve email address. Please try again."
 msgstr ""
 
@@ -2438,40 +2438,40 @@ msgstr ""
 
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:43
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:82
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:454
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:455
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:105
 msgid "Change Subscription"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:238
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:240
 msgid "Current"
 msgstr ""
 
 #. translators: %s: subscription product name
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:260
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:262
 #, php-format
 msgid "You already have %s active."
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:266
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:268
 msgid "View Subscription"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:267
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:269
 #: dist/newspack-wizards.e4dc31cc28d268fd4131.js:29
 msgid "View"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:359
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:431
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:361
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:432
 msgid "Complete your transaction"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:360
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:362
 msgid "Purchase"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:408
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:409
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1-passwords.php:239
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:310
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:396
