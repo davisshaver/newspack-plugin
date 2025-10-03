@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-10-02T14:48:14+00:00\n"
+"POT-Creation-Date: 2025-10-03T20:16:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -1096,17 +1096,17 @@ msgstr ""
 msgid "Taxonomy for organizing posts into sections within collections."
 msgstr ""
 
-#: includes/collections/class-collection-section-taxonomy.php:152
+#: includes/collections/class-collection-section-taxonomy.php:153
 msgctxt "collection section taxonomy page title"
 msgid "Sections"
 msgstr ""
 
-#: includes/collections/class-collection-section-taxonomy.php:153
+#: includes/collections/class-collection-section-taxonomy.php:154
 msgctxt "collection section taxonomy menu title"
 msgid "Sections"
 msgstr ""
 
-#: includes/collections/class-collection-section-taxonomy.php:184
+#: includes/collections/class-collection-section-taxonomy.php:185
 msgctxt "label for collection section column name"
 msgid "Sections"
 msgstr ""
@@ -1167,7 +1167,7 @@ msgstr ""
 msgid "Internal taxonomy for associating collections with posts."
 msgstr ""
 
-#: includes/collections/class-collection-taxonomy.php:228
+#: includes/collections/class-collection-taxonomy.php:229
 #: includes/wizards/newspack/class-newspack-settings.php:110
 #: dist/blocks.js:4
 #: src/blocks/collections/components/InspectorPanel.jsx:86
