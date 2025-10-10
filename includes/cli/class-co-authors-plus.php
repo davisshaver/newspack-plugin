@@ -244,10 +244,15 @@ class Co_Authors_Plus {
 				add_user_meta( $existing_user->ID, '_np_cap_guest_author_migration_data', $migration_data );
 			} else {
 				$created_users_count++;
+
+				// For new users, we need to remove the cap- prefix from the login, otherwise CAP won't find them when getting the authors of a post
+				// See https://github.com/Automattic/Co-Authors-Plus/blob/30602dbd59c6cd73bd4aa3ff8a3e6eda0c1bccea/template-tags.php#L20.
+				$user_login_for_new_user = preg_replace( '/^cap-/', '', $guest_author_login );
+
 				$user_data['role']            = \Newspack\Guest_Contributor_Role::CONTRIBUTOR_NO_EDIT_ROLE_NAME;
 				$user_data['user_registered'] = $guest_author->post_date;
-				$user_data['user_login']      = $guest_author_login;
-				$user_data['user_nicename']   = $guest_author_login;
+				$user_data['user_login']      = $user_login_for_new_user;
+				$user_data['user_nicename']   = $user_login_for_new_user;
 				$user_data['user_pass']       = wp_generate_password();
 
 				if ( ! empty( $post_meta['cap-user_email'] ) ) {
