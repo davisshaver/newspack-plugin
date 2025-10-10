@@ -554,6 +554,8 @@ class Co_Authors_Plus {
 			return false;
 		}
 
+		// TODO: consider just assigning the attachement ID directly, instead of sideloading the image again. Not sure why we did it this way.
+
 		if ( ! function_exists( 'media_sideload_image' ) ) {
 			require_once ABSPATH . 'wp-admin/includes/media.php';
 			require_once ABSPATH . 'wp-admin/includes/file.php';
