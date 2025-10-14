@@ -1,3 +1,10 @@
+## [6.20.2](https://github.com/Automattic/newspack-plugin/compare/v6.20.1...v6.20.2) (2025-10-14)
+
+
+### Bug Fixes
+
+* **gam:** account for undefined path in wizard ([#4233](https://github.com/Automattic/newspack-plugin/issues/4233)) ([d9c515e](https://github.com/Automattic/newspack-plugin/commit/d9c515ea8b542400828a3845cc8736f944b716bc))
+
 ## [6.20.1](https://github.com/Automattic/newspack-plugin/compare/v6.20.0...v6.20.1) (2025-10-08)
 
 
