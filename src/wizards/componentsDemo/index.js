@@ -39,7 +39,7 @@ import {
 	SelectControl,
 	Waiting,
 	WebPreview,
-} from '../../components/src';
+} from '../../../packages/components/src';
 import * as newspackIcons from '../../../packages/icons';
 
 class ComponentsDemo extends Component {
