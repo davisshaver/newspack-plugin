@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-10-21T19:00:01+00:00\n"
+"POT-Creation-Date: 2025-10-22T15:05:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -3267,10 +3267,10 @@ msgstr ""
 #: dist/newspack-wizards.c3d1793f3024d686145b.js:30
 #: dist/newspack-wizards.c3d1793f3024d686145b.js:31
 #: dist/setup.js:7
-#: src/wizards/componentsDemo/index.js:558
-#: src/wizards/componentsDemo/index.js:564
-#: src/wizards/componentsDemo/index.js:580
-#: src/wizards/componentsDemo/index.js:598
+#: src/wizards/componentsDemo/index.js:568
+#: src/wizards/componentsDemo/index.js:574
+#: src/wizards/componentsDemo/index.js:590
+#: src/wizards/componentsDemo/index.js:608
 msgid "Default"
 msgstr ""
 
@@ -4959,7 +4959,7 @@ msgstr ""
 
 #: includes/wizards/newspack/class-newspack-dashboard.php:263
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:568
+#: src/wizards/componentsDemo/index.js:578
 msgid "Disabled"
 msgstr ""
 
@@ -5024,7 +5024,7 @@ msgstr ""
 #: dist/componentsDemo.js:1
 #: dist/newspack-wizards.c3d1793f3024d686145b.js:31
 #: dist/setup.js:7
-#: src/wizards/componentsDemo/index.js:609
+#: src/wizards/componentsDemo/index.js:619
 msgid "Theme and Brand"
 msgstr ""
 
@@ -6633,8 +6633,8 @@ msgstr ""
 #: src/wizards/componentsDemo/index.js:334
 #: src/wizards/componentsDemo/index.js:344
 #: src/wizards/componentsDemo/index.js:372
-#: src/wizards/componentsDemo/index.js:429
-#: src/wizards/componentsDemo/index.js:435
+#: src/wizards/componentsDemo/index.js:439
+#: src/wizards/componentsDemo/index.js:445
 msgid "Configure"
 msgstr ""
 
@@ -7789,8 +7789,8 @@ msgstr ""
 #: dist/newspack-wizards.c3d1793f3024d686145b.js:30
 #: src/blocks/collections/components/InspectorPanel.jsx:191
 #: src/content-gate/editor.js:30
-#: src/wizards/componentsDemo/index.js:512
-#: src/wizards/componentsDemo/index.js:586
+#: src/wizards/componentsDemo/index.js:522
+#: src/wizards/componentsDemo/index.js:596
 msgid "Small"
 msgstr ""
 
@@ -8202,6 +8202,7 @@ msgstr ""
 #: src/wizards/componentsDemo/index.js:401
 #: src/wizards/componentsDemo/index.js:411
 #: src/wizards/componentsDemo/index.js:421
+#: src/wizards/componentsDemo/index.js:431
 msgid "Install"
 msgstr ""
 
@@ -8895,329 +8896,344 @@ msgstr ""
 
 #: dist/componentsDemo.js:1
 #: src/wizards/componentsDemo/index.js:427
-#: src/wizards/componentsDemo/index.js:433
+msgid "Brand awareness"
+msgstr ""
+
+#: dist/componentsDemo.js:1
+#: src/wizards/componentsDemo/index.js:429
+msgid "Example Eighteen"
+msgstr ""
+
+#: dist/componentsDemo.js:1
+#: src/wizards/componentsDemo/index.js:430
+msgid "An example of an action card with a brand-colored badge."
+msgstr ""
+
+#: dist/componentsDemo.js:1
+#: src/wizards/componentsDemo/index.js:437
+#: src/wizards/componentsDemo/index.js:443
 msgid "Handoff"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:428
+#: src/wizards/componentsDemo/index.js:438
 msgid "An example of an action card with Handoff."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:434
+#: src/wizards/componentsDemo/index.js:444
 msgid " An example of an action card with Handoff and EditLink."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:441
+#: src/wizards/componentsDemo/index.js:451
 msgid "Expandable"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:442
+#: src/wizards/componentsDemo/index.js:452
 msgid " An example of an action card with expandable inner content."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:444
+#: src/wizards/componentsDemo/index.js:454
 msgid "Some inner content to display when the card is expanded."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:447
+#: src/wizards/componentsDemo/index.js:457
 msgid "Image Uploader"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:458
+#: src/wizards/componentsDemo/index.js:468
 msgid "Progress bar"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:460
-#: src/wizards/componentsDemo/index.js:462
+#: src/wizards/componentsDemo/index.js:470
+#: src/wizards/componentsDemo/index.js:472
 msgid "Progress made"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:465
+#: src/wizards/componentsDemo/index.js:475
 msgid "Select dropdowns"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:468
+#: src/wizards/componentsDemo/index.js:478
 msgid "Label for Select with a preselection"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:473
-#: src/wizards/componentsDemo/index.js:488
-#: src/wizards/componentsDemo/index.js:503
-#: src/wizards/componentsDemo/index.js:518
+#: src/wizards/componentsDemo/index.js:483
+#: src/wizards/componentsDemo/index.js:498
+#: src/wizards/componentsDemo/index.js:513
+#: src/wizards/componentsDemo/index.js:528
 msgid "- Select -"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:476
-#: src/wizards/componentsDemo/index.js:491
-#: src/wizards/componentsDemo/index.js:506
-#: src/wizards/componentsDemo/index.js:521
-#: src/wizards/componentsDemo/index.js:532
+#: src/wizards/componentsDemo/index.js:486
+#: src/wizards/componentsDemo/index.js:501
+#: src/wizards/componentsDemo/index.js:516
+#: src/wizards/componentsDemo/index.js:531
+#: src/wizards/componentsDemo/index.js:542
 msgid "First"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:477
-#: src/wizards/componentsDemo/index.js:492
-#: src/wizards/componentsDemo/index.js:507
-#: src/wizards/componentsDemo/index.js:522
-#: src/wizards/componentsDemo/index.js:533
+#: src/wizards/componentsDemo/index.js:487
+#: src/wizards/componentsDemo/index.js:502
+#: src/wizards/componentsDemo/index.js:517
+#: src/wizards/componentsDemo/index.js:532
+#: src/wizards/componentsDemo/index.js:543
 msgid "Second"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:478
-#: src/wizards/componentsDemo/index.js:493
-#: src/wizards/componentsDemo/index.js:508
-#: src/wizards/componentsDemo/index.js:523
-#: src/wizards/componentsDemo/index.js:534
+#: src/wizards/componentsDemo/index.js:488
+#: src/wizards/componentsDemo/index.js:503
+#: src/wizards/componentsDemo/index.js:518
+#: src/wizards/componentsDemo/index.js:533
+#: src/wizards/componentsDemo/index.js:544
 msgid "Third"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:483
+#: src/wizards/componentsDemo/index.js:493
 msgid "Label for Select with no preselection"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:498
+#: src/wizards/componentsDemo/index.js:508
 msgid "Label for disabled Select"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:529
+#: src/wizards/componentsDemo/index.js:539
 msgid "Multi-select"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:535
+#: src/wizards/componentsDemo/index.js:545
 msgid "Fourth"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:536
+#: src/wizards/componentsDemo/index.js:546
 msgid "Fifth"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:537
+#: src/wizards/componentsDemo/index.js:547
 msgid "Sixth"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:538
+#: src/wizards/componentsDemo/index.js:548
 msgid "Seventh"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:545
+#: src/wizards/componentsDemo/index.js:555
 msgid "Selected:"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:548
+#: src/wizards/componentsDemo/index.js:558
 msgid "none"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:555
+#: src/wizards/componentsDemo/index.js:565
 msgid "Buttons"
 msgstr ""
 
 #: dist/componentsDemo.js:1
 #: dist/newspack-wizards.c3d1793f3024d686145b.js:30
 #: dist/setup.js:7
-#: src/wizards/componentsDemo/index.js:561
-#: src/wizards/componentsDemo/index.js:572
+#: src/wizards/componentsDemo/index.js:571
+#: src/wizards/componentsDemo/index.js:582
 msgid "Primary"
 msgstr ""
 
 #: dist/componentsDemo.js:1
 #: dist/newspack-wizards.c3d1793f3024d686145b.js:30
 #: dist/setup.js:7
-#: src/wizards/componentsDemo/index.js:562
-#: src/wizards/componentsDemo/index.js:575
+#: src/wizards/componentsDemo/index.js:572
+#: src/wizards/componentsDemo/index.js:585
 msgid "Secondary"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:563
-#: src/wizards/componentsDemo/index.js:578
+#: src/wizards/componentsDemo/index.js:573
+#: src/wizards/componentsDemo/index.js:588
 msgid "Tertiary"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:565
-#: src/wizards/componentsDemo/index.js:582
-#: src/wizards/componentsDemo/index.js:600
+#: src/wizards/componentsDemo/index.js:575
+#: src/wizards/componentsDemo/index.js:592
+#: src/wizards/componentsDemo/index.js:610
 msgid "isLink"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:590
+#: src/wizards/componentsDemo/index.js:600
 msgid "isPrimary"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:593
+#: src/wizards/componentsDemo/index.js:603
 msgid "isSecondary"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:596
+#: src/wizards/componentsDemo/index.js:606
 msgid "isTertiary"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:606
+#: src/wizards/componentsDemo/index.js:616
 msgid "ButtonCard"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:610
+#: src/wizards/componentsDemo/index.js:620
 msgid "Customize the look and feel of your site"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:616
+#: src/wizards/componentsDemo/index.js:626
 msgid "Start a new site"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:617
+#: src/wizards/componentsDemo/index.js:627
 msgid "You don't have content to import"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:624
+#: src/wizards/componentsDemo/index.js:634
 msgid "Migrate an existing site"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:625
+#: src/wizards/componentsDemo/index.js:635
 msgid "You have content to import"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:632
+#: src/wizards/componentsDemo/index.js:642
 msgid "Add a new Podcast"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:641
+#: src/wizards/componentsDemo/index.js:651
 msgid "Add a new Font"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:651
+#: src/wizards/componentsDemo/index.js:661
 msgid "Plugin Settings Section"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:654
+#: src/wizards/componentsDemo/index.js:664
 msgid "Example plugin settings"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:655
+#: src/wizards/componentsDemo/index.js:665
 msgid "Example plugin settings description"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:661
+#: src/wizards/componentsDemo/index.js:671
 msgid "Example Text Field"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:662
+#: src/wizards/componentsDemo/index.js:672
 msgid "Example text field help text"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:663
+#: src/wizards/componentsDemo/index.js:673
 msgid "Example Value"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:668
+#: src/wizards/componentsDemo/index.js:678
 msgid "Example checkbox Field"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:669
+#: src/wizards/componentsDemo/index.js:679
 msgid "Example checkbox field help text"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:675
+#: src/wizards/componentsDemo/index.js:685
 msgid "Example options field"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:676
+#: src/wizards/componentsDemo/index.js:686
 msgid "Example options field help text"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:680
-#: src/wizards/componentsDemo/index.js:697
+#: src/wizards/componentsDemo/index.js:690
+#: src/wizards/componentsDemo/index.js:707
 msgid "Example Value 1"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:684
-#: src/wizards/componentsDemo/index.js:701
+#: src/wizards/componentsDemo/index.js:694
+#: src/wizards/componentsDemo/index.js:711
 msgid "Example Value 2"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:691
+#: src/wizards/componentsDemo/index.js:701
 msgid "Example multiple options field"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:692
+#: src/wizards/componentsDemo/index.js:702
 msgid "Example multiple options field help text"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:715
+#: src/wizards/componentsDemo/index.js:725
 msgid "Box Contrast"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:719
+#: src/wizards/componentsDemo/index.js:729
 msgid "Demo 1:"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:724
+#: src/wizards/componentsDemo/index.js:734
 msgid "Demo 2:"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:729
+#: src/wizards/componentsDemo/index.js:739
 msgid "Demo 3:"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:736
+#: src/wizards/componentsDemo/index.js:746
 msgid "Newspack Icons"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:739
+#: src/wizards/componentsDemo/index.js:749
 msgid "This is a collection of custom SVG icons for Newspack projects.<br/>They are available in <code>newspack-plugin</code> in the <code>newspack-icons</code> package.<br/>There's also an <link>npm package</link> that you can install to use them in your projects."
 msgstr ""
 
