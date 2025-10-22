@@ -3,22 +3,33 @@ declare module '@wordpress/block-editor';
 type AccessRule = {
 	name: string;
 	description: string;
+	options?: { value: string; label: string }[];
 	conflicts?: string[];
-	value?: string | string[];
+	is_boolean: boolean;
+	default: string | string[] | boolean;
+};
+
+type Metering = {
+	enabled: boolean;
+	anonymous_count: number;
+	registered_count: number;
+	period: string;
 };
 
 type AccessRules = {
-	[key: string]: AccessRule;
-}
+	[ key: string ]: AccessRule;
+};
+
+type GateRule = {
+	slug: string;
+	value: string | string[] | boolean;
+};
 
 type Gate = {
 	id: number;
 	title: string;
 	description: string;
-	isActive: boolean;
-	isMetered: boolean;
-	limitAnonymous: number;
-	limitRegistered: number;
-	period: string;
-	accessRules: AccessRule[];
+	metering: Metering;
+	access_rules: GateRule[];
+	content_rules: [];
 };

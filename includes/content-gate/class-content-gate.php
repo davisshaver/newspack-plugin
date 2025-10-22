@@ -19,6 +19,13 @@ class Content_Gate {
 	const GATE_CPT = 'np_memberships_gate';
 
 	/**
+	 * The rendered gate post ID.
+	 *
+	 * @var int|false
+	 */
+	private static $gate_post_id = false;
+
+	/**
 	 * Whether the gate has been rendered in this execution.
 	 *
 	 * @var boolean
@@ -46,7 +53,7 @@ class Content_Gate {
 		add_filter( 'newspack_popups_assess_has_disabled_popups', [ __CLASS__, 'disable_popups' ] );
 		add_filter( 'newspack_reader_activity_article_view', [ __CLASS__, 'suppress_article_view_activity' ], 100 );
 
-		add_action( 'the_post', [ __CLASS__, 'restrict_post' ] );
+		add_action( 'the_post', [ __CLASS__, 'restrict_post' ], 10, 2 );
 
 		/** Add gate content filters to mimic 'the_content'. See 'wp-includes/default-filters.php' for reference. */
 		add_filter( 'newspack_gate_content', 'capital_P_dangit', 11 );
@@ -60,6 +67,8 @@ class Content_Gate {
 		add_filter( 'newspack_gate_content', 'wp_replace_insecure_home_url' );
 		add_filter( 'newspack_gate_content', 'do_shortcode', 11 ); // AFTER wpautop().
 
+		include __DIR__ . '/class-access-rules.php';
+		include __DIR__ . '/class-content-restriction-control.php';
 		include __DIR__ . '/class-block-patterns.php';
 		include __DIR__ . '/class-metering.php';
 	}
@@ -67,9 +76,17 @@ class Content_Gate {
 	/**
 	 * Restrict the post.
 	 *
-	 * @param \WP_Post $post Post object.
+	 * @param \WP_Post  $post Post object.
+	 * @param \WP_Query $query Query object.
 	 */
-	public static function restrict_post( $post ) {
+	public static function restrict_post( $post, $query ) {
+		if ( ! $query->is_main_query() ) {
+			return;
+		}
+		if ( self::has_rendered() ) {
+			return;
+		}
+
 		// Don't apply our restriction strategy if Woo Memberships is active.
 		if ( Memberships::is_active() ) {
 			return;
@@ -106,6 +123,7 @@ class Content_Gate {
 		$post->post_excerpt   = $content;
 		$post->comment_status = 'closed';
 		$post->comment_count  = 0;
+		self::mark_gate_as_rendered();
 	}
 
 	/**
@@ -163,9 +181,10 @@ class Content_Gate {
 				],
 				'public'       => false,
 				'show_ui'      => true,
-				'show_in_menu' => false,
+				'show_in_menu' => true,
 				'show_in_rest' => true,
-				'supports'     => [ 'editor', 'custom-fields', 'revisions' ],
+				'supports'     => [ 'editor', 'custom-fields', 'revisions', 'title' ],
+				'taxonomies'   => [ 'category', 'post_tag' ],
 			]
 		);
 	}
@@ -199,20 +218,98 @@ class Content_Gate {
 				'type'    => 'string',
 				'default' => 'medium',
 			],
+			'access_rules'       => [
+				'type'         => 'array',
+				'default'      => [],
+				'single'       => true,
+				'show_in_rest' => [
+					'schema' => [
+						'items' => [
+							'type'       => 'object',
+							'properties' => [
+								'slug'  => [
+									'type' => 'string',
+								],
+								'value' => [
+									'type' => 'mixed',
+								],
+							],
+						],
+					],
+				],
+			],
+			'post_types'         => [
+				'type'         => 'array',
+				'default'      => [ 'post' ],
+				'single'       => true,
+				'show_in_rest' => [
+					'schema' => [
+						'items' => [
+							'type' => 'string',
+						],
+					],
+				],
+			],
+			'gate_priority'      => [
+				'type'    => 'integer',
+				'default' => 0,
+			],
 		];
+
 		foreach ( $meta as $key => $config ) {
 			\register_meta(
 				'post',
 				$key,
 				[
 					'object_subtype' => self::GATE_CPT,
-					'show_in_rest'   => true,
+					'show_in_rest'   => $config['show_in_rest'] ?? true,
 					'type'           => $config['type'],
 					'default'        => $config['default'],
 					'single'         => true,
 				]
 			);
 		}
+	}
+
+	/**
+	 * Get the post types that can be restricted.
+	 */
+	public static function get_available_post_types() {
+		$available_post_types = array_values(
+			array_map(
+				function( $post_type ) {
+					return [
+						'name'  => $post_type->name,
+						'label' => $post_type->label,
+					];
+				},
+				get_post_types(
+					[
+						'public'       => true,
+						'show_in_rest' => true,
+						'_builtin'     => false,
+					],
+					'objects'
+				)
+			)
+		);
+
+		return apply_filters(
+			'newspack_content_gate_supported_post_types',
+			array_merge(
+				[
+					[
+						'name'  => 'post',
+						'label' => 'Posts',
+					],
+					[
+						'name'  => 'page',
+						'label' => 'Pages',
+					],
+				],
+				$available_post_types
+			)
+		);
 	}
 
 	/**
@@ -283,6 +380,8 @@ class Content_Gate {
 				'plans'              => Memberships::get_plans(),
 				'gate_plans'         => Memberships::get_gate_plans( get_the_ID() ),
 				'edit_plan_gate_url' => Memberships::get_edit_plan_gate_url(),
+				'post_types'         => self::get_available_post_types(),
+				'access_rules'       => Access_Rules::get_access_rules(),
 			]
 		);
 
@@ -311,8 +410,7 @@ class Content_Gate {
 	 * @return int|false Post ID or false if not set.
 	 */
 	public static function get_gate_post_id( $post_id = null ) {
-		$gate_post_id = (int) \get_option( 'newspack_memberships_gate_post_id' );
-
+		$gate_post_id = intval( self::$gate_post_id ?? \get_option( 'newspack_memberships_gate_post_id' ) );
 		if ( ! $gate_post_id ) {
 			$gate_post_id = false;
 		}
@@ -373,18 +471,23 @@ class Content_Gate {
 	 *
 	 * @param int $post_id Post ID.
 	 *
-	 * @return bool
+	 * @return int|bool Gate ID restricting the post, false if not restricted, or true if restricted by a Woo Memberships plan.
 	 */
 	public static function is_post_restricted( $post_id = null ) {
 		$post_id = $post_id ? $post_id : get_the_ID();
 
 		/**
 		 * Filters whether the post is restricted for the current user.
+		 * If the post is restricted by a content gate, return the gate post ID.
 		 *
-		 * @param bool $is_post_restricted Whether the post is restricted for the current user.
+		 * @param int|bool $restricted_by  If restricted, the gate post ID. False if not restricted.
 		 * @param int  $post_id            Post ID.
 		 */
-		return apply_filters( 'newspack_is_post_restricted', false, $post_id );
+		$restricted_by = apply_filters( 'newspack_is_post_restricted', false, $post_id );
+		if ( $restricted_by && is_int( $restricted_by ) ) {
+			self::$gate_post_id = $restricted_by;
+		}
+		return $restricted_by;
 	}
 
 	/**
@@ -610,6 +713,78 @@ class Content_Gate {
 			return false;
 		}
 		return $activity;
+	}
+
+	/**
+	 * Get gate.
+	 *
+	 * @param int $id Gate ID.
+	 *
+	 * @return array|\WP_Error The gate or error if not found.
+	 */
+	public static function get_gate( $id ) {
+		$post = get_post( $id );
+		if ( ! $post ) {
+			return new \WP_Error( 'newspack_content_gate_not_found', __( 'Gate not found.', 'newspack' ) );
+		}
+
+		return [
+			'id'            => $post->ID,
+			'title'         => $post->post_title,
+			'description'   => $post->post_excerpt,
+			'metering'      => Metering::get_metering_settings( $post->ID ),
+			'access_rules'  => Access_Rules::get_post_access_rules( $post->ID ),
+			'content_rules' => [],
+		];
+	}
+
+	/**
+	 * Update gate settings
+	 *
+	 * @param int   $id   Gate ID.
+	 * @param array $gate Gate settings.
+	 *
+	 * @return array|\WP_Error
+	 */
+	public static function update_gate_settings( $id, $gate ) {
+		$post = get_post( $id );
+		if ( ! $post ) {
+			return new \WP_Error( 'newspack_content_gate_not_found', __( 'Gate not found.', 'newspack' ) );
+		}
+
+		// Update title and description.
+		wp_update_post(
+			[
+				'ID'           => $id,
+				'post_title'   => $gate['title'],
+				'post_excerpt' => $gate['description'],
+			]
+		);
+
+		// Update metering settings.
+		Metering::update_metering_settings( $id, $gate['metering'] );
+
+		// Update access rules.
+		Access_Rules::update_post_access_rules( $id, $gate['access_rules'] );
+
+		// TODO: Update content rules.
+
+		return self::get_gate( $id );
+	}
+
+	/**
+	 * Get all gates.
+	 */
+	public static function get_gates() {
+		$posts = get_posts(
+			[
+				'post_type'      => self::GATE_CPT,
+				'post_status'    => [ 'publish', 'draft', 'trash', 'pending', 'future' ],
+				'posts_per_page' => -1,
+				// TODO: Add gate priority sorting.
+			]
+		);
+		return array_map( [ __CLASS__, 'get_gate' ], wp_list_pluck( $posts, 'ID' ) );
 	}
 }
 Content_Gate::init();
