@@ -9,7 +9,7 @@ import '../../shared/js/public-path';
 /**
  * WordPress dependencies.
  */
-import { Component, Fragment, render, createInterpolateElement } from '@wordpress/element';
+import { Component, Fragment, render, createInterpolateElement, createRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import { Icon, audio, category, plus, reusableBlock, typography } from '@wordpress/icons';
 import { ExternalLink } from '@wordpress/components';
@@ -58,7 +58,15 @@ class ComponentsDemo extends Component {
 			selectValues: [],
 			modalShown: false,
 			color1: '#003da5',
+			draggableList: [
+				{ id: 1, title: 'Draggable Item 1' },
+				{ id: 2, title: 'Draggable Item 2' },
+				{ id: 3, title: 'Draggable Item 3' },
+				{ id: 4, title: 'Draggable Item 4' },
+				{ id: 5, title: 'Draggable Item 5' },
+			],
 		};
+		this.dragWrapperRef = createRef();
 	}
 
 	/**
@@ -720,6 +728,28 @@ class ComponentsDemo extends Component {
 								console.log( 'Plugin Settings Section Changed', { key, val } );
 							} }
 						/>
+					</Card>
+					<Card>
+						<h2>{ __( 'Draggable Action Cards', 'newspack-plugin' ) }</h2>
+						<div ref={ this.dragWrapperRef }>
+							{ this.state.draggableList.map( ( { id, title }, index ) => (
+								<ActionCard
+									key={ id }
+									id={ id }
+									draggable
+									dragIndex={ index }
+									dragWrapperRef={ this.dragWrapperRef }
+									onDragCallback={ newIndex => {
+										const newList = [ ...this.state.draggableList ];
+										const [ movedItem ] = newList.splice( index, 1 );
+										newList.splice( newIndex, 0, movedItem );
+										this.setState( { draggableList: newList } );
+									} }
+									title={ title }
+									description={ __( 'An example of an action card that is draggable.', 'newspack-plugin' ) }
+								/>
+							) ) }
+						</div>
 					</Card>
 					<Card>
 						<h2>{ __( 'Box Contrast', 'newspack-plugin' ) }</h2>
