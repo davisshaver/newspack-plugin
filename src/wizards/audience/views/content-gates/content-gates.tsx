@@ -63,11 +63,7 @@ const ContentGates = () => {
 			.finally( () => setIsInFlight( false ) );
 	};
 
-	const handleDeleteGate = ( id: number ) => () => {
-		if ( isInFlight ) {
-			return;
-		}
-		setIsInFlight( true );
+	const handleDeleteGate = ( id: number ) => {
 		// eslint-disable-next-line no-alert
 		if ( ! confirm( __( 'Are you sure you want to delete this content gate?', 'newspack-plugin' ) ) ) {
 			return;
@@ -77,8 +73,7 @@ const ContentGates = () => {
 			method: 'DELETE',
 		} )
 			.then( () => setGates( gates.filter( g => g.id !== id ) ) )
-			.catch( error => console.error( error ) ) // eslint-disable-line no-console
-			.finally( () => setIsInFlight( false ) );
+			.catch( error => console.error( error ) ); // eslint-disable-line no-console
 	};
 
 	const handleUpdateGatePriorities = ( updates: Gate[] ) => {
@@ -173,24 +168,13 @@ const ContentGates = () => {
 							}
 							description={ gate.description }
 							isMedium
-							hasGreyHeader={ true }
-							actionContent={
-								<>
-									<Button variant="primary" onClick={ () => {} }>
-										{ __( 'Edit Appearance', 'newspack' ) }
-									</Button>
-									<Button isDestructive variant="secondary" onClick={ handleDeleteGate( gate.id ) }>
-										{ __( 'Delete', 'newspack-plugin' ) }
-									</Button>
-								</>
-							}
 							toggleChecked={ true }
 							dragIndex={ index }
 							dragWrapperRef={ ref }
 							onDragCallback={ reorderGates }
 							disabled={ isInFlight }
 						>
-							<ContentGateSettings value={ gate } />
+							<ContentGateSettings value={ gate } onDelete={ handleDeleteGate } />
 						</WizardsActionCard>
 					);
 				} ) }
