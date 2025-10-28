@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Newspack 6.21.2\n"
+"Project-Id-Version: Newspack 6.21.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-10-23T13:50:27+00:00\n"
+"POT-Creation-Date: 2025-10-28T15:41:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -2285,66 +2285,66 @@ msgid "Help format and provide context to AP and DDHQ elections embeds."
 msgstr ""
 
 #. translators: %s is the custom role name.
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:193
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:204
 #, php-format
 msgid "Can't update details of a \"%s\" user."
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:210
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:221
 msgid "It looks like you are an author on this site. Please contact a site adminstrator to get your account deactivated."
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:233
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:582
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:244
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:621
 msgid "Guest Contributor"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:364
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:375
 #: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:660
 #: includes/plugins/woocommerce/my-account/templates/v0/edit-account.php:54
 #: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:86
 msgid "Display name"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:408
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:419
 msgid "Guest Contributors cannot login."
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:420
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:421
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:434
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:431
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:432
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:445
 msgid "Guest Authors"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:436
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:447
 msgid "Co-Authors-Plus' Guest Authors are disabled in this site. Use the Guest Contributor user role instead."
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:437
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:448
 msgid "You can use one of the shortcuts below:"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:439
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:450
 msgid "Create a new Guest Contributor"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:440
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:451
 msgid "View all Guest Contributors"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:486
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:497
 msgid "Co-Authors Plus Options"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:491
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:502
 msgid "Enable as coauthor"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:496
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:507
 msgid "Allow this user to be assigned as a co-author of a post."
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:500
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:511
 msgid "If this option is checked, the \"Guest Contributor\" role will be added to the user (on top of their current role) and they will be able to be assigned as a co-author of a post even if they are not allowed to edit posts. For users with edit access, this option has no effect."
 msgstr ""
 
