@@ -13,6 +13,7 @@ use Newspack\Wizard;
 use Newspack\Reader_Activation;
 use Newspack\Reader_Revenue_Emails;
 use Newspack\Everlit_Configuration_Manager;
+use Newspack\Nextdoor;
 use function Newspack\google_site_kit_available;
 
 defined( 'ABSPATH' ) || exit;
@@ -90,7 +91,13 @@ class Newspack_Settings extends Wizard {
 				],
 			],
 			'social'            => [
-				'label' => __( 'Social', 'newspack-plugin' ),
+				'label'    => __( 'Social', 'newspack-plugin' ),
+				'nextdoor' => [
+					'available_roles'      => Nextdoor::get_available_roles(),
+					'country_options'      => Nextdoor::get_available_countries(),
+					'redirect_uri'         => Nextdoor::get_redirect_uri(),
+					'feature_flag_enabled' => defined( 'NEWSPACK_ENABLE_NEXTDOOR_INTEGRATION' ) && NEWSPACK_ENABLE_NEXTDOOR_INTEGRATION,
+				],
 			],
 			'syndication'       => [
 				'label' => __( 'Syndication', 'newspack-plugin' ),
