@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Newspack 6.22.0\n"
+"Project-Id-Version: Newspack 6.22.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-11-03T18:19:30+00:00\n"
+"POT-Creation-Date: 2025-11-05T16:00:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -73,7 +73,7 @@ msgstr ""
 
 #: includes/class-magic-link.php:343
 #: includes/class-magic-link.php:417
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:472
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:482
 #: includes/reader-activation/class-reader-activation.php:1244
 #: includes/reader-activation/class-reader-activation.php:2183
 msgid "Invalid user."
@@ -194,8 +194,8 @@ msgstr ""
 
 #: includes/class-magic-link.php:1066
 #: includes/class-magic-link.php:1070
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:539
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:559
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:549
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:569
 #: includes/reader-activation/class-reader-activation.php:2016
 #: includes/reader-activation/sync/class-esp-sync-admin.php:157
 msgid "Invalid request."
@@ -2367,7 +2367,7 @@ msgid "Guest Contributor"
 msgstr ""
 
 #: includes/plugins/co-authors-plus/class-guest-contributor-role.php:375
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:662
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:672
 #: includes/plugins/woocommerce/my-account/templates/v0/edit-account.php:54
 #: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:86
 msgid "Display name"
@@ -2650,7 +2650,7 @@ msgid "Please wait a moment before trying to complete this transaction again."
 msgstr ""
 
 #: includes/plugins/woocommerce/class-woocommerce-connection.php:261
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:318
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:328
 msgid "Please wait a moment before trying to add a new payment method."
 msgstr ""
 
@@ -2792,19 +2792,19 @@ msgid "Allow orders containing this product to automatically complete upon succe
 msgstr ""
 
 #. translators: %1$s: action URL, %2$s: link attributes
-#: includes/plugins/woocommerce/class-woocommerce-update-payment-notice.php:151
+#: includes/plugins/woocommerce/class-woocommerce-update-payment-notice.php:156
 #, php-format
 msgid "Please <a href=\"%1$s\" %2$s>update your payment method</a>."
 msgstr ""
 
 #. translators: %s: donation formatted value
-#: includes/plugins/woocommerce/class-woocommerce-update-payment-notice.php:182
+#: includes/plugins/woocommerce/class-woocommerce-update-payment-notice.php:187
 #, php-format
 msgid "Your recurring donation of %s has stopped."
 msgstr ""
 
 #. translators: %s: subscription product name
-#: includes/plugins/woocommerce/class-woocommerce-update-payment-notice.php:188
+#: includes/plugins/woocommerce/class-woocommerce-update-payment-notice.php:193
 #, php-format
 msgid "Your “%s” subscription is not active."
 msgstr ""
@@ -2814,9 +2814,9 @@ msgid "Please check your email inbox for instructions on how to delete your acco
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v0.php:90
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:436
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:587
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1140
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:446
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:597
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1150
 #: dist/audience-wizards.b4e954a2e704fc63f571.js:23
 #: dist/audience-wizards.b4e954a2e704fc63f571.js:29
 #: dist/audience-wizards.b4e954a2e704fc63f571.js:32
@@ -3083,31 +3083,31 @@ msgstr ""
 msgid "Delete address"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:299
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:309
 msgid "Are you sure you want to cancel this subscription?"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:340
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:350
 msgid "Account settings"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:345
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:355
 msgid "Log out"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:429
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:439
 msgid "Please check your email inbox for instructions on how to set a new password."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:516
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:526
 msgid "Invalid user ID."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:580
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:590
 msgid "Please check your email inbox for a link to verify your account."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:661
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:671
 #: includes/plugins/woocommerce/my-account/templates/v0/edit-account.php:68
 #: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:100
 #: includes/reader-activation/class-reader-activation.php:979
@@ -3115,48 +3115,48 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:901
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:911
 msgid "Active Memberships"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:902
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:912
 msgid "These memberships are active, but don't have an associated subscription. They will need to be manually renewed when they expire."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1026
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1036
 #: includes/reader-activation/class-reader-activation.php:263
 #: includes/reader-activation/class-reader-activation.php:2220
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1028
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1038
 msgid "This email address is already in use."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1032
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1042
 msgid "Something went wrong. Please try again."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1072
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1082
 msgid "Something went wrong. Please contact the site administrator."
 msgstr ""
 
 #. Translators: %s is the email address the verification email was sent to..
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1077
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1087
 #, php-format
 msgid "A verification email has been sent to %s. Please verify to complete the change."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1119
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1129
 msgid "Your email address has been successfully updated."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1144
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1180
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1154
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1190
 msgid "This email change request has been cancelled or expired."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1175
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1185
 msgid "Your email address change request has been cancelled."
 msgstr ""
 
