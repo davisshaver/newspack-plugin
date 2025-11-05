@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-11-05T16:00:19+00:00\n"
+"POT-Creation-Date: 2025-11-05T17:29:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -1026,7 +1026,7 @@ msgstr ""
 #: includes/collections/class-collection-section-taxonomy.php:54
 #: includes/collections/class-collection-section-taxonomy.php:70
 #: includes/collections/class-post-meta.php:37
-#: includes/collections/class-post-type.php:72
+#: includes/collections/class-post-type.php:73
 #: includes/collections/class-query-helper.php:205
 #: src/blocks/collections/class-collections-block.php:391
 #: dist/blocks.js:4
@@ -1123,7 +1123,7 @@ msgid "Collection"
 msgstr ""
 
 #: includes/collections/class-collection-taxonomy.php:78
-#: includes/collections/class-post-type.php:102
+#: includes/collections/class-post-type.php:103
 msgid "Search Collections"
 msgstr ""
 
@@ -1132,17 +1132,17 @@ msgid "Popular Collections"
 msgstr ""
 
 #: includes/collections/class-collection-taxonomy.php:80
-#: includes/collections/class-post-type.php:105
+#: includes/collections/class-post-type.php:106
 msgid "All Collections"
 msgstr ""
 
 #: includes/collections/class-collection-taxonomy.php:81
-#: includes/collections/class-post-type.php:100
+#: includes/collections/class-post-type.php:101
 msgid "View Collection"
 msgstr ""
 
 #: includes/collections/class-collection-taxonomy.php:82
-#: includes/collections/class-post-type.php:98
+#: includes/collections/class-post-type.php:99
 msgid "Edit Collection"
 msgstr ""
 
@@ -1151,7 +1151,7 @@ msgid "Update Collection"
 msgstr ""
 
 #: includes/collections/class-collection-taxonomy.php:84
-#: includes/collections/class-post-type.php:97
+#: includes/collections/class-post-type.php:98
 msgid "Add New Collection"
 msgstr ""
 
@@ -1215,56 +1215,60 @@ msgctxt "title for collection settings panel"
 msgid "Collection Settings"
 msgstr ""
 
-#: includes/collections/class-post-type.php:94
+#: includes/collections/class-post-type.php:95
 msgctxt "collection post type general name"
 msgid "Collections"
 msgstr ""
 
-#: includes/collections/class-post-type.php:95
+#: includes/collections/class-post-type.php:96
 msgctxt "collection post type singular name"
 msgid "Collection"
 msgstr ""
 
-#: includes/collections/class-post-type.php:96
+#: includes/collections/class-post-type.php:97
 msgctxt "label for add new collection"
 msgid "Add New"
 msgstr ""
 
-#: includes/collections/class-post-type.php:99
+#: includes/collections/class-post-type.php:100
 msgid "New Collection"
 msgstr ""
 
-#: includes/collections/class-post-type.php:101
+#: includes/collections/class-post-type.php:102
 msgid "View Collections"
 msgstr ""
 
-#: includes/collections/class-post-type.php:103
+#: includes/collections/class-post-type.php:104
 #: src/blocks/collections/class-collections-block.php:110
 msgid "No collections found."
 msgstr ""
 
-#: includes/collections/class-post-type.php:104
+#: includes/collections/class-post-type.php:105
 msgid "No collections found in Trash."
 msgstr ""
 
-#: includes/collections/class-post-type.php:106
+#: includes/collections/class-post-type.php:107
 msgid "Collection published"
 msgstr ""
 
-#: includes/collections/class-post-type.php:107
+#: includes/collections/class-post-type.php:108
 msgid "Collection updated"
 msgstr ""
 
-#: includes/collections/class-post-type.php:118
+#: includes/collections/class-post-type.php:119
 msgid "Collection"
 msgstr ""
 
-#: includes/collections/class-post-type.php:120
+#: includes/collections/class-post-type.php:121
 msgid "Grouped content for custom classification."
 msgstr ""
 
-#: includes/collections/class-post-type.php:184
+#: includes/collections/class-post-type.php:185
 msgid "Collection Details"
+msgstr ""
+
+#: includes/collections/class-post-type.php:250
+msgid "This collection could not be saved because a collection with the same title already exists. Please choose a different title and try again."
 msgstr ""
 
 #: includes/collections/class-query-helper.php:204
