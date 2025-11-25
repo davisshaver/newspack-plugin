@@ -1,3 +1,10 @@
+## [6.25.1](https://github.com/Automattic/newspack-plugin/compare/v6.25.0...v6.25.1) (2025-11-25)
+
+
+### Bug Fixes
+
+* **memberships:** use gate ID for metering meta key ([#4316](https://github.com/Automattic/newspack-plugin/issues/4316)) ([a190a47](https://github.com/Automattic/newspack-plugin/commit/a190a477ad7af079af4fd27659cc8f735f735f42))
+
 # [6.25.0](https://github.com/Automattic/newspack-plugin/compare/v6.24.3...v6.25.0) (2025-11-24)
 
 
