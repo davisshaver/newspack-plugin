@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-11-25T16:14:56+00:00\n"
+"POT-Creation-Date: 2025-11-25T20:53:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -260,7 +260,7 @@ msgstr ""
 #: includes/class-newspack-ui.php:1161
 #: includes/class-newspack-ui.php:1215
 #: includes/content-gate/content-gifting/class-content-gifting.php:615
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:714
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:704
 #: includes/reader-activation/class-reader-activation.php:1610
 #: includes/reader-activation/class-reader-activation.php:1725
 #: dist/audience-wizards.a44ef1c0528f469ddbeb.js:16
@@ -2403,7 +2403,7 @@ msgid "Every 3 hours"
 msgstr ""
 
 #: includes/optional-modules/class-rss.php:384
-#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:87
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:123
 msgid "Daily"
 msgstr ""
 
@@ -2811,12 +2811,12 @@ msgstr ""
 
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:62
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:155
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:738
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:728
 msgid "Change subscription"
 msgstr ""
 
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:158
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:736
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:726
 msgid "Confirm donation"
 msgstr ""
 
@@ -2828,44 +2828,39 @@ msgstr ""
 msgid "Amount"
 msgstr ""
 
-#. translators: %s: subscription product name
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:489
-#, php-format
-msgid "You already have %s active."
-msgstr ""
-
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:495
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:485
 msgid "View Subscription"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:496
-#: dist/newspack-wizards.ead85c22f487a4e5ff32.js:22
-msgid "View"
+#. translators: %s: subscription product name
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:492
+#, php-format
+msgid "You currently have an active subscription: %s. If you’d like to make changes, you can manage it from your subscription page."
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:551
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:526
 #: dist/audience-wizards.a44ef1c0528f469ddbeb.js:7
 #: src/wizards/audience/components/settings-modal/index.js:56
 msgid "Frequency"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:625
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:626
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:706
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:600
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:601
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:696
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:106
 msgid "Change Subscription"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:625
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:706
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:600
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:696
 msgid "Complete your transaction"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:626
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:601
 msgid "Purchase"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:684
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:674
 #: includes/reader-activation/class-reader-activation.php:286
 #: src/blocks/reader-registration/index.php:114
 #: dist/blocks.js:4
@@ -2873,7 +2868,7 @@ msgstr ""
 msgid "Sign in to an existing account"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:687
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:677
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1-passwords.php:239
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:313
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:399
@@ -2903,46 +2898,46 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:88
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:124
 #: dist/audience-wizards.a44ef1c0528f469ddbeb.js:22
 msgid "Weekly"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:89
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:125
 #: includes/plugins/woocommerce/class-woocommerce-connection.php:391
 #: includes/plugins/woocommerce/class-woocommerce-connection.php:485
 #: dist/audience-wizards.a44ef1c0528f469ddbeb.js:22
 msgid "Monthly"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:90
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:126
 #: includes/plugins/woocommerce/class-woocommerce-connection.php:392
 #: includes/plugins/woocommerce/class-woocommerce-connection.php:486
 msgid "Yearly"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:95
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:131
 #, php-format
 msgid "%s Days"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:96
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:132
 #, php-format
 msgid "%s Weeks"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:97
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:133
 #, php-format
 msgid "%s Months"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:98
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:134
 #, php-format
 msgid "%s Years"
 msgstr ""
 
 #. translators: 1: Subscription interval. 2: Subscription period.
-#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:112
+#: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:148
 #, php-format
 msgid "%1$s %2$ss"
 msgstr ""
@@ -11177,6 +11172,10 @@ msgstr ""
 
 #: dist/newspack-wizards.ead85c22f487a4e5ff32.js:22
 msgid "No endpoints found"
+msgstr ""
+
+#: dist/newspack-wizards.ead85c22f487a4e5ff32.js:22
+msgid "View"
 msgstr ""
 
 #: dist/newspack-wizards.ead85c22f487a4e5ff32.js:22
