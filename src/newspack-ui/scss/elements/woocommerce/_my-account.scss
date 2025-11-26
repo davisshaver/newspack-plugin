@@ -10,6 +10,10 @@
 .woocommerce-account.newspack-my-account.newspack-ui {
 	.woocommerce-notices-wrapper:not(:empty) {
 		margin-bottom: var(--newspack-ui-spacer-6);
+
+		> *:first-child {
+			margin-top: 0;
+		}
 	}
 	.newspack-wc-message,
 	.woocommerce-message,
@@ -185,5 +189,8 @@
 	}
 	address {
 		font-style: normal;
+	}
+	#registration-link_field .regenerate-link { // stylelint-disable-line selector-id-pattern
+		margin-left: var(--newspack-ui-spacer-3);
 	}
 }
