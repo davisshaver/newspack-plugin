@@ -5,14 +5,9 @@ import { CheckboxControl, SelectControl, TextControl } from '@wordpress/componen
 
 const noop = () => {};
 
-type AccessRuleControlProps = {
-	slug: string;
-	value: string | string[] | boolean;
-	onChange: ( value: string | string[] | boolean ) => void;
-};
+export default function AccessRuleControl( { slug, value, onChange }: GateAccessRuleControlProps ) {
+	const rule = window.newspackAudienceContentGates.available_access_rules[ slug ];
 
-export default function AccessRuleControl( { slug, value, onChange }: AccessRuleControlProps ) {
-	const rule = window.newspackAudienceContentGates.available_rules[ slug ];
 	if ( ! rule ) {
 		return null;
 	}

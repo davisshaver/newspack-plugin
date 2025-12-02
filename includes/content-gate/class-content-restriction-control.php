@@ -22,6 +22,71 @@ class Content_Restriction_Control {
 	}
 
 	/**
+	 * Get the post types that can be restricted.
+	 */
+	public static function get_available_post_types() {
+		$available_post_types = array_values(
+			array_map(
+				function( $post_type ) {
+					return [
+						'value' => $post_type->name,
+						'label' => $post_type->label,
+					];
+				},
+				get_post_types(
+					[
+						'public'       => true,
+						'show_in_rest' => true,
+						'_builtin'     => false,
+					],
+					'objects'
+				)
+			)
+		);
+
+		return apply_filters(
+			'newspack_content_gate_supported_post_types',
+			array_merge(
+				[
+					[
+						'value' => 'post',
+						'label' => 'Posts',
+					],
+					[
+						'value' => 'page',
+						'label' => 'Pages',
+					],
+				],
+				$available_post_types
+			)
+		);
+	}
+
+	/**
+	 * Get the taxonomies that can be restricted.
+	 * By default, this includes all public taxonomies that apply to available post types.
+	 *
+	 * @return array Array of taxonomies.
+	 */
+	public static function get_available_taxonomies() {
+		$available_taxonomies = [
+			[
+				'slug'  => 'category',
+				'label' => 'Categories',
+			],
+			[
+				'slug'  => 'post_tag',
+				'label' => 'Tags',
+			],
+		];
+
+		return apply_filters(
+			'newspack_content_gate_supported_taxonomies',
+			$available_taxonomies
+		);
+	}
+
+	/**
 	 * Get post gates.
 	 *
 	 * @param int $post_id Optional post ID.
@@ -32,15 +97,16 @@ class Content_Restriction_Control {
 		$post_id    = $post_id ?? \get_the_ID();
 		$post_type  = \get_post_type( $post_id );
 		$categories = \wp_get_post_categories( $post_id );
-		$tags       = \wp_get_post_tags( 2742, [ 'fields' => 'ids' ] );
+		$tags       = \wp_get_post_tags( $post_id, [ 'fields' => 'ids' ] );
 
 		$gate_post_ids   = [];
 		$gates           = Content_Gate::get_gates();
 
 		foreach ( $gates as $gate ) {
-			$gate_post_types = \get_post_meta( $gate->ID, 'post_types', true );
-			$gate_categories = \wp_get_post_categories( $gate->ID );
-			$gate_tags       = \wp_get_post_tags( $gate->ID, [ 'fields' => 'ids' ] );
+			// TODO: Change this to read from the gate rules.
+			$gate_post_types = \get_post_meta( $gate['id'], 'post_types', true );
+			$gate_categories = \wp_get_post_categories( $gate['id'] );
+			$gate_tags       = \wp_get_post_tags( $gate['id'], [ 'fields' => 'ids' ] );
 
 			if ( empty( $gate_post_types ) || ! in_array( $post_type, $gate_post_types, true ) ) {
 				continue;
@@ -51,7 +117,7 @@ class Content_Restriction_Control {
 			if ( ! empty( $gate_tags ) && empty( array_intersect( $gate_tags, $tags ) ) ) {
 				continue;
 			}
-			$gate_post_ids[] = $gate->ID;
+			$gate_post_ids[] = $gate['id'];
 		}
 
 		return $gate_post_ids;
