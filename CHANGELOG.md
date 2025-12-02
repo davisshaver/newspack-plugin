@@ -1,3 +1,10 @@
+# [6.26.0](https://github.com/Automattic/newspack-plugin/compare/v6.25.1...v6.26.0) (2025-12-02)
+
+
+### Features
+
+* **content-gifting:** metering support and CTA auth links ([#4331](https://github.com/Automattic/newspack-plugin/issues/4331)) ([8d5f500](https://github.com/Automattic/newspack-plugin/commit/8d5f50058fc5661f985066306cacc8d03f1c3d20))
+
 ## [6.25.1](https://github.com/Automattic/newspack-plugin/compare/v6.25.0...v6.25.1) (2025-11-25)
 
 
