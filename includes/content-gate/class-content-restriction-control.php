@@ -13,12 +13,19 @@ use Newspack\Access_Rules;
  * Main class.
  */
 class Content_Restriction_Control {
+	/**
+	 * Map of post IDs to gate IDs.
+	 *
+	 * @var array
+	 */
+	private static $post_gate_id_map = [];
 
 	/**
 	 * Initialize hooks and filters.
 	 */
 	public static function init() {
 		add_filter( 'newspack_is_post_restricted', [ __CLASS__, 'is_post_restricted' ], 10, 2 );
+		add_filter( 'newspack_content_gate_post_id', [ __CLASS__, 'get_gate_post_id' ], 10, 2 );
 	}
 
 	/**
@@ -91,36 +98,52 @@ class Content_Restriction_Control {
 	 *
 	 * @param int $post_id Optional post ID.
 	 *
-	 * @return int[] Array of gate post IDs.
+	 * @return array Array of post gates.
 	 */
 	public static function get_post_gates( $post_id = null ) {
-		$post_id    = $post_id ?? \get_the_ID();
-		$post_type  = \get_post_type( $post_id );
-		$categories = \wp_get_post_categories( $post_id );
-		$tags       = \wp_get_post_tags( $post_id, [ 'fields' => 'ids' ] );
-
-		$gate_post_ids   = [];
-		$gates           = Content_Gate::get_gates();
-
-		foreach ( $gates as $gate ) {
-			// TODO: Change this to read from the gate rules.
-			$gate_post_types = \get_post_meta( $gate['id'], 'post_types', true );
-			$gate_categories = \wp_get_post_categories( $gate['id'] );
-			$gate_tags       = \wp_get_post_tags( $gate['id'], [ 'fields' => 'ids' ] );
-
-			if ( empty( $gate_post_types ) || ! in_array( $post_type, $gate_post_types, true ) ) {
-				continue;
-			}
-			if ( ! empty( $gate_categories ) && empty( array_intersect( $gate_categories, $categories ) ) ) {
-				continue;
-			}
-			if ( ! empty( $gate_tags ) && empty( array_intersect( $gate_tags, $tags ) ) ) {
-				continue;
-			}
-			$gate_post_ids[] = $gate['id'];
+		$post_id = $post_id ?? \get_the_ID();
+		if ( ! $post_id ) {
+			return [];
 		}
 
-		return $gate_post_ids;
+		$gates = Content_Gate::get_gates();
+		if ( empty( $gates ) ) {
+			return [];
+		}
+
+		$post_gates = [];
+		foreach ( $gates as $gate ) {
+			if ( 'publish' !== $gate['status'] ) {
+				continue;
+			}
+			$content_rules = $gate['content_rules'];
+			if ( empty( $content_rules ) ) {
+				continue;
+			}
+
+			foreach ( $content_rules as $content_rule ) {
+				if ( $content_rule['slug'] === 'post_types' ) {
+					$post_type = get_post_type( $post_id );
+					if ( ! in_array( $post_type, $content_rule['value'], true ) ) {
+						continue 2;
+					}
+				} else {
+					$taxonomy = get_taxonomy( $content_rule['slug'] );
+					if ( ! $taxonomy ) {
+						continue 2;
+					}
+					$terms = wp_get_post_terms( $post_id, $content_rule['slug'], [ 'fields' => 'ids' ] );
+					if ( ! $terms || is_wp_error( $terms ) ) {
+						continue 2;
+					}
+					if ( empty( array_intersect( $terms, $content_rule['value'] ) ) ) {
+						continue 2;
+					}
+				}
+			}
+			$post_gates[] = $gate;
+		}
+		return $post_gates;
 	}
 
 	/**
@@ -142,23 +165,45 @@ class Content_Restriction_Control {
 			return $is_post_restricted;
 		}
 
-		$gate_ids = self::get_post_gates( $post_id );
-		if ( empty( $gate_ids ) ) {
+		$post_gates = self::get_post_gates( $post_id );
+		if ( empty( $post_gates ) ) {
 			return false;
 		}
 
-		foreach ( $gate_ids as $gate_id ) {
-			$access_rules = Access_Rules::get_post_access_rules( $gate_id );
+		// Return if the post gate has already been determined.
+		if ( ! empty( self::$post_gate_id_map[ $post_id ] ) ) {
+			return true;
+		}
+
+		foreach ( $post_gates as $gate ) {
+			$access_rules = $gate['access_rules'];
 			if ( empty( $access_rules ) ) {
 				continue;
 			}
 			foreach ( $access_rules as $rule ) {
 				if ( ! Access_Rules::evaluate_rule( $rule['slug'], $rule['value'] ?? null ) ) {
-					return false;
+					self::$post_gate_id_map[ $post_id ] = $gate['id'];
+					return true;
 				}
 			}
 		}
-		return true;
+		return false;
+	}
+
+	/**
+	 * Get the current gate post ID.
+	 *
+	 * @param int $gate_post_id Gate post ID.
+	 * @param int $post_id      Post ID. If not given, uses the current post ID.
+	 *
+	 * @return int|false
+	 */
+	public static function get_gate_post_id( $gate_post_id, $post_id = null ) {
+		$post_id = $post_id ?? \get_the_ID();
+		if ( ! empty( self::$post_gate_id_map[ $post_id ] ) ) {
+			return self::$post_gate_id_map[ $post_id ];
+		}
+		return $gate_post_id;
 	}
 }
 Content_Restriction_Control::init();

@@ -93,19 +93,18 @@ class Content_Gate {
 		if ( ! $query->is_main_query() ) {
 			return;
 		}
-		if ( self::has_rendered() ) {
+		if ( ! is_singular() ) {
 			return;
 		}
-
+		if ( get_queried_object_id() !== $post->ID ) {
+			return;
+		}
 		// Don't apply our restriction strategy if Woo Memberships is active.
 		if ( Memberships::is_active() ) {
 			return;
 		}
 		// Never restrict posts in the admin.
 		if ( is_admin() ) {
-			return;
-		}
-		if ( ! self::has_gate() ) {
 			return;
 		}
 		if ( ! self::is_post_restricted( $post->ID ) ) {
@@ -127,9 +126,7 @@ class Content_Gate {
 
 		$content = self::get_restricted_post_excerpt( $post );
 
-		$content .= self::get_inline_gate_content();
-
-		$post->post_content   = $content;
+		$post->post_content   = $content . self::get_inline_gate_content();
 		$post->post_excerpt   = $content;
 		$post->comment_status = 'closed';
 		$post->comment_count  = 0;
@@ -390,11 +387,13 @@ class Content_Gate {
 			$gate_post_id = false;
 		}
 
+		$post_id = $post_id ?? get_the_ID();
+
 		/**
 		 * Filters the gate post ID.
 		 *
 		 * @param int $gate_post_id Gate post ID.
-		 * @param int $post_id Post ID.
+		 * @param int $post_id      Post ID.
 		 */
 		return apply_filters( 'newspack_content_gate_post_id', $gate_post_id, $post_id );
 	}
@@ -474,16 +473,11 @@ class Content_Gate {
 
 		/**
 		 * Filters whether the post is restricted for the current user.
-		 * If the post is restricted by a content gate, return the gate post ID.
 		 *
-		 * @param int|bool $restricted_by  If restricted, the gate post ID. False if not restricted.
-		 * @param int  $post_id            Post ID.
+		 * @param bool $restricted_by Whether the post is restricted.
+		 * @param int  $post_id       Post ID.
 		 */
-		$restricted_by = apply_filters( 'newspack_is_post_restricted', false, $post_id );
-		if ( $restricted_by && is_int( $restricted_by ) ) {
-			self::$gate_post_id = $restricted_by;
-		}
-		return $restricted_by;
+		return apply_filters( 'newspack_is_post_restricted', false, $post_id );
 	}
 
 	/**
@@ -627,7 +621,7 @@ class Content_Gate {
 			$content = apply_filters( 'newspack_gate_content', explode( '<!--more-->', $content )[0] );
 		} else {
 			$content = apply_filters( 'newspack_gate_content', $content );
-			$count = (int) get_post_meta( $gate_post_id, 'visible_paragraphs', true );
+			$count   = max( 1, (int) get_post_meta( $gate_post_id, 'visible_paragraphs', true ) );
 			// Split into paragraphs.
 			$content = explode( '</p>', $content );
 			// Extract the first $x paragraphs only.
@@ -742,7 +736,6 @@ class Content_Gate {
 			'id'            => $post->ID,
 			'status'        => $post->post_status,
 			'title'         => $post->post_title,
-			'description'   => $post->post_excerpt,
 			'metering'      => Metering::get_metering_settings( $post->ID ),
 			'priority'      => (int) get_post_meta( $post->ID, 'gate_priority', true ),
 			'access_rules'  => Access_Rules::get_post_access_rules( $post->ID ),
