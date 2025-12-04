@@ -108,6 +108,31 @@ class Content_Gate {
 		if ( is_admin() ) {
 			return;
 		}
+		// Never in Privacy Policy page.
+		if ( is_privacy_policy() ) {
+			return;
+		}
+		// Never in My Account pages.
+		if ( function_exists( 'is_account_page' ) && is_account_page() ) {
+			return;
+		}
+		// Never in Terms and Conditions page.
+		if ( function_exists( 'wc_terms_and_conditions_page_id' ) && $post->ID === wc_terms_and_conditions_page_id() ) {
+			return;
+		}
+		// Never in WooCommerce cart page.
+		if ( function_exists( 'is_cart' ) && is_cart() ) {
+			return;
+		}
+		// Never in WooCommerce checkout page.
+		if ( function_exists( 'is_checkout' ) && is_checkout() ) {
+			return;
+		}
+		// Never on Accessibility Statement page.
+		if ( $post->ID === get_theme_mod( 'accessibility_statement_page_id' ) ) {
+			return;
+		}
+		// If no other restrictions apply.
 		if ( ! self::is_post_restricted( $post->ID ) ) {
 			return;
 		}
