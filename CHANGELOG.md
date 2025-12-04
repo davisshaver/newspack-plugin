@@ -1,3 +1,10 @@
+## [6.26.3](https://github.com/Automattic/newspack-plugin/compare/v6.26.2...v6.26.3) (2025-12-04)
+
+
+### Bug Fixes
+
+* workaround issue and conflict with teams ([#4342](https://github.com/Automattic/newspack-plugin/issues/4342)) ([c9b3f5c](https://github.com/Automattic/newspack-plugin/commit/c9b3f5cca05fd1f9507fd551f17047712c6dd2d8))
+
 ## [6.26.2](https://github.com/Automattic/newspack-plugin/compare/v6.26.1...v6.26.2) (2025-12-04)
 
 
