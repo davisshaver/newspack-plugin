@@ -1,3 +1,24 @@
+## [6.26.2](https://github.com/Automattic/newspack-plugin/compare/v6.26.1...v6.26.2) (2025-12-04)
+
+
+### Bug Fixes
+
+* hide block visibility from all blocks ([#4339](https://github.com/Automattic/newspack-plugin/issues/4339)) ([9cadf45](https://github.com/Automattic/newspack-plugin/commit/9cadf45d8b51df494f8f34b9191be5f9271a1fd1))
+
+## [6.26.1](https://github.com/Automattic/newspack-plugin/compare/v6.26.0...v6.26.1) (2025-12-03)
+
+
+### Bug Fixes
+
+* Hotfix/active subscription checks ([#4334](https://github.com/Automattic/newspack-plugin/issues/4334)) ([486a1e7](https://github.com/Automattic/newspack-plugin/commit/486a1e766f506d0103234a93e7a05c21df0da351))
+
+# [6.26.0](https://github.com/Automattic/newspack-plugin/compare/v6.25.1...v6.26.0) (2025-12-02)
+
+
+### Features
+
+* **content-gifting:** metering support and CTA auth links ([#4331](https://github.com/Automattic/newspack-plugin/issues/4331)) ([8d5f500](https://github.com/Automattic/newspack-plugin/commit/8d5f50058fc5661f985066306cacc8d03f1c3d20))
+
 ## [6.25.1](https://github.com/Automattic/newspack-plugin/compare/v6.25.0...v6.25.1) (2025-11-25)
 
 
