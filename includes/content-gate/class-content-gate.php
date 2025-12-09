@@ -177,11 +177,6 @@ class Content_Gate {
 	 * Register post type for custom gate.
 	 */
 	public static function register_post_type() {
-		$icon = sprintf(
-			'data:image/svg+xml;base64,%s',
-			base64_encode( Newspack_UI_Icons::get_svg( 'key' ) )
-		);
-
 		\register_post_type(
 			self::GATE_CPT,
 			[
@@ -196,9 +191,8 @@ class Content_Gate {
 				],
 				'public'       => false,
 				'show_ui'      => true,
-				'show_in_menu' => true,
+				'show_in_menu' => false,
 				'show_in_rest' => true,
-				'menu_icon'    => $icon,
 				'supports'     => [ 'editor', 'custom-fields', 'revisions', 'title' ],
 				'taxonomies'   => [ 'category', 'post_tag' ],
 			]
