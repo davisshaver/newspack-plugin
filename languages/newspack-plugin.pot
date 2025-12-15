@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-12-15T18:08:07+00:00\n"
+"POT-Creation-Date: 2025-12-15T19:14:58+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -5326,6 +5326,10 @@ msgstr ""
 msgid "Advertisers"
 msgstr ""
 
+#: includes/wizards/class-newsletters-wizard.php:428
+msgid "Tracking"
+msgstr ""
+
 #: includes/wizards/newspack/class-newspack-dashboard.php:47
 #: includes/wizards/newspack/class-newspack-dashboard.php:260
 #: dist/audience-wizards.9f2010336a37ada78748.js:36
@@ -10556,7 +10560,7 @@ msgstr ""
 #: dist/newsletters.js:4
 #: src/wizards/newsletters/index.js:34
 #: src/wizards/newsletters/views/tracking/index.js:55
-msgid "Tracking"
+msgid "Ads Tracking"
 msgstr ""
 
 #: dist/newsletters.js:4
@@ -10566,17 +10570,17 @@ msgstr ""
 
 #: dist/newsletters.js:4
 #: src/wizards/newsletters/views/tracking/index.js:58
-msgid "Track the clicks on the links in your newsletter."
+msgid "Track the clicks on ads in your newsletter."
 msgstr ""
 
 #: dist/newsletters.js:4
 #: src/wizards/newsletters/views/tracking/index.js:64
-msgid "Tracking pixel"
+msgid "Ads impressions"
 msgstr ""
 
 #: dist/newsletters.js:4
 #: src/wizards/newsletters/views/tracking/index.js:65
-msgid "Track the opens of your newsletter."
+msgid "Track the impressions of ads in your newsletter."
 msgstr ""
 
 #: dist/newsletters.js:4
