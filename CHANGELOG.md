@@ -1,3 +1,10 @@
+## [6.27.2](https://github.com/Automattic/newspack-plugin/compare/v6.27.1...v6.27.2) (2025-12-16)
+
+
+### Bug Fixes
+
+* **indesign-exporter:** caption and credit character encoding ([#4364](https://github.com/Automattic/newspack-plugin/issues/4364)) ([5868d27](https://github.com/Automattic/newspack-plugin/commit/5868d2789a2726f808674928c853ce9b2461711f))
+
 ## [6.27.1](https://github.com/Automattic/newspack-plugin/compare/v6.27.0...v6.27.1) (2025-12-08)
 
 
