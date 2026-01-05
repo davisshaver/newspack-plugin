@@ -46,6 +46,7 @@ class My_Account_UI_V1 {
 		\add_action( 'newspack_woocommerce_after_account_addresses', [ __CLASS__, 'delete_address_modals' ] );
 		\add_action( 'woocommerce_after_save_address_validation', [ __CLASS__, 'handle_delete_address_submission' ], 10, 4 );
 		\add_filter( 'woocommerce_address_to_edit', [ __CLASS__, 'reorder_address_fields' ], PHP_INT_MAX, 2 );
+		\add_action( 'woocommerce_account_content', [ __CLASS__, 'render_content_around_shortcode' ], 0 );
 	}
 
 	/**
@@ -653,14 +654,15 @@ class My_Account_UI_V1 {
 		$content = ob_get_clean();
 		Newspack_UI::generate_modal(
 			[
-				'id'         => 'add-payment-method',
-				'title'      => __( 'Add Payment Method', 'newspack-plugin' ),
-				'content'    => $content,
-				'size'       => 'medium',
-				'form'       => 'POST',
-				'form_class' => 'newspack-ui__accordion newspack-ui__accordion--open',
-				'form_id'    => 'add_payment_method',
-				'actions'    => [
+				'id'              => 'add-payment-method',
+				'title'           => __( 'Add Payment Method', 'newspack-plugin' ),
+				'content'         => $content,
+				'content_is_safe' => true, // Allow the contents of `woocommerce_account_add_payment_method` to be rendered as is.
+				'size'            => 'medium',
+				'form'            => 'POST',
+				'form_class'      => 'newspack-ui__accordion newspack-ui__accordion--open',
+				'form_id'         => 'add_payment_method',
+				'actions'         => [
 					'cancel' => [
 						'label'  => __( 'Cancel', 'newspack-plugin' ),
 						'type'   => 'ghost',
@@ -685,40 +687,44 @@ class My_Account_UI_V1 {
 		$address_types = \apply_filters( 'woocommerce_my_account_get_addresses', $address_types );
 		foreach ( $address_types as $address_type => $address_name ) {
 			$address = \wc_get_account_formatted_address( $address_type );
+
 			ob_start();
 			\woocommerce_account_edit_address( $address_type );
-				$content          = ob_get_clean();
-				$edit_address_url = \add_query_arg(
-					'edit-address',
-					$address_type,
-					\wc_get_endpoint_url( 'edit-address', $address_type )
-				);
-				Newspack_UI::generate_modal(
-					[
-						'id'          => 'edit-address-' . $address_type,
-						'title'       => ! empty( $address ) ? sprintf(
-							// Translators: %s is the address type.
-							__( 'Edit %s address', 'newspack-plugin' ),
-							$address_type
-						) : sprintf(
-							// Translators: %s is the address type.
-							__( 'Add %s address', 'newspack-plugin' ),
-							$address_type
-						),
-						'content'     => $content,
-						'size'        => 'medium',
-						'form'        => 'POST',
-						'form_id'     => 'edit_address_' . $address_type,
-						'form_action' => $edit_address_url,
-						'actions'     => [
-							'cancel' => [
-								'label'  => __( 'Cancel', 'newspack-plugin' ),
-								'type'   => 'ghost',
-								'action' => 'close',
-							],
+			$content = ob_get_clean();
+
+			$edit_address_url = \add_query_arg(
+				'edit-address',
+				$address_type,
+				\wc_get_endpoint_url( 'edit-address', $address_type )
+			);
+
+			Newspack_UI::generate_modal(
+				[
+					'id'              => 'edit-address-' . $address_type,
+					'title'           => ! empty( $address ) ? sprintf(
+						// Translators: %s is the address type.
+						__( 'Edit %s address', 'newspack-plugin' ),
+						$address_type
+					) : sprintf(
+						// Translators: %s is the address type.
+						__( 'Add %s address', 'newspack-plugin' ),
+						$address_type
+					),
+					'content'         => $content,
+					'content_is_safe' => true, // Allow the contents of `woocommerce_account_edit_address` to be rendered as is.
+					'size'            => 'medium',
+					'form'            => 'POST',
+					'form_id'         => 'edit_address_' . $address_type,
+					'form_action'     => $edit_address_url,
+					'actions'         => [
+						'cancel' => [
+							'label'  => __( 'Cancel', 'newspack-plugin' ),
+							'type'   => 'ghost',
+							'action' => 'close',
 						],
-					]
-				);
+					],
+				]
+			);
 		}
 	}
 
@@ -864,6 +870,48 @@ class My_Account_UI_V1 {
 		}
 
 		return $address;
+	}
+
+	/**
+	 * Render the content around the [woocommerce_my_account] shortcode inside the
+	 * woocommerce-MyAccount-content context.
+	 *
+	 * This is necessary because of the highly customized grid layout.
+	 */
+	public static function render_content_around_shortcode() {
+		// Only allow custom content under the dashboard (root) or edit-account (default redirect) pages.
+		global $wp;
+		if ( ! isset( $wp->query_vars['page'] ) && ! empty( $wp->query_vars ) && ! isset( $wp->query_vars['edit-account'] ) ) {
+			return;
+		}
+
+		$content = get_the_content();
+		if ( empty( $content ) ) {
+			return;
+		}
+		$parts = explode( '[woocommerce_my_account]', $content );
+
+		$before = ! empty( $parts[0] ) ? $parts[0] : '';
+		if ( ! empty( $before ) ) {
+			add_action(
+				'woocommerce_account_content',
+				function() use ( $before ) {
+					echo apply_filters( 'the_content', $before ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				},
+				9 // Right before the shortcode.
+			);
+		}
+
+		$after = ! empty( $parts[1] ) ? $parts[1] : '';
+		if ( ! empty( $after ) ) {
+			add_action(
+				'woocommerce_account_content',
+				function() use ( $after ) {
+					echo apply_filters( 'the_content', $after ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				},
+				11 // Right after the shortcode.
+			);
+		}
 	}
 }
 My_Account_UI_V1::init();
