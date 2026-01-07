@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-06T20:55:30+00:00\n"
+"POT-Creation-Date: 2026-01-07T14:23:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -1826,37 +1826,37 @@ msgstr ""
 msgid "Correction"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:509
+#: includes/corrections/class-corrections.php:508
 msgid "Newspack Corrections"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:517
+#: includes/corrections/class-corrections.php:516
 msgid "Corrections Loop"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:518
+#: includes/corrections/class-corrections.php:517
 msgid "A block pattern for displaying an archive of corrections."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:520
+#: includes/corrections/class-corrections.php:519
 msgid "corrections"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:520
+#: includes/corrections/class-corrections.php:519
 msgid "archive"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:520
+#: includes/corrections/class-corrections.php:519
 #: dist/blocks.js:4
 #: src/blocks/collections/index.js:33
 msgid "loop"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:550
+#: includes/corrections/class-corrections.php:549
 msgid "Corrections Archive"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:551
+#: includes/corrections/class-corrections.php:550
 msgid "A block template for displaying an archive of corrections."
 msgstr ""
 
