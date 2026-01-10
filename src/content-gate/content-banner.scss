@@ -52,19 +52,32 @@ body .sd-social-icon .sd-content ul li[class*="share-"].share-newspack-gift-arti
 	margin-top: 1px;
 }
 
-body.newspack-is-gifted-post {
-	padding-bottom: var(--newspack-content-gifting-cta-offset, 72px);
+body.newspack-is-gifted-post,
+body.newspack-has-countdown-banner {
+	.site {
+		padding-bottom: var(--newspack-content-banner-cta-offset, 72px);
+	}
+
+	.newspack-lightbox-placement-bottom {
+		bottom: var(--newspack-content-banner-cta-offset, 72px);
+	}
 }
 
-.newspack-content-gifting {
+.newspack-content-gifting,
+.newspack-countdown-banner {
 	&__cta {
 		bottom: 0;
 		left: 0;
 		padding: var(--newspack-ui-spacer-2) var(--newspack-ui-spacer-3);
 		position: fixed;
 		right: 0;
+		transition: opacity 0.3s ease-in-out;
 		z-index: 99999;
 		@include mixins.newspack-ui-elevation( 3 );
+
+		&--hidden {
+			opacity: 0;
+		}
 
 		&__content {
 			align-items: center;
@@ -74,6 +87,18 @@ body.newspack-is-gifted-post {
 			justify-content: space-between;
 			min-height: var(--newspack-ui-spacer-9);
 
+			&__wrapper {
+				> span {
+					display: block;
+				}
+				a {
+					text-decoration: underline;
+				}
+			}
+
+			&__message {
+				color: var(--newspack-content-banner-message-color, inherit);
+			}
 			.newspack-ui__button {
 				width: 100%;
 
@@ -81,19 +106,22 @@ body.newspack-is-gifted-post {
 					width: auto;
 				}
 			}
-
+			strong {
+				font-weight: 600;
+			}
 			a {
 				color: var(--newspack-ui-color-primary-60);
 				text-decoration: underline;
 			}
 
 			&__links {
-				color: var(--newspack-content-gifting__cta__content__links--color, inherit);
+				color: var(--newspack-content-banner__cta__content__links--color, inherit);
 			}
 		}
 
 		&.is-style-light {
-			--newspack-content-gifting__cta__content__links--color: var(--newspack-ui-color-neutral-60);
+			--newspack-content-banner-message-color: var(--newspack-ui-color-neutral-60);
+			--newspack-content-banner__cta__content__links--color: var(--newspack-ui-color-neutral-60);
 			background: var(--newspack-ui-color-neutral-0);
 			color: var(--newspack-ui-color-neutral-90);
 		}
@@ -106,6 +134,7 @@ body.newspack-is-gifted-post {
 		.newspack-wizard & {
 			box-shadow: none;
 			position: relative;
+			z-index: 0;
 
 			&-preview {
 				border: 1px solid var(--wp-components-color-gray-600, #{wp-colors.$gray-600});

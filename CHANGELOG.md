@@ -1,3 +1,47 @@
+# [6.28.0](https://github.com/Automattic/newspack-plugin/compare/v6.27.4...v6.28.0) (2026-01-05)
+
+
+### Bug Fixes
+
+* **content-gating:** never gate special pages ([#4340](https://github.com/Automattic/newspack-plugin/issues/4340)) ([a4dcfdd](https://github.com/Automattic/newspack-plugin/commit/a4dcfdd99cebe7f37bc1c67c5d06a34d9382b085))
+* **countdown-banner:** don't show on unrestricted posts ([#4349](https://github.com/Automattic/newspack-plugin/issues/4349)) ([66d2c94](https://github.com/Automattic/newspack-plugin/commit/66d2c947c4967c92f56c1ffbda291d3fe55f8139))
+* **countdown-banner:** never show more views than total ([#4369](https://github.com/Automattic/newspack-plugin/issues/4369)) ([0ef3a24](https://github.com/Automattic/newspack-plugin/commit/0ef3a2404e89cfc6fede33e723e9a12de1f15f60))
+* **indesign-export:** only register the attribute for allowed blocks ([#4330](https://github.com/Automattic/newspack-plugin/issues/4330)) ([e1801cb](https://github.com/Automattic/newspack-plugin/commit/e1801cb4fc23ed82098b934bed2796d81bb2e6b6))
+* **my-account:** safe content argument to skip sanitization ([#4326](https://github.com/Automattic/newspack-plugin/issues/4326)) ([b066de5](https://github.com/Automattic/newspack-plugin/commit/b066de523e524ff50c1c340eff67aa3b0d3ecf20))
+* **my-account:** set new payment method as default ([#4343](https://github.com/Automattic/newspack-plugin/issues/4343)) ([6ebcaf9](https://github.com/Automattic/newspack-plugin/commit/6ebcaf933b0fc05cdf5b538532f29b7526b86eeb))
+* **my-account:** support dynamic content around shortcode ([#4328](https://github.com/Automattic/newspack-plugin/issues/4328)) ([36b9524](https://github.com/Automattic/newspack-plugin/commit/36b95246f8d55e7cf395ceea65e872765b86ae88))
+* **subscription-tiers-modal:** skip private products ([#4337](https://github.com/Automattic/newspack-plugin/issues/4337)) ([564d803](https://github.com/Automattic/newspack-plugin/commit/564d8032858291b466ba41e6466511af2e124c9f))
+
+
+### Features
+
+* **content-gate:** content rules ([#4265](https://github.com/Automattic/newspack-plugin/issues/4265)) ([b5b8cd9](https://github.com/Automattic/newspack-plugin/commit/b5b8cd994fcb2cefc45aed26aae7a555a0d49450))
+* **content-gate:** implement restriction rules ([#4251](https://github.com/Automattic/newspack-plugin/issues/4251)) ([4034103](https://github.com/Automattic/newspack-plugin/commit/4034103d217382f0aa9f6f9679d7a95420ef492d))
+* metered content countdown banner ([#4315](https://github.com/Automattic/newspack-plugin/issues/4315)) ([c9a68cc](https://github.com/Automattic/newspack-plugin/commit/c9a68cc3acc1e3799641c9c75f83ed768a48d21f))
+* **payment-notice:** detect equivalent subscription ([#4333](https://github.com/Automattic/newspack-plugin/issues/4333)) ([9a98889](https://github.com/Automattic/newspack-plugin/commit/9a988895b477c36555f6c4778a58f2c70a0407bf))
+* **ras:** OAuth OTP flow improvements ([#4341](https://github.com/Automattic/newspack-plugin/issues/4341)) ([8b345fa](https://github.com/Automattic/newspack-plugin/commit/8b345fafcb927432cba0b0bd9b1a1b2e32e14b68))
+
+## [6.27.4](https://github.com/Automattic/newspack-plugin/compare/v6.27.3...v6.27.4) (2025-12-17)
+
+
+### Bug Fixes
+
+* less aggressive free trial abuse prevention ([#4365](https://github.com/Automattic/newspack-plugin/issues/4365)) ([c613622](https://github.com/Automattic/newspack-plugin/commit/c6136228d3ec06865d5dbfc303435ca7d2a686f9))
+
+## [6.27.3](https://github.com/Automattic/newspack-plugin/compare/v6.27.2...v6.27.3) (2025-12-16)
+
+
+### Bug Fixes
+
+* **recaptcha:** log verification responses and errors ([#4361](https://github.com/Automattic/newspack-plugin/issues/4361)) ([1a280fb](https://github.com/Automattic/newspack-plugin/commit/1a280fbfbab27c5ba8eb9d392a71764ce5a40876))
+
+## [6.27.2](https://github.com/Automattic/newspack-plugin/compare/v6.27.1...v6.27.2) (2025-12-16)
+
+
+### Bug Fixes
+
+* **indesign-exporter:** caption and credit character encoding ([#4364](https://github.com/Automattic/newspack-plugin/issues/4364)) ([5868d27](https://github.com/Automattic/newspack-plugin/commit/5868d2789a2726f808674928c853ce9b2461711f))
+
 ## [6.27.1](https://github.com/Automattic/newspack-plugin/compare/v6.27.0...v6.27.1) (2025-12-08)
 
 
