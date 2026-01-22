@@ -138,6 +138,18 @@ trait Content_Gate_Layout {
 	}
 
 	/**
+	 * Get the number of visible paragraphs for the gate.
+	 *
+	 * @param int $gate_post_id Gate post ID.
+	 *
+	 * @return int
+	 */
+	protected static function get_visible_paragraphs( $gate_post_id ) {
+		$visible_paragraphs = \get_post_meta( $gate_post_id, 'visible_paragraphs', true );
+		return '' === $visible_paragraphs ? 2 : max( 0, (int) $visible_paragraphs );
+	}
+
+	/**
 	 * Get the inline gate content with fade effect.
 	 *
 	 * @param int $gate_post_id The gate post ID.
