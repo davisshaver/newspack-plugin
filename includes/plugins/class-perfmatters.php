@@ -25,6 +25,7 @@ class Perfmatters {
 		// add_filter( 'perfmatters_rucss_excluded_stylesheets', [ __CLASS__, 'add_rucss_excluded_stylesheets' ] );
 		// phpcs:enable Squiz.PHP.CommentedOutCode.Found
 		// phpcs:enable Squiz.Commenting.InlineComment.InvalidEndChar
+		add_filter( 'perfmatters_delay_js', [ __CLASS__, 'should_delay_js' ] );
 	}
 
 	/**
@@ -335,6 +336,21 @@ class Perfmatters {
 			return $stylesheet_exclusions;
 		}
 		return array_unique( array_merge( $stylesheet_exclusions, self::unused_css_excluded_stylesheets() ) );
+	}
+
+	/**
+	 * Whether to delay JS scripts.
+	 *
+	 * @param bool $delay_js Existing delay JS value.
+	 *
+	 * @return bool Whether to delay JS.
+	 */
+	public static function should_delay_js( $delay_js ) {
+		// Don't delay JS on lite site requests.
+		if ( Lite_Site::is_lite_site_request() ) {
+			return false;
+		}
+		return $delay_js;
 	}
 }
 Perfmatters::init();
