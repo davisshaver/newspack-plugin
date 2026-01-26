@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Newspack 6.29.2\n"
+"Project-Id-Version: Newspack 6.29.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/project\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-26T17:16:58+00:00\n"
+"POT-Creation-Date: 2026-01-26T20:48:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -1353,7 +1353,7 @@ msgstr ""
 msgid "Post Types"
 msgstr ""
 
-#: includes/content-gate/class-metering-countdown.php:36
+#: includes/content-gate/class-metering-countdown.php:43
 #: dist/audience-wizards.26392cdd43fc5adc8774.js:24
 #: dist/commons.js:15
 #: src/blocks/content-gate/countdown-box/edit.jsx:112
@@ -1361,7 +1361,7 @@ msgstr ""
 msgid "Subscribe now and get unlimited access."
 msgstr ""
 
-#: includes/content-gate/class-metering-countdown.php:37
+#: includes/content-gate/class-metering-countdown.php:44
 #: includes/content-gate/content-gifting/class-content-gifting-cta.php:137
 #: dist/audience-wizards.26392cdd43fc5adc8774.js:1
 #: dist/audience-wizards.26392cdd43fc5adc8774.js:24
@@ -1371,22 +1371,22 @@ msgid "Subscribe now"
 msgstr ""
 
 #. translators: %s is the setting key.
-#: includes/content-gate/class-metering-countdown.php:74
+#: includes/content-gate/class-metering-countdown.php:81
 #, php-format
 msgid "Invalid setting key: %s."
 msgstr ""
 
-#: includes/content-gate/class-metering-countdown.php:116
+#: includes/content-gate/class-metering-countdown.php:123
 msgid "Failed to update countdown banner settings."
 msgstr ""
 
 #. translators: 1: current number of metered views, 2: total metered views, 3: the metering period.
-#: includes/content-gate/class-metering-countdown.php:235
+#: includes/content-gate/class-metering-countdown.php:249
 #, php-format
 msgid "<span class=\"newspack-countdown-banner__views\">%1$d</span>/<span class=\"newspack-countdown-banner__total_views\">%2$d</span> free articles this %3$s"
 msgstr ""
 
-#: includes/content-gate/class-metering-countdown.php:252
+#: includes/content-gate/class-metering-countdown.php:266
 #: includes/content-gate/content-gifting/class-content-gifting-cta.php:238
 #: includes/reader-activation/class-reader-activation.php:281
 #: includes/reader-activation/class-reader-activation.php:291
@@ -1396,7 +1396,7 @@ msgstr ""
 msgid "Create an account"
 msgstr ""
 
-#: includes/content-gate/class-metering-countdown.php:254
+#: includes/content-gate/class-metering-countdown.php:268
 #: includes/content-gate/content-gifting/class-content-gifting-cta.php:240
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:680
 #: includes/reader-activation/class-reader-activation.php:292
