@@ -1,3 +1,17 @@
+## [6.29.4](https://github.com/Automattic/newspack-plugin/compare/v6.29.3...v6.29.4) (2026-01-28)
+
+
+### Bug Fixes
+
+* **memberships:** allow free trial members to comment ([#4428](https://github.com/Automattic/newspack-plugin/issues/4428)) ([32d455e](https://github.com/Automattic/newspack-plugin/commit/32d455eb299a486011e71c22c2e564005b689e0d))
+
+## [6.29.3](https://github.com/Automattic/newspack-plugin/compare/v6.29.2...v6.29.3) (2026-01-26)
+
+
+### Bug Fixes
+
+* **countdown-banner:** cache result of `is_enabled()` check ([#4422](https://github.com/Automattic/newspack-plugin/issues/4422)) ([19d27fd](https://github.com/Automattic/newspack-plugin/commit/19d27fdc1ced97b2cf0132c86263bf4ccd253e85))
+
 ## [6.29.2](https://github.com/Automattic/newspack-plugin/compare/v6.29.1...v6.29.2) (2026-01-22)
 
 
