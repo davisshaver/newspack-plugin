@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Newspack 6.30.0\n"
+"Project-Id-Version: Newspack 6.30.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/newspack-plugin\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-04T21:39:44+00:00\n"
+"POT-Creation-Date: 2026-02-05T15:05:28+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -3830,24 +3830,24 @@ msgstr ""
 msgid "My account"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:34
+#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:45
 msgid "Open navigation"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:34
+#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:45
 msgid "Close navigation"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:41
+#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:52
 msgid "Account pages"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:44
-#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:51
+#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:55
+#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:84
 msgid "Back to Homepage"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:85
+#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:118
 msgid "Sign out"
 msgstr ""
 
