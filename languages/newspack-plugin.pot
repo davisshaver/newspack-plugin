@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-11T20:06:47+00:00\n"
+"POT-Creation-Date: 2026-02-11T22:23:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -3120,8 +3120,8 @@ msgstr ""
 #: includes/reader-activation/class-reader-activation.php:305
 #: src/blocks/my-account-button/class-my-account-button-block.php:94
 #: src/blocks/reader-registration/index.php:106
-#: dist/blocks.js:4
-#: src/blocks/my-account-button/edit.js:59
+#: dist/commons.js:18
+#: src/blocks/my-account-button/edit.js:63
 msgid "My Account"
 msgstr ""
 
@@ -3864,11 +3864,14 @@ msgid "Expired"
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:101
+#: dist/blocks.js:1
 #: dist/componentsDemo.js:1
+#: dist/my-account-button-block.js:1
 #: dist/newspack-wizards.7343496958b10e09b426.js:1
 #: dist/newspack-wizards.7343496958b10e09b426.js:23
 #: dist/newspack-wizards.7343496958b10e09b426.js:24
 #: dist/setup.js:7
+#: src/blocks/my-account-button/index.js:22
 #: src/wizards/componentsDemo/index.js:607
 #: src/wizards/componentsDemo/index.js:613
 #: src/wizards/componentsDemo/index.js:630
@@ -4218,8 +4221,8 @@ msgstr ""
 #: includes/templates/reader-activation-emails/otp.php:281
 #: includes/templates/reader-activation-emails/otp.php:311
 #: src/blocks/my-account-button/class-my-account-button-block.php:95
-#: dist/blocks.js:4
-#: src/blocks/my-account-button/edit.js:59
+#: dist/commons.js:18
+#: src/blocks/my-account-button/edit.js:63
 msgid "Sign in"
 msgstr ""
 
@@ -4765,7 +4768,7 @@ msgstr ""
 
 #: includes/templates/block-patterns/corrections/corrections-loop.php:18
 #: includes/templates/corrections/corrections-archive.php:16
-#: dist/blocks.js:1
+#: dist/blocks.js:4
 #: dist/other-scripts/corrections-modal.js:1
 #: src/blocks/correction-item/index.js:22
 #: src/other-scripts/corrections-modal/index.js:192
@@ -8067,13 +8070,12 @@ msgid "Manage Subscriptions"
 msgstr ""
 
 #: dist/avatar-block.js:1
-#: dist/blocks.js:1
+#: dist/blocks.js:4
 #: src/blocks/avatar/index.js:15
 msgid "Avatar"
 msgstr ""
 
 #: dist/avatar-block.js:1
-#: dist/blocks.js:1
 #: dist/blocks.js:4
 #: src/blocks/avatar/index.js:28
 #: src/blocks/byline/index.js:28
@@ -8081,19 +8083,18 @@ msgid "author"
 msgstr ""
 
 #: dist/avatar-block.js:1
-#: dist/blocks.js:1
+#: dist/blocks.js:4
 #: src/blocks/avatar/index.js:29
 msgid "user"
 msgstr ""
 
 #: dist/avatar-block.js:1
-#: dist/blocks.js:1
+#: dist/blocks.js:4
 #: src/blocks/avatar/index.js:30
 msgid "profile"
 msgstr ""
 
 #: dist/avatar-block.js:1
-#: dist/blocks.js:1
 #: dist/blocks.js:4
 #: dist/contribution-meter-block.js:5
 #: src/blocks/avatar/index.js:31
@@ -8104,7 +8105,7 @@ msgid "newspack"
 msgstr ""
 
 #: dist/avatar-block.js:1
-#: dist/blocks.js:1
+#: dist/blocks.js:4
 #: src/blocks/avatar/index.js:33
 msgid "Display post author avatar."
 msgstr ""
@@ -8567,6 +8568,18 @@ msgid "Edit Ad Unit"
 msgstr ""
 
 #: dist/blocks.js:1
+#: dist/my-account-button-block.js:1
+#: src/blocks/my-account-button/index.js:28
+msgid "Icon only"
+msgstr ""
+
+#: dist/blocks.js:1
+#: dist/my-account-button-block.js:1
+#: src/blocks/my-account-button/index.js:33
+msgid "Text only"
+msgstr ""
+
+#: dist/blocks.js:1
 #: dist/commons.js:6
 #: dist/content-gate-countdown-box-block.js:1
 #: src/blocks/content-gate/countdown-box/edit.jsx:147
@@ -8618,62 +8631,6 @@ msgstr ""
 #: dist/content-gate-countdown-box-block.js:1
 #: src/blocks/content-gate/countdown-box/index.js:34
 msgid "Displays how many free articles remain before the paywall, helping users track access with a real-time countdown."
-msgstr ""
-
-#: dist/blocks.js:1
-#: dist/correction-item-block.js:1
-#: src/blocks/correction-item/index.js:15
-msgid "Correction Item"
-msgstr ""
-
-#: dist/blocks.js:1
-#: dist/correction-item-block.js:1
-#: src/blocks/correction-item/index.js:56
-msgid "Display an archive of all the corrections and clarifications."
-msgstr ""
-
-#: dist/blocks.js:1
-#: src/blocks/correction-item/index.js:23
-msgid "Please select \"Corrections\" as the post type in the Query Loop to use this block."
-msgstr ""
-
-#: dist/blocks.js:1
-#: src/blocks/correction-item/index.js:31
-msgid "Correction Type, Date, and Time: "
-msgstr ""
-
-#: dist/blocks.js:1
-#: src/blocks/correction-item/index.js:33
-msgid "This is where the content will appear, providing details about the update, whether correcting an error or offering additional context."
-msgstr ""
-
-#: dist/blocks.js:1
-#: src/blocks/correction-item/index.js:40
-msgid "Post Title"
-msgstr ""
-
-#: dist/blocks.js:1
-#: dist/correction-box-block.js:1
-#: src/blocks/correction-box/index.js:15
-msgid "Corrections"
-msgstr ""
-
-#: dist/blocks.js:1
-#: dist/correction-box-block.js:1
-#: src/blocks/correction-box/index.js:27
-msgid "clarifications"
-msgstr ""
-
-#: dist/blocks.js:1
-#: dist/correction-box-block.js:1
-#: src/blocks/correction-box/index.js:27
-msgid "updates"
-msgstr ""
-
-#: dist/blocks.js:1
-#: dist/correction-box-block.js:1
-#: src/blocks/correction-box/index.js:28
-msgid "Display all corrections and clarifications made to a post."
 msgstr ""
 
 #: dist/blocks.js:1
@@ -8786,21 +8743,6 @@ msgstr ""
 #: dist/blocks.js:4
 #: src/blocks/reader-registration/edit.js:363
 msgid "Logged in message…"
-msgstr ""
-
-#: dist/blocks.js:4
-#: src/blocks/my-account-button/edit.js:77
-msgid "Signed out"
-msgstr ""
-
-#: dist/blocks.js:4
-#: src/blocks/my-account-button/edit.js:84
-msgid "Signed in"
-msgstr ""
-
-#: dist/blocks.js:4
-#: src/blocks/my-account-button/edit.js:96
-msgid "Button text"
 msgstr ""
 
 #: dist/blocks.js:4
@@ -9160,6 +9102,62 @@ msgstr ""
 #: dist/blocks.js:4
 #: src/blocks/content-gate/countdown/index.js:33
 msgid "Displays the current free article count."
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/correction-item-block.js:1
+#: src/blocks/correction-item/index.js:15
+msgid "Correction Item"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/correction-item-block.js:1
+#: src/blocks/correction-item/index.js:56
+msgid "Display an archive of all the corrections and clarifications."
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/correction-item/index.js:23
+msgid "Please select \"Corrections\" as the post type in the Query Loop to use this block."
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/correction-item/index.js:31
+msgid "Correction Type, Date, and Time: "
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/correction-item/index.js:33
+msgid "This is where the content will appear, providing details about the update, whether correcting an error or offering additional context."
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/correction-item/index.js:40
+msgid "Post Title"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/correction-box-block.js:1
+#: src/blocks/correction-box/index.js:15
+msgid "Corrections"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/correction-box-block.js:1
+#: src/blocks/correction-box/index.js:27
+msgid "clarifications"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/correction-box-block.js:1
+#: src/blocks/correction-box/index.js:27
+msgid "updates"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/correction-box-block.js:1
+#: src/blocks/correction-box/index.js:28
+msgid "Display all corrections and clarifications made to a post."
 msgstr ""
 
 #: dist/bylines.js:1
@@ -9714,6 +9712,23 @@ msgstr ""
 #: dist/newspack-wizards.7343496958b10e09b426.js:31
 #: src/wizards/componentsDemo/index.js:420
 msgid "Disconnect"
+msgstr ""
+
+#: dist/commons.js:18
+#: src/blocks/my-account-button/edit.js:81
+#: src/blocks/my-account-button/edit.js:85
+msgid "Signed out"
+msgstr ""
+
+#: dist/commons.js:18
+#: src/blocks/my-account-button/edit.js:90
+#: src/blocks/my-account-button/edit.js:94
+msgid "Signed in"
+msgstr ""
+
+#: dist/commons.js:18
+#: src/blocks/my-account-button/edit.js:110
+msgid "Button text"
 msgstr ""
 
 #: dist/componentsDemo.js:1
