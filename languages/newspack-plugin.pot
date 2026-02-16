@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Newspack 6.31.0\n"
+"Project-Id-Version: Newspack 6.31.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/newspack-plugin\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-12T22:13:45+00:00\n"
+"POT-Creation-Date: 2026-02-16T17:01:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -2847,25 +2847,25 @@ msgstr ""
 msgid "Bulk edit changes were reverted because this membership is linked to a subscription."
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-on-hold-duration.php:56
+#: includes/plugins/woocommerce-subscriptions/class-on-hold-duration.php:51
 msgid "Newspack Subscriptions Settings"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-on-hold-duration.php:58
+#: includes/plugins/woocommerce-subscriptions/class-on-hold-duration.php:53
 msgid "Subscriptions settings added by Newspack."
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-on-hold-duration.php:62
+#: includes/plugins/woocommerce-subscriptions/class-on-hold-duration.php:57
 msgid "On-hold Duration"
 msgstr ""
 
 #. Translators: %s is a line break.
-#: includes/plugins/woocommerce-subscriptions/class-on-hold-duration.php:73
+#: includes/plugins/woocommerce-subscriptions/class-on-hold-duration.php:68
 #, php-format
 msgid "Set the number of days a subscription remains in the On-Hold status after all automatic payment retries have failed.%sDuring this period, subscribers can update their payment details to restore the subscription at their current price. Once this time expires, the subscription will automatically transition to expired."
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-on-hold-duration.php:194
+#: includes/plugins/woocommerce-subscriptions/class-on-hold-duration.php:189
 msgid "Subscription status updated by Newspack."
 msgstr ""
 
@@ -4618,33 +4618,33 @@ msgid "Click here to monitor progress."
 msgstr ""
 
 #. Translators: %s is the email address of the contact to synced.
-#: includes/reader-activation/sync/class-contact-sync.php:121
+#: includes/reader-activation/sync/class-contact-sync.php:269
 #, php-format
 msgid "Scheduling secondary sync for contact %s."
 msgstr ""
 
-#: includes/reader-activation/sync/class-contact-sync.php:156
-#: includes/reader-activation/sync/class-contact-sync.php:161
+#: includes/reader-activation/sync/class-contact-sync.php:304
+#: includes/reader-activation/sync/class-contact-sync.php:309
 msgid "WC_Customer class unavailable."
 msgstr ""
 
 #. Translators: %d is the user ID.
-#: includes/reader-activation/sync/class-contact-sync.php:169
+#: includes/reader-activation/sync/class-contact-sync.php:317
 #, php-format
 msgid "Customer with ID %d does not exist."
 msgstr ""
 
 #. Translators: %1$s is the status and %2$s is the contact's email address.
-#: includes/reader-activation/sync/class-contact-sync.php:218
+#: includes/reader-activation/sync/class-contact-sync.php:366
 #, php-format
 msgid "%1$s contact data for %2$s."
 msgstr ""
 
-#: includes/reader-activation/sync/class-contact-sync.php:219
+#: includes/reader-activation/sync/class-contact-sync.php:367
 msgid "Would sync"
 msgstr ""
 
-#: includes/reader-activation/sync/class-contact-sync.php:219
+#: includes/reader-activation/sync/class-contact-sync.php:367
 #: dist/other-scripts/salesforce.js:1
 #: src/other-scripts/salesforce/index.js:30
 msgid "Synced"
