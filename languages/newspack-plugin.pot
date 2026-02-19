@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-19T16:28:25+00:00\n"
+"POT-Creation-Date: 2026-02-19T22:00:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -69,7 +69,7 @@ msgstr ""
 
 #: includes/class-magic-link.php:343
 #: includes/class-magic-link.php:417
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:482
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:494
 #: includes/reader-activation/class-reader-activation.php:1266
 #: includes/reader-activation/class-reader-activation.php:2205
 msgid "Invalid user."
@@ -85,8 +85,8 @@ msgstr ""
 #: includes/class-magic-link.php:970
 #: includes/class-magic-link.php:1098
 #: includes/cli/class-ras.php:74
-#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:127
-#: includes/reader-activation/sync/class-contact-sync-admin.php:169
+#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:138
+#: includes/reader-activation/sync/class-contact-sync-admin.php:180
 msgid "User not found."
 msgstr ""
 
@@ -190,16 +190,16 @@ msgstr ""
 
 #: includes/class-magic-link.php:1082
 #: includes/class-magic-link.php:1086
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:549
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:569
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:561
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:581
 #: includes/reader-activation/class-reader-activation.php:2038
-#: includes/reader-activation/sync/class-contact-sync-admin.php:157
+#: includes/reader-activation/sync/class-contact-sync-admin.php:168
 msgid "Invalid request."
 msgstr ""
 
 #: includes/class-magic-link.php:1092
-#: includes/reader-activation/sync/class-contact-sync-admin.php:125
-#: includes/reader-activation/sync/class-contact-sync-admin.php:163
+#: includes/reader-activation/sync/class-contact-sync-admin.php:136
+#: includes/reader-activation/sync/class-contact-sync-admin.php:174
 msgid "You do not have permission to do that."
 msgstr ""
 
@@ -260,7 +260,7 @@ msgstr ""
 #: includes/class-newspack-ui.php:1168
 #: includes/class-newspack-ui.php:1222
 #: includes/content-gate/content-gifting/class-content-gifting.php:592
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:710
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:721
 #: includes/reader-activation/class-reader-activation.php:1622
 #: includes/reader-activation/class-reader-activation.php:1737
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:16
@@ -436,7 +436,7 @@ msgid "Sponsored and underwritten content for Newspack sites."
 msgstr ""
 
 #: includes/class-plugin-manager.php:156
-#: includes/wizards/class-listings-wizard.php:111
+#: includes/wizards/class-listings-wizard.php:122
 msgid "Newspack Listings"
 msgstr ""
 
@@ -1384,13 +1384,13 @@ msgstr ""
 msgid "Set custom conditions based on reader data key/value pairs."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:952
+#: includes/content-gate/class-content-gate.php:963
 #: dist/billboard.js:12
 #: src/wizards/advertising/components/suppression/index.js:78
 msgid "Post types"
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:955
+#: includes/content-gate/class-content-gate.php:966
 msgid "Content types like posts, pages, or listings."
 msgstr ""
 
@@ -1446,7 +1446,7 @@ msgstr ""
 
 #: includes/content-gate/class-metering-countdown.php:268
 #: includes/content-gate/content-gifting/class-content-gifting-cta.php:240
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:680
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:691
 #: includes/reader-activation/class-reader-activation.php:292
 #: src/blocks/reader-registration/index.php:114
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:46
@@ -2029,7 +2029,7 @@ msgstr ""
 #: includes/lite-site/class-lite-site.php:100
 #: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-settings.php:270
 #: includes/wizards/advertising/class-advertising-sponsors.php:94
-#: includes/wizards/class-listings-wizard.php:124
+#: includes/wizards/class-listings-wizard.php:135
 #: includes/wizards/class-network-wizard.php:319
 #: includes/wizards/class-newsletters-wizard.php:303
 #: includes/wizards/newspack/class-newspack-dashboard.php:101
@@ -2345,15 +2345,15 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: includes/optional-modules/class-nextdoor.php:311
+#: includes/optional-modules/class-nextdoor.php:333
 msgid "United States"
 msgstr ""
 
-#: includes/optional-modules/class-nextdoor.php:315
+#: includes/optional-modules/class-nextdoor.php:337
 msgid "Canada"
 msgstr ""
 
-#: includes/optional-modules/class-nextdoor.php:319
+#: includes/optional-modules/class-nextdoor.php:341
 msgid "Australia"
 msgstr ""
 
@@ -2755,107 +2755,107 @@ msgid "Membership re-activated due to subscription re-purchase (%1$s, Order %2$s
 msgstr ""
 
 #. translators: %s is the custom role name.
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:204
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:215
 #, php-format
 msgid "Can't update details of a \"%s\" user."
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:221
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:232
 msgid "It looks like you are an author on this site. Please contact a site adminstrator to get your account deactivated."
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:244
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:626
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:255
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:637
 msgid "Guest Contributor"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:380
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:672
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:391
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:684
 #: includes/plugins/woocommerce/my-account/templates/v0/edit-account.php:54
 #: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:84
 msgid "Display name"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:424
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:435
 msgid "Guest Contributors cannot login."
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:436
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:437
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:450
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:447
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:448
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:461
 msgid "Guest Authors"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:452
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:463
 msgid "Co-Authors-Plus' Guest Authors are disabled in this site. Use the Guest Contributor user role instead."
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:453
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:464
 msgid "You can use one of the shortcuts below:"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:455
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:466
 msgid "Create a new Guest Contributor"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:456
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:467
 msgid "View all Guest Contributors"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:502
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:513
 msgid "Co-Authors Plus Options"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:507
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:518
 msgid "Enable as coauthor"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:512
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:523
 msgid "Allow this user to be assigned as a co-author of a post."
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:516
+#: includes/plugins/co-authors-plus/class-guest-contributor-role.php:527
 msgid "If this option is checked, the \"Guest Contributor\" role will be added to the user (on top of their current role) and they will be able to be assigned as a co-author of a post even if they are not allowed to edit posts. For users with edit access, this option has no effect."
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:64
+#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:75
 msgid "Please provide a new slug."
 msgstr ""
 
 #. translators: %s is the new nicename.
-#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:90
+#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:101
 #, php-format
 msgid "Slug %s is available."
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:94
+#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:105
 msgid "Slug is not available."
 msgstr ""
 
 #. translators: %s is the new nicename.
-#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:143
+#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:154
 #, php-format
 msgid "Slug updated to %s!"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:166
+#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:177
 msgid "Change User archive URL"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:171
+#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:182
 msgid "Current slug"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:179
-#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:198
+#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:190
+#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:209
 msgid "Change slug"
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:187
+#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:198
 msgid "Changing the slug will change the URL of your author archive page. The old URL will redirect to the new one after the change."
 msgstr ""
 
-#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:195
+#: includes/plugins/co-authors-plus/class-nicename-change-ui.php:206
 msgid "Check availability"
 msgstr ""
 
@@ -2922,57 +2922,57 @@ msgstr ""
 
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:62
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:155
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:734
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:745
 #: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:105
 msgid "Change subscription"
 msgstr ""
 
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:158
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:732
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:743
 msgid "Confirm donation"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:429
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:440
 msgid "Current"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:473
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:484
 msgid "Amount"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:491
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:502
 msgid "View Subscription"
 msgstr ""
 
 #. translators: %s: subscription product name
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:498
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:509
 #, php-format
 msgid "You currently have an active subscription: %s. If you’d like to make changes, you can manage it from your subscription page."
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:532
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:543
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:7
 #: src/wizards/audience/components/settings-modal/index.js:56
 msgid "Frequency"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:606
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:607
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:702
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:617
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:618
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:713
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:112
 msgid "Change Subscription"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:606
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:702
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:617
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:713
 msgid "Complete your transaction"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:607
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:618
 msgid "Purchase"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:683
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:694
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1-passwords.php:239
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:348
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:434
@@ -3009,15 +3009,15 @@ msgid "Weekly"
 msgstr ""
 
 #: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:181
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:459
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:553
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:516
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:610
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:24
 msgid "Monthly"
 msgstr ""
 
 #: includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php:182
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:460
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:554
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:517
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:611
 msgid "Yearly"
 msgstr ""
 
@@ -3126,35 +3126,35 @@ msgstr ""
 msgid "Transaction fee (%s)"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:212
-#: includes/reader-activation/class-reader-activation.php:2540
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:246
+#: includes/reader-activation/class-reader-activation.php:2550
 msgid "Please wait a moment before trying again."
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:254
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:288
 msgid "Please wait a moment before trying to complete this transaction again."
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:265
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:328
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:299
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:340
 msgid "Please wait a moment before trying to add a new payment method."
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:322
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:356
 msgid "The card will be automatically saved to your active subscriptions and set as your default payment method."
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:489
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:585
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:546
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:642
 msgid "One-time"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:505
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:562
 #: dist/newspack-wizards.766840f50c4dd0edaabb.js:28
 msgid "Card"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:509
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:566
 #: includes/reader-activation/class-reader-activation.php:305
 #: src/blocks/my-account-button/class-my-account-button-block.php:94
 #: src/blocks/reader-registration/index.php:106
@@ -3163,32 +3163,32 @@ msgstr ""
 msgid "My Account"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:597
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:654
 msgid "Restart Donation"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:597
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:654
 msgid "Restart Subscription"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:605
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:662
 msgid "Donation Cancelled"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:605
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:662
 msgid "Subscription Cancelled"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:609
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:666
 msgid "recurring donation"
 msgstr ""
 
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:609
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:666
 msgid "subscription"
 msgstr ""
 
 #. Translators: %s is the user's billing first and last name – or company name.
-#: includes/plugins/woocommerce/class-woocommerce-connection.php:853
+#: includes/plugins/woocommerce/class-woocommerce-connection.php:921
 #, php-format
 msgid "%s's Team"
 msgstr ""
@@ -3307,9 +3307,9 @@ msgid "Please check your email inbox for instructions on how to delete your acco
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v0.php:90
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:446
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:597
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1150
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:458
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:609
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1174
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:34
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:40
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:43
@@ -3586,31 +3586,31 @@ msgstr ""
 msgid "Delete address"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:309
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:321
 msgid "Are you sure you want to cancel this subscription?"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:350
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:362
 msgid "Account settings"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:355
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:367
 msgid "Log out"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:439
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:451
 msgid "Please check your email inbox for instructions on how to set a new password."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:526
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:538
 msgid "Invalid user ID."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:590
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:602
 msgid "Please check your email inbox for a link to verify your account."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:671
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:683
 #: includes/plugins/woocommerce/my-account/templates/v0/edit-account.php:68
 #: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:98
 #: includes/reader-activation/class-reader-activation.php:995
@@ -3618,48 +3618,48 @@ msgstr ""
 msgid "Email address"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:911
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:935
 msgid "Active Memberships"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:912
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:936
 msgid "These memberships are active, but don't have an associated subscription. They will need to be manually renewed when they expire."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1036
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1060
 #: includes/reader-activation/class-reader-activation.php:275
 #: includes/reader-activation/class-reader-activation.php:2242
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1038
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1062
 msgid "This email address is already in use."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1042
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1066
 msgid "Something went wrong. Please try again."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1082
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1106
 msgid "Something went wrong. Please contact the site administrator."
 msgstr ""
 
 #. Translators: %s is the email address the verification email was sent to..
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1087
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1111
 #, php-format
 msgid "A verification email has been sent to %s. Please verify to complete the change."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1129
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1153
 msgid "Your email address has been successfully updated."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1154
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1190
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1178
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1214
 msgid "This email change request has been cancelled or expired."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1185
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1209
 msgid "Your email address change request has been cancelled."
 msgstr ""
 
@@ -4586,32 +4586,32 @@ msgstr ""
 msgid "Cannot register while logged in."
 msgstr ""
 
-#: includes/reader-activation/class-reader-activation.php:2574
+#: includes/reader-activation/class-reader-activation.php:2584
 msgid "Please wait before requesting another verification email."
 msgstr ""
 
-#: includes/reader-activation/class-reader-activation.php:2812
+#: includes/reader-activation/class-reader-activation.php:2822
 msgid "Your personal data will be used to process your order and create an account if one doesn't exist. This information will also support your experience throughout this website, and be used for other purposes described in our privacy policy."
 msgstr ""
 
 #. Translators: %s is the name of the site.
-#: includes/reader-activation/class-reader-activation.php:2829
+#: includes/reader-activation/class-reader-activation.php:2839
 #, php-format
 msgid "Thank you for supporting %s. Your transaction was completed successfully."
 msgstr ""
 
 #. Translators: %s is the name of the site.
-#: includes/reader-activation/class-reader-activation.php:2848
+#: includes/reader-activation/class-reader-activation.php:2858
 #, php-format
 msgid "Thank you for supporting %s. Your account has been created, and your transaction was completed successfully."
 msgstr ""
 
-#: includes/reader-activation/class-reader-activation.php:2874
+#: includes/reader-activation/class-reader-activation.php:2884
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:49
 msgid "I understand this is a recurring subscription and that I can cancel anytime through the My Account Page."
 msgstr ""
 
-#: includes/reader-activation/class-reader-activation.php:2898
+#: includes/reader-activation/class-reader-activation.php:2908
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:49
 msgid "I have read and accept the {{Terms & Conditions}}."
 msgstr ""
@@ -4620,41 +4620,41 @@ msgstr ""
 msgid "ESPs Integration"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:46
+#: includes/reader-activation/integrations/class-esp.php:57
 msgid "Newspack Newsletters is not available."
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:53
+#: includes/reader-activation/integrations/class-esp.php:64
 msgid "ESP sync is not enabled."
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:60
+#: includes/reader-activation/integrations/class-esp.php:71
 msgid "ESP master list ID is not set."
 msgstr ""
 
-#: includes/reader-activation/sync/class-contact-sync-admin.php:77
+#: includes/reader-activation/sync/class-contact-sync-admin.php:88
 msgid "Resync contact to ESP"
 msgstr ""
 
-#: includes/reader-activation/sync/class-contact-sync-admin.php:99
+#: includes/reader-activation/sync/class-contact-sync-admin.php:110
 msgid "Resync to the ESP"
 msgstr ""
 
-#: includes/reader-activation/sync/class-contact-sync-admin.php:118
+#: includes/reader-activation/sync/class-contact-sync-admin.php:129
 msgid "ActionScheduler is not available to perform the bulk action."
 msgstr ""
 
-#: includes/reader-activation/sync/class-contact-sync-admin.php:194
+#: includes/reader-activation/sync/class-contact-sync-admin.php:205
 msgid "Contact resynced to the ESP."
 msgstr ""
 
 #. translators: %d: number of contacts resynced.
-#: includes/reader-activation/sync/class-contact-sync-admin.php:199
+#: includes/reader-activation/sync/class-contact-sync-admin.php:210
 #, php-format
 msgid "%d contacts scheculed for resync to the ESP and should complete in a couple of minutes."
 msgstr ""
 
-#: includes/reader-activation/sync/class-contact-sync-admin.php:209
+#: includes/reader-activation/sync/class-contact-sync-admin.php:220
 msgid "Click here to monitor progress."
 msgstr ""
 
@@ -4699,15 +4699,15 @@ msgstr ""
 msgid "Audience Management contact data syncing is disabled for cloned sites."
 msgstr ""
 
-#: includes/reader-activation/sync/class-sync.php:74
+#: includes/reader-activation/sync/class-sync.php:85
 msgid "Contact data syncing is disabled for staging sites. To bypass this check, set the NEWSPACK_ALLOW_READER_SYNC constant in your wp-config.php."
 msgstr ""
 
-#: includes/reader-activation/sync/class-sync.php:100
+#: includes/reader-activation/sync/class-sync.php:111
 msgid "This method was called before integrations were registered. Integrations are registered on the \"init\" hook with priority 5. Make sure to call this method after that hook has fired."
 msgstr ""
 
-#: includes/reader-activation/sync/class-sync.php:134
+#: includes/reader-activation/sync/class-sync.php:145
 msgid "No active integrations found."
 msgstr ""
 
@@ -5494,32 +5494,32 @@ msgstr ""
 msgid "Error skipping prerequisite."
 msgstr ""
 
-#: includes/wizards/class-listings-wizard.php:70
+#: includes/wizards/class-listings-wizard.php:81
 msgid "Listings / Events"
 msgstr ""
 
-#: includes/wizards/class-listings-wizard.php:71
+#: includes/wizards/class-listings-wizard.php:82
 msgid "Listings / Generic Listings"
 msgstr ""
 
-#: includes/wizards/class-listings-wizard.php:72
+#: includes/wizards/class-listings-wizard.php:83
 msgid "Listings / Marketplace Listings"
 msgstr ""
 
-#: includes/wizards/class-listings-wizard.php:73
+#: includes/wizards/class-listings-wizard.php:84
 msgid "Listings / Places"
 msgstr ""
 
-#: includes/wizards/class-listings-wizard.php:75
+#: includes/wizards/class-listings-wizard.php:86
 msgid "Listings / Settings"
 msgstr ""
 
-#: includes/wizards/class-listings-wizard.php:112
+#: includes/wizards/class-listings-wizard.php:123
 #: includes/wizards/newspack/class-newspack-dashboard.php:134
 msgid "Listings"
 msgstr ""
 
-#: includes/wizards/class-listings-wizard.php:123
+#: includes/wizards/class-listings-wizard.php:134
 msgid "Newspack Listings: Site-Wide Settings"
 msgstr ""
 
