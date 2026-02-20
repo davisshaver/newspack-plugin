@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-19T22:00:14+00:00\n"
+"POT-Creation-Date: 2026-02-20T12:28:27+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -71,7 +71,7 @@ msgstr ""
 #: includes/class-magic-link.php:417
 #: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:494
 #: includes/reader-activation/class-reader-activation.php:1266
-#: includes/reader-activation/class-reader-activation.php:2205
+#: includes/reader-activation/class-reader-activation.php:2208
 msgid "Invalid user."
 msgstr ""
 
@@ -82,8 +82,8 @@ msgstr ""
 #: includes/class-magic-link.php:566
 #: includes/class-magic-link.php:636
 #: includes/class-magic-link.php:719
-#: includes/class-magic-link.php:970
-#: includes/class-magic-link.php:1098
+#: includes/class-magic-link.php:975
+#: includes/class-magic-link.php:1103
 #: includes/cli/class-ras.php:74
 #: includes/plugins/co-authors-plus/class-nicename-change-ui.php:138
 #: includes/reader-activation/sync/class-contact-sync-admin.php:180
@@ -129,67 +129,68 @@ msgid "We were not able to authenticate your account. Please try logging in agai
 msgstr ""
 
 #: includes/class-magic-link.php:845
-#: includes/class-magic-link.php:878
+#: includes/class-magic-link.php:882
+#: src/blocks/reader-registration/index.php:191
 msgid "Unsupported request method"
 msgstr ""
 
-#: includes/class-magic-link.php:882
+#: includes/class-magic-link.php:886
 msgid "Missing required parameters"
 msgstr ""
 
-#: includes/class-magic-link.php:887
+#: includes/class-magic-link.php:891
 msgid "Invalid user"
 msgstr ""
 
-#: includes/class-magic-link.php:897
+#: includes/class-magic-link.php:901
 msgid "You've reached the maximum attempts for this code, try again."
 msgstr ""
 
-#: includes/class-magic-link.php:900
+#: includes/class-magic-link.php:904
 msgid "Code not recognized, try again."
 msgstr ""
 
-#: includes/class-magic-link.php:905
+#: includes/class-magic-link.php:909
 msgid "Unable to authenticate, try again."
 msgstr ""
 
-#: includes/class-magic-link.php:928
+#: includes/class-magic-link.php:933
 #: includes/reader-activation/class-reader-activation.php:285
 msgid "Login successful!"
 msgstr ""
 
 #. translators: %s is the email address of the user.
-#: includes/class-magic-link.php:980
+#: includes/class-magic-link.php:985
 #, php-format
 msgid "Email sent to %s."
 msgstr ""
 
-#: includes/class-magic-link.php:986
+#: includes/class-magic-link.php:991
 msgid "Send a magic link to a reader."
 msgstr ""
 
-#: includes/class-magic-link.php:1030
+#: includes/class-magic-link.php:1035
 msgid "Send authentication link"
 msgstr ""
 
-#: includes/class-magic-link.php:1051
+#: includes/class-magic-link.php:1056
 msgid "Authentication link sent."
 msgstr ""
 
-#: includes/class-magic-link.php:1054
+#: includes/class-magic-link.php:1059
 msgid "All authentication link tokens were removed."
 msgstr ""
 
-#: includes/class-magic-link.php:1057
+#: includes/class-magic-link.php:1062
 msgid "Authentication links are now disabled."
 msgstr ""
 
-#: includes/class-magic-link.php:1060
+#: includes/class-magic-link.php:1065
 msgid "Authentication links are now enabled."
 msgstr ""
 
-#: includes/class-magic-link.php:1082
-#: includes/class-magic-link.php:1086
+#: includes/class-magic-link.php:1087
+#: includes/class-magic-link.php:1091
 #: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:561
 #: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:581
 #: includes/reader-activation/class-reader-activation.php:2038
@@ -197,54 +198,54 @@ msgstr ""
 msgid "Invalid request."
 msgstr ""
 
-#: includes/class-magic-link.php:1092
+#: includes/class-magic-link.php:1097
 #: includes/reader-activation/sync/class-contact-sync-admin.php:136
 #: includes/reader-activation/sync/class-contact-sync-admin.php:174
 msgid "You do not have permission to do that."
 msgstr ""
 
-#: includes/class-magic-link.php:1142
+#: includes/class-magic-link.php:1147
 msgid "Passwordless Authentication Management"
 msgstr ""
 
-#: includes/class-magic-link.php:1145
+#: includes/class-magic-link.php:1150
 msgid "Authentication Link Support"
 msgstr ""
 
 #. translators: %1$s: Disabled or enabled. %2$s: User's display name.
-#: includes/class-magic-link.php:1156
+#: includes/class-magic-link.php:1161
 #, php-format
 msgid "Authentication links support is currently %1$s for %2$s."
 msgstr ""
 
-#: includes/class-magic-link.php:1157
+#: includes/class-magic-link.php:1162
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:204
+#: src/blocks/reader-registration/edit.js:200
 msgid "disabled"
 msgstr ""
 
-#: includes/class-magic-link.php:1157
+#: includes/class-magic-link.php:1162
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:204
+#: src/blocks/reader-registration/edit.js:200
 msgid "enabled"
 msgstr ""
 
-#: includes/class-magic-link.php:1166
+#: includes/class-magic-link.php:1171
 msgid "Send Authentication Link"
 msgstr ""
 
 #. translators: %1$s: User's display name. %2$d is the expiration period in minutes.
-#: includes/class-magic-link.php:1173
+#: includes/class-magic-link.php:1178
 #, php-format
 msgid "Generate and send a new link to %1$s, which will authenticate them instantly. The link will be valid for %2$d minutes after its creation."
 msgstr ""
 
-#: includes/class-magic-link.php:1182
+#: includes/class-magic-link.php:1187
 msgid "Clear All Tokens"
 msgstr ""
 
 #. translators: %s: User's display name.
-#: includes/class-magic-link.php:1189
+#: includes/class-magic-link.php:1194
 #, php-format
 msgid "Clear all existing authentication link tokens for %s."
 msgstr ""
@@ -1384,13 +1385,13 @@ msgstr ""
 msgid "Set custom conditions based on reader data key/value pairs."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:963
+#: includes/content-gate/class-content-gate.php:950
 #: dist/billboard.js:12
 #: src/wizards/advertising/components/suppression/index.js:78
 msgid "Post types"
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:966
+#: includes/content-gate/class-content-gate.php:953
 msgid "Content types like posts, pages, or listings."
 msgstr ""
 
@@ -1448,10 +1449,7 @@ msgstr ""
 #: includes/content-gate/content-gifting/class-content-gifting-cta.php:240
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:691
 #: includes/reader-activation/class-reader-activation.php:292
-#: src/blocks/reader-registration/index.php:114
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:46
-#: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:325
 #: src/wizards/audience/views/setup/content-gifting.js:173
 #: src/wizards/audience/views/setup/countdown-banner.js:112
 msgid "Sign in to an existing account"
@@ -2201,7 +2199,7 @@ msgid "%1$s | Details: %2$s"
 msgstr ""
 
 #: includes/oauth/class-google-login.php:292
-#: src/blocks/reader-registration/index.php:341
+#: src/blocks/reader-registration/index.php:456
 msgid "Thank you for registering!"
 msgstr ""
 
@@ -2210,12 +2208,12 @@ msgid "Thank you for signing in!"
 msgstr ""
 
 #. translators: %s is a unique user id
-#: includes/oauth/class-google-login.php:327
+#: includes/oauth/class-google-login.php:329
 #, php-format
 msgid "Missing email for unique id: %s"
 msgstr ""
 
-#: includes/oauth/class-google-login.php:328
+#: includes/oauth/class-google-login.php:330
 msgid "Failed to retrieve email address. Please try again."
 msgstr ""
 
@@ -3127,7 +3125,7 @@ msgid "Transaction fee (%s)"
 msgstr ""
 
 #: includes/plugins/woocommerce/class-woocommerce-connection.php:246
-#: includes/reader-activation/class-reader-activation.php:2550
+#: includes/reader-activation/class-reader-activation.php:2553
 msgid "Please wait a moment before trying again."
 msgstr ""
 
@@ -3157,7 +3155,7 @@ msgstr ""
 #: includes/plugins/woocommerce/class-woocommerce-connection.php:566
 #: includes/reader-activation/class-reader-activation.php:305
 #: src/blocks/my-account-button/class-my-account-button-block.php:94
-#: src/blocks/reader-registration/index.php:106
+#: src/blocks/reader-registration/index.php:239
 #: dist/commons.js:18
 #: src/blocks/my-account-button/edit.js:63
 msgid "My Account"
@@ -3472,7 +3470,10 @@ msgstr ""
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:379
 #: includes/reader-activation/class-reader-activation.php:286
 #: includes/reader-activation/class-reader-activation.php:314
+#: src/blocks/reader-registration/index.php:245
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:46
+#: dist/blocks.js:4
+#: src/blocks/reader-registration/edit.js:302
 #: src/wizards/audience/views/setup/campaign.js:86
 msgid "Continue"
 msgstr ""
@@ -3628,7 +3629,7 @@ msgstr ""
 
 #: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1060
 #: includes/reader-activation/class-reader-activation.php:275
-#: includes/reader-activation/class-reader-activation.php:2242
+#: includes/reader-activation/class-reader-activation.php:2245
 msgid "Please enter a valid email address."
 msgstr ""
 
@@ -4260,6 +4261,7 @@ msgstr ""
 #: includes/templates/reader-activation-emails/otp.php:281
 #: includes/templates/reader-activation-emails/otp.php:311
 #: src/blocks/my-account-button/class-my-account-button-block.php:95
+#: src/blocks/reader-registration/index.php:174
 #: dist/commons.js:18
 #: src/blocks/my-account-button/edit.js:63
 msgid "Sign in"
@@ -4298,10 +4300,11 @@ msgid "Email me a one-time code instead"
 msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:289
-msgid "Enter the code sent to your email."
+msgid "Enter the code sent to your email"
 msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:293
+#: src/blocks/reader-registration/index.php:164
 #: dist/commons.js:18
 #: dist/other-scripts/corrections-modal.js:7
 #: packages/components/src/section-header/index.js:102
@@ -4314,9 +4317,9 @@ msgid "Set a password (optional)"
 msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:298
-#: src/blocks/reader-registration/index.php:100
+#: src/blocks/reader-registration/index.php:233
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:70
+#: src/blocks/reader-registration/edit.js:66
 msgid "Success! Your account was created and you’re signed in."
 msgstr ""
 
@@ -4341,9 +4344,9 @@ msgid "Sign In"
 msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:308
-#: src/blocks/reader-registration/index.php:113
+#: src/blocks/reader-registration/index.php:246
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:270
+#: src/blocks/reader-registration/edit.js:266
 msgid "Subscribe to our newsletter"
 msgstr ""
 
@@ -4534,18 +4537,18 @@ msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:1957
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:295
-msgid "Sign in with Google"
+#: src/blocks/reader-registration/edit.js:291
+msgid "Continue with Google"
 msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:1960
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:297
+#: src/blocks/reader-registration/edit.js:293
 msgid "Or"
 msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:2042
-#: src/blocks/reader-registration/index.php:415
+#: src/blocks/reader-registration/index.php:530
 msgid "You must enter a valid email address."
 msgstr ""
 
@@ -4555,13 +4558,12 @@ msgid "Account not found. <a data-set-action=\"register\" href=\"#register_modal
 msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:2053
-#: includes/reader-activation/class-reader-activation.php:2119
-#: src/blocks/reader-registration/index.php:115
+#: includes/reader-activation/class-reader-activation.php:2122
 msgid "An account was already registered with this email. Please check your inbox for an authentication link."
 msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:2076
-#: includes/reader-activation/class-reader-activation.php:2100
+#: includes/reader-activation/class-reader-activation.php:2103
 msgid "We encountered an error sending an authentication link. Please try again."
 msgstr ""
 
@@ -4570,48 +4572,48 @@ msgstr ""
 msgid "Password not recognized, try again."
 msgstr ""
 
-#: includes/reader-activation/class-reader-activation.php:2119
+#: includes/reader-activation/class-reader-activation.php:2122
 msgid "An account was already registered with this email. Please sign in to continue."
 msgstr ""
 
-#: includes/reader-activation/class-reader-activation.php:2124
+#: includes/reader-activation/class-reader-activation.php:2127
 msgid "Unable to register your account. Try a different email."
 msgstr ""
 
-#: includes/reader-activation/class-reader-activation.php:2232
+#: includes/reader-activation/class-reader-activation.php:2235
 msgid "Registration is disabled."
 msgstr ""
 
-#: includes/reader-activation/class-reader-activation.php:2236
+#: includes/reader-activation/class-reader-activation.php:2239
 msgid "Cannot register while logged in."
 msgstr ""
 
-#: includes/reader-activation/class-reader-activation.php:2584
+#: includes/reader-activation/class-reader-activation.php:2587
 msgid "Please wait before requesting another verification email."
 msgstr ""
 
-#: includes/reader-activation/class-reader-activation.php:2822
+#: includes/reader-activation/class-reader-activation.php:2825
 msgid "Your personal data will be used to process your order and create an account if one doesn't exist. This information will also support your experience throughout this website, and be used for other purposes described in our privacy policy."
 msgstr ""
 
 #. Translators: %s is the name of the site.
-#: includes/reader-activation/class-reader-activation.php:2839
+#: includes/reader-activation/class-reader-activation.php:2842
 #, php-format
 msgid "Thank you for supporting %s. Your transaction was completed successfully."
 msgstr ""
 
 #. Translators: %s is the name of the site.
-#: includes/reader-activation/class-reader-activation.php:2858
+#: includes/reader-activation/class-reader-activation.php:2861
 #, php-format
 msgid "Thank you for supporting %s. Your account has been created, and your transaction was completed successfully."
 msgstr ""
 
-#: includes/reader-activation/class-reader-activation.php:2884
+#: includes/reader-activation/class-reader-activation.php:2887
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:49
 msgid "I understand this is a recurring subscription and that I can cancel anytime through the My Account Page."
 msgstr ""
 
-#: includes/reader-activation/class-reader-activation.php:2908
+#: includes/reader-activation/class-reader-activation.php:2911
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:49
 msgid "I have read and accept the {{Terms & Conditions}}."
 msgstr ""
@@ -5959,16 +5961,38 @@ msgstr ""
 msgid "%s goal"
 msgstr ""
 
-#. Translators: %s is a link to My Account.
-#: src/blocks/reader-registration/index.php:105
+#. translators: %s is the user's email address.
+#: src/blocks/reader-registration/index.php:115
+#: src/blocks/reader-registration/index.php:154
 #, php-format
-msgid "Please visit %s to verify and manage your account."
+msgid "We'll send a verification code to %s."
 msgstr ""
 
-#: src/blocks/reader-registration/index.php:112
-#: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:306
-msgid "Sign up"
+#: src/blocks/reader-registration/index.php:123
+#: src/blocks/reader-registration/index.php:161
+msgid "Send code"
+msgstr ""
+
+#: src/blocks/reader-registration/index.php:195
+msgid "Invalid request. Please refresh the page and try again."
+msgstr ""
+
+#: src/blocks/reader-registration/index.php:199
+msgid "User not logged in"
+msgstr ""
+
+#: src/blocks/reader-registration/index.php:204
+msgid "User is not a reader or is already verified"
+msgstr ""
+
+#: src/blocks/reader-registration/index.php:212
+msgid "OTP sent"
+msgstr ""
+
+#. Translators: %s is a link to My Account.
+#: src/blocks/reader-registration/index.php:238
+#, php-format
+msgid "Please visit %s to verify and manage your account."
 msgstr ""
 
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:1
@@ -8727,115 +8751,105 @@ msgid "Displays how many free articles remain before the paywall, helping users 
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:29
+#: src/blocks/reader-registration/edit.js:28
 msgid "Initial"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:30
+#: src/blocks/reader-registration/edit.js:29
 msgid "Registration Success"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:31
-msgid "Login Success"
-msgstr ""
-
-#: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:116
+#: src/blocks/reader-registration/edit.js:112
 msgid "Form settings"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:118
+#: src/blocks/reader-registration/edit.js:114
 msgid "Input placeholder"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:125
+#: src/blocks/reader-registration/edit.js:121
 msgid "Newsletter Subscription"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:127
+#: src/blocks/reader-registration/edit.js:123
 msgid "Enable newsletter subscription"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:137
+#: src/blocks/reader-registration/edit.js:133
 msgid "To enable newsletter subscription, you must configure subscription lists on Newspack Newsletters."
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:146
+#: src/blocks/reader-registration/edit.js:142
 msgid "Display list description"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:156
+#: src/blocks/reader-registration/edit.js:152
 msgid "Hide newsletter selection and always subscribe"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:168
+#: src/blocks/reader-registration/edit.js:164
 msgid "You must select at least one list."
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:172
+#: src/blocks/reader-registration/edit.js:168
 msgid "Lists"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:193
+#: src/blocks/reader-registration/edit.js:189
 msgid "Configure your subscription lists"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:199
+#: src/blocks/reader-registration/edit.js:195
 msgid "Spam protection"
 msgstr ""
 
 #. translators: %s is either 'enabled' or 'disabled'.
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:203
+#: src/blocks/reader-registration/edit.js:199
 #, js-format
 msgid "reCAPTCHA is currently %s."
 msgstr ""
 
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:209
+#: src/blocks/reader-registration/edit.js:205
 msgid "It's highly recommended that you enable reCAPTCHA protection to prevent spambots from using this form!"
 msgstr ""
 
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:216
+#: src/blocks/reader-registration/edit.js:212
 msgid "Configure your reCAPTCHA settings."
 msgstr ""
 
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:222
+#: src/blocks/reader-registration/edit.js:218
 msgid "Edited State"
 msgstr ""
 
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:241
+#: src/blocks/reader-registration/edit.js:237
 msgid "Add title"
 msgstr ""
 
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:250
+#: src/blocks/reader-registration/edit.js:246
 msgid "Add description"
 msgstr ""
 
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:335
+#: src/blocks/reader-registration/edit.js:316
 msgid "Terms & Conditions statement…"
-msgstr ""
-
-#: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:363
-msgid "Logged in message…"
 msgstr ""
 
 #: dist/blocks.js:4
