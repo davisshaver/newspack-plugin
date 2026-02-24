@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-24T13:45:14+00:00\n"
+"POT-Creation-Date: 2026-02-24T20:58:24+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -250,16 +250,16 @@ msgstr ""
 msgid "Clear all existing authentication link tokens for %s."
 msgstr ""
 
-#: includes/class-newspack-ui.php:119
-#: includes/class-newspack-ui.php:240
-#: includes/class-newspack-ui.php:954
-#: includes/class-newspack-ui.php:977
-#: includes/class-newspack-ui.php:1016
-#: includes/class-newspack-ui.php:1051
-#: includes/class-newspack-ui.php:1083
-#: includes/class-newspack-ui.php:1131
-#: includes/class-newspack-ui.php:1168
-#: includes/class-newspack-ui.php:1222
+#: includes/class-newspack-ui.php:118
+#: includes/class-newspack-ui.php:239
+#: includes/class-newspack-ui.php:953
+#: includes/class-newspack-ui.php:976
+#: includes/class-newspack-ui.php:1015
+#: includes/class-newspack-ui.php:1050
+#: includes/class-newspack-ui.php:1082
+#: includes/class-newspack-ui.php:1130
+#: includes/class-newspack-ui.php:1167
+#: includes/class-newspack-ui.php:1221
 #: includes/content-gate/content-gifting/class-content-gifting.php:592
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:721
 #: includes/reader-activation/class-reader-activation.php:1622
@@ -269,9 +269,9 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: includes/class-newspack-ui.php:431
-#: includes/class-newspack-ui.php:451
-#: includes/class-newspack-ui.php:766
+#: includes/class-newspack-ui.php:430
+#: includes/class-newspack-ui.php:450
+#: includes/class-newspack-ui.php:765
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:111
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:212
 #: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:105
@@ -282,15 +282,15 @@ msgstr ""
 msgid "More"
 msgstr ""
 
-#: includes/class-newspack-ui.php:905
-#: includes/class-newspack-ui.php:909
-#: includes/class-newspack-ui.php:913
-#: includes/class-newspack-ui.php:917
-#: includes/class-newspack-ui.php:921
-#: includes/class-newspack-ui.php:925
-#: includes/class-newspack-ui.php:929
-#: includes/class-newspack-ui.php:936
-#: includes/class-newspack-ui.php:941
+#: includes/class-newspack-ui.php:904
+#: includes/class-newspack-ui.php:908
+#: includes/class-newspack-ui.php:912
+#: includes/class-newspack-ui.php:916
+#: includes/class-newspack-ui.php:920
+#: includes/class-newspack-ui.php:924
+#: includes/class-newspack-ui.php:928
+#: includes/class-newspack-ui.php:935
+#: includes/class-newspack-ui.php:940
 msgid "Open Menu"
 msgstr ""
 
@@ -5058,7 +5058,7 @@ msgstr ""
 #: includes/templates/collections/archive-newspack-collection.php:59
 #: includes/templates/collections/archive-newspack-collection.php:74
 #: dist/commons.js:4
-#: src/blocks/correction-box/edit.jsx:68
+#: src/blocks/correction-box/edit.jsx:69
 msgid "All"
 msgstr ""
 
@@ -9477,46 +9477,46 @@ msgid "Loading avatar…"
 msgstr ""
 
 #: dist/commons.js:4
-#: src/blocks/correction-box/edit.jsx:38
+#: src/blocks/correction-box/edit.jsx:39
 msgid "This is the Corrections block, it will display all the corrections and clarifications."
 msgstr ""
 
 #: dist/commons.js:4
-#: src/blocks/correction-box/edit.jsx:39
+#: src/blocks/correction-box/edit.jsx:40
 msgid "If there are no corrections or clarifications, this block will not be displayed."
 msgstr ""
 
 #: dist/commons.js:4
-#: src/blocks/correction-box/edit.jsx:59
+#: src/blocks/correction-box/edit.jsx:60
 msgid "Correction Box Settings"
 msgstr ""
 
 #: dist/commons.js:4
-#: src/blocks/correction-box/edit.jsx:62
+#: src/blocks/correction-box/edit.jsx:63
 msgid "Corrections by Priority"
 msgstr ""
 
 #: dist/commons.js:4
-#: src/blocks/correction-box/edit.jsx:63
+#: src/blocks/correction-box/edit.jsx:64
 msgid "Filter corrections by their priority."
 msgstr ""
 
 #: dist/commons.js:4
 #: dist/other-scripts/corrections-modal.js:1
-#: src/blocks/correction-box/edit.jsx:66
+#: src/blocks/correction-box/edit.jsx:67
 #: src/other-scripts/corrections-modal/index.js:36
 msgid "High"
 msgstr ""
 
 #: dist/commons.js:4
 #: dist/other-scripts/corrections-modal.js:1
-#: src/blocks/correction-box/edit.jsx:67
+#: src/blocks/correction-box/edit.jsx:68
 #: src/other-scripts/corrections-modal/index.js:37
 msgid "Low"
 msgstr ""
 
 #: dist/commons.js:4
-#: src/blocks/correction-box/edit.jsx:88
+#: src/blocks/correction-box/edit.jsx:91
 msgid "Refresh"
 msgstr ""
 
