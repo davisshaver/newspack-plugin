@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-02-20T20:41:25+00:00\n"
+"POT-Creation-Date: 2026-02-24T13:45:14+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -1608,6 +1608,9 @@ msgid "New ones will be available %s."
 msgstr ""
 
 #: includes/content-gate/content-gifting/class-content-gifting.php:601
+#: dist/blocks.js:4
+#: src/blocks/author-social-link/index.js:21
+#: src/blocks/author-social-link/index.js:22
 msgid "Link"
 msgstr ""
 
@@ -2045,7 +2048,8 @@ msgstr ""
 #: dist/other-scripts/emails.js:2
 #: dist/setup.js:7
 #: dist/wizards.js:1
-#: src/blocks/avatar/edit.jsx:25
+#: src/blocks/author-profile-social/edit.jsx:118
+#: src/blocks/avatar/inspector.jsx:18
 #: src/blocks/byline/inspector.jsx:25
 #: src/blocks/collections/components/InspectorPanel.jsx:63
 #: src/content-gate/editor/editor.js:108
@@ -2750,6 +2754,10 @@ msgstr ""
 #: includes/plugins/class-teams-for-memberships.php:300
 #, php-format
 msgid "Membership re-activated due to subscription re-purchase (%1$s, Order %2$s)."
+msgstr ""
+
+#: includes/plugins/co-authors-plus/class-author-rest-fields.php:39
+msgid "Enriched author information for byline and avatar blocks."
 msgstr ""
 
 #. translators: %s is the custom role name.
@@ -3910,13 +3918,14 @@ msgid "Expired"
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:101
-#: dist/blocks.js:1
+#: dist/blocks.js:4
 #: dist/componentsDemo.js:1
 #: dist/my-account-button-block.js:1
 #: dist/newspack-wizards.766840f50c4dd0edaabb.js:1
 #: dist/newspack-wizards.766840f50c4dd0edaabb.js:27
 #: dist/newspack-wizards.766840f50c4dd0edaabb.js:28
 #: dist/setup.js:7
+#: src/blocks/author-profile-social/utils.js:13
 #: src/blocks/my-account-button/index.js:22
 #: src/wizards/componentsDemo/index.js:610
 #: src/wizards/componentsDemo/index.js:616
@@ -5048,7 +5057,7 @@ msgstr ""
 
 #: includes/templates/collections/archive-newspack-collection.php:59
 #: includes/templates/collections/archive-newspack-collection.php:74
-#: dist/commons.js:1
+#: dist/commons.js:4
 #: src/blocks/correction-box/edit.jsx:68
 msgid "All"
 msgstr ""
@@ -5878,7 +5887,7 @@ msgid "Loading..."
 msgstr ""
 
 #: src/blocks/avatar/class-avatar-block.php:40
-msgid "Stacked"
+msgid "Overlapped"
 msgstr ""
 
 #: src/blocks/byline/class-byline-block.php:252
@@ -7017,7 +7026,7 @@ msgstr ""
 #: dist/audience-wizards.f3e1118ff4c1e097b5a1.js:46
 #: dist/bylines.js:1
 #: dist/other-scripts/nextdoor.js:1
-#: src/bylines/index.js:423
+#: src/bylines/index.js:424
 #: src/other-scripts/nextdoor/index.js:247
 msgid "Update"
 msgstr ""
@@ -8685,72 +8694,6 @@ msgid "Edit Ad Unit"
 msgstr ""
 
 #: dist/blocks.js:1
-#: dist/my-account-button-block.js:1
-#: src/blocks/my-account-button/index.js:28
-msgid "Icon only"
-msgstr ""
-
-#: dist/blocks.js:1
-#: dist/my-account-button-block.js:1
-#: src/blocks/my-account-button/index.js:33
-msgid "Text only"
-msgstr ""
-
-#: dist/blocks.js:1
-#: dist/commons.js:6
-#: dist/content-gate-countdown-box-block.js:1
-#: src/blocks/content-gate/countdown-box/edit.jsx:147
-#: src/blocks/content-gate/countdown-box/index.js:15
-msgid "Content Gate Countdown"
-msgstr ""
-
-#: dist/blocks.js:1
-#: dist/blocks.js:4
-#: dist/content-gate-countdown-box-block.js:1
-#: src/blocks/content-gate/countdown-box/index.js:28
-#: src/blocks/content-gate/countdown/index.js:27
-msgid "countdown"
-msgstr ""
-
-#: dist/blocks.js:1
-#: dist/blocks.js:4
-#: dist/content-gate-countdown-box-block.js:1
-#: src/blocks/content-gate/countdown-box/index.js:29
-#: src/blocks/content-gate/countdown/index.js:28
-msgid "content gate"
-msgstr ""
-
-#: dist/blocks.js:1
-#: dist/blocks.js:4
-#: dist/content-gate-countdown-box-block.js:1
-#: src/blocks/content-gate/countdown-box/index.js:30
-#: src/blocks/content-gate/countdown/index.js:29
-msgid "metered"
-msgstr ""
-
-#: dist/blocks.js:1
-#: dist/blocks.js:4
-#: dist/content-gate-countdown-box-block.js:1
-#: src/blocks/content-gate/countdown-box/index.js:31
-#: src/blocks/content-gate/countdown/index.js:30
-msgid "paywall"
-msgstr ""
-
-#: dist/blocks.js:1
-#: dist/blocks.js:4
-#: dist/content-gate-countdown-box-block.js:1
-#: src/blocks/content-gate/countdown-box/index.js:32
-#: src/blocks/content-gate/countdown/index.js:31
-msgid "tracking"
-msgstr ""
-
-#: dist/blocks.js:1
-#: dist/content-gate-countdown-box-block.js:1
-#: src/blocks/content-gate/countdown-box/index.js:34
-msgid "Displays how many free articles remain before the paywall, helping users track access with a real-time countdown."
-msgstr ""
-
-#: dist/blocks.js:1
 #: src/blocks/reader-registration/edit.js:28
 msgid "Initial"
 msgstr ""
@@ -8864,7 +8807,7 @@ msgstr ""
 
 #: dist/blocks.js:4
 #: dist/commons.js:1
-#: src/blocks/avatar/edit.jsx:42
+#: src/blocks/avatar/inspector.jsx:35
 #: src/blocks/byline/inspector.jsx:37
 msgid "Link to author archive"
 msgstr ""
@@ -8899,6 +8842,86 @@ msgstr ""
 #: dist/blocks.js:4
 #: src/blocks/byline/index.js:33
 msgid "Display post author(s) with support for custom bylines and CoAuthors Plus."
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/author-profile-social/index.js:24
+msgid "Author Social Links"
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/author-profile-social/edit.jsx:101
+msgid "Social links will appear here."
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/author-profile-social/edit.jsx:110
+#: src/blocks/author-profile-social/edit.jsx:111
+msgid "Reset links"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/newspack-wizards.766840f50c4dd0edaabb.js:11
+#: dist/newspack-wizards.766840f50c4dd0edaabb.js:27
+#: src/blocks/author-profile-social/edit.jsx:112
+msgid "Reset"
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/author-profile-social/edit.jsx:120
+msgid "Icon size"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/componentsDemo.js:1
+#: dist/content-gate-editor.js:25
+#: dist/contribution-meter-block.js:1
+#: dist/newspack-wizards.766840f50c4dd0edaabb.js:27
+#: src/blocks/author-profile-social/utils.js:14
+#: src/blocks/collections/components/InspectorPanel.jsx:191
+#: src/blocks/contribution-meter/components/InspectorPanel.jsx:169
+#: src/content-gate/editor/editor.js:31
+#: src/wizards/componentsDemo/index.js:564
+#: src/wizards/componentsDemo/index.js:640
+msgid "Small"
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/author-profile-social/utils.js:15
+msgid "Normal"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/content-gate-editor.js:25
+#: dist/contribution-meter-block.js:1
+#: dist/newspack-wizards.766840f50c4dd0edaabb.js:27
+#: src/blocks/author-profile-social/utils.js:16
+#: src/blocks/collections/components/InspectorPanel.jsx:201
+#: src/blocks/contribution-meter/components/InspectorPanel.jsx:171
+#: src/content-gate/editor/editor.js:33
+msgid "Large"
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/author-profile-social/utils.js:17
+msgid "Huge"
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/author-profile-social/edit.jsx:128
+msgid "Add missing links"
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/author-social-link/utils.js:29
+msgid "Email"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/commons.js:18
+#: packages/components/src/web-preview/index.js:158
+#: src/blocks/author-social-link/utils.js:30
+msgid "Phone"
 msgstr ""
 
 #: dist/blocks.js:4
@@ -9017,19 +9040,6 @@ msgid "S"
 msgstr ""
 
 #: dist/blocks.js:4
-#: dist/componentsDemo.js:1
-#: dist/content-gate-editor.js:25
-#: dist/contribution-meter-block.js:1
-#: dist/newspack-wizards.766840f50c4dd0edaabb.js:27
-#: src/blocks/collections/components/InspectorPanel.jsx:191
-#: src/blocks/contribution-meter/components/InspectorPanel.jsx:169
-#: src/content-gate/editor/editor.js:31
-#: src/wizards/componentsDemo/index.js:564
-#: src/wizards/componentsDemo/index.js:640
-msgid "Small"
-msgstr ""
-
-#: dist/blocks.js:4
 #: dist/contribution-meter-block.js:1
 #: dist/newspack-wizards.766840f50c4dd0edaabb.js:27
 #: dist/setup.js:7
@@ -9054,16 +9064,6 @@ msgstr ""
 #: src/blocks/collections/components/InspectorPanel.jsx:199
 #: src/blocks/contribution-meter/components/InspectorPanel.jsx:171
 msgid "L"
-msgstr ""
-
-#: dist/blocks.js:4
-#: dist/content-gate-editor.js:25
-#: dist/contribution-meter-block.js:1
-#: dist/newspack-wizards.766840f50c4dd0edaabb.js:27
-#: src/blocks/collections/components/InspectorPanel.jsx:201
-#: src/blocks/contribution-meter/components/InspectorPanel.jsx:171
-#: src/content-gate/editor/editor.js:33
-msgid "Large"
 msgstr ""
 
 #: dist/blocks.js:4
@@ -9202,8 +9202,69 @@ msgid "Article Counter"
 msgstr ""
 
 #: dist/blocks.js:4
+#: dist/content-gate-countdown-box-block.js:1
+#: src/blocks/content-gate/countdown-box/index.js:28
+#: src/blocks/content-gate/countdown/index.js:27
+msgid "countdown"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/content-gate-countdown-box-block.js:1
+#: src/blocks/content-gate/countdown-box/index.js:29
+#: src/blocks/content-gate/countdown/index.js:28
+msgid "content gate"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/content-gate-countdown-box-block.js:1
+#: src/blocks/content-gate/countdown-box/index.js:30
+#: src/blocks/content-gate/countdown/index.js:29
+msgid "metered"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/content-gate-countdown-box-block.js:1
+#: src/blocks/content-gate/countdown-box/index.js:31
+#: src/blocks/content-gate/countdown/index.js:30
+msgid "paywall"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/content-gate-countdown-box-block.js:1
+#: src/blocks/content-gate/countdown-box/index.js:32
+#: src/blocks/content-gate/countdown/index.js:31
+msgid "tracking"
+msgstr ""
+
+#: dist/blocks.js:4
 #: src/blocks/content-gate/countdown/index.js:33
 msgid "Displays the current free article count."
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/my-account-button-block.js:1
+#: src/blocks/my-account-button/index.js:28
+msgid "Icon only"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/my-account-button-block.js:1
+#: src/blocks/my-account-button/index.js:33
+msgid "Text only"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/commons.js:6
+#: dist/content-gate-countdown-box-block.js:1
+#: src/blocks/content-gate/countdown-box/edit.jsx:147
+#: src/blocks/content-gate/countdown-box/index.js:15
+msgid "Content Gate Countdown"
+msgstr ""
+
+#: dist/blocks.js:4
+#: dist/content-gate-countdown-box-block.js:1
+#: src/blocks/content-gate/countdown-box/index.js:34
+msgid "Displays how many free articles remain before the paywall, helping users track access with a real-time countdown."
 msgstr ""
 
 #: dist/blocks.js:4
@@ -9278,8 +9339,8 @@ msgid "Enable custom byline"
 msgstr ""
 
 #: dist/bylines.js:1
-#: src/bylines/index.js:402
-#: src/bylines/index.js:407
+#: src/bylines/index.js:403
+#: src/bylines/index.js:408
 msgid "Edit byline"
 msgstr ""
 
@@ -9389,84 +9450,84 @@ msgid "How to get a service account user for API access"
 msgstr ""
 
 #: dist/commons.js:1
+#: src/blocks/avatar/avatar-wrapper.jsx:60
+msgid "No avatar available"
+msgstr ""
+
+#: dist/commons.js:1
+#: src/blocks/avatar/inspector.jsx:22
+msgid "Image size"
+msgstr ""
+
+#. translators: %s: Author name.
+#: dist/commons.js:4
+#: src/blocks/avatar/hooks.js:75
+#, js-format
+msgid "%s Avatar"
+msgstr ""
+
+#: dist/commons.js:4
+#: src/blocks/avatar/hooks.js:76
+msgid "Default Avatar"
+msgstr ""
+
+#: dist/commons.js:4
+#: src/blocks/avatar/edit.jsx:125
+msgid "Loading avatar…"
+msgstr ""
+
+#: dist/commons.js:4
 #: src/blocks/correction-box/edit.jsx:38
 msgid "This is the Corrections block, it will display all the corrections and clarifications."
 msgstr ""
 
-#: dist/commons.js:1
+#: dist/commons.js:4
 #: src/blocks/correction-box/edit.jsx:39
 msgid "If there are no corrections or clarifications, this block will not be displayed."
 msgstr ""
 
-#: dist/commons.js:1
+#: dist/commons.js:4
 #: src/blocks/correction-box/edit.jsx:59
 msgid "Correction Box Settings"
 msgstr ""
 
-#: dist/commons.js:1
+#: dist/commons.js:4
 #: src/blocks/correction-box/edit.jsx:62
 msgid "Corrections by Priority"
 msgstr ""
 
-#: dist/commons.js:1
+#: dist/commons.js:4
 #: src/blocks/correction-box/edit.jsx:63
 msgid "Filter corrections by their priority."
 msgstr ""
 
-#: dist/commons.js:1
+#: dist/commons.js:4
 #: dist/other-scripts/corrections-modal.js:1
 #: src/blocks/correction-box/edit.jsx:66
 #: src/other-scripts/corrections-modal/index.js:36
 msgid "High"
 msgstr ""
 
-#: dist/commons.js:1
+#: dist/commons.js:4
 #: dist/other-scripts/corrections-modal.js:1
 #: src/blocks/correction-box/edit.jsx:67
 #: src/other-scripts/corrections-modal/index.js:37
 msgid "Low"
 msgstr ""
 
-#: dist/commons.js:1
+#: dist/commons.js:4
 #: src/blocks/correction-box/edit.jsx:88
 msgid "Refresh"
 msgstr ""
 
-#: dist/commons.js:1
+#: dist/commons.js:4
 #: src/wizards/advertising/components/utils/index.js:21
 msgid "Invalid JSON file"
 msgstr ""
 
-#: dist/commons.js:1
+#: dist/commons.js:4
 #: src/wizards/advertising/components/utils/index.js:26
 msgid "Unable to read file"
-msgstr ""
-
-#: dist/commons.js:1
-#: src/blocks/avatar/edit.jsx:29
-msgid "Image size"
-msgstr ""
-
-#: dist/commons.js:1
-#: src/blocks/avatar/edit.jsx:73
-msgid "No avatar available"
-msgstr ""
-
-#. translators: %s: Author name.
-#: dist/commons.js:4
-#: src/blocks/avatar/hooks.js:56
-#, js-format
-msgid "%s Avatar"
-msgstr ""
-
-#: dist/commons.js:4
-#: src/blocks/avatar/hooks.js:57
-msgid "Default Avatar"
-msgstr ""
-
-#: dist/commons.js:4
-#: src/blocks/avatar/edit.jsx:145
-msgid "Loading avatar…"
 msgstr ""
 
 #: dist/commons.js:4
@@ -9802,11 +9863,6 @@ msgstr ""
 #: dist/commons.js:18
 #: packages/components/src/web-preview/index.js:147
 msgid "Tablet"
-msgstr ""
-
-#: dist/commons.js:18
-#: packages/components/src/web-preview/index.js:158
-msgid "Phone"
 msgstr ""
 
 #: dist/commons.js:18
@@ -11727,11 +11783,6 @@ msgid "This email is not active. The receipt template will be used if active."
 msgstr ""
 
 #: dist/newspack-wizards.766840f50c4dd0edaabb.js:11
-#: dist/newspack-wizards.766840f50c4dd0edaabb.js:27
-msgid "Reset"
-msgstr ""
-
-#: dist/newspack-wizards.766840f50c4dd0edaabb.js:11
 msgid "Are you sure you want to reset the contents of this email?"
 msgstr ""
 
@@ -13047,6 +13098,30 @@ msgstr ""
 
 #: src/wizards/audience/views/campaigns/analytics/index.js:33
 msgid "View the help page"
+msgstr ""
+
+#: dist/blocks/author-profile-social/block.json
+#: src/blocks/author-profile-social/block.json
+msgctxt "block title"
+msgid "Author Social Links"
+msgstr ""
+
+#: dist/blocks/author-profile-social/block.json
+#: src/blocks/author-profile-social/block.json
+msgctxt "block description"
+msgid "Display the author's social media links and email."
+msgstr ""
+
+#: dist/blocks/author-social-link/block.json
+#: src/blocks/author-social-link/block.json
+msgctxt "block title"
+msgid "Author Social Link"
+msgstr ""
+
+#: dist/blocks/author-social-link/block.json
+#: src/blocks/author-social-link/block.json
+msgctxt "block description"
+msgid "Display a single social media icon for the author."
 msgstr ""
 
 #: dist/blocks/byline/block.json
