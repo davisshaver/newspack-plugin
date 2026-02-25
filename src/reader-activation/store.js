@@ -165,6 +165,18 @@ function decode( str ) {
 }
 
 /**
+ * Assert that a key is not read-only.
+ *
+ * @param {string} key Key to check.
+ * @throws {Error} If the key is read-only.
+ */
+function assertNotReadOnly( key ) {
+	if ( ( newspack_reader_data?.read_only_keys || [] ).includes( key ) ) {
+		throw new Error( `Key '${ key }' is read-only.` );
+	}
+}
+
+/**
  * Internal get function to fetch data from storage.
  *
  * @param {string}  key      Key to get.
@@ -265,6 +277,7 @@ export default function Store() {
 		 * @param {boolean} sync  Whether to sync the value with the server. Default true.
 		 */
 		set: ( key, value, sync = true ) => {
+			assertNotReadOnly( key );
 			_set( key, value, false );
 			if ( sync ) {
 				setPendingSync( key );
@@ -280,6 +293,7 @@ export default function Store() {
 			if ( ! key ) {
 				throw new Error( 'Key is required.' );
 			}
+			assertNotReadOnly( key );
 			config.storage.removeItem( getStoreItemKey( key ) );
 			emit( EVENTS.data, { key, value: undefined } );
 			setPendingSync( key );
@@ -296,6 +310,7 @@ export default function Store() {
 			if ( ! key ) {
 				throw new Error( 'Key cannot be empty.' );
 			}
+			assertNotReadOnly( key );
 			if ( ! value ) {
 				throw new Error( 'Value cannot be empty.' );
 			}
