@@ -1015,7 +1015,7 @@ class WooCommerce_My_Account {
 	 * @return bool
 	 */
 	public static function allow_braintree_token_deletion( $allow_deletion, $payment_token ) {
-		if ( $payment_token instanceof \WC_Payment_Token && str_starts_with( $payment_token->get_gateway_id(), 'braintree_' ) ) {
+		if ( str_starts_with( $payment_token->get_gateway_id(), 'braintree_' ) ) {
 			return true;
 		}
 		return $allow_deletion;
@@ -1030,7 +1030,7 @@ class WooCommerce_My_Account {
 	 * @return array
 	 */
 	public static function remove_braintree_edit_actions( $item, $payment_token ) {
-		if ( $payment_token instanceof \WC_Payment_Token && str_starts_with( $payment_token->get_gateway_id(), 'braintree_' ) ) {
+		if ( str_starts_with( $payment_token->get_gateway_id(), 'braintree_' ) ) {
 			unset( $item['actions']['edit'], $item['actions']['save'] );
 		}
 		return $item;
