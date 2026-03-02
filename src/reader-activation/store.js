@@ -238,7 +238,7 @@ export default function Store() {
 	// Push unsynced items to the sync queue, pruning existing read-only
 	// keys in order to address the upgrade case.
 	const readOnlyKeys = newspack_reader_data?.read_only_keys || [];
-	const unsynced = _get( 'unsynced', true ).filter( key => ! readOnlyKeys.includes( key ) );
+	const unsynced = ( _get( 'unsynced', true ) || [] ).filter( key => ! readOnlyKeys.includes( key ) );
 	_set( 'unsynced', unsynced, true );
 	for ( const key of unsynced ) {
 		if ( ! syncQueue.includes( key ) ) {
