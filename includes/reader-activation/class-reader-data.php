@@ -44,6 +44,10 @@ final class Reader_Data {
 	 * Server is the source of truth for these keys, and they
 	 * shouldn't be written to or deleted by the client.
 	 *
+	 * This list is surfaced to the client as
+	 * `newspack_reader_data.read_only_keys` to allow browser-side
+	 * validation and more graceful error handling.
+	 *
 	 * Implemented in a filter hook to permit plugins to alter the list.
 	 *
 	 * @return string[] Names of read-only keys.
