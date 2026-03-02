@@ -130,5 +130,14 @@ describe( 'Store', () => {
 			store.delete( 'custom_key' );
 			expect( store.get( 'custom_key' ) ).toBeNull();
 		} );
+		it( 'should prune read-only keys from the unsynced queue on init', () => {
+			// Simulate a pre-upgrade state where a read-only key was queued for sync.
+			localStorage.setItem( 'np_reader__unsynced', JSON.stringify( [ 'is_donor', 'custom_key' ] ) );
+			localStorage.setItem( 'np_reader_is_donor', true );
+			localStorage.setItem( 'np_reader_custom_key', '"value"' );
+			Store();
+			const unsynced = JSON.parse( localStorage.getItem( 'np_reader__unsynced' ) );
+			expect( unsynced ).toEqual( [ 'custom_key' ] );
+		} );
 	} );
 } );
