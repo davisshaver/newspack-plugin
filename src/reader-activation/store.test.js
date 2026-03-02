@@ -117,11 +117,11 @@ describe( 'Store', () => {
 			window.newspack_reader_data = {
 				read_only_keys: [ 'is_donor' ],
 				items: {
-					is_donor: '"true"',
+					is_donor: true,
 				},
 			};
 			const store = Store();
-			expect( store.get( 'is_donor' ) ).toEqual( 'true' );
+			expect( store.get( 'is_donor' ) ).toEqual( true );
 		} );
 		it( 'should not affect non-read-only keys', () => {
 			const store = Store();
