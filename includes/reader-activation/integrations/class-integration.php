@@ -77,7 +77,7 @@ abstract class Integration {
 	 *
 	 * @param bool $return_errors Optional. Whether to return a WP_Error object. Default false.
 	 *
-	 * @return bool|WP_Error True if contacts can be synced, false otherwise. WP_Error if return_errors is true.
+	 * @return bool|\WP_Error True if contacts can be synced, false otherwise. WP_Error if return_errors is true.
 	 */
 	abstract public function can_sync( $return_errors = false );
 
@@ -94,6 +94,49 @@ abstract class Integration {
 	 * @return true|\WP_Error True on success or WP_Error on failure.
 	 */
 	abstract public function push_contact_data( $contact, $context = '', $existing_contact = null );
+
+	/**
+	 * Register data event handlers for this integration.
+	 *
+	 * Called by Integrations after all integrations have been registered.
+	 * Concrete classes should override this and call $this->register_handler()
+	 * for each data event they need to handle.
+	 */
+	public function register_handlers() {}
+
+	/**
+	 * Register a data event handler for this integration.
+	 *
+	 * Delegates to Integrations which owns the handler map and
+	 * registers a serializable static callable with Data Events.
+	 *
+	 * The referenced method must have the following signature:
+	 *   public function $method( int $timestamp, array $data, string $client_id ): void
+	 *
+	 * @param string $action_name The data event action name.
+	 * @param string $method      The instance method to call on this integration.
+	 */
+	final protected function register_handler( $action_name, $method ) {
+		Integrations::register_data_event_handler( $this, static::class, $action_name, $method );
+	}
+
+	/**
+	 * Static dispatcher called by Data Events.
+	 *
+	 * Thin trampoline that delegates to Integrations::dispatch_data_event_handler().
+	 * This method must live on Integration so that late static binding
+	 * (static::class) produces a unique serializable callable per concrete
+	 * subclass, which Data Events needs for independent handler retries.
+	 *
+	 * @param int    $timestamp Timestamp of the event.
+	 * @param array  $data      Data associated with the event.
+	 * @param string $client_id Client ID.
+	 *
+	 * @throws \RuntimeException When the handler cannot be dispatched.
+	 */
+	final public static function dispatch_data_event_handler( $timestamp, $data, $client_id ) {
+		Integrations::dispatch_data_event_handler( static::class, $timestamp, $data, $client_id );
+	}
 
 	/**
 	 * Pull contact data from the integration for a given user.
