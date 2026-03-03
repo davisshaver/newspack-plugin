@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Newspack 6.33.0\n"
+"Project-Id-Version: Newspack 6.34.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/newspack-plugin\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-02T12:28:52+00:00\n"
+"POT-Creation-Date: 2026-03-03T15:06:02+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -1054,7 +1054,7 @@ msgstr ""
 #: includes/collections/class-query-helper.php:205
 #: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:22
 #: src/blocks/collections/class-collections-block.php:411
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/CollectionItem.jsx:61
 msgid "Order"
 msgstr ""
@@ -1195,7 +1195,7 @@ msgstr ""
 
 #: includes/collections/class-collection-taxonomy.php:229
 #: includes/wizards/newspack/class-newspack-settings.php:118
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:86
 #: src/blocks/collections/index.js:15
 msgid "Collections"
@@ -1298,7 +1298,7 @@ msgstr ""
 
 #: includes/collections/class-query-helper.php:204
 #: src/blocks/collections/class-collections-block.php:407
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/CollectionItem.jsx:57
 msgid "Subscribe"
 msgstr ""
@@ -1338,7 +1338,7 @@ msgid "See all %s"
 msgstr ""
 
 #: includes/collections/class-template-helper.php:690
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:76
 msgid "Recent"
 msgstr ""
@@ -1614,7 +1614,7 @@ msgid "New ones will be available %s."
 msgstr ""
 
 #: includes/content-gate/content-gifting/class-content-gifting.php:601
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/author-social-link/index.js:21
 #: src/blocks/author-social-link/index.js:22
 msgid "Link"
@@ -1902,7 +1902,7 @@ msgid "archive"
 msgstr ""
 
 #: includes/corrections/class-corrections.php:519
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/index.js:33
 msgid "loop"
 msgstr ""
@@ -2046,6 +2046,7 @@ msgstr ""
 #: dist/audience-wizards.d0258efb034579487f96.js:7
 #: dist/billboard.js:12
 #: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/commons.js:1
 #: dist/content-gate-editor.js:28
 #: dist/newsletters.js:4
@@ -3928,7 +3929,7 @@ msgstr ""
 
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:101
 #: dist/blocks.js:1
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/componentsDemo.js:1
 #: dist/my-account-button-block.js:1
 #: dist/newspack-wizards.3415f5c733d1b89a1e34.js:1
@@ -5915,7 +5916,7 @@ msgstr ""
 
 #. translators: 1: current number of metered views, 2: total metered views.
 #: src/blocks/content-gate/countdown/class-content-gate-countdown-block.php:76
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/content-gate-countdown-block.js:1
 #: src/blocks/content-gate/countdown/edit.jsx:28
 #: src/blocks/content-gate/countdown/view.js:32
@@ -6402,7 +6403,7 @@ msgstr ""
 
 #: dist/audience-wizards.d0258efb034579487f96.js:7
 #: dist/billboard.js:12
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/content-gate-editor.js:25
 #: src/blocks/collections/components/InspectorPanel.jsx:182
 #: src/content-gate/editor/editor.js:88
@@ -7000,7 +7001,7 @@ msgid "include"
 msgstr ""
 
 #: dist/audience-wizards.d0258efb034579487f96.js:30
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:65
 msgid "Mode"
 msgstr ""
@@ -8298,12 +8299,13 @@ msgid "Are you sure you want to skip this step? You can always come back later."
 msgstr ""
 
 #: dist/avatar-block.js:1
-#: dist/blocks.js:4
+#: dist/blocks.js:1
 #: src/blocks/avatar/index.js:15
 msgid "Avatar"
 msgstr ""
 
 #: dist/avatar-block.js:1
+#: dist/blocks.js:1
 #: dist/blocks.js:4
 #: src/blocks/avatar/index.js:28
 #: src/blocks/byline/index.js:28
@@ -8311,30 +8313,33 @@ msgid "author"
 msgstr ""
 
 #: dist/avatar-block.js:1
-#: dist/blocks.js:4
+#: dist/blocks.js:1
 #: src/blocks/avatar/index.js:29
 msgid "user"
 msgstr ""
 
 #: dist/avatar-block.js:1
-#: dist/blocks.js:4
+#: dist/blocks.js:1
 #: src/blocks/avatar/index.js:30
 msgid "profile"
 msgstr ""
 
 #: dist/avatar-block.js:1
+#: dist/blocks.js:1
 #: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/contribution-meter-block.js:5
 #: src/blocks/avatar/index.js:31
 #: src/blocks/byline/index.js:31
 #: src/blocks/collections/index.js:36
 #: src/blocks/contribution-meter/index.js:37
 #: src/blocks/copyright-date/index.js:30
+#: src/blocks/featured-image-caption/index.js:31
 msgid "newspack"
 msgstr ""
 
 #: dist/avatar-block.js:1
-#: dist/blocks.js:4
+#: dist/blocks.js:1
 #: src/blocks/avatar/index.js:33
 msgid "Display post author avatar."
 msgstr ""
@@ -8824,7 +8829,7 @@ msgid "Content Gate Countdown"
 msgstr ""
 
 #: dist/blocks.js:1
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/content-gate-countdown-box-block.js:1
 #: src/blocks/content-gate/countdown-box/index.js:28
 #: src/blocks/content-gate/countdown/index.js:27
@@ -8832,7 +8837,7 @@ msgid "countdown"
 msgstr ""
 
 #: dist/blocks.js:1
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/content-gate-countdown-box-block.js:1
 #: src/blocks/content-gate/countdown-box/index.js:29
 #: src/blocks/content-gate/countdown/index.js:28
@@ -8840,7 +8845,7 @@ msgid "content gate"
 msgstr ""
 
 #: dist/blocks.js:1
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/content-gate-countdown-box-block.js:1
 #: src/blocks/content-gate/countdown-box/index.js:30
 #: src/blocks/content-gate/countdown/index.js:29
@@ -8848,7 +8853,7 @@ msgid "metered"
 msgstr ""
 
 #: dist/blocks.js:1
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/content-gate-countdown-box-block.js:1
 #: src/blocks/content-gate/countdown-box/index.js:31
 #: src/blocks/content-gate/countdown/index.js:30
@@ -8856,7 +8861,7 @@ msgid "paywall"
 msgstr ""
 
 #: dist/blocks.js:1
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/content-gate-countdown-box-block.js:1
 #: src/blocks/content-gate/countdown-box/index.js:32
 #: src/blocks/content-gate/countdown/index.js:31
@@ -8899,6 +8904,30 @@ msgstr ""
 #: dist/blocks.js:1
 #: src/blocks/correction-item/index.js:40
 msgid "Post Title"
+msgstr ""
+
+#: dist/blocks.js:1
+#: dist/correction-box-block.js:1
+#: src/blocks/correction-box/index.js:15
+msgid "Corrections"
+msgstr ""
+
+#: dist/blocks.js:1
+#: dist/correction-box-block.js:1
+#: src/blocks/correction-box/index.js:27
+msgid "clarifications"
+msgstr ""
+
+#: dist/blocks.js:1
+#: dist/correction-box-block.js:1
+#: src/blocks/correction-box/index.js:27
+msgid "updates"
+msgstr ""
+
+#: dist/blocks.js:1
+#: dist/correction-box-block.js:1
+#: src/blocks/correction-box/index.js:28
+msgid "Display all corrections and clarifications made to a post."
 msgstr ""
 
 #: dist/blocks.js:1
@@ -9053,34 +9082,83 @@ msgid "Display post author(s) with support for custom bylines and CoAuthors Plus
 msgstr ""
 
 #: dist/blocks.js:4
+#: src/blocks/featured-image-caption/index.js:15
+msgid "Featured Image Caption"
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/featured-image-caption/index.js:28
+msgid "caption"
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/featured-image-caption/index.js:29
+msgid "featured image"
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/featured-image-caption/index.js:30
+msgid "credit"
+msgstr ""
+
+#: dist/blocks.js:4
+#: src/blocks/featured-image-caption/index.js:33
+msgid "Display the featured image caption and credit."
+msgstr ""
+
+#. translators: 1: media credit, 2: organization
+#: dist/blocks.js:5
+#: src/blocks/featured-image-caption/edit.js:19
+#, js-format
+msgid "Credit: %1$s / %2$s"
+msgstr ""
+
+#. translators: %s: media credit
+#: dist/blocks.js:6
+#: src/blocks/featured-image-caption/edit.js:27
+#, js-format
+msgid "Credit: %s"
+msgstr ""
+
+#: dist/blocks.js:6
+#: src/blocks/featured-image-caption/edit.js:67
+msgid "No caption or credit available."
+msgstr ""
+
+#: dist/blocks.js:6
+#: src/blocks/featured-image-caption/edit.js:59
+msgid "Featured image caption."
+msgstr ""
+
+#: dist/blocks.js:6
 #: src/blocks/author-profile-social/index.js:24
 msgid "Author Social Links"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/author-profile-social/edit.jsx:101
 msgid "Social links will appear here."
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/author-profile-social/edit.jsx:110
 #: src/blocks/author-profile-social/edit.jsx:111
 msgid "Reset links"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/newspack-wizards.3415f5c733d1b89a1e34.js:11
 #: dist/newspack-wizards.3415f5c733d1b89a1e34.js:27
 #: src/blocks/author-profile-social/edit.jsx:112
 msgid "Reset"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/author-profile-social/edit.jsx:120
 msgid "Icon size"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/componentsDemo.js:1
 #: dist/content-gate-editor.js:25
 #: dist/contribution-meter-block.js:1
@@ -9094,12 +9172,12 @@ msgstr ""
 msgid "Small"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/author-profile-social/utils.js:15
 msgid "Normal"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/content-gate-editor.js:25
 #: dist/contribution-meter-block.js:1
 #: dist/newspack-wizards.3415f5c733d1b89a1e34.js:27
@@ -9110,135 +9188,135 @@ msgstr ""
 msgid "Large"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/author-profile-social/utils.js:17
 msgid "Huge"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/author-profile-social/edit.jsx:128
 msgid "Add missing links"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/author-social-link/utils.js:29
 msgid "Email"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/commons.js:13
 #: packages/components/src/web-preview/index.js:158
 #: src/blocks/author-social-link/utils.js:30
 msgid "Phone"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:71
 msgid "The block will display the most recent collection(s)."
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:72
 msgid "The block will display only the specifically selected collection(s)."
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:77
 msgid "Static"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:87
 msgid "Begin typing any word in a collection title. Click on an autocomplete result to select it."
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:95
 msgid "Number of collections"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:104
 msgid "Offset"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:109
 msgid "Number of collections to skip from the beginning"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:118
 msgid "Included categories"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:128
 msgid "Excluded categories"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:137
 msgid "Grid"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:139
 msgid "Columns"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:149
 msgid "Featured Image"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:151
 msgid "Show featured image"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:158
 msgid "Alignment"
 msgstr ""
 
 #. translators: Overlay Position
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/content-gate-editor.js:3
 #: packages/components/src/position-control/index.js:27
 #: src/blocks/collections/components/InspectorPanel.jsx:165
 msgid "Top"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:167
 #: src/blocks/collections/edit.jsx:41
 msgid "Show image on top"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:170
 msgid "Left"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:172
 #: src/blocks/collections/edit.jsx:47
 msgid "Show image on left"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:175
 msgid "Right"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:177
 #: src/blocks/collections/edit.jsx:53
 msgid "Show image on right"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/contribution-meter-block.js:1
 #: dist/newspack-wizards.3415f5c733d1b89a1e34.js:27
 #: dist/setup.js:7
@@ -9247,7 +9325,7 @@ msgstr ""
 msgid "S"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/contribution-meter-block.js:1
 #: dist/newspack-wizards.3415f5c733d1b89a1e34.js:27
 #: dist/setup.js:7
@@ -9256,7 +9334,7 @@ msgstr ""
 msgid "M"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/content-gate-editor.js:25
 #: dist/contribution-meter-block.js:1
 #: src/blocks/collections/components/InspectorPanel.jsx:196
@@ -9265,7 +9343,7 @@ msgstr ""
 msgid "Medium"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: dist/contribution-meter-block.js:1
 #: dist/newspack-wizards.3415f5c733d1b89a1e34.js:27
 #: dist/setup.js:7
@@ -9274,203 +9352,179 @@ msgstr ""
 msgid "L"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:208
 msgid "Collection Meta"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:210
 msgid "Show title"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:216
 msgid "Show category"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:222
 msgid "Show excerpt"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:228
 msgid "Show period"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:234
 msgid "Show volume"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:240
 msgid "Show number"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:246
 msgid "Show CTAs"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:254
 msgid "Number of CTAs"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:259
 msgid "Maximum number of CTAs to display"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:264
 msgid "Show subscription URL"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:270
 msgid "Show order URL"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:277
 msgid "Specific CTAs (comma-separated)"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:278
 msgid "Enter specific CTA to show, e.g. \"Digital Edition\" (should match existing CTA label). Leave empty to show first available CTAs."
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/index.js:28
 msgid "collections"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/index.js:29
 msgid "issues"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/index.js:30
 msgid "magazine"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/index.js:31
 msgid "publications"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/index.js:32
 msgid "content"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/index.js:34
 msgid "query"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/index.js:35
 msgid "latest"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/index.js:38
 msgid "An advanced block that allows displaying collections based on different parameters and visual configurations."
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/edit.jsx:23
 msgid "List view"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/edit.jsx:29
 msgid "Grid view"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/edit.jsx:113
 msgid "Loading collections…"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/collections/edit.jsx:120
 msgid "No collections found"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/content-gate/countdown/index.js:14
 msgid "Article Counter"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/content-gate/countdown/index.js:33
 msgid "Displays the current free article count."
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/copyright-date/index.js:14
 msgid "Copyright Date"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/copyright-date/index.js:27
 msgid "copyright"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/copyright-date/index.js:28
 msgid "date"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/copyright-date/index.js:29
 msgid "year"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/copyright-date/index.js:32
 msgid "Display the current year with configurable prefix and suffix text."
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/copyright-date/edit.jsx:34
 msgid "Prefix…"
 msgstr ""
 
-#: dist/blocks.js:4
+#: dist/blocks.js:6
 #: src/blocks/copyright-date/edit.jsx:43
 msgid "Suffix…"
-msgstr ""
-
-#: dist/blocks.js:4
-#: dist/correction-box-block.js:1
-#: src/blocks/correction-box/index.js:15
-msgid "Corrections"
-msgstr ""
-
-#: dist/blocks.js:4
-#: dist/correction-box-block.js:1
-#: src/blocks/correction-box/index.js:27
-msgid "clarifications"
-msgstr ""
-
-#: dist/blocks.js:4
-#: dist/correction-box-block.js:1
-#: src/blocks/correction-box/index.js:27
-msgid "updates"
-msgstr ""
-
-#: dist/blocks.js:4
-#: dist/correction-box-block.js:1
-#: src/blocks/correction-box/index.js:28
-msgid "Display all corrections and clarifications made to a post."
 msgstr ""
 
 #: dist/bylines.js:1
@@ -13382,6 +13436,12 @@ msgstr ""
 #: src/blocks/copyright-date/block.json
 msgctxt "block description"
 msgid "Display the current year with configurable prefix and suffix text."
+msgstr ""
+
+#: dist/blocks/featured-image-caption/block.json
+#: src/blocks/featured-image-caption/block.json
+msgctxt "block title"
+msgid "Featured Image Caption"
 msgstr ""
 
 #: dist/blocks/my-account-button/block.json
