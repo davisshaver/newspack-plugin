@@ -24,6 +24,16 @@ class Sample_Integration extends Integration {
 	}
 
 	/**
+	 * Pull contact data (test implementation).
+	 *
+	 * @param int $user_id WordPress user ID.
+	 * @return array
+	 */
+	public function pull_contact_data( $user_id ) {
+		return [];
+	}
+
+	/**
 	 * Whether contacts can be synced to the ESP.
 	 *
 	 * @param bool $return_errors Optional. Whether to return a WP_Error object. Default false.
@@ -32,5 +42,17 @@ class Sample_Integration extends Integration {
 	 */
 	public function can_sync( $return_errors = false ) {
 		return $return_errors ? new \WP_Error() : true;
+	}
+
+	/**
+	 * Get incoming available contact fields from the integration.
+	 *
+	 * This method should be implemented by child classes to return
+	 * an array of available contact fields from their integration.
+	 *
+	 * @return Integrations\Incoming_Contact_Field[]|\WP_Error Array of incoming contact field objects or WP_Error on failure.
+	 */
+	public function get_incoming_available_contact_fields() {
+		return [];
 	}
 }
