@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-03T22:39:04+00:00\n"
+"POT-Creation-Date: 2026-03-04T13:11:39+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -1742,177 +1742,177 @@ msgstr ""
 msgid "No donation products found."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:143
+#: includes/corrections/class-corrections.php:144
 msgctxt "post type general name"
 msgid "Corrections"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:144
+#: includes/corrections/class-corrections.php:145
 msgctxt "post type singular name"
 msgid "Correction"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:145
+#: includes/corrections/class-corrections.php:146
 msgctxt "admin menu"
 msgid "Corrections"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:146
+#: includes/corrections/class-corrections.php:147
 msgctxt "add new on admin bar"
 msgid "Correction"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:147
+#: includes/corrections/class-corrections.php:148
 msgctxt "correction"
 msgid "Add New"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:148
+#: includes/corrections/class-corrections.php:149
 #: dist/other-scripts/corrections-modal.js:1
 #: src/other-scripts/corrections-modal/index.js:208
 msgid "Add New Correction"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:149
+#: includes/corrections/class-corrections.php:150
 msgid "New Correction"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:150
+#: includes/corrections/class-corrections.php:151
 msgid "Edit Correction"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:151
 #: includes/corrections/class-corrections.php:152
+#: includes/corrections/class-corrections.php:153
 msgid "View Correction"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:153
+#: includes/corrections/class-corrections.php:154
 msgid "All Corrections"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:154
+#: includes/corrections/class-corrections.php:155
 msgid "Search Corrections"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:155
+#: includes/corrections/class-corrections.php:156
 msgid "Parent Correction:"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:156
+#: includes/corrections/class-corrections.php:157
 msgid "No corrections found."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:157
+#: includes/corrections/class-corrections.php:158
 msgid "No corrections found in Trash."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:158
+#: includes/corrections/class-corrections.php:159
 msgid "Correction Archives"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:159
+#: includes/corrections/class-corrections.php:160
 msgid "Correction Attributes"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:160
+#: includes/corrections/class-corrections.php:161
 msgid "Insert into correction"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:161
+#: includes/corrections/class-corrections.php:162
 msgid "Uploaded to this correction"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:162
+#: includes/corrections/class-corrections.php:163
 msgid "Filter corrections list"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:163
+#: includes/corrections/class-corrections.php:164
 msgid "Corrections list navigation"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:164
+#: includes/corrections/class-corrections.php:165
 msgid "Corrections list"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:165
+#: includes/corrections/class-corrections.php:166
 msgid "Correction published."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:166
+#: includes/corrections/class-corrections.php:167
 msgid "Correction published privately."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:167
+#: includes/corrections/class-corrections.php:168
 msgid "Correction reverted to draft."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:168
+#: includes/corrections/class-corrections.php:169
 msgid "Correction scheduled."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:169
+#: includes/corrections/class-corrections.php:170
 msgid "Correction updated."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:170
+#: includes/corrections/class-corrections.php:171
 msgid "Correction Link"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:171
+#: includes/corrections/class-corrections.php:172
 msgid "A link to a correction."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:175
+#: includes/corrections/class-corrections.php:176
 msgid "Post type used to store corrections and clarifications."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:265
+#: includes/corrections/class-corrections.php:266
 msgid "Corrections saved successfully."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:412
+#: includes/corrections/class-corrections.php:413
 #: dist/other-scripts/corrections-modal.js:1
 #: src/other-scripts/corrections-modal/index.js:27
 msgid "Clarification"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:414
+#: includes/corrections/class-corrections.php:415
 #: dist/other-scripts/corrections-modal.js:1
 #: src/other-scripts/corrections-modal/index.js:26
 msgid "Correction"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:508
+#: includes/corrections/class-corrections.php:574
 msgid "Newspack Corrections"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:516
+#: includes/corrections/class-corrections.php:582
 msgid "Corrections Loop"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:517
+#: includes/corrections/class-corrections.php:583
 msgid "A block pattern for displaying an archive of corrections."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:519
+#: includes/corrections/class-corrections.php:585
 msgid "corrections"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:519
+#: includes/corrections/class-corrections.php:585
 msgid "archive"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:519
+#: includes/corrections/class-corrections.php:585
 #: dist/blocks.js:6
 #: src/blocks/collections/index.js:33
 msgid "loop"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:549
+#: includes/corrections/class-corrections.php:615
 msgid "Corrections Archive"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:550
+#: includes/corrections/class-corrections.php:616
 msgid "A block template for displaying an archive of corrections."
 msgstr ""
 
