@@ -97,6 +97,9 @@ describe( 'Store', () => {
 		expect( store.get( 'foo' ) ).toEqual( 'bar' );
 	} );
 	describe( 'getAll', () => {
+		beforeEach( () => {
+			window.newspack_reader_data = {};
+		} );
 		it( 'should return all store data as a plain object', () => {
 			const store = Store();
 			store.set( 'name', 'Leo' );
