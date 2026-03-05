@@ -273,6 +273,27 @@ export default function Store() {
 			return _get( key );
 		},
 		/**
+		 * Get all values from the store.
+		 *
+		 * Iterates over keys in storage, filtering by our
+		 * store prefix to ensure only relevant items are included.
+		 *
+		 * @return {Object} Plain object with all key-value pairs.
+		 */
+		getAll: () => {
+			const data = {};
+			const { storePrefix, storage } = config;
+			const internalPrefix = storePrefix + '_';
+			for ( let i = 0; i < storage.length; i++ ) {
+				const storageKey = storage.key( i );
+				if ( storageKey.startsWith( storePrefix ) && ! storageKey.startsWith( internalPrefix ) ) {
+					const key = storageKey.slice( storePrefix.length );
+					data[ key ] = decode( storage.getItem( storageKey ) );
+				}
+			}
+			return data;
+		},
+		/**
 		 * Set a value in the store.
 		 *
 		 * @param {string}  key   Key to set.
