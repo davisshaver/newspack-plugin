@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-05T17:24:35+00:00\n"
+"POT-Creation-Date: 2026-03-05T20:41:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -4757,33 +4757,33 @@ msgid "Click here to monitor progress."
 msgstr ""
 
 #. Translators: %s is the email address of the contact to synced.
-#: includes/reader-activation/sync/class-contact-sync.php:314
+#: includes/reader-activation/sync/class-contact-sync.php:339
 #, php-format
 msgid "Scheduling secondary sync for contact %s."
 msgstr ""
 
-#: includes/reader-activation/sync/class-contact-sync.php:349
-#: includes/reader-activation/sync/class-contact-sync.php:354
+#: includes/reader-activation/sync/class-contact-sync.php:374
+#: includes/reader-activation/sync/class-contact-sync.php:379
 msgid "WC_Customer class unavailable."
 msgstr ""
 
 #. Translators: %d is the user ID.
-#: includes/reader-activation/sync/class-contact-sync.php:362
+#: includes/reader-activation/sync/class-contact-sync.php:387
 #, php-format
 msgid "Customer with ID %d does not exist."
 msgstr ""
 
 #. Translators: %1$s is the status and %2$s is the contact's email address.
-#: includes/reader-activation/sync/class-contact-sync.php:411
+#: includes/reader-activation/sync/class-contact-sync.php:436
 #, php-format
 msgid "%1$s contact data for %2$s."
 msgstr ""
 
-#: includes/reader-activation/sync/class-contact-sync.php:412
+#: includes/reader-activation/sync/class-contact-sync.php:437
 msgid "Would sync"
 msgstr ""
 
-#: includes/reader-activation/sync/class-contact-sync.php:412
+#: includes/reader-activation/sync/class-contact-sync.php:437
 #: dist/other-scripts/salesforce.js:1
 #: src/other-scripts/salesforce/index.js:30
 msgid "Synced"
