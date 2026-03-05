@@ -286,6 +286,9 @@ export default function Store() {
 			const internalPrefix = storePrefix + '_';
 			for ( let i = 0; i < storage.length; i++ ) {
 				const storageKey = storage.key( i );
+				if ( ! storageKey ) {
+					continue;
+				}
 				if ( storageKey.startsWith( storePrefix ) && ! storageKey.startsWith( internalPrefix ) ) {
 					const key = storageKey.slice( storePrefix.length );
 					data[ key ] = decode( storage.getItem( storageKey ) );
