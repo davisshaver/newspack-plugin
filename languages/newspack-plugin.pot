@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-06T19:38:39+00:00\n"
+"POT-Creation-Date: 2026-03-06T20:34:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -86,7 +86,7 @@ msgstr ""
 #: includes/class-magic-link.php:1103
 #: includes/cli/class-ras.php:74
 #: includes/plugins/co-authors-plus/class-nicename-change-ui.php:138
-#: includes/reader-activation/integrations/class-esp.php:123
+#: includes/reader-activation/integrations/class-esp.php:148
 #: includes/reader-activation/sync/class-contact-sync-admin.php:180
 msgid "User not found."
 msgstr ""
@@ -785,17 +785,17 @@ msgstr ""
 msgid "Customize the featured image sizes used in the RSS feed"
 msgstr ""
 
-#: includes/cli/class-mailchimp.php:60
-#: includes/cli/class-mailchimp.php:147
+#: includes/cli/class-mailchimp.php:61
+#: includes/cli/class-mailchimp.php:148
 msgid "Mailchimp audience ID not set."
 msgstr ""
 
-#: includes/cli/class-mailchimp.php:65
-#: includes/cli/class-mailchimp.php:152
+#: includes/cli/class-mailchimp.php:66
+#: includes/cli/class-mailchimp.php:153
 msgid "Could not connect to Mailchimp API. Is the site connected to Mailchimp?"
 msgstr ""
 
-#: includes/cli/class-mailchimp.php:126
+#: includes/cli/class-mailchimp.php:127
 msgid "Please specify at least one field to delete."
 msgstr ""
 
@@ -4798,21 +4798,21 @@ msgstr ""
 msgid "I have read and accept the {{Terms & Conditions}}."
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:27
+#: includes/reader-activation/integrations/class-esp.php:28
 msgid "ESPs Integration"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:58
-#: includes/reader-activation/integrations/class-esp.php:149
+#: includes/reader-activation/integrations/class-esp.php:83
+#: includes/reader-activation/integrations/class-esp.php:174
 msgid "Newspack Newsletters is not available."
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:65
+#: includes/reader-activation/integrations/class-esp.php:90
 msgid "ESP sync is not enabled."
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:72
-#: includes/reader-activation/integrations/class-esp.php:158
+#: includes/reader-activation/integrations/class-esp.php:97
+#: includes/reader-activation/integrations/class-esp.php:183
 msgid "ESP master list ID is not set."
 msgstr ""
 
