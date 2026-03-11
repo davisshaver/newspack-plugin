@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-11T18:29:05+00:00\n"
+"POT-Creation-Date: 2026-03-11T20:38:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -69,7 +69,7 @@ msgstr ""
 
 #: includes/class-magic-link.php:343
 #: includes/class-magic-link.php:417
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:489
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:506
 #: includes/reader-activation/class-reader-activation.php:1267
 #: includes/reader-activation/class-reader-activation.php:2209
 msgid "Invalid user."
@@ -98,7 +98,7 @@ msgstr ""
 
 #: includes/class-magic-link.php:572
 #: includes/class-magic-link.php:602
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:407
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:422
 msgid "Invalid token."
 msgstr ""
 
@@ -192,8 +192,8 @@ msgstr ""
 
 #: includes/class-magic-link.php:1087
 #: includes/class-magic-link.php:1091
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:556
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:576
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:573
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:593
 #: includes/reader-activation/class-reader-activation.php:2039
 #: includes/reader-activation/sync/class-contact-sync-admin.php:168
 msgid "Invalid request."
@@ -275,6 +275,7 @@ msgstr ""
 #: includes/class-newspack-ui.php:1221
 #: includes/content-gate/content-gifting/class-content-gifting.php:592
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:721
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:235
 #: includes/reader-activation/class-reader-activation.php:1623
 #: includes/reader-activation/class-reader-activation.php:1738
 #: dist/audience-wizards.714aa3a637886a875795.js:16
@@ -285,11 +286,13 @@ msgstr ""
 #: includes/class-newspack-ui.php:430
 #: includes/class-newspack-ui.php:450
 #: includes/class-newspack-ui.php:765
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:147
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:196
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:111
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:212
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:105
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:111
 #: includes/plugins/woocommerce/my-account/templates/v1/related-subscriptions.php:53
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:161
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:170
 #: dist/audience-wizards.714aa3a637886a875795.js:46
 #: dist/commons.js:4
 #: dist/commons.js:13
@@ -1062,7 +1065,7 @@ msgstr ""
 #: includes/collections/class-post-meta.php:37
 #: includes/collections/class-post-type.php:73
 #: includes/collections/class-query-helper.php:205
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:22
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:28
 #: src/blocks/collections/class-collections-block.php:411
 #: dist/blocks.js:6
 #: src/blocks/collections/components/CollectionItem.jsx:61
@@ -2336,7 +2339,7 @@ msgid "Nonce verification failed for id: %s"
 msgstr ""
 
 #: includes/oauth/class-google-login.php:127
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:403
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:418
 #: includes/plugins/woocommerce/my-account/templates/delete-account.php:20
 msgid "Invalid nonce."
 msgstr ""
@@ -2500,7 +2503,7 @@ msgid "If checked, the media partner markup will be skipped in RSS feeds and App
 msgstr ""
 
 #: includes/optional-modules/class-media-partners.php:477
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:246
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:229
 #: dist/audience-wizards.714aa3a637886a875795.js:10
 #: dist/audience-wizards.714aa3a637886a875795.js:18
 #: dist/audience-wizards.714aa3a637886a875795.js:25
@@ -2959,9 +2962,9 @@ msgid "Guest Contributor"
 msgstr ""
 
 #: includes/plugins/co-authors-plus/class-guest-contributor-role.php:395
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:679
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:696
 #: includes/plugins/woocommerce/my-account/templates/v0/edit-account.php:54
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:84
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:67
 msgid "Display name"
 msgstr ""
 
@@ -3134,7 +3137,7 @@ msgstr ""
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:62
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:155
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:745
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:105
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:114
 msgid "Change subscription"
 msgstr ""
 
@@ -3187,12 +3190,14 @@ msgstr ""
 #: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-settings.php:340
 #: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-settings.php:342
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1-passwords.php:239
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:354
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:440
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:672
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:708
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:762
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:857
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:369
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:455
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:687
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:723
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:777
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:872
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:215
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:256
 #: dist/audience-wizards.714aa3a637886a875795.js:10
 #: dist/audience-wizards.714aa3a637886a875795.js:16
 #: dist/audience-wizards.714aa3a637886a875795.js:18
@@ -3265,6 +3270,7 @@ msgid "WooCommerce Subscriptions is not available."
 msgstr ""
 
 #: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-api.php:155
+#: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-myaccount.php:103
 #: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription.php:104
 msgid "Subscription not found."
 msgstr ""
@@ -3364,12 +3370,42 @@ msgstr ""
 msgid "There was a problem with your invitation."
 msgstr ""
 
+#: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-myaccount.php:116
+msgid "You do not have permission to manage members of this subscription."
+msgstr ""
+
+#: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-myaccount.php:159
+msgid "Manage members"
+msgstr ""
+
+#: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-myaccount.php:187
+msgid "You do not have permission to manage members for this group subscription."
+msgstr ""
+
+#. translators: %s: The invited email address.
+#: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-myaccount.php:243
+#, php-format
+msgid "%s has been invited to become a member of this group subscription."
+msgstr ""
+
+#. translators: %s: The cancelled invitation's email address.
+#: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-myaccount.php:266
+#, php-format
+msgid "The invitation for %s has been cancelled."
+msgstr ""
+
+#. translators: %s: The removed member's email address.
+#: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-myaccount.php:351
+#, php-format
+msgid "%s has been removed from this group subscription."
+msgstr ""
+
 #: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-settings.php:83
 msgid "Search for a reader..."
 msgstr ""
 
 #: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-settings.php:84
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1090
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1107
 #: includes/reader-activation/class-reader-activation.php:276
 #: includes/reader-activation/class-reader-activation.php:2246
 msgid "Please enter a valid email address."
@@ -3447,15 +3483,16 @@ msgid "Or, send an invitation to a new reader:"
 msgstr ""
 
 #: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-settings.php:359
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:678
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:695
 #: includes/plugins/woocommerce/my-account/templates/v0/edit-account.php:68
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:98
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:81
 #: includes/reader-activation/class-reader-activation.php:996
 #: includes/reader-activation/class-reader-activation.php:1553
 msgid "Email address"
 msgstr ""
 
 #: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-settings.php:360
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:255
 msgid "Invite"
 msgstr ""
 
@@ -3480,7 +3517,7 @@ msgid "Please wait a moment before trying to complete this transaction again."
 msgstr ""
 
 #: includes/plugins/woocommerce/class-woocommerce-connection.php:299
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:335
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:352
 msgid "Please wait a moment before trying to add a new payment method."
 msgstr ""
 
@@ -3651,9 +3688,9 @@ msgid "Please check your email inbox for instructions on how to delete your acco
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v0.php:90
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:453
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:604
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1204
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:470
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:621
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1221
 #: dist/audience-wizards.714aa3a637886a875795.js:80
 #: dist/audience-wizards.714aa3a637886a875795.js:86
 #: dist/audience-wizards.714aa3a637886a875795.js:89
@@ -3688,32 +3725,32 @@ msgid "Password updated."
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1-passwords.php:188
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:214
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:197
 msgid "New password"
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1-passwords.php:188
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1-passwords.php:200
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:203
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:214
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:226
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:186
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:197
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:209
 msgid "Required"
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1-passwords.php:200
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:226
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:209
 msgid "Re-enter new password"
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1-passwords.php:227
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:248
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:231
 #: includes/templates/reader-activation-emails/password-reset.php:42
 #: includes/templates/reader-activation-emails/password-reset.php:248
 msgid "Set password"
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1-passwords.php:227
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:198
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:181
 msgid "Reset password"
 msgstr ""
 
@@ -3734,11 +3771,11 @@ msgstr ""
 msgid "Change payment method"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:225
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:227
 msgid "Payment information"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:231
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:233
 #: includes/plugins/woocommerce/my-account/templates/v1/subscription-totals-table.php:38
 #: dist/audience-wizards.714aa3a637886a875795.js:95
 msgid "Subscription"
@@ -3746,76 +3783,76 @@ msgid_plural "Subscriptions"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:281
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:413
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:509
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:296
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:428
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:524
 #: dist/audience-wizards.714aa3a637886a875795.js:31
 #: dist/audience-wizards.714aa3a637886a875795.js:52
 msgid "Are you sure?"
 msgstr ""
 
 #. Translators: %s will be displayed only if the user has active subscriptions or newsletter subscriptions.
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:288
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:303
 #, php-format
 msgid "Deleting your account is permanent and cannot be undone. All your data will be removed from our systems. %s"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:289
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:304
 msgid "Your newsletter subscriptions and all recurring payments will be cancelled."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:297
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:312
 msgid "Instead of deleting your account, you may want to:"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:306
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:321
 #: includes/wizards/audience/class-audience-subscriptions.php:100
 #: includes/wizards/newspack/class-newspack-dashboard.php:70
 #: includes/wizards/newspack/class-newspack-dashboard.php:218
 msgid "Subscriptions"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:307
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:322
 msgid "Review and cancel active subscriptions."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:311
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:326
 msgid "Manage subscriptions"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:319
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:334
 #: includes/wizards/newspack/class-newspack-dashboard.php:81
 #: dist/audience-wizards.714aa3a637886a875795.js:18
 #: src/wizards/audience/views/campaigns/segments/single-segment.js:208
 msgid "Newsletters"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:320
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:335
 msgid "Update your newsletter preferences."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:324
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:339
 msgid "Manage newsletters"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:336
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:341
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:380
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:429
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:436
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:263
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:351
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:356
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:395
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:444
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:451
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:246
 msgid "Delete account"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:369
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:384
 msgid "Your account deletion has been requested."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:371
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:386
 msgid "We just sent instructions on how to delete your account to"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:385
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:400
 #: includes/reader-activation/class-reader-activation.php:287
 #: includes/reader-activation/class-reader-activation.php:315
 #: src/blocks/reader-registration/index.php:245
@@ -3826,52 +3863,52 @@ msgstr ""
 msgid "Continue"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:416
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:431
 #: includes/plugins/woocommerce/my-account/templates/delete-account.php:39
 msgid "Confirm to delete your account permanently."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:417
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:432
 #: includes/plugins/woocommerce/my-account/templates/delete-account.php:45
 msgid "Caution, this action is irreversible!"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:470
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:485
 #: includes/plugins/woocommerce/my-account/templates/after-delete-account.php:15
 msgid "Your account has been deleted."
 msgstr ""
 
 #. Translators: %s is either the next payment date, or a generic explanation of when the subscription will end if cancelled.
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:516
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:531
 #, php-format
 msgid "If you cancel now, your subscription will remain active until %s."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:517
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:532
 msgid "the end of your current billing period"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:523
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:538
 msgid "After this, your subscription access will end unless you choose to renew."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:530
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:534
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:24
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:545
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:549
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:26
 msgid "Cancel subscription"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:539
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:554
 msgid "Keep subscription"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:615
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:630
 msgid "Are you sure you want to delete this payment method from your account?"
 msgstr ""
 
 #. translators: last 4 digits.
 #. translators: last 4 digits
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:627
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:642
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:54
 #, php-format
 msgid "Ending in %s"
@@ -3879,123 +3916,123 @@ msgstr ""
 
 #. translators: expiration date.
 #. translators: expiration date
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:635
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:650
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:67
 #, php-format
 msgid "Exp. %s"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:660
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:668
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:675
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:683
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:118
 msgid "Delete payment method"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:699
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:714
 msgid "Add Payment Method"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:724
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:780
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:739
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:795
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:174
 msgid "Billing"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:726
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:782
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:741
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:797
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:176
 msgid "Shipping"
 msgstr ""
 
 #. Translators: %s is the address type.
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:747
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:762
 #, php-format
 msgid "Edit %s address"
 msgstr ""
 
 #. Translators: %s is the address type.
 #. translators: address type
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:751
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:766
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:250
 #, php-format
 msgid "Add %s address"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:794
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:809
 msgid "Are you sure you want to delete this address from your account?"
 msgstr ""
 
 #. Translators: %s is the address type.
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:843
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:858
 #, php-format
 msgid "Delete %s address"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:853
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:868
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:223
 msgid "Delete address"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:316
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:333
 msgid "Are you sure you want to cancel this subscription?"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:357
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:374
 msgid "Account settings"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:362
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:379
 msgid "Log out"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:446
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:463
 msgid "Please check your email inbox for instructions on how to set a new password."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:533
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:550
 msgid "Invalid user ID."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:597
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:614
 msgid "Please check your email inbox for a link to verify your account."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:930
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:947
 msgid "Active Memberships"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:931
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:948
 msgid "These memberships are active, but don't have an associated subscription. They will need to be manually renewed when they expire."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1092
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1109
 msgid "This email address is already in use."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1096
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1113
 msgid "Something went wrong. Please try again."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1136
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1153
 msgid "Something went wrong. Please contact the site administrator."
 msgstr ""
 
 #. Translators: %s is the email address the verification email was sent to..
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1141
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1158
 #, php-format
 msgid "A verification email has been sent to %s. Please verify to complete the change."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1183
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1200
 msgid "Your email address has been successfully updated."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1208
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1244
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1225
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1261
 msgid "This email change request has been cancelled or expired."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1239
+#: includes/plugins/woocommerce/my-account/class-woocommerce-my-account.php:1256
 msgid "Your email address change request has been cancelled."
 msgstr ""
 
@@ -4019,7 +4056,7 @@ msgstr ""
 
 #: includes/plugins/woocommerce/my-account/templates/delete-account.php:52
 #: includes/plugins/woocommerce/my-account/templates/v0/edit-account.php:160
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:269
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:252
 #: includes/reader-activation/class-reader-activation-emails.php:148
 msgid "Delete Account"
 msgstr ""
@@ -4029,26 +4066,26 @@ msgid "Your Name"
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/templates/v0/edit-account.php:64
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:94
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:77
 msgid "This is how your name is displayed publicly."
 msgstr ""
 
 #. Translators: %s is the account's current email address.
 #: includes/plugins/woocommerce/my-account/templates/v0/edit-account.php:81
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:134
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:117
 #, php-format
 msgid "This email address is pending verification. Please verify to complete the change request, or cancel the change to retain the current account email: %s"
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/templates/v0/edit-account.php:116
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:180
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:163
 #: includes/templates/reader-activation-emails/change-email-cancel.php:44
 #: includes/templates/reader-activation-emails/change-email-cancel.php:245
 msgid "Cancel email change"
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/templates/v0/edit-account.php:118
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:183
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:166
 msgid "Save changes"
 msgstr ""
 
@@ -4072,75 +4109,195 @@ msgstr ""
 msgid "Request account deletion"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:50
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:33
 msgid "Profile"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:56
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:39
 msgid "First name"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:63
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:46
 msgid "Your First Name"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:69
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:52
 msgid "Last name"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:76
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:59
 msgid "Your Last Name"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:91
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:74
 msgid "Your Display Name"
 msgstr ""
 
 #. Translators: %s is the reply-to email address for the site.
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:149
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:132
 #, php-format
 msgid "To update your email address, please <a href=\"mailto:%s\">contact us</a>."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:183
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:166
 msgid "Update profile"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:192
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:175
 msgid "Password"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:195
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:178
 msgid "Create a password to secure your account."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:195
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:178
 msgid "Reset your account password."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:198
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:181
 msgid "Create a password"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:203
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:186
 msgid "Current password"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:248
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:231
 msgid "Update password"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:251
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:234
 #: includes/reader-activation/class-reader-activation.php:291
 msgid "Forgot password"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:265
+#: includes/plugins/woocommerce/my-account/templates/v1/account-settings.php:248
 msgid "Please note, account deletion is final, and there will be no way to restore your account."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:24
-#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:35
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:35
+msgid "Back to subscription"
+msgstr ""
+
+#. translators: %s: The product name.
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:43
+#, php-format
+msgid "%s / Manage members"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:73
+msgid "Invite member"
+msgstr ""
+
+#. translators: %d: The number of members.
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:87
+#, php-format
+msgid "Members (<span class=\"newspack-group-subscription--members-count\">%d</span>)"
+msgstr ""
+
+#. translators: %d: The number of members.
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:99
+#, php-format
+msgid "Invitations (<span class=\"newspack-group-subscription--invitations-count\">%d</span>)"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:109
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:134
+#: dist/billboard.js:12
+#: dist/newspack-wizards.a6298c3ddc087726381d.js:1
+#: dist/newspack-wizards.a6298c3ddc087726381d.js:27
+#: src/wizards/advertising/views/ad-unit/index.js:79
+msgid "Name"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:110
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:140
+#: dist/blocks.js:6
+#: src/blocks/author-social-link/utils.js:29
+msgid "Email"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:111
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:141
+msgid "Role"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:120
+msgid "No members found."
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:128
+msgid "Manager"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:128
+msgid "Member"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:130
+msgid "Owner"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:137
+msgid " (you)"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:157
+msgid "Remove member"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:173
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:190
+msgid "Sent to"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:174
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:191
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:27
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:55
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:30
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:59
+msgid "Status"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:183
+msgid "No invitations found."
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:191
+#: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:98
+msgid "Expired"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:191
+#: dist/audience-wizards.714aa3a637886a875795.js:73
+#: dist/audience-wizards.714aa3a637886a875795.js:89
+msgid "Pending"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:206
+msgid "Resend"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:232
+msgid "Invite a group member"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:247
+msgid "You have reached the member limit for this group subscription. Please remove some members or cancel pending invitations before inviting more group members."
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:250
+msgid "Enter an email address to invite a new member to this group subscription."
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:252
+msgid "Recipient’s email address"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:26
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:41
 #: dist/audience-wizards.714aa3a637886a875795.js:70
 #: dist/audience-wizards.714aa3a637886a875795.js:73
 #: dist/audience-wizards.714aa3a637886a875795.js:92
@@ -4149,84 +4306,82 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:25
-#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:44
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:24
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:53
-msgid "Status"
-msgstr ""
-
-#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:26
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:28
 msgctxt "table heading"
 msgid "Next payment"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:27
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:29
 msgctxt "table heading"
 msgid "Total"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:47
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:51
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:60
+msgid "Group"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:58
 msgctxt "table heading"
 msgid "Next Payment"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:53
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:65
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:64
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:71
 msgctxt "Used in data attribute. Escaped"
 msgid "Total"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:57
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:94
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:68
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:100
 msgctxt "view a subscription"
 msgid "View"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:68
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:79
 msgid "Previous"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:72
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:83
 msgid "Next"
 msgstr ""
 
 #. translators: %1$s: opening anchor tag. %2$s: closing anchor tag.
-#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:82
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:93
 #, php-format
 msgid "You have reached the end of subscriptions. Go to the %1$sfirst page%2$s."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:87
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:98
 msgid "You have no active subscriptions."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:90
+#: includes/plugins/woocommerce/my-account/templates/v1/my-subscriptions.php:101
 msgid "Browse products"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:20
+#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:21
 msgid "My account"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:45
+#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:46
 msgid "Open navigation"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:45
+#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:46
 msgid "Close navigation"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:52
+#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:53
 msgid "Account pages"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:55
-#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:84
+#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:56
+#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:85
 msgid "Back to Homepage"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:118
+#: includes/plugins/woocommerce/my-account/templates/v1/navigation.php:112
 msgid "Sign out"
 msgstr ""
 
@@ -4236,10 +4391,6 @@ msgstr ""
 
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:21
 msgid "Payment methods"
-msgstr ""
-
-#: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:98
-msgid "Expired"
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:101
@@ -4273,7 +4424,7 @@ msgid "Addresses"
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/templates/v1/payment-information.php:218
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:95
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:104
 #: dist/audience-wizards.714aa3a637886a875795.js:1
 #: dist/audience-wizards.714aa3a637886a875795.js:16
 #: dist/audience-wizards.714aa3a637886a875795.js:18
@@ -4299,50 +4450,50 @@ msgstr ""
 msgid "You don’t have any addresses saved yet."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:15
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:21
 msgid "Billing history"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:23
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:50
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:29
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:56
 #: dist/other-scripts/corrections-modal.js:1
 #: src/other-scripts/corrections-modal/index.js:255
 #: src/other-scripts/corrections-modal/index.js:274
 msgid "Date"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:25
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:31
 msgctxt "table heading"
 msgid "Amount"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:43
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:49
 msgid "Order Number"
 msgstr ""
 
 #. translators: placeholder is an order number.
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:45
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:51
 #, php-format
 msgid "View order number %s"
 msgstr ""
 
 #. translators: placeholder is an order number.
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:47
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:53
 #, php-format
 msgctxt "hash before order number"
 msgid "#%s"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:60
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:66
 msgid "Paid"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:75
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:81
 msgctxt "pay for a subscription"
 msgid "Pay"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:88
+#: includes/plugins/woocommerce/my-account/templates/v1/related-orders.php:94
 msgctxt "an action on a subscription"
 msgid "Cancel"
 msgstr ""
@@ -4352,72 +4503,82 @@ msgstr ""
 msgid "View"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:24
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:27
 msgctxt "customer subscription table header"
 msgid "First payment"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:25
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:28
 msgctxt "customer subscription table header"
 msgid "Latest payment"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:26
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:29
 msgctxt "customer subscription table header"
 msgid "Next payment"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:27
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:30
 msgctxt "customer subscription table header"
 msgid "End date"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:28
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:31
 msgctxt "customer subscription table header"
 msgid "Trial end date"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:45
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:48
 msgid "Auto renew"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:53
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:56
 msgid "Enable auto renew"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:60
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:63
 msgid "Disable auto renew"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:66
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:69
 msgid "Using the auto-renewal toggle is disabled while in staging mode."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:74
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:81
+msgid "Subscription owner"
+msgstr ""
+
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:94
 #: includes/templates/reader-revenue-emails/receipt.php:54
 #: includes/templates/reader-revenue-emails/welcome.php:70
 msgid "Payment method"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:89
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:110
 msgid "Subscription updates"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:95
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-details.php:116
 msgctxt "date on subscription updates list. Will be localized"
 msgid "l jS \\o\\f F Y, h:ia"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:31
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:33
 msgid "Update payment method"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:47
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:49
 msgid "Back to all subscriptions"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:95
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:104
 msgid "Change"
+msgstr ""
+
+#. translators: %s is the email link to the display name of the subscription owner.
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-header.php:209
+#, php-format
+msgid "You are a member of this group subscription. It is managed by %s."
 msgstr ""
 
 #: includes/plugins/woocommerce/my-account/templates/v1/subscription-totals-table.php:23
@@ -4425,15 +4586,15 @@ msgctxt "table headings in notification email"
 msgid "Amount"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/verify.php:53
+#: includes/plugins/woocommerce/my-account/templates/verify.php:38
 msgid "You must verify your account before you can manage account settings. Verify with a link or by setting a password."
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/verify.php:57
+#: includes/plugins/woocommerce/my-account/templates/verify.php:42
 msgid "Send me a link"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/verify.php:60
+#: includes/plugins/woocommerce/my-account/templates/verify.php:45
 #: includes/templates/reader-activation-emails/password-reset.php:30
 #: includes/templates/reader-activation-emails/password-reset.php:73
 #: includes/templates/reader-activation-emails/password-reset.php:244
@@ -7926,11 +8087,6 @@ msgstr ""
 
 #: dist/audience-wizards.714aa3a637886a875795.js:73
 #: dist/audience-wizards.714aa3a637886a875795.js:89
-msgid "Pending"
-msgstr ""
-
-#: dist/audience-wizards.714aa3a637886a875795.js:73
-#: dist/audience-wizards.714aa3a637886a875795.js:89
 msgid "Ready"
 msgstr ""
 
@@ -9205,13 +9361,6 @@ msgid "Ad Unit Details"
 msgstr ""
 
 #: dist/billboard.js:12
-#: dist/newspack-wizards.a6298c3ddc087726381d.js:1
-#: dist/newspack-wizards.a6298c3ddc087726381d.js:27
-#: src/wizards/advertising/views/ad-unit/index.js:79
-msgid "Name"
-msgstr ""
-
-#: dist/billboard.js:12
 #: src/wizards/advertising/views/ad-unit/index.js:85
 msgid "Code"
 msgstr ""
@@ -9656,11 +9805,6 @@ msgstr ""
 #: dist/blocks.js:6
 #: src/blocks/author-profile-social/edit.jsx:128
 msgid "Add missing links"
-msgstr ""
-
-#: dist/blocks.js:6
-#: src/blocks/author-social-link/utils.js:29
-msgid "Email"
 msgstr ""
 
 #: dist/blocks.js:6
