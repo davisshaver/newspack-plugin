@@ -173,7 +173,7 @@ class WooCommerce_Subscriptions {
 				continue;
 			}
 			foreach ( $user_subscriptions as $subscription ) {
-				if ( $subscription->has_product( $product_to_check->get_id() ) && $subscription->has_status( 'active' ) ) {
+				if ( $subscription->has_product( $product_to_check->get_id() ) && $subscription->has_status( WooCommerce_Connection::ACTIVE_SUBSCRIPTION_STATUSES ) ) {
 					return $subscription;
 				}
 			}
