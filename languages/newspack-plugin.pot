@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-17T15:49:14+00:00\n"
+"POT-Creation-Date: 2026-03-17T19:46:30+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -86,7 +86,7 @@ msgstr ""
 #: includes/class-magic-link.php:1103
 #: includes/cli/class-ras.php:74
 #: includes/plugins/co-authors-plus/class-nicename-change-ui.php:138
-#: includes/reader-activation/integrations/class-esp.php:303
+#: includes/reader-activation/integrations/class-esp.php:345
 #: includes/reader-activation/sync/class-contact-sync-admin.php:180
 msgid "User not found."
 msgstr ""
@@ -5116,69 +5116,69 @@ msgstr ""
 msgid "Sync reader data and activity to the connected email service provider."
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:58
+#: includes/reader-activation/integrations/class-esp.php:52
 msgid "Mailchimp Audience"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:59
+#: includes/reader-activation/integrations/class-esp.php:53
 #: dist/audience-wizards.43b7bb91017a2011b357.js:80
 #: src/wizards/audience/components/mailchimp.js:47
 #: src/wizards/audience/components/settings.js:37
 msgid "Choose an audience to receive reader activity data."
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:66
+#: includes/reader-activation/integrations/class-esp.php:59
 #: dist/audience-wizards.43b7bb91017a2011b357.js:83
 #: src/wizards/audience/components/mailchimp.js:58
 #: src/wizards/audience/components/settings.js:74
 msgid "Default reader status"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:67
+#: includes/reader-activation/integrations/class-esp.php:60
 msgid "Choose which Mailchimp status readers should have by default if they are not subscribed to any newsletters."
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:70
+#: includes/reader-activation/integrations/class-esp.php:63
 #: dist/audience-wizards.43b7bb91017a2011b357.js:86
 #: src/wizards/audience/components/mailchimp.js:69
 #: src/wizards/audience/components/settings.js:89
 msgid "Transactional/Non-Subscribed"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:74
+#: includes/reader-activation/integrations/class-esp.php:67
 #: dist/audience-wizards.43b7bb91017a2011b357.js:86
 #: src/wizards/audience/components/mailchimp.js:71
 #: src/wizards/audience/components/settings.js:91
 msgid "Subscribed"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:85
+#: includes/reader-activation/integrations/class-esp.php:76
 msgid "ActiveCampaign Master List"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:86
-#: includes/reader-activation/integrations/class-esp.php:96
+#: includes/reader-activation/integrations/class-esp.php:77
+#: includes/reader-activation/integrations/class-esp.php:84
 #: dist/audience-wizards.43b7bb91017a2011b357.js:80
 #: src/wizards/audience/components/settings.js:38
 msgid "Choose a master list to which all registered readers will be added."
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:95
+#: includes/reader-activation/integrations/class-esp.php:83
 msgid "Constant Contact Master List"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:106
+#: includes/reader-activation/integrations/class-esp.php:90
 #: dist/audience-wizards.43b7bb91017a2011b357.js:86
 #: src/wizards/audience/views/setup/setup.js:241
 #: src/wizards/audience/views/setup/setup.js:248
 msgid "Sync user account deletion"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:107
+#: includes/reader-activation/integrations/class-esp.php:91
 msgid "When a reader account is deleted, also remove the contact from the ESP."
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:149
+#: includes/reader-activation/integrations/class-esp.php:191
 #: dist/audience-wizards.43b7bb91017a2011b357.js:83
 #: src/wizards/audience/components/active-campaign.js:52
 #: src/wizards/audience/components/mailchimp.js:52
@@ -5186,35 +5186,35 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:240
-#: includes/reader-activation/integrations/class-esp.php:343
+#: includes/reader-activation/integrations/class-esp.php:282
+#: includes/reader-activation/integrations/class-esp.php:385
 msgid "Newspack Newsletters is not available."
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:247
+#: includes/reader-activation/integrations/class-esp.php:289
 msgid "ESP sync is not enabled."
 msgstr ""
 
-#: includes/reader-activation/integrations/class-esp.php:253
-#: includes/reader-activation/integrations/class-esp.php:352
+#: includes/reader-activation/integrations/class-esp.php:295
+#: includes/reader-activation/integrations/class-esp.php:394
 msgid "ESP master list ID is not set."
 msgstr ""
 
-#: includes/reader-activation/integrations/class-integration.php:388
+#: includes/reader-activation/integrations/class-integration.php:380
 #: dist/audience-wizards.43b7bb91017a2011b357.js:86
 #: src/wizards/audience/components/metadata-fields.js:20
 msgid "Metadata field prefix"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-integration.php:389
+#: includes/reader-activation/integrations/class-integration.php:381
 msgid "A string to prefix metadata fields synced to the integration. Required to ensure that metadata field names are unique. Default: NP_"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-integration.php:395
+#: includes/reader-activation/integrations/class-integration.php:387
 msgid "Outgoing metadata fields"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-integration.php:401
+#: includes/reader-activation/integrations/class-integration.php:393
 msgid "Incoming metadata fields"
 msgstr ""
 
