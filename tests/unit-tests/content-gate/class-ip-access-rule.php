@@ -182,4 +182,81 @@ class Newspack_Test_IP_Access_Rule extends WP_UnitTestCase {
 
 		$this->assertSame( home_url( '/' ), $url );
 	}
+
+	/**
+	 * Test REST endpoint with institution_id param — matching IP.
+	 */
+	public function test_rest_endpoint_institution_id_match() {
+		$original_addr = isset( $_SERVER['REMOTE_ADDR'] ) ? $_SERVER['REMOTE_ADDR'] : null; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput, WordPressVIPMinimum.Variables.ServerVariables.UserControlledHeaders, WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__REMOTE_ADDR__
+
+		$inst_id = \Newspack\Institution::create(
+			'REST Test Library',
+			'',
+			[ 'ip_range' => '192.168.1.0/24' ]
+		);
+		$this->assertIsInt( $inst_id );
+		delete_transient( \Newspack\Institution::TRANSIENT_KEY );
+
+		$_SERVER['REMOTE_ADDR'] = '192.168.1.50'; // phpcs:ignore WordPressVIPMinimum.Variables.ServerVariables.UserControlledHeaders, WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__REMOTE_ADDR__
+
+		$request = new WP_REST_Request( 'GET', '/' . NEWSPACK_API_NAMESPACE . IP_Access_Rule::REST_ROUTE );
+		$request->set_param( 'institution_id', $inst_id );
+		$response = @rest_do_request( $request ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+		$data     = $response->get_data();
+
+		$this->assertTrue( $data['valid'] );
+		$this->assertSame( 'REST Test Library', $data['institution'] );
+
+		if ( null === $original_addr ) {
+			unset( $_SERVER['REMOTE_ADDR'] ); // phpcs:ignore WordPressVIPMinimum.Variables.ServerVariables.UserControlledHeaders, WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__REMOTE_ADDR__
+		} else {
+			$_SERVER['REMOTE_ADDR'] = $original_addr; // phpcs:ignore WordPressVIPMinimum.Variables.ServerVariables.UserControlledHeaders, WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__REMOTE_ADDR__
+		}
+		wp_delete_post( $inst_id, true );
+	}
+
+	/**
+	 * Test REST endpoint with institution_id param — non-matching IP.
+	 */
+	public function test_rest_endpoint_institution_id_no_match() {
+		$original_addr = isset( $_SERVER['REMOTE_ADDR'] ) ? $_SERVER['REMOTE_ADDR'] : null; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput, WordPressVIPMinimum.Variables.ServerVariables.UserControlledHeaders, WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__REMOTE_ADDR__
+
+		$inst_id = \Newspack\Institution::create(
+			'REST Test Library',
+			'',
+			[ 'ip_range' => '192.168.1.0/24' ]
+		);
+		$this->assertIsInt( $inst_id );
+		delete_transient( \Newspack\Institution::TRANSIENT_KEY );
+
+		$_SERVER['REMOTE_ADDR'] = '10.0.0.1'; // phpcs:ignore WordPressVIPMinimum.Variables.ServerVariables.UserControlledHeaders, WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__REMOTE_ADDR__
+
+		$request = new WP_REST_Request( 'GET', '/' . NEWSPACK_API_NAMESPACE . IP_Access_Rule::REST_ROUTE );
+		$request->set_param( 'institution_id', $inst_id );
+		$response = @rest_do_request( $request ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged -- nocache_headers cannot send headers in tests.
+		$data     = $response->get_data();
+
+		$this->assertFalse( $data['valid'] );
+		$this->assertSame( 'REST Test Library', $data['institution'], 'Institution name should be returned even on failure.' );
+
+		if ( null === $original_addr ) {
+			unset( $_SERVER['REMOTE_ADDR'] ); // phpcs:ignore WordPressVIPMinimum.Variables.ServerVariables.UserControlledHeaders, WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__REMOTE_ADDR__
+		} else {
+			$_SERVER['REMOTE_ADDR'] = $original_addr; // phpcs:ignore WordPressVIPMinimum.Variables.ServerVariables.UserControlledHeaders, WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__REMOTE_ADDR__
+		}
+		wp_delete_post( $inst_id, true );
+	}
+
+	/**
+	 * Test REST endpoint with invalid institution_id.
+	 */
+	public function test_rest_endpoint_institution_id_invalid() {
+		$request = new WP_REST_Request( 'GET', '/' . NEWSPACK_API_NAMESPACE . IP_Access_Rule::REST_ROUTE );
+		$request->set_param( 'institution_id', 999999 );
+		$response = @rest_do_request( $request ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged -- nocache_headers cannot send headers in tests.
+		$data     = $response->get_data();
+
+		$this->assertFalse( $data['valid'] );
+		$this->assertArrayNotHasKey( 'institution', $data );
+	}
 }
