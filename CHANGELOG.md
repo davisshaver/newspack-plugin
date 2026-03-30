@@ -1,3 +1,10 @@
+## [6.35.2](https://github.com/Automattic/newspack-plugin/compare/v6.35.1...v6.35.2) (2026-03-30)
+
+
+### Bug Fixes
+
+* **memberships:** force non-empty message to allow wc_memberships_notice_html to fire ([0e6f1c0](https://github.com/Automattic/newspack-plugin/commit/0e6f1c0d7600267f4524eec3411b1e2f15254d3e))
+
 ## [6.35.1](https://github.com/Automattic/newspack-plugin/compare/v6.35.0...v6.35.1) (2026-03-18)
 
 
