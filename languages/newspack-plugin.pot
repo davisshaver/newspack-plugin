@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Newspack 6.35.2\n"
+"Project-Id-Version: Newspack 6.36.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/newspack-plugin\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-03-30T18:57:06+00:00\n"
+"POT-Creation-Date: 2026-03-31T08:21:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -1626,7 +1626,7 @@ msgid "Connected to %s."
 msgstr ""
 
 #: includes/content-gate/class-ip-access-rule.php:225
-#: includes/content-gate/class-ip-access-rule.php:385
+#: includes/content-gate/class-ip-access-rule.php:387
 msgid "Connected to your organization."
 msgstr ""
 
@@ -1639,56 +1639,56 @@ msgid "Verifying access"
 msgstr ""
 
 #. translators: %s: institution name
-#: includes/content-gate/class-ip-access-rule.php:341
+#: includes/content-gate/class-ip-access-rule.php:342
 #, php-format
 msgid "Verifying your access to %s…"
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:343
+#: includes/content-gate/class-ip-access-rule.php:344
 msgid "Verifying your access…"
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:347
+#: includes/content-gate/class-ip-access-rule.php:348
 msgid "You'll be redirected in a few seconds."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:349
+#: includes/content-gate/class-ip-access-rule.php:351
 msgid "Try again"
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:350
+#: includes/content-gate/class-ip-access-rule.php:352
 msgid "Continue to site"
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:366
+#: includes/content-gate/class-ip-access-rule.php:368
 msgid "Verification timed out."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:367
+#: includes/content-gate/class-ip-access-rule.php:369
 msgid "Please check your connection and try again."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:384
+#: includes/content-gate/class-ip-access-rule.php:386
 msgid "Connected to "
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:386
+#: includes/content-gate/class-ip-access-rule.php:388
 msgid "Redirecting…"
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:397
+#: includes/content-gate/class-ip-access-rule.php:399
 msgid "We couldn't verify your location."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:398
+#: includes/content-gate/class-ip-access-rule.php:400
 msgid "Make sure you're on your organization's network and try again."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:405
+#: includes/content-gate/class-ip-access-rule.php:407
 msgid "Verification failed."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:406
+#: includes/content-gate/class-ip-access-rule.php:408
 msgid "An error occurred. Please try again."
 msgstr ""
 
