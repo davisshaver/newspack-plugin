@@ -144,7 +144,7 @@ class WooCommerce_Subscriptions {
 	}
 
 	/**
-	 * Get the user's subscription within a grouped or variable subscription product.
+	 * Get the user's active subscription for a product (simple, grouped, or variable).
 	 *
 	 * @param \WC_Product $product Product.
 	 * @param int|null    $user_id User ID. Defaults to the current user.
