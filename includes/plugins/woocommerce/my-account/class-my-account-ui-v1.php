@@ -192,9 +192,15 @@ class My_Account_UI_V1 {
 				}
 				return $template;
 			case 'notices/notice.php':
-				return __DIR__ . '/templates/v1/notices/notice.php';
+				if ( function_exists( 'is_account_page' ) && function_exists( 'did_action' ) && \did_action( 'wp' ) && \is_account_page() ) {
+					return __DIR__ . '/templates/v1/notices/notice.php';
+				}
+				return $template;
 			case 'notices/success.php':
-				return __DIR__ . '/templates/v1/notices/success.php';
+				if ( function_exists( 'is_account_page' ) && function_exists( 'did_action' ) && \did_action( 'wp' ) && \is_account_page() ) {
+					return __DIR__ . '/templates/v1/notices/success.php';
+				}
+				return $template;
 			default:
 				return $template;
 		}
