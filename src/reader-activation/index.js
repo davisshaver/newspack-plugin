@@ -353,6 +353,8 @@ function setReferrer() {
 	const referrer = document.referrer ? new URL( document.referrer ).hostname : '';
 	if ( referrer && referrer !== window.location.hostname ) {
 		store.set( 'referrer', referrer.replace( 'www.', '' ).trim().toLowerCase() );
+	} else {
+		store.set( 'referrer', '' );
 	}
 }
 
