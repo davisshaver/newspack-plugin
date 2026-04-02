@@ -501,10 +501,12 @@ final class Reader_Activation {
 		$last_name    = $request->get_param( 'last_name' );
 		$display_name = trim( $first_name . ' ' . $last_name );
 
-		// Build metadata.
-		$metadata = [
+		// Build metadata. Normalize referer to a local path, matching process_auth_form().
+		$referer          = \wp_parse_url( \wp_get_referer() );
+		$current_page_url = ! empty( $referer['path'] ) ? \esc_url( \home_url( $referer['path'] ) ) : '';
+		$metadata         = [
 			'registration_method' => 'integration-registration-' . $integration_id,
-			'current_page_url'    => \wp_get_referer() ? \wp_get_referer() : '',
+			'current_page_url'    => $current_page_url,
 		];
 
 		$result = self::register_reader( $email, $display_name, true, $metadata );
