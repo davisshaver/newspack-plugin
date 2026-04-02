@@ -491,7 +491,7 @@ function register( email, integrationId, profileFields = {} ) {
 			dispatchActivity( 'reader_registered', {
 				email,
 				integration_id: integrationId,
-				status: 'created',
+				status: data.status || 'created',
 			} );
 			return data;
 		} )
