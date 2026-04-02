@@ -522,6 +522,9 @@ final class Reader_Activation {
 			);
 		}
 
+		// @todo register_reader() returns false for both existing readers (sends magic link)
+		// and existing non-reader accounts (sends login reminder). This 409 treats both
+		// identically. Consider distinguishing these cases to avoid disclosing account type.
 		if ( false === $result ) {
 			return new \WP_Error(
 				'reader_already_exists',
