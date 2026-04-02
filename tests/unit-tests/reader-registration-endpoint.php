@@ -9,6 +9,8 @@ use Newspack\Reader_Activation;
 
 /**
  * Tests the Frontend Reader Registration REST endpoint.
+ *
+ * @group frontend-registration
  */
 class Newspack_Test_Frontend_Registration_Endpoint extends WP_UnitTestCase {
 	/**
