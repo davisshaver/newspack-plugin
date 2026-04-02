@@ -248,7 +248,14 @@ class Contact_Pull {
 				return $data;
 			}
 
-			$selected_keys = array_flip( $selected_fields );
+			$selected_keys = array_flip(
+				array_map(
+					function( $field ) {
+						return $field->get_key();
+					},
+					$selected_fields
+				)
+			);
 			$data          = array_intersect_key( $data, $selected_keys );
 			Logger::log( 'Pulled data from ' . $integration->get_id() . ': ' . wp_json_encode( $data ) );
 
@@ -287,14 +294,16 @@ class Contact_Pull {
 				],
 			];
 
-			if ( function_exists( 'as_has_scheduled_action' ) && \as_has_scheduled_action( self::ASYNC_PULL_HOOK, $args, 'newspack' ) ) {
+			$group = Integrations::get_action_group( $integration->get_id() );
+
+			if ( function_exists( 'as_has_scheduled_action' ) && \as_has_scheduled_action( self::ASYNC_PULL_HOOK, $args, $group ) ) {
 				continue;
 			}
 
 			\as_enqueue_async_action(
 				self::ASYNC_PULL_HOOK,
 				$args,
-				'newspack'
+				$group
 			);
 		}
 	}
