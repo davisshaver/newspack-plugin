@@ -468,6 +468,7 @@ final class Reader_Activation {
 		$should_verify   = \apply_filters( 'newspack_recaptcha_verify_captcha', Recaptcha::can_use_captcha(), '', 'integration_registration' );
 		if ( $should_verify ) {
 			// Bridge: verify_captcha() reads from $_POST.
+			// @todo Refactor Recaptcha::verify_captcha() to accept an optional $token parameter, eliminating this $_POST mutation.
 			$_POST['g-recaptcha-response'] = $recaptcha_token; // phpcs:ignore WordPress.Security.NonceVerification.Missing
 			$captcha_result                = Recaptcha::verify_captcha();
 			unset( $_POST['g-recaptcha-response'] );
