@@ -506,6 +506,7 @@ final class Reader_Activation {
 
 		// Build metadata. Normalize referer to a local path, matching process_auth_form().
 		$referer          = \wp_parse_url( \wp_get_referer() );
+		$referer          = is_array( $referer ) ? $referer : [];
 		$current_page_url = ! empty( $referer['path'] ) ? \esc_url( \home_url( $referer['path'] ) ) : '';
 		$metadata         = [
 			'registration_method' => 'integration-registration-' . $integration_id,
