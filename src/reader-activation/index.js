@@ -507,6 +507,10 @@ function register( email, integrationId, profileFields = {} ) {
 		return Promise.reject( new Error( 'Invalid email address.' ) );
 	}
 
+	if ( ! newspack_ras_config?.frontend_registration_url ) {
+		return Promise.reject( new Error( 'Registration is not available.' ) );
+	}
+
 	const body = {
 		npe: email,
 		integration_id: integrationId,
