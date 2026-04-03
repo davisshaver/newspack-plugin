@@ -521,6 +521,18 @@ final class Reader_Activation {
 		$result = self::register_reader( $email, $display_name, true, $metadata );
 
 		if ( \is_wp_error( $result ) ) {
+			// Race condition: concurrent requests for the same email can cause
+			// wp_insert_user() or wc_create_new_customer() to return an "existing
+			// user" error instead of register_reader() returning false.
+			$existing_user_codes = [ 'existing_user_email', 'existing_user_login', 'registration-error-email-exists' ];
+			if ( array_intersect( $result->get_error_codes(), $existing_user_codes ) ) {
+				return new \WP_Error(
+					'reader_already_exists',
+					__( 'A reader with this email address is already registered.', 'newspack-plugin' ),
+					[ 'status' => 409 ]
+				);
+			}
+
 			return new \WP_Error(
 				'registration_failed',
 				$result->get_error_message(),
