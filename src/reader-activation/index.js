@@ -524,7 +524,10 @@ function register( email, integrationId, profileFields = {} ) {
 	const captchaVersion = newspack_ras_config?.captcha_version;
 	let captchaPromise;
 
-	if ( captchaSiteKey && window.grecaptcha ) {
+	if ( captchaSiteKey ) {
+		if ( ! window.grecaptcha ) {
+			return Promise.reject( new Error( 'reCAPTCHA is configured but not loaded.' ) );
+		}
 		if ( captchaVersion === 'v3' ) {
 			captchaPromise = new Promise( function ( resolve, reject ) {
 				window.grecaptcha.ready( function () {
