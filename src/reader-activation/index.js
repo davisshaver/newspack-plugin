@@ -572,15 +572,16 @@ function register( email, integrationId, profileFields = {} ) {
 			} );
 		} )
 		.then( function ( data ) {
+			const readerEmail = data.email || email;
 			const reader = {
 				...( store.get( 'reader' ) || {} ),
-				email,
+				email: readerEmail,
 				authenticated: true,
 			};
 			store.set( 'reader', reader, false );
 			emit( EVENTS.reader, reader );
 			dispatchActivity( 'reader_registered', {
-				email,
+				email: readerEmail,
 				integration_id: integrationId,
 				status: data.status || 'created',
 			} );
