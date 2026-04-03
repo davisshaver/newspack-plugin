@@ -358,6 +358,10 @@ final class Reader_Activation {
 	 * @return bool|\WP_Error True if under limit, WP_Error if exceeded.
 	 */
 	private static function check_registration_rate_limit(): bool|\WP_Error {
+		// @todo REMOTE_ADDR may be a proxy/load-balancer IP in some environments.
+		// On WordPress VIP/Atomic this is the real client IP. For other hosts,
+		// consider parsing forwarded headers or providing a filter to override IP resolution.
+		// See WooCommerce_Connection::get_client_ip() for a forwarded-header approach.
 		$ip        = isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '127.0.0.1'; // phpcs:ignore WordPressVIPMinimum.Variables.ServerVariables.UserControlledHeaders,WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__REMOTE_ADDR__
 		$cache_key = 'newspack_reg_ip_' . md5( $ip );
 
