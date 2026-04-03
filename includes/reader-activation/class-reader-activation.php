@@ -148,7 +148,7 @@ final class Reader_Activation {
 		];
 
 		$frontend_integrations = self::get_frontend_registration_integrations();
-		if ( ! empty( $frontend_integrations ) ) {
+		if ( self::is_enabled() && ! empty( $frontend_integrations ) ) {
 			$integrations_config = [];
 			foreach ( $frontend_integrations as $id => $label ) {
 				$integrations_config[ $id ] = [
@@ -157,9 +157,7 @@ final class Reader_Activation {
 				];
 			}
 			$script_data['frontend_registration_integrations'] = $integrations_config;
-			if ( self::is_enabled() ) {
-				$script_data['frontend_registration_url'] = \rest_url( NEWSPACK_API_NAMESPACE . '/reader-activation/register' );
-			}
+			$script_data['frontend_registration_url']           = \rest_url( NEWSPACK_API_NAMESPACE . '/reader-activation/register' );
 		}
 
 		if ( Recaptcha::can_use_captcha() ) {
