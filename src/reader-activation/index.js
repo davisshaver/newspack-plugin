@@ -433,6 +433,10 @@ function attachNewsletterFormListener() {
  * Renders a temporary invisible widget, executes it, and resolves
  * with the token. Cleans up the widget container after completion.
  *
+ * @todo Consider adding an in-flight guard to coalesce concurrent calls,
+ * since each invocation renders a separate widget and the reCAPTCHA API
+ * may not handle multiple simultaneous invisible widgets well.
+ *
  * @param {string} siteKey reCAPTCHA site key.
  * @return {Promise<string>} Resolves with the reCAPTCHA token.
  */
