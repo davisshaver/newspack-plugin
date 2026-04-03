@@ -428,6 +428,49 @@ function attachNewsletterFormListener() {
 }
 
 /**
+ * Acquire a reCAPTCHA v2 invisible token.
+ *
+ * Renders a temporary invisible widget, executes it, and resolves
+ * with the token. Cleans up the widget container after completion.
+ *
+ * @param {string} siteKey reCAPTCHA site key.
+ * @return {Promise<string>} Resolves with the reCAPTCHA token.
+ */
+function acquireV2InvisibleToken( siteKey ) {
+	return new Promise( function ( resolve, reject ) {
+		const container = document.createElement( 'div' );
+		container.style.display = 'none';
+		document.body.appendChild( container );
+
+		let widgetId;
+		try {
+			widgetId = window.grecaptcha.render( container, {
+				sitekey: siteKey,
+				size: 'invisible',
+				callback( token ) {
+					container.remove();
+					resolve( token );
+				},
+				'error-callback'() {
+					container.remove();
+					reject( new Error( 'reCAPTCHA challenge failed.' ) );
+				},
+				'expired-callback'() {
+					container.remove();
+					reject( new Error( 'reCAPTCHA token expired.' ) );
+				},
+			} );
+		} catch ( err ) {
+			container.remove();
+			reject( err );
+			return;
+		}
+
+		window.grecaptcha.execute( widgetId );
+	} );
+}
+
+/**
  * Register a reader via a frontend integration.
  *
  * @param {string} email         Reader email address.
@@ -455,20 +498,35 @@ function register( email, integrationId, profileFields = {} ) {
 		last_name: profileFields.last_name || '',
 	};
 
-	// Acquire reCAPTCHA v3 token if configured, then POST.
-	const captchaPromise =
-		newspack_ras_config?.captcha_site_key && window.grecaptcha
-			? new Promise( function ( resolve, reject ) {
-					window.grecaptcha.ready( function () {
-						window.grecaptcha
-							.execute( newspack_ras_config.captcha_site_key, {
-								action: 'integration_registration',
-							} )
-							.then( resolve )
-							.catch( reject );
-					} );
-			  } )
-			: Promise.resolve( '' );
+	// Acquire reCAPTCHA token if configured, using the appropriate version flow.
+	const captchaSiteKey = newspack_ras_config?.captcha_site_key;
+	const captchaVersion = newspack_ras_config?.captcha_version;
+	let captchaPromise;
+
+	if ( captchaSiteKey && window.grecaptcha ) {
+		if ( captchaVersion === 'v3' ) {
+			captchaPromise = new Promise( function ( resolve, reject ) {
+				window.grecaptcha.ready( function () {
+					window.grecaptcha
+						.execute( captchaSiteKey, {
+							action: 'integration_registration',
+						} )
+						.then( resolve )
+						.catch( reject );
+				} );
+			} );
+		} else if ( captchaVersion && captchaVersion.substring( 0, 2 ) === 'v2' ) {
+			captchaPromise = new Promise( function ( resolve, reject ) {
+				window.grecaptcha.ready( function () {
+					acquireV2InvisibleToken( captchaSiteKey ).then( resolve ).catch( reject );
+				} );
+			} );
+		} else {
+			captchaPromise = Promise.resolve( '' );
+		}
+	} else {
+		captchaPromise = Promise.resolve( '' );
+	}
 
 	return captchaPromise
 		.then( function ( token ) {
