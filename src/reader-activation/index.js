@@ -458,8 +458,15 @@ function register( email, integrationId, profileFields = {} ) {
 	// Acquire reCAPTCHA v3 token if configured, then POST.
 	const captchaPromise =
 		newspack_ras_config?.captcha_site_key && window.grecaptcha
-			? window.grecaptcha.execute( newspack_ras_config.captcha_site_key, {
-					action: 'integration_registration',
+			? new Promise( function ( resolve, reject ) {
+					window.grecaptcha.ready( function () {
+						window.grecaptcha
+							.execute( newspack_ras_config.captcha_site_key, {
+								action: 'integration_registration',
+							} )
+							.then( resolve )
+							.catch( reject );
+					} );
 			  } )
 			: Promise.resolve( '' );
 
