@@ -486,8 +486,13 @@ function register( email, integrationId, profileFields = {} ) {
 			} );
 		} )
 		.then( function ( data ) {
-			store.set( 'reader', { email, authenticated: true } );
-			emit( EVENTS.reader, { email, authenticated: true } );
+			const reader = {
+				...( store.get( 'reader' ) || {} ),
+				email,
+				authenticated: true,
+			};
+			store.set( 'reader', reader, false );
+			emit( EVENTS.reader, reader );
 			dispatchActivity( 'reader_registered', {
 				email,
 				integration_id: integrationId,
