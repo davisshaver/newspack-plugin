@@ -446,6 +446,7 @@ function acquireV2InvisibleToken( siteKey ) {
 			const widgetId = window.grecaptcha.render( container, {
 				sitekey: siteKey,
 				size: 'invisible',
+				isolated: true,
 				callback( token ) {
 					container.remove();
 					resolve( token );
