@@ -430,4 +430,36 @@ class Newspack_Test_Frontend_Registration_Endpoint extends WP_UnitTestCase {
 			wp_delete_user( $user->ID );
 		}
 	}
+
+	/**
+	 * Test that current_page_url is normalized from the HTTP referer.
+	 *
+	 * The endpoint should parse the referer, extract the path, and rebuild
+	 * it with home_url() — matching the process_auth_form() convention.
+	 */
+	public function test_current_page_url_normalization() {
+		$test_email = 'referer-test@test.com';
+
+		// Set a referer with query params and fragment that should be stripped.
+		$_SERVER['HTTP_REFERER'] = home_url( '/sample-page/?foo=bar&baz=1#section' );
+
+		$response = $this->do_register_request(
+			[
+				'npe'             => $test_email,
+				'integration_id'  => self::$integration_id,
+				'integration_key' => self::generate_key( self::$integration_id ),
+			]
+		);
+		$this->assertEquals( 201, $response->get_status() );
+
+		$user = get_user_by( 'email', $test_email );
+		$this->assertInstanceOf( 'WP_User', $user );
+
+		$registration_page = get_user_meta( $user->ID, Reader_Activation::REGISTRATION_PAGE, true );
+		// Should be normalized to just the path on the home URL, no query params.
+		$this->assertEquals( home_url( '/sample-page/' ), $registration_page );
+
+		unset( $_SERVER['HTTP_REFERER'] );
+		wp_delete_user( $user->ID );
+	}
 }
