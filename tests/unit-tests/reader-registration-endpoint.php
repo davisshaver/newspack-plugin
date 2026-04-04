@@ -385,4 +385,49 @@ class Newspack_Test_Frontend_Registration_Endpoint extends WP_UnitTestCase {
 			}
 		}
 	}
+
+	/**
+	 * Test that a race condition WP_Error with "existing user" code maps to 409.
+	 *
+	 * Simulates a race where another request creates the user between
+	 * register_reader()'s exists check and its wp_insert_user() call.
+	 */
+	public function test_race_condition_existing_user_returns_409() {
+		$race_email = 'race-test@test.com';
+
+		// This filter fires inside canonize_user_data(), after the exists check
+		// but before wp_insert_user(). Creating the user here simulates a race.
+		$create_user_during_insert = function( $user_data ) use ( $race_email ) {
+			if ( ! empty( $user_data['user_email'] ) && $user_data['user_email'] === $race_email ) {
+				wp_insert_user(
+					[
+						'user_login' => 'race-user',
+						'user_email' => $race_email,
+						'user_pass'  => wp_generate_password(),
+						'role'       => 'subscriber',
+					]
+				);
+			}
+			return $user_data;
+		};
+		add_filter( 'newspack_register_reader_user_data', $create_user_during_insert );
+
+		$response = $this->do_register_request(
+			[
+				'npe'             => $race_email,
+				'integration_id'  => self::$integration_id,
+				'integration_key' => self::generate_key( self::$integration_id ),
+			]
+		);
+		$this->assertEquals( 409, $response->get_status() );
+		$data = $response->get_data();
+		$this->assertEquals( 'reader_already_exists', $data['code'] );
+
+		remove_filter( 'newspack_register_reader_user_data', $create_user_during_insert );
+
+		$user = get_user_by( 'email', $race_email );
+		if ( $user ) {
+			wp_delete_user( $user->ID );
+		}
+	}
 }
