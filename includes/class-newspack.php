@@ -170,6 +170,7 @@ final class Newspack {
 		include_once NEWSPACK_ABSPATH . 'includes/wizards/newspack/class-pixels-section.php';
 		include_once NEWSPACK_ABSPATH . 'includes/wizards/newspack/class-recirculation-section.php';
 		include_once NEWSPACK_ABSPATH . 'includes/wizards/newspack/class-collections-section.php';
+		include_once NEWSPACK_ABSPATH . 'includes/wizards/newspack/class-privacy-section.php';
 
 		include_once NEWSPACK_ABSPATH . 'includes/wizards/class-setup-wizard.php';
 		include_once NEWSPACK_ABSPATH . 'includes/wizards/class-components-demo.php';
@@ -225,6 +226,7 @@ final class Newspack {
 		include_once NEWSPACK_ABSPATH . 'includes/plugins/co-authors-plus/class-nicename-change.php';
 		include_once NEWSPACK_ABSPATH . 'includes/plugins/co-authors-plus/class-nicename-change-ui.php';
 		include_once NEWSPACK_ABSPATH . 'includes/plugins/co-authors-plus/class-search-authors-limit.php';
+		include_once NEWSPACK_ABSPATH . 'includes/plugins/class-complianz.php';
 		include_once NEWSPACK_ABSPATH . 'includes/plugins/wc-memberships/class-memberships.php';
 		include_once NEWSPACK_ABSPATH . 'includes/plugins/class-woocommerce.php';
 		include_once NEWSPACK_ABSPATH . 'includes/plugins/woocommerce-subscriptions/class-woocommerce-subscriptions.php';
