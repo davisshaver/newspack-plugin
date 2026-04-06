@@ -12,6 +12,7 @@ import setupArticleViewsAggregates from './article-view.js';
 import setupEngagement from './engagement.js';
 import initSubscriptionTiersForm from './subscription-tiers-form.js';
 import { openAuthModal as _openAuthModal } from '../reader-activation-auth/auth-modal.js';
+import { hydrateSession } from './session.js';
 
 /**
  * Reader Activation Library.
@@ -375,6 +376,7 @@ function attachAuthCookiesListener() {
 			if ( authCookie ) {
 				setReaderEmail( authCookie );
 				setAuthenticated( true );
+				hydrateSession();
 				clearInterval( interval );
 			}
 		}
