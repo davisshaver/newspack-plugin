@@ -662,6 +662,20 @@ class Donations {
 	}
 
 	/**
+	 * Whether the current donation platform has a secure server-side mechanism
+	 * to manage donor status (e.g., via the donation_new data event).
+	 *
+	 * Platforms with server-side tracking can enforce is_donor as read-only
+	 * at the public API boundary. Platforms without it (NRH, other) need
+	 * client-side write access for post-transaction landing page flows.
+	 *
+	 * @return bool
+	 */
+	public static function has_server_side_donor_tracking() {
+		return self::is_platform_wc();
+	}
+
+	/**
 	 * Handle submission of the donation form.
 	 */
 	public static function process_donation_request() {

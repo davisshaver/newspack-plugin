@@ -67,21 +67,32 @@ final class Reader_Data {
 	 * @return string[] Names of read-only keys.
 	 */
 	public static function get_read_only_keys() {
+		$keys = [
+			'active_memberships',
+			'active_subscriptions',
+			'is_former_donor',
+			'newsletter_subscribed_lists',
+		];
+
+		// is_donor is only read-only when the platform has a secure server-side
+		// mechanism to manage donor status. Currently only WooCommerce has this
+		// via the donation_new data event. Non-Woo platforms (NRH, other) rely
+		// on client-side writes from the donor landing page.
+		if ( Donations::has_server_side_donor_tracking() ) {
+			$keys[] = 'is_donor';
+		}
+
 		/**
 		 * Filters the list of read-only reader data keys.
 		 *
+		 * This list is used for both client-side configuration (via wp_localize_script)
+		 * and server-side REST API enforcement. Note that filter callbacks relying on
+		 * page-context conditionals (is_page, get_the_ID, etc.) will only affect the
+		 * client-side path.
+		 *
 		 * @param string[] $keys Names of read-only keys.
 		 */
-		return apply_filters(
-			'newspack_reader_data_read_only_keys',
-			[
-				'active_memberships',
-				'active_subscriptions',
-				'is_former_donor',
-				'is_donor',
-				'newsletter_subscribed_lists',
-			]
-		);
+		return apply_filters( 'newspack_reader_data_read_only_keys', $keys );
 	}
 
 	/**
