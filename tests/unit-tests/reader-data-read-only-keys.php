@@ -1,0 +1,142 @@
+<?php
+/**
+ * Tests for platform-conditional read-only key enforcement in Reader_Data.
+ *
+ * @package Newspack\Tests
+ * @group reader-data-read-only
+ */
+
+use Newspack\Donations;
+use Newspack\Reader_Data;
+
+/**
+ * Tests for Reader_Data read-only key behavior based on donation platform.
+ *
+ * @group reader-data-read-only
+ */
+class Newspack_Test_Reader_Data_Read_Only_Keys extends WP_UnitTestCase {
+
+	/**
+	 * Tear down after each test — reset platform to default.
+	 */
+	public function tear_down() {
+		Donations::set_platform_slug( 'wc' );
+		parent::tear_down();
+	}
+
+	/**
+	 * Test that has_server_side_donor_tracking() returns true for WooCommerce.
+	 */
+	public function test_has_server_side_donor_tracking_wc() {
+		Donations::set_platform_slug( 'wc' );
+		self::assertTrue(
+			Donations::has_server_side_donor_tracking(),
+			'WooCommerce platform should have server-side donor tracking.'
+		);
+	}
+
+	/**
+	 * Test that has_server_side_donor_tracking() returns false for NRH.
+	 */
+	public function test_has_server_side_donor_tracking_nrh() {
+		Donations::set_platform_slug( 'nrh' );
+		self::assertFalse(
+			Donations::has_server_side_donor_tracking(),
+			'NRH platform should not have server-side donor tracking.'
+		);
+	}
+
+	/**
+	 * Test that has_server_side_donor_tracking() returns false for other.
+	 */
+	public function test_has_server_side_donor_tracking_other() {
+		Donations::set_platform_slug( 'other' );
+		self::assertFalse(
+			Donations::has_server_side_donor_tracking(),
+			'Other platform should not have server-side donor tracking.'
+		);
+	}
+
+	/**
+	 * Test that is_donor is read-only on WooCommerce platform.
+	 */
+	public function test_is_donor_read_only_on_wc() {
+		Donations::set_platform_slug( 'wc' );
+		self::assertContains(
+			'is_donor',
+			Reader_Data::get_read_only_keys(),
+			'is_donor should be read-only on WooCommerce platform.'
+		);
+	}
+
+	/**
+	 * Test that is_donor is writable on NRH platform.
+	 */
+	public function test_is_donor_writable_on_nrh() {
+		Donations::set_platform_slug( 'nrh' );
+		self::assertNotContains(
+			'is_donor',
+			Reader_Data::get_read_only_keys(),
+			'is_donor should be writable on NRH platform.'
+		);
+	}
+
+	/**
+	 * Test that is_donor is writable on other platform.
+	 */
+	public function test_is_donor_writable_on_other() {
+		Donations::set_platform_slug( 'other' );
+		self::assertNotContains(
+			'is_donor',
+			Reader_Data::get_read_only_keys(),
+			'is_donor should be writable on other platform.'
+		);
+	}
+
+	/**
+	 * Test that is_former_donor is always read-only regardless of platform.
+	 *
+	 * @dataProvider platform_provider
+	 * @param string $platform Platform slug.
+	 */
+	public function test_is_former_donor_always_read_only( $platform ) {
+		Donations::set_platform_slug( $platform );
+		self::assertContains(
+			'is_former_donor',
+			Reader_Data::get_read_only_keys(),
+			"is_former_donor should be read-only on {$platform} platform."
+		);
+	}
+
+	/**
+	 * Test that the newspack_reader_data_read_only_keys filter still works.
+	 */
+	public function test_filter_can_add_custom_key() {
+		$add_key = function ( $keys ) {
+			$keys[] = 'custom_key';
+			return $keys;
+		};
+		add_filter( 'newspack_reader_data_read_only_keys', $add_key );
+
+		self::assertContains(
+			'custom_key',
+			Reader_Data::get_read_only_keys(),
+			'Filter should be able to add custom read-only keys.'
+		);
+
+		remove_filter( 'newspack_reader_data_read_only_keys', $add_key );
+	}
+
+	/**
+	 * Data provider for all platform slugs.
+	 *
+	 * @return array[]
+	 */
+	public function platform_provider() {
+		return [
+			'wc'    => [ 'wc' ],
+			'nrh'   => [ 'nrh' ],
+			'other' => [ 'other' ],
+		];
+	}
+}
