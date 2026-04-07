@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-07T15:55:21+00:00\n"
+"POT-Creation-Date: 2026-04-07T18:31:26+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -283,7 +283,10 @@ msgstr ""
 #: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:235
 #: includes/reader-activation/class-reader-activation.php:1675
 #: includes/reader-activation/class-reader-activation.php:1791
+#: src/blocks/overlay-menu/panel/class-overlay-menu-panel-block.php:100
 #: dist/audience-wizards.566c597d2652872d3c9b.js:94
+#: dist/blocks.js:6
+#: src/blocks/overlay-menu/panel/edit.js:157
 #: src/wizards/audience/components/prompt-action-card/index.js:139
 msgid "Close"
 msgstr ""
@@ -2386,6 +2389,7 @@ msgstr ""
 #: src/blocks/avatar/inspector.jsx:18
 #: src/blocks/byline/inspector.jsx:25
 #: src/blocks/collections/components/InspectorPanel.jsx:63
+#: src/blocks/overlay-menu/panel/edit.js:99
 #: src/content-gate/editor/editor.js:108
 #: src/other-scripts/emails/index.js:106
 #: src/wizards/advertising/index.js:154
@@ -4577,6 +4581,7 @@ msgstr ""
 #: dist/setup.js:7
 #: src/blocks/author-profile-social/utils.js:13
 #: src/blocks/my-account-button/index.js:22
+#: src/blocks/overlay-menu/trigger/index.js:23
 #: src/wizards/componentsDemo/index.js:612
 #: src/wizards/componentsDemo/index.js:618
 #: src/wizards/componentsDemo/index.js:635
@@ -6834,6 +6839,14 @@ msgstr ""
 #: src/blocks/contribution-meter/components/LinearMeter.jsx:79
 #, php-format,js-format
 msgid "%s goal"
+msgstr ""
+
+#: src/blocks/overlay-menu/panel/class-overlay-menu-panel-block.php:81
+#: src/blocks/overlay-menu/trigger/class-overlay-menu-trigger-block.php:54
+#: dist/blocks.js:6
+#: src/blocks/overlay-menu/trigger/edit.js:68
+#: src/blocks/overlay-menu/trigger/edit.js:81
+msgid "Menu"
 msgstr ""
 
 #. translators: %s is the user's email address.
@@ -9654,32 +9667,33 @@ msgid "No integrations with configurable settings are registered."
 msgstr ""
 
 #: dist/avatar-block.js:1
-#: dist/blocks.js:6
+#: dist/blocks.js:1
 #: src/blocks/avatar/index.js:15
 msgid "Avatar"
 msgstr ""
 
 #: dist/avatar-block.js:1
+#: dist/blocks.js:1
 #: dist/blocks.js:4
-#: dist/blocks.js:6
 #: src/blocks/avatar/index.js:28
 #: src/blocks/byline/index.js:28
 msgid "author"
 msgstr ""
 
 #: dist/avatar-block.js:1
-#: dist/blocks.js:6
+#: dist/blocks.js:1
 #: src/blocks/avatar/index.js:29
 msgid "user"
 msgstr ""
 
 #: dist/avatar-block.js:1
-#: dist/blocks.js:6
+#: dist/blocks.js:1
 #: src/blocks/avatar/index.js:30
 msgid "profile"
 msgstr ""
 
 #: dist/avatar-block.js:1
+#: dist/blocks.js:1
 #: dist/blocks.js:4
 #: dist/blocks.js:6
 #: dist/contribution-meter-block.js:5
@@ -9693,7 +9707,7 @@ msgid "newspack"
 msgstr ""
 
 #: dist/avatar-block.js:1
-#: dist/blocks.js:6
+#: dist/blocks.js:1
 #: src/blocks/avatar/index.js:33
 msgid "Display post author avatar."
 msgstr ""
@@ -10156,14 +10170,18 @@ msgid "Edit Ad Unit"
 msgstr ""
 
 #: dist/blocks.js:1
+#: dist/blocks.js:6
 #: dist/my-account-button-block.js:1
 #: src/blocks/my-account-button/index.js:28
+#: src/blocks/overlay-menu/trigger/index.js:29
 msgid "Icon only"
 msgstr ""
 
 #: dist/blocks.js:1
+#: dist/blocks.js:6
 #: dist/my-account-button-block.js:1
 #: src/blocks/my-account-button/index.js:33
+#: src/blocks/overlay-menu/trigger/index.js:34
 msgid "Text only"
 msgstr ""
 
@@ -10251,6 +10269,30 @@ msgstr ""
 #: dist/blocks.js:1
 #: src/blocks/correction-item/index.js:40
 msgid "Post Title"
+msgstr ""
+
+#: dist/blocks.js:1
+#: dist/correction-box-block.js:1
+#: src/blocks/correction-box/index.js:15
+msgid "Corrections"
+msgstr ""
+
+#: dist/blocks.js:1
+#: dist/correction-box-block.js:1
+#: src/blocks/correction-box/index.js:27
+msgid "clarifications"
+msgstr ""
+
+#: dist/blocks.js:1
+#: dist/correction-box-block.js:1
+#: src/blocks/correction-box/index.js:27
+msgid "updates"
+msgstr ""
+
+#: dist/blocks.js:1
+#: dist/correction-box-block.js:1
+#: src/blocks/correction-box/index.js:28
+msgid "Display all corrections and clarifications made to a post."
 msgstr ""
 
 #: dist/blocks.js:1
@@ -10619,6 +10661,7 @@ msgstr ""
 
 #: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:170
+#: src/blocks/overlay-menu/panel/edit.js:107
 msgid "Left"
 msgstr ""
 
@@ -10630,6 +10673,7 @@ msgstr ""
 
 #: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:175
+#: src/blocks/overlay-menu/panel/edit.js:108
 msgid "Right"
 msgstr ""
 
@@ -10846,27 +10890,92 @@ msgid "Suffix…"
 msgstr ""
 
 #: dist/blocks.js:6
-#: dist/correction-box-block.js:1
-#: src/blocks/correction-box/index.js:15
-msgid "Corrections"
+#: src/blocks/overlay-menu/panel-preview-toggle.js:22
+msgid "Close panel"
 msgstr ""
 
 #: dist/blocks.js:6
-#: dist/correction-box-block.js:1
-#: src/blocks/correction-box/index.js:27
-msgid "clarifications"
+#: src/blocks/overlay-menu/panel-preview-toggle.js:22
+msgid "Open panel"
 msgstr ""
 
 #: dist/blocks.js:6
-#: dist/correction-box-block.js:1
-#: src/blocks/correction-box/index.js:27
-msgid "updates"
+#: src/blocks/overlay-menu/index.js:16
+msgid "Overlay Menu"
 msgstr ""
 
 #: dist/blocks.js:6
-#: dist/correction-box-block.js:1
-#: src/blocks/correction-box/index.js:28
-msgid "Display all corrections and clarifications made to a post."
+#: src/blocks/overlay-menu/index.js:29
+msgid "menu"
+msgstr ""
+
+#: dist/blocks.js:6
+#: src/blocks/overlay-menu/index.js:30
+msgid "overlay"
+msgstr ""
+
+#: dist/blocks.js:6
+#: src/blocks/overlay-menu/index.js:31
+msgid "drawer"
+msgstr ""
+
+#: dist/blocks.js:6
+#: src/blocks/overlay-menu/index.js:32
+msgid "navigation"
+msgstr ""
+
+#: dist/blocks.js:6
+#: src/blocks/overlay-menu/index.js:33
+msgid "hamburger"
+msgstr ""
+
+#: dist/blocks.js:6
+#: src/blocks/overlay-menu/index.js:35
+msgid "A trigger button that opens an overlay drawer panel with customizable content."
+msgstr ""
+
+#: dist/blocks.js:6
+#: src/blocks/overlay-menu/trigger/index.js:15
+msgid "Overlay Button"
+msgstr ""
+
+#: dist/blocks.js:6
+#: dist/commons.js:18
+#: src/blocks/my-account-button/edit.js:110
+#: src/blocks/overlay-menu/trigger/edit.js:80
+msgid "Button text"
+msgstr ""
+
+#: dist/blocks.js:6
+#: src/blocks/overlay-menu/panel/index.js:15
+msgid "Menu Panel"
+msgstr ""
+
+#: dist/blocks.js:6
+#: src/blocks/overlay-menu/panel/edit.js:101
+msgid "Slide direction"
+msgstr ""
+
+#: dist/blocks.js:6
+#: src/blocks/overlay-menu/panel/edit.js:102
+msgid "Choose which side of the screen the panel slides in from."
+msgstr ""
+
+#: dist/blocks.js:6
+#: src/blocks/overlay-menu/panel/edit.js:117
+msgid "Text"
+msgstr ""
+
+#: dist/blocks.js:6
+#: src/blocks/overlay-menu/panel/edit.js:122
+msgid "Background"
+msgstr ""
+
+#: dist/blocks.js:6
+#: dist/content-gate-editor.js:25
+#: src/blocks/overlay-menu/panel/edit.js:127
+#: src/content-gate/editor/editor.js:21
+msgid "Overlay"
 msgstr ""
 
 #: dist/bylines.js:1
@@ -11430,11 +11539,6 @@ msgstr ""
 #: src/blocks/my-account-button/edit.js:90
 #: src/blocks/my-account-button/edit.js:94
 msgid "Signed in"
-msgstr ""
-
-#: dist/commons.js:18
-#: src/blocks/my-account-button/edit.js:110
-msgid "Button text"
 msgstr ""
 
 #: dist/componentsDemo.js:1
@@ -12462,11 +12566,6 @@ msgstr ""
 #: dist/content-gate-editor.js:25
 #: packages/components/src/position-control/index.js:90
 msgid "Select Position"
-msgstr ""
-
-#: dist/content-gate-editor.js:25
-#: src/content-gate/editor/editor.js:21
-msgid "Overlay"
 msgstr ""
 
 #: dist/content-gate-editor.js:25
@@ -15047,6 +15146,72 @@ msgstr ""
 #: src/blocks/my-account-button/block.json
 msgctxt "block keyword"
 msgid "button"
+msgstr ""
+
+#: dist/blocks/overlay-menu/block.json
+#: src/blocks/overlay-menu/block.json
+msgctxt "block title"
+msgid "Overlay Menu"
+msgstr ""
+
+#: dist/blocks/overlay-menu/block.json
+#: src/blocks/overlay-menu/block.json
+msgctxt "block description"
+msgid "A container block that pairs a trigger button with a content panel. The panel can appear as a side overlay or expand to fill the entire screen. Multiple instances can be used on the same page."
+msgstr ""
+
+#: dist/blocks/overlay-menu/block.json
+#: src/blocks/overlay-menu/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr ""
+
+#: dist/blocks/overlay-menu/block.json
+#: src/blocks/overlay-menu/block.json
+msgctxt "block keyword"
+msgid "overlay"
+msgstr ""
+
+#: dist/blocks/overlay-menu/block.json
+#: src/blocks/overlay-menu/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr ""
+
+#: dist/blocks/overlay-menu/block.json
+#: src/blocks/overlay-menu/block.json
+msgctxt "block keyword"
+msgid "navigation"
+msgstr ""
+
+#: dist/blocks/overlay-menu/block.json
+#: src/blocks/overlay-menu/block.json
+msgctxt "block keyword"
+msgid "hamburger"
+msgstr ""
+
+#: dist/blocks/overlay-menu/panel/block.json
+#: src/blocks/overlay-menu/panel/block.json
+msgctxt "block title"
+msgid "Menu Panel"
+msgstr ""
+
+#: dist/blocks/overlay-menu/panel/block.json
+#: src/blocks/overlay-menu/panel/block.json
+msgctxt "block description"
+msgid "The panel that appears when the Overlay Button is triggered. Accepts any blocks as content, making it suitable for navigation menus, search forms, or any custom layout."
+msgstr ""
+
+#: dist/blocks/overlay-menu/trigger/block.json
+#: src/blocks/overlay-menu/trigger/block.json
+msgctxt "block title"
+msgid "Overlay Button"
+msgstr ""
+
+#: dist/blocks/overlay-menu/trigger/block.json
+#: src/blocks/overlay-menu/trigger/block.json
+msgctxt "block description"
+msgid "The trigger element that opens and closes the associated panel. Customize the label, icon, or style to match your design."
 msgstr ""
 
 #: dist/blocks/reader-registration/block.json
