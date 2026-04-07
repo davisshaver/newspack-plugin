@@ -78,6 +78,12 @@ final class Reader_Data {
 		// mechanism to manage donor status. Currently only WooCommerce has this
 		// via the donation_new data event. Non-Woo platforms (NRH, other) rely
 		// on client-side writes from the donor landing page.
+		//
+		// Note: when is_donor is NOT read-only, any authenticated reader can
+		// set it via the REST API. This is an intentional trade-off — is_donor
+		// is used for segmentation and analytics, not access control. Consumers
+		// that need to distinguish server-verified from client-asserted donor
+		// status should check Donations::has_server_side_donor_tracking().
 		if ( Donations::has_server_side_donor_tracking() ) {
 			$keys[] = 'is_donor';
 		}
