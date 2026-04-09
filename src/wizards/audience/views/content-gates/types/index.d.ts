@@ -1,12 +1,14 @@
 declare module '@wordpress/block-editor';
+import type { Icon } from '@wordpress/icons';
 
 type HeaderAction = {
 	type: 'primary' | 'secondary' | 'more';
 	label: string;
-	icon: React.ReactNode;
-	action: () => void;
+	icon?: Icon | string;
 	disabled?: boolean;
 	destructive?: boolean;
+	action?: () => void;
+	href?: string;
 };
 
 type GateAccessRuleValue = string | string[] | boolean;
@@ -26,6 +28,8 @@ type ContentRule = {
 	name: string;
 	default: GateContentRuleValue;
 	description?: string;
+	endpoint?: string;
+	include_only?: boolean;
 	options?: { value: string; label: string }[];
 	value: GateContentRuleValue;
 };
@@ -54,6 +58,7 @@ type GateContentRuleProps = {
 	slug: string;
 	onChange: (value: GateContentRuleValue) => void;
 	onChangeExclusion?: (value: boolean) => void;
+	isNewsletter?: boolean;
 };
 
 type GateRuleControlProps = {
@@ -138,12 +143,34 @@ type MeteringCountdownConfig = {
 	cta_product_id: number;
 };
 
+type AdvancedSettingsConfig = {
+	restrict_feeds: boolean;
+};
+
 type GateSettings = {
 	content_gifting?: ContentGiftingConfig;
 	countdown_banner?: MeteringCountdownConfig;
+	advanced_settings?: AdvancedSettingsConfig;
 };
 
 type GateConfig = {
 	gates: Gate[];
-	config: GateSettings
+	config: GateSettings;
+};
+
+type Institution = {
+	id: number;
+	title: { raw: string; rendered: string };
+	excerpt: { raw: string; rendered: string };
+	featured_media: number;
+	slug: string;
+	status: string;
+	meta: {
+		np_institution_email_domain: string;
+		np_institution_ip_range: string;
+		np_institution_reader_data: string;
+	};
+	_embedded?: {
+		'wp:featuredmedia'?: Array<{ source_url: string }>;
+	};
 };

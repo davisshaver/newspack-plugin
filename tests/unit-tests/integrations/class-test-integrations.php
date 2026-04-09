@@ -281,36 +281,36 @@ class Test_Integrations extends \WP_UnitTestCase {
 	}
 
 	/**
-	 * Test get_available_incoming_contact_fields returns empty array when no fields available.
+	 * Test get_available_incoming_fields returns empty array when no fields available.
 	 */
-	public function test_get_available_incoming_contact_fields_empty() {
+	public function test_get_available_incoming_fields_empty() {
 		$integration = new Sample_Integration( 'test-id', 'Test Integration' );
 		Integrations::register( $integration );
 
-		$fields = $integration->get_available_incoming_contact_fields();
+		$fields = $integration->get_available_incoming_fields();
 
 		$this->assertIsArray( $fields );
 		$this->assertEmpty( $fields );
 	}
 
 	/**
-	 * Test get_available_incoming_contact_fields propagates WP_Error from get_available_incoming_contact_fields.
+	 * Test get_available_incoming_fields propagates WP_Error from get_available_incoming_fields.
 	 */
-	public function test_get_available_incoming_contact_fields_propagates_error() {
+	public function test_get_available_incoming_fields_propagates_error() {
 		$integration = new class( 'error-test', 'Error Test' ) extends Sample_Integration {
 			/**
 			 * Get incoming available contact fields (returns error for test).
 			 *
 			 * @return \WP_Error
 			 */
-			public function get_available_incoming_contact_fields() {
+			public function get_available_incoming_fields() {
 				return new \WP_Error( 'test_error', 'Test error message' );
 			}
 		};
 
 		Integrations::register( $integration );
 
-		$result = $integration->get_available_incoming_contact_fields();
+		$result = $integration->get_available_incoming_fields();
 
 		$this->assertWPError( $result );
 		$this->assertEquals( 'test_error', $result->get_error_code() );
@@ -331,11 +331,13 @@ class Test_Integrations extends \WP_UnitTestCase {
 	 */
 	public function test_set_and_get_enabled_incoming_fields() {
 		$integration = new Sample_Integration( 'test-id', 'Test Integration' );
-		$fields      = [ 'first_name', 'last_name', 'phone' ];
+		$keys        = [ 'first_name', 'last_name', 'phone' ];
 
-		$integration->update_enabled_incoming_fields( $fields );
+		$integration->update_enabled_incoming_fields( $keys );
 
-		$this->assertSame( $fields, $integration->get_enabled_incoming_fields() );
+		$result     = $integration->get_enabled_incoming_fields();
+		$result_keys = array_map( fn( $f ) => $f->get_key(), $result );
+		$this->assertSame( $keys, $result_keys );
 	}
 
 	/**
@@ -343,11 +345,13 @@ class Test_Integrations extends \WP_UnitTestCase {
 	 */
 	public function test_update_incoming_fields_stores_any_keys() {
 		$integration = new Sample_Integration( 'test-id', 'Test Integration' );
-		$fields      = [ 'nonexistent_field', 'another_unknown' ];
+		$keys        = [ 'nonexistent_field', 'another_unknown' ];
 
-		$integration->update_enabled_incoming_fields( $fields );
+		$integration->update_enabled_incoming_fields( $keys );
 
-		$this->assertSame( $fields, $integration->get_enabled_incoming_fields() );
+		$result     = $integration->get_enabled_incoming_fields();
+		$result_keys = array_map( fn( $f ) => $f->get_key(), $result );
+		$this->assertSame( $keys, $result_keys );
 	}
 
 	/**
@@ -869,7 +873,6 @@ class Test_Integrations extends \WP_UnitTestCase {
 	 */
 	public function test_settings_field_value_routes_metadata_prefix() {
 		$integration = new Sample_Integration( 'route-test', 'Route Test' );
-		$integration->init();
 
 		$this->assertTrue( $integration->update_settings_field_value( 'metadata_prefix', 'API_' ) );
 		$this->assertSame( 'API_', $integration->get_settings_field_value( 'metadata_prefix' ) );
@@ -900,7 +903,6 @@ class Test_Integrations extends \WP_UnitTestCase {
 	 */
 	public function test_get_settings_config_includes_metadata_prefix() {
 		$integration = new Sample_Integration( 'config-test', 'Config Test' );
-		$integration->init();
 		$integration->update_metadata_prefix( 'CFG_' );
 
 		$config = $integration->get_settings_config();
@@ -948,5 +950,59 @@ class Test_Integrations extends \WP_UnitTestCase {
 		$this->assertTrue( $result );
 		$stored = get_user_meta( $user_id, 'newspack_reader_data_item_ajax_field', true );
 		$this->assertSame( wp_json_encode( 'ajax_value' ), $stored );
+	}
+
+	/**
+	 * Test get_action_group returns prefixed integration ID.
+	 */
+	public function test_get_action_group() {
+		$this->assertSame( 'newspack-integration-esp', Integrations::get_action_group( 'esp' ) );
+		$this->assertSame( 'newspack-integration-my-crm', Integrations::get_action_group( 'my-crm' ) );
+	}
+
+	/**
+	 * Test get_action_group_for_handler returns group for registered handler.
+	 */
+	public function test_get_action_group_for_handler_returns_group() {
+		$action_name = 'test_group_event';
+		Data_Events::register_action( $action_name );
+
+		$integration = new Sample_Integration( 'test-id', 'Test' );
+		Integrations::register( $integration );
+		$integration->test_register_handler( $action_name, 'handle_test_event' );
+
+		$group = Integrations::get_action_group_for_handler( Sample_Integration::class, $action_name );
+		$this->assertSame( 'newspack-integration-test-id', $group );
+	}
+
+	/**
+	 * Test get_action_group_for_handler returns null for unknown handler.
+	 */
+	public function test_get_action_group_for_handler_fallback() {
+		$group = Integrations::get_action_group_for_handler( 'NonExistent', 'unknown_action' );
+		$this->assertNull( $group );
+	}
+
+	/**
+	 * Test Data_Events::get_handler_action_group returns 'newspack' by default.
+	 */
+	public function test_data_events_get_handler_action_group_default() {
+		$group = Data_Events::get_handler_action_group( 'SomeClass', 'some_action' );
+		$this->assertSame( 'newspack', $group );
+	}
+
+	/**
+	 * Test Data_Events::get_handler_action_group is filtered by Integrations.
+	 */
+	public function test_data_events_get_handler_action_group_filtered() {
+		$action_name = 'test_filtered_group_event';
+		Data_Events::register_action( $action_name );
+
+		$integration = new Sample_Integration( 'filtered-id', 'Filtered' );
+		Integrations::register( $integration );
+		$integration->test_register_handler( $action_name, 'handle_test_event' );
+
+		$group = Data_Events::get_handler_action_group( Sample_Integration::class, $action_name );
+		$this->assertSame( 'newspack-integration-filtered-id', $group );
 	}
 }

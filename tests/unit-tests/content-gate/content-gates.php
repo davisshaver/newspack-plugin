@@ -7,7 +7,9 @@
 
 namespace Newspack\Tests\Content_Gate;
 
+use Newspack\Reader_Activation;
 use Newspack\Access_Rules;
+use Newspack\Content_Rules;
 use Newspack\Content_Gate;
 use Newspack\Content_Restriction_Control;
 
@@ -153,6 +155,7 @@ class Test_Content_Gates extends \WP_UnitTestCase {
 		foreach ( $this->post_ids as $post_id ) {
 			wp_delete_post( $post_id, true );
 		}
+		$this->reset_restriction_cache();
 	}
 
 	/**
@@ -209,7 +212,7 @@ class Test_Content_Gates extends \WP_UnitTestCase {
 		$this->post_ids[] = $post3;
 
 		// Update content rules to match posts in category 1.
-		Content_Gate::update_post_content_rules(
+		Content_Rules::update_gate_content_rules(
 			$this->gate_ids[2],
 			[
 				[
@@ -231,7 +234,7 @@ class Test_Content_Gates extends \WP_UnitTestCase {
 		$this->assertCount( 0, $gates, 'No gate for the post with no categories' );
 
 		// Make the content rule an exclusion rule.
-		Content_Gate::update_post_content_rules(
+		Content_Rules::update_gate_content_rules(
 			$this->gate_ids[2],
 			[
 				[
@@ -502,7 +505,7 @@ class Test_Content_Gates extends \WP_UnitTestCase {
 		$result = Access_Rules::normalize_rules( [] );
 		$this->assertEmpty( $result, 'Empty rules should return empty array' );
 
-		// Flat rules should be wrapped in a single group.
+		// Flat rules should each become their own group (OR logic).
 		$flat_rules = [
 			[
 				'slug'  => 'subscription',
@@ -514,8 +517,9 @@ class Test_Content_Gates extends \WP_UnitTestCase {
 			],
 		];
 		$result = Access_Rules::normalize_rules( $flat_rules );
-		$this->assertCount( 1, $result, 'Flat rules should be wrapped in single group' );
-		$this->assertEquals( $flat_rules, $result[0], 'Group should contain original rules' );
+		$this->assertCount( 2, $result, 'Each flat rule should become its own group' );
+		$this->assertEquals( [ $flat_rules[0] ], $result[0], 'First group should contain first rule' );
+		$this->assertEquals( [ $flat_rules[1] ], $result[1], 'Second group should contain second rule' );
 
 		// Already grouped rules should remain unchanged.
 		$grouped_rules = [
@@ -570,9 +574,14 @@ class Test_Content_Gates extends \WP_UnitTestCase {
 			],
 		];
 		$result = Access_Rules::evaluate_rules( $flat_rules_pass );
-		$this->assertTrue( $result, 'Flat rules with passing email_domain should grant access' );
+		$this->assertFalse( $result, 'Flat rules with passing email_domain should deny access for unverified reader' );
 
-		// Test 2: Flat legacy rules with failing rule.
+		// Test 2: Flat legacy rules with passing rule for verified reader.
+		Reader_Activation::set_reader_verified( $user_id );
+		$result = Access_Rules::evaluate_rules( $flat_rules_pass );
+		$this->assertTrue( $result, 'Flat rules with passing email_domain should grant access for verified reader' );
+
+		// Test 3: Flat legacy rules with failing rule.
 		$flat_rules_fail = [
 			[
 				'slug'  => 'email_domain',
@@ -582,7 +591,7 @@ class Test_Content_Gates extends \WP_UnitTestCase {
 		$result = Access_Rules::evaluate_rules( $flat_rules_fail );
 		$this->assertFalse( $result, 'Flat rules with non-matching email_domain should deny access' );
 
-		// Test 3: Flat rules with mixed pass/fail (AND logic - should fail).
+		// Test 4: Flat rules with mixed pass/fail (OR logic - should pass).
 		$flat_rules_mixed = [
 			[
 				'slug'  => 'email_domain',
@@ -594,9 +603,9 @@ class Test_Content_Gates extends \WP_UnitTestCase {
 			],
 		];
 		$result = Access_Rules::evaluate_rules( $flat_rules_mixed );
-		$this->assertFalse( $result, 'Flat rules with mixed results should deny access (AND logic)' );
+		$this->assertTrue( $result, 'Flat rules with mixed results should grant access (OR logic)' );
 
-		// Test 4: Multiple groups - first group fails, second passes (OR logic - should pass).
+		// Test 5: Multiple groups - first group fails, second passes (OR logic - should pass).
 		$grouped_rules_or_pass = [
 			// Group 1: Fails (non-matching domain).
 			[
@@ -616,7 +625,7 @@ class Test_Content_Gates extends \WP_UnitTestCase {
 		$result = Access_Rules::evaluate_rules( $grouped_rules_or_pass );
 		$this->assertTrue( $result, 'Multiple groups with at least one passing should grant access (OR logic)' );
 
-		// Test 5: Multiple groups - all groups fail (OR logic - should fail).
+		// Test 6: Multiple groups - all groups fail (OR logic - should fail).
 		$grouped_rules_all_fail = [
 			[
 				[
@@ -634,7 +643,7 @@ class Test_Content_Gates extends \WP_UnitTestCase {
 		$result = Access_Rules::evaluate_rules( $grouped_rules_all_fail );
 		$this->assertFalse( $result, 'Multiple groups with all failing should deny access' );
 
-		// Test 6: Group with AND logic - both rules must pass.
+		// Test 7: Group with AND logic - both rules must pass.
 		$grouped_and_logic = [
 			[
 				[
@@ -812,6 +821,19 @@ class Test_Content_Gates extends \WP_UnitTestCase {
 	}
 
 	/**
+	 * Reset the static per-post restriction cache on Content_Restriction_Control.
+	 * This cache is populated by is_post_restricted() and must be cleared between
+	 * tests to prevent cross-test contamination.
+	 */
+	private function reset_restriction_cache() {
+		foreach ( [ 'post_gate_id_map', 'post_gate_layout_id_map' ] as $prop ) {
+			$reflection = new \ReflectionProperty( Content_Restriction_Control::class, $prop );
+			$reflection->setAccessible( true );
+			$reflection->setValue( null, [] );
+		}
+	}
+
+	/**
 	 * Test comment filters on fully gated posts.
 	 */
 	public function test_comments_closed_on_gated_post() {
@@ -931,5 +953,57 @@ class Test_Content_Gates extends \WP_UnitTestCase {
 		$settings = Content_Gate::get_custom_access_settings( $gate_id );
 		$this->assertCount( 2, $settings['access_rules'], 'Should have two groups' );
 		$this->assertEquals( $grouped_rules, $settings['access_rules'], 'Grouped rules should be preserved' );
+	}
+
+	// =========================================================================
+	// Newsletter content rule (added in feat/access-control-premium-newsletters)
+	// =========================================================================
+
+	/**
+	 * A gate with a `newsletters` content rule must NOT apply to a post whose
+	 * ID is not in the rule's value array.
+	 */
+	public function test_newsletter_content_rule_does_not_match_other_posts() {
+		$list_post_id     = $this->factory->post->create();
+		$other_post_id    = $this->factory->post->create();
+		$this->post_ids[] = $list_post_id;
+		$this->post_ids[] = $other_post_id;
+
+		Content_Rules::update_gate_content_rules(
+			$this->gate_ids[2], // Published gate from set_up().
+			[
+				[
+					'slug'  => 'newsletters',
+					'value' => [ $list_post_id ],
+				],
+			]
+		);
+
+		// $other_post_id is NOT in the newsletters rule value.
+		$gates = Content_Restriction_Control::get_post_gates( $other_post_id );
+		$this->assertEmpty( $gates, 'Newsletter content rule must not match posts not in its value array.' );
+	}
+
+	/**
+	 * A gate with a `newsletters` content rule MUST apply to a post whose
+	 * ID is in the rule's value array.
+	 */
+	public function test_newsletter_content_rule_matches_listed_post() {
+		$list_post_id     = $this->factory->post->create();
+		$this->post_ids[] = $list_post_id;
+
+		Content_Rules::update_gate_content_rules(
+			$this->gate_ids[2], // Published gate from set_up().
+			[
+				[
+					'slug'  => 'newsletters',
+					'value' => [ $list_post_id ],
+				],
+			]
+		);
+
+		$gates = Content_Restriction_Control::get_post_gates( $list_post_id );
+		$this->assertCount( 1, $gates, 'Newsletter content rule must match a post whose ID is in the value array.' );
+		$this->assertEquals( $this->gate_ids[2], $gates[0]['id'] );
 	}
 }
