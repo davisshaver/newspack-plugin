@@ -158,6 +158,11 @@ abstract class Integration {
 	 * the HMAC key. Subclasses can override this to implement custom
 	 * validation (e.g., signature verification, token decryption).
 	 *
+	 * Note: The built-in JS client (newspackReaderActivation.register())
+	 * always sends the value from get_registration_key(). Integrations
+	 * that override this method to accept a different value must provide
+	 * their own client-side code to compute and submit the correct key.
+	 *
 	 * @param string $key The submitted key to validate.
 	 * @return bool Whether the key is valid.
 	 */
