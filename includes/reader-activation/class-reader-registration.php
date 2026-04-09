@@ -10,6 +10,9 @@
 
 namespace Newspack;
 
+use Newspack\Recaptcha;
+use Newspack\Logger;
+
 defined( 'ABSPATH' ) || exit;
 
 /**
