@@ -6,6 +6,7 @@
  */
 
 use Newspack\Reader_Activation;
+use Newspack\Reader_Registration;
 
 /**
  * Tests the Frontend Reader Registration REST endpoint.
@@ -73,7 +74,7 @@ class Newspack_Test_Frontend_Registration_Endpoint extends WP_UnitTestCase {
 		add_filter( 'newspack_frontend_registration_integrations', [ __CLASS__, 'register_test_integration' ] );
 		// Ensure routes are registered — Reader_Activation::init() may have run
 		// before IS_TEST_ENV was defined, skipping the rest_api_init hook.
-		add_action( 'rest_api_init', [ Reader_Activation::class, 'register_routes' ] );
+		add_action( 'rest_api_init', [ Reader_Registration::class, 'register_routes' ] );
 		do_action( 'rest_api_init' );
 		wp_set_current_user( 0 );
 	}
@@ -85,7 +86,7 @@ class Newspack_Test_Frontend_Registration_Endpoint extends WP_UnitTestCase {
 		global $wp_rest_server;
 		$wp_rest_server = null;
 		remove_filter( 'newspack_frontend_registration_integrations', [ __CLASS__, 'register_test_integration' ] );
-		remove_action( 'rest_api_init', [ Reader_Activation::class, 'register_routes' ] );
+		remove_action( 'rest_api_init', [ Reader_Registration::class, 'register_routes' ] );
 		$user = get_user_by( 'email', self::$reader_email );
 		if ( $user ) {
 			wp_delete_user( $user->ID );
@@ -538,7 +539,7 @@ class Newspack_Test_Frontend_Registration_Endpoint extends WP_UnitTestCase {
 	 */
 	public function test_get_frontend_registration_integrations() {
 		// The test integration is registered via the filter in set_up().
-		$integrations = Reader_Activation::get_frontend_registration_integrations();
+		$integrations = Reader_Registration::get_frontend_registration_integrations();
 		$this->assertArrayHasKey( self::$integration_id, $integrations );
 		$this->assertEquals( 'Test Integration', $integrations[ self::$integration_id ] );
 	}
@@ -549,7 +550,7 @@ class Newspack_Test_Frontend_Registration_Endpoint extends WP_UnitTestCase {
 	public function test_get_frontend_registration_integrations_empty_without_filter() {
 		remove_filter( 'newspack_frontend_registration_integrations', [ __CLASS__, 'register_test_integration' ] );
 
-		$integrations = Reader_Activation::get_frontend_registration_integrations();
+		$integrations = Reader_Registration::get_frontend_registration_integrations();
 		$this->assertEmpty( $integrations );
 
 		// Re-add for tear_down consistency.
@@ -560,9 +561,9 @@ class Newspack_Test_Frontend_Registration_Endpoint extends WP_UnitTestCase {
 	 * Test that integration key generation is deterministic and unique per ID.
 	 */
 	public function test_integration_key_determinism_and_uniqueness() {
-		$key_a_first  = Reader_Activation::get_frontend_registration_key( 'integration-a' );
-		$key_a_second = Reader_Activation::get_frontend_registration_key( 'integration-a' );
-		$key_b        = Reader_Activation::get_frontend_registration_key( 'integration-b' );
+		$key_a_first  = Reader_Registration::get_frontend_registration_key( 'integration-a' );
+		$key_a_second = Reader_Registration::get_frontend_registration_key( 'integration-a' );
+		$key_b        = Reader_Registration::get_frontend_registration_key( 'integration-b' );
 
 		// Same ID produces the same key.
 		$this->assertEquals( $key_a_first, $key_a_second );
