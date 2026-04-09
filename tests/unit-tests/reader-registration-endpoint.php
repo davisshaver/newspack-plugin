@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:disable WordPress.Files.FileName.InvalidClassFileName, Generic.Files.OneObjectStructurePerFile.MultipleFound -- Test file intentionally defines helper Integration subclasses alongside the main test class.
 /**
  * Tests the Frontend Reader Registration REST endpoint.
  *
@@ -7,6 +7,119 @@
 
 use Newspack\Reader_Activation;
 use Newspack\Reader_Registration;
+use Newspack\Reader_Activation\Integrations;
+use Newspack\Reader_Activation\Integration;
+
+/**
+ * Test integration that supports frontend registration with default HMAC key.
+ */
+class Test_Frontend_Integration extends Integration {
+	/**
+	 * Whether this integration supports frontend registration.
+	 *
+	 * @return bool
+	 */
+	public function supports_frontend_registration(): bool {
+		return true;
+	}
+
+	/**
+	 * Register settings fields.
+	 *
+	 * @return array
+	 */
+	public function register_settings_fields() {
+		return [];
+	}
+
+	/**
+	 * Whether this integration can sync.
+	 *
+	 * @param bool $return_errors Whether to return errors.
+	 * @return bool
+	 */
+	public function can_sync( $return_errors = false ) {
+		return false;
+	}
+
+	/**
+	 * Push contact data.
+	 *
+	 * @param array  $contact         Contact data.
+	 * @param string $context         Context.
+	 * @param array  $existing_contact Existing contact data.
+	 * @return bool
+	 */
+	public function push_contact_data( $contact, $context = '', $existing_contact = null ) {
+		return true;
+	}
+}
+
+/**
+ * Test integration with custom key validation.
+ * Demonstrates asymmetric key pattern: public key is output to page,
+ * but validation uses a different secret key.
+ */
+class Test_Custom_Key_Integration extends Integration {
+	/**
+	 * Whether this integration supports frontend registration.
+	 *
+	 * @return bool
+	 */
+	public function supports_frontend_registration(): bool {
+		return true;
+	}
+
+	/**
+	 * Get the registration key (public key output to the page).
+	 *
+	 * @return string
+	 */
+	public function get_registration_key(): string {
+		return 'custom-public-key';
+	}
+
+	/**
+	 * Validate the registration key using a different secret key.
+	 *
+	 * @param string $key Key to validate.
+	 * @return bool
+	 */
+	public function validate_registration_key( string $key ): bool {
+		return $key === 'custom-secret-key';
+	}
+
+	/**
+	 * Register settings fields.
+	 *
+	 * @return array
+	 */
+	public function register_settings_fields() {
+		return [];
+	}
+
+	/**
+	 * Whether this integration can sync.
+	 *
+	 * @param bool $return_errors Whether to return errors.
+	 * @return bool
+	 */
+	public function can_sync( $return_errors = false ) {
+		return false;
+	}
+
+	/**
+	 * Push contact data.
+	 *
+	 * @param array  $contact         Contact data.
+	 * @param string $context         Context.
+	 * @param array  $existing_contact Existing contact data.
+	 * @return bool
+	 */
+	public function push_contact_data( $contact, $context = '', $existing_contact = null ) {
+		return true;
+	}
+}
 
 /**
  * Tests the Frontend Reader Registration REST endpoint.
@@ -572,5 +685,74 @@ class Newspack_Test_Frontend_Registration_Endpoint extends WP_UnitTestCase {
 		// Keys are 64-character hex strings (SHA-256).
 		$this->assertMatchesRegularExpression( '/^[a-f0-9]{64}$/', $key_a_first );
 		$this->assertMatchesRegularExpression( '/^[a-f0-9]{64}$/', $key_b );
+	}
+
+	/**
+	 * Test registration via an Integration subclass with default HMAC key.
+	 */
+	public function test_register_via_integration_subclass() {
+		$integration = new Test_Frontend_Integration( 'subclass-test', 'Subclass Test' );
+		Integrations::register( $integration );
+
+		$response = $this->do_register_request(
+			[
+				'npe'             => 'subclass@test.com',
+				'integration_id'  => 'subclass-test',
+				'integration_key' => $integration->get_registration_key(),
+			]
+		);
+		$this->assertEquals( 201, $response->get_status() );
+		$data = $response->get_data();
+		$this->assertTrue( $data['success'] );
+
+		$user = get_user_by( 'email', 'subclass@test.com' );
+		if ( $user ) {
+			wp_delete_user( $user->ID );
+		}
+	}
+
+	/**
+	 * Test that a custom key validation override is used.
+	 */
+	public function test_custom_key_validation() {
+		$integration = new Test_Custom_Key_Integration( 'custom-key-test', 'Custom Key Test' );
+		Integrations::register( $integration );
+
+		// The public key (from get_registration_key) should NOT validate.
+		$response = $this->do_register_request(
+			[
+				'npe'             => 'custom@test.com',
+				'integration_id'  => 'custom-key-test',
+				'integration_key' => 'custom-public-key',
+			]
+		);
+		$this->assertEquals( 403, $response->get_status() );
+		$data = $response->get_data();
+		$this->assertEquals( 'invalid_integration_key', $data['code'] );
+
+		// The secret key should validate via the custom validate_registration_key().
+		$response = $this->do_register_request(
+			[
+				'npe'             => 'custom@test.com',
+				'integration_id'  => 'custom-key-test',
+				'integration_key' => 'custom-secret-key',
+			]
+		);
+		$this->assertEquals( 201, $response->get_status() );
+
+		$user = get_user_by( 'email', 'custom@test.com' );
+		if ( $user ) {
+			wp_delete_user( $user->ID );
+		}
+	}
+
+	/**
+	 * Test that Integration subclass is included in get_frontend_registration_integrations().
+	 */
+	public function test_integration_subclass_in_registry() {
+		// subclass-test was registered in test_register_via_integration_subclass.
+		$integrations = Reader_Registration::get_frontend_registration_integrations();
+		$this->assertArrayHasKey( 'subclass-test', $integrations );
+		$this->assertEquals( 'Subclass Test', $integrations['subclass-test'] );
 	}
 }
