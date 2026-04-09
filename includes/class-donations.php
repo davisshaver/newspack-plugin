@@ -672,7 +672,14 @@ class Donations {
 	 * @return bool
 	 */
 	public static function has_server_side_donor_tracking() {
-		return self::is_platform_wc();
+		/**
+		 * Allow third parties to declare server-side donor tracking,
+		 * which will cause is_donor to be enforced as read-only
+		 * at the public API boundary.
+		 *
+		 * @param bool $has_tracking Whether the platform has server-side tracking. Default to whether we're using Woo.
+		 */
+		return apply_filters( 'newspack_has_server_side_donor_tracking', self::is_platform_wc() );
 	}
 
 	/**
