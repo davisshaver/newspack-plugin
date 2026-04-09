@@ -750,9 +750,11 @@ class Newspack_Test_Frontend_Registration_Endpoint extends WP_UnitTestCase {
 	 * Test that Integration subclass is included in get_frontend_registration_integrations().
 	 */
 	public function test_integration_subclass_in_registry() {
-		// subclass-test was registered in test_register_via_integration_subclass.
+		$integration = new Test_Frontend_Integration( 'registry-test', 'Registry Test' );
+		Integrations::register( $integration );
+
 		$integrations = Reader_Registration::get_frontend_registration_integrations();
-		$this->assertArrayHasKey( 'subclass-test', $integrations );
-		$this->assertEquals( 'Subclass Test', $integrations['subclass-test'] );
+		$this->assertArrayHasKey( 'registry-test', $integrations );
+		$this->assertEquals( 'Registry Test', $integrations['registry-test'] );
 	}
 }
