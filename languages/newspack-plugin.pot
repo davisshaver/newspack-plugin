@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-07T18:31:26+00:00\n"
+"POT-Creation-Date: 2026-04-09T07:25:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -2186,53 +2186,53 @@ msgstr ""
 msgid "Post type used to store corrections and clarifications."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:266
+#: includes/corrections/class-corrections.php:274
 msgid "Corrections saved successfully."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:413
+#: includes/corrections/class-corrections.php:421
 #: dist/other-scripts/corrections-modal.js:1
 #: src/other-scripts/corrections-modal/index.js:27
 msgid "Clarification"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:415
+#: includes/corrections/class-corrections.php:423
 #: dist/other-scripts/corrections-modal.js:1
 #: src/other-scripts/corrections-modal/index.js:26
 msgid "Correction"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:574
+#: includes/corrections/class-corrections.php:582
 msgid "Newspack Corrections"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:582
+#: includes/corrections/class-corrections.php:590
 msgid "Corrections Loop"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:583
+#: includes/corrections/class-corrections.php:591
 msgid "A block pattern for displaying an archive of corrections."
 msgstr ""
 
-#: includes/corrections/class-corrections.php:585
+#: includes/corrections/class-corrections.php:593
 msgid "corrections"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:585
+#: includes/corrections/class-corrections.php:593
 msgid "archive"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:585
+#: includes/corrections/class-corrections.php:593
 #: dist/blocks.js:6
 #: src/blocks/collections/index.js:33
 msgid "loop"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:615
+#: includes/corrections/class-corrections.php:623
 msgid "Corrections Archive"
 msgstr ""
 
-#: includes/corrections/class-corrections.php:616
+#: includes/corrections/class-corrections.php:624
 msgid "A block template for displaying an archive of corrections."
 msgstr ""
 
