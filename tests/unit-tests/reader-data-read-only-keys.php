@@ -24,6 +24,13 @@ class Newspack_Test_Reader_Data_Read_Only_Keys extends WP_UnitTestCase {
 	private $custom_key_filter = null;
 
 	/**
+	 * Filter callback registered during test_filter_can_override_tracking.
+	 *
+	 * @var callable|null
+	 */
+	private $tracking_filter = null;
+
+	/**
 	 * Tear down after each test.
 	 */
 	public function tear_down() {
@@ -31,6 +38,10 @@ class Newspack_Test_Reader_Data_Read_Only_Keys extends WP_UnitTestCase {
 		if ( $this->custom_key_filter ) {
 			remove_filter( 'newspack_reader_data_read_only_keys', $this->custom_key_filter );
 			$this->custom_key_filter = null;
+		}
+		if ( $this->tracking_filter ) {
+			remove_filter( 'newspack_has_server_side_donor_tracking', $this->tracking_filter );
+			$this->tracking_filter = null;
 		}
 		parent::tear_down();
 	}
@@ -116,6 +127,30 @@ class Newspack_Test_Reader_Data_Read_Only_Keys extends WP_UnitTestCase {
 			'is_former_donor',
 			Reader_Data::get_read_only_keys(),
 			"is_former_donor should be read-only on {$platform} platform."
+		);
+	}
+
+	/**
+	 * Test that a non-WC platform can declare server-side tracking via filter.
+	 */
+	public function test_filter_can_override_tracking() {
+		Donations::set_platform_slug( 'nrh' );
+		self::assertFalse(
+			Donations::has_server_side_donor_tracking(),
+			'NRH should not have server-side tracking by default.'
+		);
+
+		$this->tracking_filter = '__return_true';
+		add_filter( 'newspack_has_server_side_donor_tracking', $this->tracking_filter );
+
+		self::assertTrue(
+			Donations::has_server_side_donor_tracking(),
+			'Filter should allow NRH to declare server-side tracking.'
+		);
+		self::assertContains(
+			'is_donor',
+			Reader_Data::get_read_only_keys(),
+			'is_donor should become read-only when filter declares server-side tracking.'
 		);
 	}
 
