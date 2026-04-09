@@ -12,6 +12,7 @@ namespace Newspack;
 
 use Newspack\Recaptcha;
 use Newspack\Logger;
+use Newspack\Reader_Activation\Integrations;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -92,7 +93,16 @@ final class Reader_Registration {
 		 *
 		 * @param array<string, string> $integrations Map of integration ID => display label.
 		 */
-		return \apply_filters( 'newspack_frontend_registration_integrations', [] );
+		$integrations = \apply_filters( 'newspack_frontend_registration_integrations', [] );
+
+		// Also include Integration subclasses that opt in.
+		foreach ( Integrations::get_available_integrations() as $integration ) {
+			if ( $integration->supports_frontend_registration() && ! isset( $integrations[ $integration->get_id() ] ) ) {
+				$integrations[ $integration->get_id() ] = $integration->get_name();
+			}
+		}
+
+		return $integrations;
 	}
 
 	/**
@@ -107,6 +117,11 @@ final class Reader_Registration {
 	 * @return string HMAC-SHA256 hex string.
 	 */
 	public static function get_frontend_registration_key( string $integration_id ): string {
+		$integration = Integrations::get_integration( $integration_id );
+		if ( $integration && $integration->supports_frontend_registration() ) {
+			return $integration->get_registration_key();
+		}
+		// Fallback for filter-only registrations.
 		return hash_hmac( 'sha256', $integration_id, \wp_salt( 'auth' ) );
 	}
 
@@ -239,9 +254,16 @@ final class Reader_Registration {
 		}
 
 		// Step 4: Validate integration key.
-		$integration_key = $request->get_param( 'integration_key' );
-		$expected_key    = self::get_frontend_registration_key( $integration_id );
-		if ( ! hash_equals( $expected_key, $integration_key ) ) {
+		$integration_key      = $request->get_param( 'integration_key' );
+		$integration_instance = Integrations::get_integration( $integration_id );
+		if ( $integration_instance && $integration_instance->supports_frontend_registration() ) {
+			$key_valid = $integration_instance->validate_registration_key( $integration_key );
+		} else {
+			// Fallback for filter-only registrations.
+			$expected_key = self::get_frontend_registration_key( $integration_id );
+			$key_valid    = hash_equals( $expected_key, $integration_key );
+		}
+		if ( ! $key_valid ) {
 			Logger::log( 'Frontend registration rejected: invalid key for integration "' . $integration_id . '"' );
 			return new \WP_Error(
 				'invalid_integration_key',
