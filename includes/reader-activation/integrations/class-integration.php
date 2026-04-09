@@ -127,6 +127,45 @@ abstract class Integration {
 	}
 
 	/**
+	 * Whether this integration supports frontend reader registration.
+	 *
+	 * Integrations that return true will have their key output to the page
+	 * and will be accepted by the frontend registration endpoint.
+	 *
+	 * @return bool
+	 */
+	public function supports_frontend_registration(): bool {
+		return false;
+	}
+
+	/**
+	 * Generate the registration key for this integration.
+	 *
+	 * The default implementation uses HMAC-SHA256 with the site's auth salt.
+	 * Subclasses can override this to implement custom key schemes
+	 * (e.g., asymmetric key pairs, time-bounded tokens).
+	 *
+	 * @return string The registration key.
+	 */
+	public function get_registration_key(): string {
+		return hash_hmac( 'sha256', $this->id, \wp_salt( 'auth' ) );
+	}
+
+	/**
+	 * Validate a submitted registration key for this integration.
+	 *
+	 * The default implementation uses timing-safe comparison against
+	 * the HMAC key. Subclasses can override this to implement custom
+	 * validation (e.g., signature verification, token decryption).
+	 *
+	 * @param string $key The submitted key to validate.
+	 * @return bool Whether the key is valid.
+	 */
+	public function validate_registration_key( string $key ): bool {
+		return hash_equals( $this->get_registration_key(), $key );
+	}
+
+	/**
 	 * Initialize the integration, performing any necessary setup or validation.
 	 *
 	 * Currently only initializes settings fields, but can be extended by child classes for additional setup.
