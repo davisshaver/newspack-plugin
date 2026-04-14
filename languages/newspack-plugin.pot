@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Newspack 6.36.2\n"
+"Project-Id-Version: Newspack 6.37.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/newspack-plugin\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-09T21:01:40+00:00\n"
+"POT-Creation-Date: 2026-04-14T19:42:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -59,12 +59,55 @@ msgstr ""
 msgid "You cannot use this resource."
 msgstr ""
 
+#. translators: %s is the parameter name.
+#: includes/api/class-plugins-controller.php:405
+#, php-format
+msgid "%s must be a valid URL."
+msgstr ""
+
+#. translators: %s is the parameter name.
+#: includes/api/class-plugins-controller.php:410
+#, php-format
+msgid "%s must be an http(s) URL."
+msgstr ""
+
+#. translators: %s is the parameter name.
+#: includes/api/class-plugins-controller.php:416
+#, php-format
+msgid "%s must be a same-site URL."
+msgstr ""
+
 #: includes/class-donations.php:537
 msgid "Donate"
 msgstr ""
 
 #: includes/class-donations.php:1187
 msgid "Donate now"
+msgstr ""
+
+#: includes/class-handoff-banner.php:76
+#: includes/class-handoff-banner.php:146
+#: dist/handoff-banner.js:1
+#: src/wizards/handoff-banner/index.js:20
+msgid "Return to Newspack after completing configuration"
+msgstr ""
+
+#: includes/class-handoff-banner.php:79
+#: includes/class-handoff-banner.php:147
+#: dist/handoff-banner.js:1
+#: src/wizards/handoff-banner/index.js:21
+msgid "Back to Newspack"
+msgstr ""
+
+#: includes/class-handoff-banner.php:91
+#: includes/plugins/woocommerce/class-woocommerce-duplicate-orders.php:212
+#: dist/commons.js:13
+#: dist/componentsDemo.js:1
+#: dist/handoff-banner.js:1
+#: packages/components/src/handoff/index.js:60
+#: src/wizards/componentsDemo/index.js:269
+#: src/wizards/handoff-banner/index.js:22
+msgid "Dismiss"
 msgstr ""
 
 #: includes/class-magic-link.php:343
@@ -132,7 +175,7 @@ msgstr ""
 
 #: includes/class-magic-link.php:845
 #: includes/class-magic-link.php:882
-#: src/blocks/reader-registration/index.php:191
+#: src/blocks/reader-registration/index.php:199
 msgid "Unsupported request method"
 msgstr ""
 
@@ -230,7 +273,7 @@ msgstr ""
 #: dist/blocks.js:4
 #: dist/newsletters-wizards.1188ab99d61f7bf7a537.js:27
 #: dist/newsletters-wizards.1188ab99d61f7bf7a537.js:79
-#: src/blocks/reader-registration/edit.js:200
+#: src/blocks/reader-registration/edit.js:209
 msgid "disabled"
 msgstr ""
 
@@ -244,7 +287,7 @@ msgstr ""
 #: dist/blocks.js:4
 #: dist/newsletters-wizards.1188ab99d61f7bf7a537.js:27
 #: dist/newsletters-wizards.1188ab99d61f7bf7a537.js:79
-#: src/blocks/reader-registration/edit.js:200
+#: src/blocks/reader-registration/edit.js:209
 msgid "enabled"
 msgstr ""
 
@@ -1398,44 +1441,47 @@ msgstr ""
 msgid "Error activating %s gateway."
 msgstr ""
 
-#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:13
-msgid "Wall"
+#: includes/content-gate/block-patterns/donation-wall.php:25
+#: includes/content-gate/block-patterns/donation-wall.php:34
+msgid "Donation"
 msgstr ""
 
-#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:18
-#: includes/content-gate/block-patterns/registration-wall.php:18
-msgid "Continue reading for free"
+#: includes/content-gate/block-patterns/donation-wall.php:28
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering-wide.php:25
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:25
+#: includes/content-gate/block-patterns/pay-wall-one-tier.php:22
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:30
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:102
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:30
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:102
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:24
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:94
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:24
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:94
+#: includes/content-gate/block-patterns/registration-wall.php:11
+#: dist/audience-wizards.566c597d2652872d3c9b.js:94
+#: dist/audience-wizards.566c597d2652872d3c9b.js:96
+#: dist/audience-wizards.566c597d2652872d3c9b.js:145
+#: src/wizards/audience/components/prompt-action-card/index.js:153
+#: src/wizards/audience/views/campaigns/segments/single-segment.js:164
+msgid "Title"
 msgstr ""
 
-#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:22
-#: dist/audience-wizards.566c597d2652872d3c9b.js:24
-#: dist/audience-wizards.566c597d2652872d3c9b.js:27
-#: dist/audience-wizards.566c597d2652872d3c9b.js:124
-#: dist/audience-wizards.566c597d2652872d3c9b.js:127
-#: dist/newsletters-wizards.1188ab99d61f7bf7a537.js:24
-#: dist/newsletters-wizards.1188ab99d61f7bf7a537.js:27
-#: dist/newsletters-wizards.1188ab99d61f7bf7a537.js:79
-#: dist/newsletters-wizards.1188ab99d61f7bf7a537.js:82
-msgid "Content"
+#: includes/content-gate/block-patterns/donation-wall.php:30
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:32
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:32
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:26
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:26
+msgid "Choose an option to continue reading"
 msgstr ""
 
-#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:29
-msgid "Register now and get<br><strong>3 free articles every week.</strong>"
-msgstr ""
-
-#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:38
-msgid "Register for free"
-msgstr ""
-
-#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:51
-msgid "Unlimited access to our<br><strong>daily content and archives</strong>."
-msgstr ""
-
-#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:55
-msgid "Subscribe for $5/month"
-msgstr ""
-
-#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:67
+#: includes/content-gate/block-patterns/donation-wall.php:45
+#: includes/content-gate/block-patterns/pay-wall-one-tier.php:47
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:206
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:206
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:150
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:150
+#: includes/content-gate/block-patterns/registration-banner.php:39
 #: includes/content-gate/class-metering-countdown.php:268
 #: includes/content-gate/content-gifting/class-content-gifting-cta.php:240
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:691
@@ -1448,16 +1494,346 @@ msgstr ""
 msgid "Sign in to an existing account"
 msgstr ""
 
-#: includes/content-gate/block-patterns/registration-wall.php:24
-msgid "Get unlimited access to this article and our full collection."
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering-wide.php:14
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:14
+#: includes/content-gate/block-patterns/pay-wall-one-tier.php:11
+msgid "Become a member"
 msgstr ""
 
-#: includes/content-gate/block-patterns/registration-wall.php:25
-msgid "A free account unlocks everything."
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering-wide.php:23
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:23
+#: includes/content-gate/block-patterns/pay-wall-one-tier.php:20
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:27
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:27
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:21
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:21
+#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:253
+#: includes/plugins/woocommerce/my-account/templates/v1/subscription-totals-table.php:38
+#: dist/audience-wizards.566c597d2652872d3c9b.js:118
+msgid "Subscription"
+msgid_plural "Subscriptions"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering-wide.php:27
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:27
+msgid "Unlock the full article"
 msgstr ""
 
-#: includes/content-gate/block-patterns/registration-wall.php:32
-msgid "Thank you for registering."
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering-wide.php:33
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:33
+msgid "Join a community of passionate readers and never miss a story."
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering-wide.php:37
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:37
+#: includes/content-gate/block-patterns/pay-wall-one-tier.php:28
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:50
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:96
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:153
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:50
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:96
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:153
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:42
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:88
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:42
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:88
+#: includes/content-gate/block-patterns/registration-banner.php:16
+#: includes/content-gate/block-patterns/registration-wall.php:17
+#: dist/audience-wizards.566c597d2652872d3c9b.js:24
+#: dist/audience-wizards.566c597d2652872d3c9b.js:27
+#: dist/audience-wizards.566c597d2652872d3c9b.js:124
+#: dist/audience-wizards.566c597d2652872d3c9b.js:127
+#: dist/newsletters-wizards.1188ab99d61f7bf7a537.js:24
+#: dist/newsletters-wizards.1188ab99d61f7bf7a537.js:27
+#: dist/newsletters-wizards.1188ab99d61f7bf7a537.js:79
+#: dist/newsletters-wizards.1188ab99d61f7bf7a537.js:82
+msgid "Content"
+msgstr ""
+
+#. translators: 1: number of free articles, 2: period label such as "month" or "week".
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering-wide.php:47
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:47
+#: includes/content-gate/block-patterns/registration-banner.php:24
+#, php-format
+msgid "Get %1$s free article every %2$s with a free account."
+msgid_plural "Get %1$s free articles every %2$s with a free account."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering-wide.php:71
+#: includes/content-gate/block-patterns/pay-wall-one-tier-metering.php:71
+msgid "Support our journalism and get unlimited access to our full archive."
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-one-tier.php:24
+msgid "This article is for paid members only"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-one-tier.php:32
+msgid "Support our journalism and get unlimited access to this article and our full archive."
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-one-tier.php:38
+#: dist/componentsDemo.js:1
+#: src/wizards/componentsDemo/index.js:615
+msgid "Buttons"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:9
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:9
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:9
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:9
+msgid "Unlimited access to our content"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:10
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:10
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:10
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:10
+msgid "Puzzles and recipes"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:11
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:11
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:11
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:11
+msgid "Support quality journalism"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:15
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:15
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:15
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:15
+msgid "Everything Members get"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:16
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:16
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:16
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:16
+msgid "Exclusive podcasts and newsletters"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:17
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:17
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:17
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:17
+msgid "Our appreciation and love"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:21
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:21
+msgid "Everything Patrons get"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:22
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:22
+msgid "Special offers from our partners"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:23
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:23
+msgid "Priority invitations to events"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:38
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:38
+msgid "Subscribe to the Member, Patron or VIP monthly memberships to gain unlimited access to exclusive content."
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:44
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:44
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:36
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:36
+msgid "Tiers"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:52
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:98
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:155
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:52
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:98
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:155
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:44
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:90
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:44
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:90
+msgid "Details"
+msgstr ""
+
+#. translators: Overlay Position
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:54
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:100
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:157
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:54
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:100
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:157
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:46
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:92
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:46
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:92
+#: dist/blocks.js:6
+#: dist/content-gate-editor.js:3
+#: packages/components/src/position-control/index.js:27
+#: src/blocks/collections/components/InspectorPanel.jsx:165
+msgid "Top"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:58
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:58
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:50
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:50
+#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:128
+msgid "Member"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:61
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:118
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:164
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:61
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:118
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:164
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:53
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:110
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:53
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:110
+msgid "Price"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:63
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:120
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:166
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:63
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:120
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:166
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:55
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:112
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:55
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:112
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:484
+msgid "Amount"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:64
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:64
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:56
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:56
+msgid "$7"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:66
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:123
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:169
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:66
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:123
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:169
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:58
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:115
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:58
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:115
+#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:543
+#: dist/audience-wizards.566c597d2652872d3c9b.js:85
+#: src/wizards/audience/components/settings-modal/index.js:56
+msgid "Frequency"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:67
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:124
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:170
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:67
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:124
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:170
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:59
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:116
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:59
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:116
+msgid "per month"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:86
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:86
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:78
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:78
+msgid "Become a Member"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:106
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:106
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:98
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:98
+msgid "Patron"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:109
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:109
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:101
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:101
+msgid "Badge"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:112
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:112
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:104
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:104
+msgid "Best value"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:121
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:121
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:113
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:113
+msgid "$15"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:143
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:143
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:135
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:135
+msgid "Become a Patron"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:161
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:161
+msgid "VIP"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:167
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:167
+msgid "$30"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-three-tiers-alt.php:189
+#: includes/content-gate/block-patterns/pay-wall-three-tiers.php:189
+msgid "Become a VIP"
+msgstr ""
+
+#: includes/content-gate/block-patterns/pay-wall-two-tiers-alt.php:32
+#: includes/content-gate/block-patterns/pay-wall-two-tiers.php:32
+msgid "Subscribe to the Member or Patron monthly memberships to gain unlimited access to exclusive content."
+msgstr ""
+
+#: includes/content-gate/block-patterns/registration-banner.php:13
+#: includes/content-gate/block-patterns/registration-wall.php:9
+#: dist/audience-wizards.566c597d2652872d3c9b.js:96
+#: src/wizards/audience/views/campaigns/segments/single-segment.js:194
+msgid "Registration"
+msgstr ""
+
+#: includes/content-gate/block-patterns/registration-banner.php:49
+msgid "Create a free account"
+msgstr ""
+
+#: includes/content-gate/block-patterns/registration-wall.php:13
+msgid "Continue reading for free"
+msgstr ""
+
+#: includes/content-gate/block-patterns/registration-wall.php:21
+msgid "Create a free account and unlock unlimited access to this article and all our content."
+msgstr ""
+
+#: includes/content-gate/block-patterns/registration-wall.php:27
+msgid "Form"
 msgstr ""
 
 #: includes/content-gate/class-access-rules.php:90
@@ -1495,6 +1871,59 @@ msgstr ""
 
 #: includes/content-gate/class-access-rules.php:108
 msgid "Grant access to readers from selected institutions."
+msgstr ""
+
+#: includes/content-gate/class-block-patterns.php:54
+msgid "Registration Banner"
+msgstr ""
+
+#: includes/content-gate/class-block-patterns.php:55
+msgid "Registration Wall"
+msgstr ""
+
+#: includes/content-gate/class-block-patterns.php:56
+msgid "Donation Wall"
+msgstr ""
+
+#: includes/content-gate/class-block-patterns.php:57
+msgid "Paywall with One Tier"
+msgstr ""
+
+#: includes/content-gate/class-block-patterns.php:58
+msgid "Paywall with One Tier and Metering"
+msgstr ""
+
+#: includes/content-gate/class-block-patterns.php:59
+msgid "Paywall with One Tier and Metering (Wide)"
+msgstr ""
+
+#: includes/content-gate/class-block-patterns.php:60
+msgid "Paywall with Two Tiers"
+msgstr ""
+
+#: includes/content-gate/class-block-patterns.php:61
+msgid "Paywall with Two Tiers (Alt)"
+msgstr ""
+
+#: includes/content-gate/class-block-patterns.php:62
+msgid "Paywall with Three Tiers"
+msgstr ""
+
+#: includes/content-gate/class-block-patterns.php:63
+msgid "Paywall with Three Tiers (Alt)"
+msgstr ""
+
+#: includes/content-gate/class-block-patterns.php:117
+msgid "month"
+msgstr ""
+
+#: includes/content-gate/class-block-patterns.php:137
+msgid "Newspack Access Control"
+msgstr ""
+
+#: includes/content-gate/class-block-patterns.php:156
+msgctxt "Block pattern description"
+msgid "Invite your reader to become a member before continuing reading the article"
 msgstr ""
 
 #: includes/content-gate/class-content-gate-api.php:109
@@ -1550,44 +1979,44 @@ msgstr ""
 
 #: includes/content-gate/class-content-gate.php:375
 #: includes/content-gate/class-content-gate.php:759
-#: includes/content-gate/class-content-gate.php:882
+#: includes/content-gate/class-content-gate.php:889
 msgid "Content Gate Layout"
 msgstr ""
 
 #: includes/content-gate/class-content-gate.php:698
-#: includes/content-gate/class-content-gate.php:886
+#: includes/content-gate/class-content-gate.php:893
 msgid "Registration Access Layout"
 msgstr ""
 
 #: includes/content-gate/class-content-gate.php:710
-#: includes/content-gate/class-content-gate.php:889
+#: includes/content-gate/class-content-gate.php:896
 msgid "Paid Access Layout"
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:829
+#: includes/content-gate/class-content-gate.php:830
 msgid "This article is only available to members."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:868
+#: includes/content-gate/class-content-gate.php:875
 msgid "Gate ID is required."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:873
+#: includes/content-gate/class-content-gate.php:880
 msgid "Gate mode is required."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:878
-#: includes/content-gate/class-content-gate.php:1164
-#: includes/content-gate/class-content-gate.php:1190
-#: includes/content-gate/class-content-gate.php:1240
+#: includes/content-gate/class-content-gate.php:885
+#: includes/content-gate/class-content-gate.php:1171
+#: includes/content-gate/class-content-gate.php:1197
+#: includes/content-gate/class-content-gate.php:1247
 msgid "Gate not found."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:891
+#: includes/content-gate/class-content-gate.php:898
 msgid "Invalid gate mode."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:1213
+#: includes/content-gate/class-content-gate.php:1220
 msgid "Invalid gate setting key."
 msgstr ""
 
@@ -1611,7 +2040,7 @@ msgstr ""
 
 #: includes/content-gate/class-content-rules.php:56
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:168
+#: src/blocks/reader-registration/edit.js:177
 msgid "Lists"
 msgstr ""
 
@@ -2542,7 +2971,7 @@ msgid "%1$s | Details: %2$s"
 msgstr ""
 
 #: includes/oauth/class-google-login.php:292
-#: src/blocks/reader-registration/index.php:456
+#: src/blocks/reader-registration/index.php:466
 msgid "Thank you for registering!"
 msgstr ""
 
@@ -3313,10 +3742,6 @@ msgstr ""
 msgid "Current"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:484
-msgid "Amount"
-msgstr ""
-
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:502
 msgid "View Subscription"
 msgstr ""
@@ -3325,12 +3750,6 @@ msgstr ""
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:509
 #, php-format
 msgid "You currently have an active subscription: %s. If you’d like to make changes, you can manage it from your subscription page."
-msgstr ""
-
-#: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:543
-#: dist/audience-wizards.566c597d2652872d3c9b.js:85
-#: src/wizards/audience/components/settings-modal/index.js:56
-msgid "Frequency"
 msgstr ""
 
 #: includes/plugins/woocommerce-subscriptions/class-subscriptions-tiers.php:617
@@ -3438,7 +3857,7 @@ msgstr ""
 
 #: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-api.php:155
 #: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription-myaccount.php:103
-#: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription.php:104
+#: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription.php:108
 msgid "Subscription not found."
 msgstr ""
 
@@ -3663,7 +4082,7 @@ msgstr ""
 msgid "Invite"
 msgstr ""
 
-#: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription.php:132
+#: includes/plugins/woocommerce-subscriptions/group-subscription/class-group-subscription.php:136
 msgid "Member limit reached. Please remove some members or increase the limit."
 msgstr ""
 
@@ -3709,7 +4128,7 @@ msgstr ""
 #: includes/plugins/woocommerce/class-woocommerce-connection.php:567
 #: includes/reader-activation/class-reader-activation.php:304
 #: src/blocks/my-account-button/class-my-account-button-block.php:94
-#: src/blocks/reader-registration/index.php:239
+#: src/blocks/reader-registration/index.php:247
 #: dist/commons.js:18
 #: src/blocks/my-account-button/edit.js:63
 msgid "My Account"
@@ -3771,16 +4190,6 @@ msgstr ""
 #: includes/plugins/woocommerce/class-woocommerce-duplicate-orders.php:200
 #, php-format
 msgid "Customer %1$s made multiple orders of %2$s on %3$s. Orders: %4$s."
-msgstr ""
-
-#: includes/plugins/woocommerce/class-woocommerce-duplicate-orders.php:212
-#: dist/commons.js:13
-#: dist/componentsDemo.js:1
-#: dist/handoff-banner.js:1
-#: packages/components/src/handoff/index.js:58
-#: src/wizards/componentsDemo/index.js:271
-#: src/wizards/handoff-banner/index.js:22
-msgid "Dismiss"
 msgstr ""
 
 #: includes/plugins/woocommerce/class-woocommerce-order-utm.php:94
@@ -3946,14 +4355,6 @@ msgstr ""
 msgid "Payment information"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:253
-#: includes/plugins/woocommerce/my-account/templates/v1/subscription-totals-table.php:38
-#: dist/audience-wizards.566c597d2652872d3c9b.js:118
-msgid "Subscription"
-msgid_plural "Subscriptions"
-msgstr[0] ""
-msgstr[1] ""
-
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:316
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:448
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:544
@@ -3999,7 +4400,7 @@ msgstr ""
 #: dist/audience-wizards.566c597d2652872d3c9b.js:96
 #: dist/componentsDemo.js:1
 #: src/wizards/audience/views/campaigns/segments/single-segment.js:208
-#: src/wizards/componentsDemo/index.js:981
+#: src/wizards/componentsDemo/index.js:987
 msgid "Newsletters"
 msgstr ""
 
@@ -4031,10 +4432,10 @@ msgstr ""
 #: includes/plugins/woocommerce/my-account/class-my-account-ui-v1.php:420
 #: includes/reader-activation/class-reader-activation.php:285
 #: includes/reader-activation/class-reader-activation.php:313
-#: src/blocks/reader-registration/index.php:245
+#: src/blocks/reader-registration/index.php:253
 #: dist/audience-wizards.566c597d2652872d3c9b.js:115
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:302
+#: src/blocks/reader-registration/edit.js:315
 #: src/wizards/audience/views/setup/campaign.js:86
 msgid "Continue"
 msgstr ""
@@ -4409,10 +4810,6 @@ msgstr ""
 msgid "Manager"
 msgstr ""
 
-#: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:128
-msgid "Member"
-msgstr ""
-
 #: includes/plugins/woocommerce/my-account/templates/v1/group-subscription-members.php:130
 msgid "Owner"
 msgstr ""
@@ -4583,10 +4980,10 @@ msgstr ""
 #: src/blocks/author-profile-social/utils.js:13
 #: src/blocks/my-account-button/index.js:22
 #: src/blocks/overlay-menu/trigger/index.js:23
-#: src/wizards/componentsDemo/index.js:612
 #: src/wizards/componentsDemo/index.js:618
-#: src/wizards/componentsDemo/index.js:635
-#: src/wizards/componentsDemo/index.js:654
+#: src/wizards/componentsDemo/index.js:624
+#: src/wizards/componentsDemo/index.js:641
+#: src/wizards/componentsDemo/index.js:660
 msgid "Default"
 msgstr ""
 
@@ -4624,8 +5021,8 @@ msgstr ""
 #: src/wizards/audience/components/prompt-action-card/index.js:142
 #: src/wizards/audience/components/prompt-popovers/primary.js:64
 #: src/wizards/audience/views/campaigns/segments/segments-list.js:114
-#: src/wizards/componentsDemo/index.js:320
-#: src/wizards/componentsDemo/index.js:987
+#: src/wizards/componentsDemo/index.js:318
+#: src/wizards/componentsDemo/index.js:993
 #: src/wizards/newsletters/views/settings/index.js:360
 msgid "Edit"
 msgstr ""
@@ -4964,7 +5361,7 @@ msgstr ""
 #: includes/templates/reader-activation-emails/otp.php:281
 #: includes/templates/reader-activation-emails/otp.php:311
 #: src/blocks/my-account-button/class-my-account-button-block.php:95
-#: src/blocks/reader-registration/index.php:174
+#: src/blocks/reader-registration/index.php:182
 #: dist/commons.js:18
 #: src/blocks/my-account-button/edit.js:63
 msgid "Sign in"
@@ -5007,7 +5404,7 @@ msgid "Enter the code sent to your email"
 msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:292
-#: src/blocks/reader-registration/index.php:164
+#: src/blocks/reader-registration/index.php:172
 #: dist/commons.js:13
 #: dist/other-scripts/corrections-modal.js:7
 #: packages/components/src/section-header/index.js:152
@@ -5020,9 +5417,9 @@ msgid "Set a password (optional)"
 msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:297
-#: src/blocks/reader-registration/index.php:233
+#: src/blocks/reader-registration/index.php:241
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:66
+#: src/blocks/reader-registration/edit.js:68
 msgid "Success! Your account was created and you’re signed in."
 msgstr ""
 
@@ -5047,9 +5444,9 @@ msgid "Sign In"
 msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:307
-#: src/blocks/reader-registration/index.php:246
+#: src/blocks/reader-registration/index.php:254
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:266
+#: src/blocks/reader-registration/edit.js:279
 msgid "Subscribe to our newsletter"
 msgstr ""
 
@@ -5236,18 +5633,18 @@ msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:2014
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:291
+#: src/blocks/reader-registration/edit.js:304
 msgid "Continue with Google"
 msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:2017
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:293
+#: src/blocks/reader-registration/edit.js:306
 msgid "Or"
 msgstr ""
 
 #: includes/reader-activation/class-reader-activation.php:2111
-#: src/blocks/reader-registration/index.php:530
+#: src/blocks/reader-registration/index.php:540
 msgid "You must enter a valid email address."
 msgstr ""
 
@@ -5422,21 +5819,21 @@ msgstr ""
 msgid "ESP master list ID is not set."
 msgstr ""
 
-#: includes/reader-activation/integrations/class-integration.php:482
+#: includes/reader-activation/integrations/class-integration.php:509
 #: dist/audience-wizards.566c597d2652872d3c9b.js:109
 #: src/wizards/audience/components/metadata-fields.js:20
 msgid "Metadata field prefix"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-integration.php:483
+#: includes/reader-activation/integrations/class-integration.php:510
 msgid "A string to prefix metadata fields synced to the integration. Required to ensure that metadata field names are unique. Default: NP_"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-integration.php:489
+#: includes/reader-activation/integrations/class-integration.php:516
 msgid "Outgoing metadata fields"
 msgstr ""
 
-#: includes/reader-activation/integrations/class-integration.php:495
+#: includes/reader-activation/integrations/class-integration.php:522
 msgid "Incoming metadata fields"
 msgstr ""
 
@@ -6515,8 +6912,8 @@ msgstr ""
 #: includes/wizards/newsletters/class-premium-newsletters-wizard.php:236
 #: includes/wizards/newsletters/class-premium-newsletters-wizard.php:284
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:396
-#: src/wizards/componentsDemo/index.js:432
+#: src/wizards/componentsDemo/index.js:394
+#: src/wizards/componentsDemo/index.js:430
 msgid "Premium"
 msgstr ""
 
@@ -6669,7 +7066,7 @@ msgstr ""
 
 #: includes/wizards/newspack/class-newspack-dashboard.php:263
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:623
+#: src/wizards/componentsDemo/index.js:629
 msgid "Disabled"
 msgstr ""
 
@@ -6863,36 +7260,46 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
+#: src/blocks/reader-registration/index.php:40
+#: dist/audience-wizards.566c597d2652872d3c9b.js:79
+#: dist/audience-wizards.566c597d2652872d3c9b.js:96
+#: dist/content-gate-editor.js:25
+#: src/content-gate/editor/editor.js:20
+#: src/wizards/audience/components/segment-group/index.js:171
+#: src/wizards/audience/views/campaigns/utils.js:62
+msgid "Inline"
+msgstr ""
+
 #. translators: %s is the user's email address.
-#: src/blocks/reader-registration/index.php:115
-#: src/blocks/reader-registration/index.php:154
+#: src/blocks/reader-registration/index.php:123
+#: src/blocks/reader-registration/index.php:162
 #, php-format
 msgid "We'll send a verification code to %s."
 msgstr ""
 
-#: src/blocks/reader-registration/index.php:123
-#: src/blocks/reader-registration/index.php:161
+#: src/blocks/reader-registration/index.php:131
+#: src/blocks/reader-registration/index.php:169
 msgid "Send code"
 msgstr ""
 
-#: src/blocks/reader-registration/index.php:195
+#: src/blocks/reader-registration/index.php:203
 msgid "Invalid request. Please refresh the page and try again."
 msgstr ""
 
-#: src/blocks/reader-registration/index.php:199
+#: src/blocks/reader-registration/index.php:207
 msgid "User not logged in"
 msgstr ""
 
-#: src/blocks/reader-registration/index.php:204
+#: src/blocks/reader-registration/index.php:212
 msgid "User is not a reader or is already verified"
 msgstr ""
 
-#: src/blocks/reader-registration/index.php:212
+#: src/blocks/reader-registration/index.php:220
 msgid "OTP sent"
 msgstr ""
 
 #. Translators: %s is a link to My Account.
-#: src/blocks/reader-registration/index.php:238
+#: src/blocks/reader-registration/index.php:246
 #, php-format
 msgid "Please visit %s to verify and manage your account."
 msgstr ""
@@ -7147,8 +7554,8 @@ msgstr ""
 #: src/wizards/audience/components/campaign-management-popover/index.js:104
 #: src/wizards/audience/components/prompt-popovers/primary.js:79
 #: src/wizards/audience/views/campaigns/segments/segments-list.js:118
-#: src/wizards/componentsDemo/index.js:321
-#: src/wizards/componentsDemo/index.js:369
+#: src/wizards/componentsDemo/index.js:319
+#: src/wizards/componentsDemo/index.js:367
 msgid "Delete"
 msgstr ""
 
@@ -7579,7 +7986,7 @@ msgstr ""
 #: src/wizards/audience/components/prompt-popovers/primary.js:61
 #: src/wizards/audience/views/setup/content-gifting.js:157
 #: src/wizards/audience/views/setup/countdown-banner.js:97
-#: src/wizards/componentsDemo/index.js:988
+#: src/wizards/componentsDemo/index.js:994
 msgid "Preview"
 msgstr ""
 
@@ -7637,15 +8044,6 @@ msgstr ""
 #: dist/audience-wizards.566c597d2652872d3c9b.js:79
 #: src/wizards/audience/views/campaigns/utils.js:61
 msgid "Bottom Right Overlay"
-msgstr ""
-
-#: dist/audience-wizards.566c597d2652872d3c9b.js:79
-#: dist/audience-wizards.566c597d2652872d3c9b.js:96
-#: dist/content-gate-editor.js:25
-#: src/content-gate/editor/editor.js:20
-#: src/wizards/audience/components/segment-group/index.js:171
-#: src/wizards/audience/views/campaigns/utils.js:62
-msgid "Inline"
 msgstr ""
 
 #: dist/audience-wizards.566c597d2652872d3c9b.js:79
@@ -7993,14 +8391,6 @@ msgid "This prompt will not be assigned to any campaign."
 msgstr ""
 
 #: dist/audience-wizards.566c597d2652872d3c9b.js:94
-#: dist/audience-wizards.566c597d2652872d3c9b.js:96
-#: dist/audience-wizards.566c597d2652872d3c9b.js:145
-#: src/wizards/audience/components/prompt-action-card/index.js:153
-#: src/wizards/audience/views/campaigns/segments/single-segment.js:164
-msgid "Title"
-msgstr ""
-
-#: dist/audience-wizards.566c597d2652872d3c9b.js:94
 #: src/wizards/audience/components/segment-group/index.js:46
 msgid "No unassigned prompts in this segment."
 msgstr ""
@@ -8238,11 +8628,6 @@ msgstr ""
 #: dist/audience-wizards.566c597d2652872d3c9b.js:96
 #: src/wizards/audience/views/campaigns/segments/single-segment.js:182
 msgid "Target readers based on their browsing behavior."
-msgstr ""
-
-#: dist/audience-wizards.566c597d2652872d3c9b.js:96
-#: src/wizards/audience/views/campaigns/segments/single-segment.js:194
-msgid "Registration"
 msgstr ""
 
 #: dist/audience-wizards.566c597d2652872d3c9b.js:96
@@ -8952,11 +9337,11 @@ msgstr ""
 #: src/wizards/audience/components/payment-methods/stripe.js:93
 #: src/wizards/audience/components/payment-methods/woopayments.js:85
 #: src/wizards/audience/views/setup/content-gating.js:77
-#: src/wizards/componentsDemo/index.js:378
-#: src/wizards/componentsDemo/index.js:388
-#: src/wizards/componentsDemo/index.js:416
-#: src/wizards/componentsDemo/index.js:483
-#: src/wizards/componentsDemo/index.js:489
+#: src/wizards/componentsDemo/index.js:376
+#: src/wizards/componentsDemo/index.js:386
+#: src/wizards/componentsDemo/index.js:414
+#: src/wizards/componentsDemo/index.js:481
+#: src/wizards/componentsDemo/index.js:487
 msgid "Configure"
 msgstr ""
 
@@ -8983,7 +9368,7 @@ msgstr ""
 #: dist/audience-wizards.566c597d2652872d3c9b.js:115
 #: dist/componentsDemo.js:1
 #: src/wizards/audience/components/payment-methods/stripe.js:69
-#: src/wizards/componentsDemo/index.js:968
+#: src/wizards/componentsDemo/index.js:974
 msgid "Stripe"
 msgstr ""
 
@@ -9059,7 +9444,7 @@ msgstr ""
 #: src/wizards/audience/components/payment-methods/payment-gateway.js:89
 #: src/wizards/audience/components/payment-methods/stripe.js:102
 #: src/wizards/audience/components/payment-methods/woopayments.js:89
-#: src/wizards/componentsDemo/index.js:953
+#: src/wizards/componentsDemo/index.js:959
 msgid "Connect"
 msgstr ""
 
@@ -9376,11 +9761,11 @@ msgstr ""
 #: dist/audience-wizards.566c597d2652872d3c9b.js:139
 #: dist/audience-wizards.566c597d2652872d3c9b.js:142
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:908
-#: src/wizards/componentsDemo/index.js:923
-#: src/wizards/componentsDemo/index.js:944
-#: src/wizards/componentsDemo/index.js:975
-#: src/wizards/componentsDemo/index.js:989
+#: src/wizards/componentsDemo/index.js:914
+#: src/wizards/componentsDemo/index.js:929
+#: src/wizards/componentsDemo/index.js:950
+#: src/wizards/componentsDemo/index.js:981
+#: src/wizards/componentsDemo/index.js:995
 msgid "Disable"
 msgstr ""
 
@@ -9407,9 +9792,9 @@ msgstr ""
 #: dist/audience-wizards.566c597d2652872d3c9b.js:145
 #: dist/componentsDemo.js:1
 #: src/wizards/audience/views/content-gates/index.js:62
-#: src/wizards/componentsDemo/index.js:890
-#: src/wizards/componentsDemo/index.js:900
-#: src/wizards/componentsDemo/index.js:914
+#: src/wizards/componentsDemo/index.js:896
+#: src/wizards/componentsDemo/index.js:906
+#: src/wizards/componentsDemo/index.js:920
 msgid "Metered countdown"
 msgstr ""
 
@@ -9421,7 +9806,7 @@ msgstr ""
 
 #: dist/audience-wizards.566c597d2652872d3c9b.js:139
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:895
+#: src/wizards/componentsDemo/index.js:901
 msgid "Requires metering"
 msgstr ""
 
@@ -9429,8 +9814,8 @@ msgstr ""
 #: dist/audience-wizards.566c597d2652872d3c9b.js:145
 #: dist/componentsDemo.js:1
 #: src/wizards/audience/views/content-gates/index.js:74
-#: src/wizards/componentsDemo/index.js:930
-#: src/wizards/componentsDemo/index.js:938
+#: src/wizards/componentsDemo/index.js:936
+#: src/wizards/componentsDemo/index.js:944
 msgid "Content gifting"
 msgstr ""
 
@@ -9590,8 +9975,8 @@ msgstr ""
 #: dist/audience-wizards.566c597d2652872d3c9b.js:145
 #: dist/componentsDemo.js:1
 #: dist/newsletters-wizards.1188ab99d61f7bf7a537.js:88
-#: src/wizards/componentsDemo/index.js:363
-#: src/wizards/componentsDemo/index.js:368
+#: src/wizards/componentsDemo/index.js:361
+#: src/wizards/componentsDemo/index.js:366
 msgid "Active"
 msgstr ""
 
@@ -10320,89 +10705,94 @@ msgid "Registration Success"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:112
+#: src/blocks/reader-registration/edit.js:114
 msgid "Form settings"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:114
+#: src/blocks/reader-registration/edit.js:116
 msgid "Input placeholder"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:121
+#: src/blocks/reader-registration/edit.js:123
+msgid "Show Google sign-in button"
+msgstr ""
+
+#: dist/blocks.js:1
+#: src/blocks/reader-registration/edit.js:130
 msgid "Newsletter Subscription"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:123
+#: src/blocks/reader-registration/edit.js:132
 msgid "Enable newsletter subscription"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:133
+#: src/blocks/reader-registration/edit.js:142
 msgid "To enable newsletter subscription, you must configure subscription lists on Newspack Newsletters."
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:142
+#: src/blocks/reader-registration/edit.js:151
 msgid "Display list description"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:152
+#: src/blocks/reader-registration/edit.js:161
 msgid "Hide newsletter selection and always subscribe"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:164
+#: src/blocks/reader-registration/edit.js:173
 msgid "You must select at least one list."
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:189
+#: src/blocks/reader-registration/edit.js:198
 msgid "Configure your subscription lists"
 msgstr ""
 
 #: dist/blocks.js:1
-#: src/blocks/reader-registration/edit.js:195
+#: src/blocks/reader-registration/edit.js:204
 msgid "Spam protection"
 msgstr ""
 
 #. translators: %s is either 'enabled' or 'disabled'.
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:199
+#: src/blocks/reader-registration/edit.js:208
 #, js-format
 msgid "reCAPTCHA is currently %s."
 msgstr ""
 
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:205
+#: src/blocks/reader-registration/edit.js:214
 msgid "It's highly recommended that you enable reCAPTCHA protection to prevent spambots from using this form!"
 msgstr ""
 
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:212
+#: src/blocks/reader-registration/edit.js:221
 msgid "Configure your reCAPTCHA settings."
 msgstr ""
 
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:218
+#: src/blocks/reader-registration/edit.js:227
 msgid "Edited State"
 msgstr ""
 
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:237
+#: src/blocks/reader-registration/edit.js:247
 msgid "Add title"
 msgstr ""
 
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:246
+#: src/blocks/reader-registration/edit.js:258
 msgid "Add description"
 msgstr ""
 
 #: dist/blocks.js:4
-#: src/blocks/reader-registration/edit.js:316
+#: src/blocks/reader-registration/edit.js:329
 msgid "Terms & Conditions statement…"
 msgstr ""
 
@@ -10551,8 +10941,8 @@ msgstr ""
 #: src/blocks/collections/components/InspectorPanel.jsx:191
 #: src/blocks/contribution-meter/components/InspectorPanel.jsx:169
 #: src/content-gate/editor/editor.js:31
-#: src/wizards/componentsDemo/index.js:566
-#: src/wizards/componentsDemo/index.js:642
+#: src/wizards/componentsDemo/index.js:572
+#: src/wizards/componentsDemo/index.js:648
 msgid "Small"
 msgstr ""
 
@@ -10657,14 +11047,6 @@ msgstr ""
 #: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:158
 msgid "Alignment"
-msgstr ""
-
-#. translators: Overlay Position
-#: dist/blocks.js:6
-#: dist/content-gate-editor.js:3
-#: packages/components/src/position-control/index.js:27
-#: src/blocks/collections/components/InspectorPanel.jsx:165
-msgid "Top"
 msgstr ""
 
 #: dist/blocks.js:6
@@ -11264,13 +11646,13 @@ msgid "Latest Posts"
 msgstr ""
 
 #: dist/commons.js:13
-#: packages/components/src/action-card/index.js:312
+#: packages/components/src/action-card/index.js:326
 #: packages/components/src/card/core-card.js:100
 msgid "Move one position up"
 msgstr ""
 
 #: dist/commons.js:13
-#: packages/components/src/action-card/index.js:318
+#: packages/components/src/action-card/index.js:332
 #: packages/components/src/card/core-card.js:107
 msgid "Move one position down"
 msgstr ""
@@ -11313,19 +11695,19 @@ msgid "Contact Support"
 msgstr ""
 
 #: dist/commons.js:13
-#: packages/components/src/handoff/index.js:55
-#: packages/components/src/handoff/index.js:56
 #: packages/components/src/handoff/index.js:57
+#: packages/components/src/handoff/index.js:58
+#: packages/components/src/handoff/index.js:59
 msgid "Manage"
 msgstr ""
 
 #: dist/commons.js:13
-#: packages/components/src/handoff/index.js:115
+#: packages/components/src/handoff/index.js:153
 msgid " not installed"
 msgstr ""
 
 #: dist/commons.js:13
-#: packages/components/src/handoff/index.js:126
+#: packages/components/src/handoff/index.js:164
 msgid "Retrieving Plugin Info"
 msgstr ""
 
@@ -11347,14 +11729,14 @@ msgstr ""
 #: dist/commons.js:13
 #: dist/componentsDemo.js:1
 #: packages/components/src/plugin-installer/index.js:169
-#: src/wizards/componentsDemo/index.js:312
-#: src/wizards/componentsDemo/index.js:339
-#: src/wizards/componentsDemo/index.js:399
-#: src/wizards/componentsDemo/index.js:435
-#: src/wizards/componentsDemo/index.js:445
-#: src/wizards/componentsDemo/index.js:455
-#: src/wizards/componentsDemo/index.js:465
-#: src/wizards/componentsDemo/index.js:475
+#: src/wizards/componentsDemo/index.js:310
+#: src/wizards/componentsDemo/index.js:337
+#: src/wizards/componentsDemo/index.js:397
+#: src/wizards/componentsDemo/index.js:433
+#: src/wizards/componentsDemo/index.js:443
+#: src/wizards/componentsDemo/index.js:453
+#: src/wizards/componentsDemo/index.js:463
+#: src/wizards/componentsDemo/index.js:473
 msgid "Install"
 msgstr ""
 
@@ -11387,7 +11769,7 @@ msgstr ""
 #: dist/componentsDemo.js:1
 #: dist/newspack-wizards.642aeeefc1878bb756ec.js:1
 #: packages/components/src/plugin-toggle/index.js:149
-#: src/wizards/componentsDemo/index.js:333
+#: src/wizards/componentsDemo/index.js:331
 msgid "Installing…"
 msgstr ""
 
@@ -11538,8 +11920,8 @@ msgstr ""
 #: dist/componentsDemo.js:1
 #: dist/newspack-wizards.642aeeefc1878bb756ec.js:8
 #: dist/newspack-wizards.642aeeefc1878bb756ec.js:30
-#: src/wizards/componentsDemo/index.js:425
-#: src/wizards/componentsDemo/index.js:959
+#: src/wizards/componentsDemo/index.js:423
+#: src/wizards/componentsDemo/index.js:965
 msgid "Disconnect"
 msgstr ""
 
@@ -11655,328 +12037,346 @@ msgid "Handoff Buttons"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:235
-msgid "Manage AMP"
-msgstr ""
-
-#: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:236
-msgid "Click to go to the AMP dashboard. There will be a notification bar at the top with a link to return to Newspack."
-msgstr ""
-
-#: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:247
+#: src/wizards/componentsDemo/index.js:238
 msgid "Specific Yoast Page"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:252
+#: src/wizards/componentsDemo/index.js:242
+#: src/wizards/componentsDemo/index.js:496
+msgid "Return to Components Demo once you're done."
+msgstr ""
+
+#: dist/componentsDemo.js:1
+#: src/wizards/componentsDemo/index.js:243
+#: src/wizards/componentsDemo/index.js:497
+msgid "Back to Components Demo"
+msgstr ""
+
+#: dist/componentsDemo.js:1
+#: src/wizards/componentsDemo/index.js:245
+#: src/wizards/componentsDemo/index.js:494
+msgid "Go to Dashboard"
+msgstr ""
+
+#: dist/componentsDemo.js:1
+#: src/wizards/componentsDemo/index.js:250
 msgid "Modal"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:255
+#: src/wizards/componentsDemo/index.js:253
 msgid "Open modal"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:260
+#: src/wizards/componentsDemo/index.js:258
 msgid "This is the modal title"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:264
+#: src/wizards/componentsDemo/index.js:262
 msgid "Based on industry research, we advise to test the modal component, and continuing this sentence so we can see how the text wraps is one good way of doing that."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:274
+#: src/wizards/componentsDemo/index.js:272
 msgid "Also dismiss"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:281
+#: src/wizards/componentsDemo/index.js:279
 msgid "Notice"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:282
+#: src/wizards/componentsDemo/index.js:280
 msgid "This is an info notice."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:283
+#: src/wizards/componentsDemo/index.js:281
 msgid "This is an error notice."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:284
+#: src/wizards/componentsDemo/index.js:282
 msgid "This is a help notice."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:285
+#: src/wizards/componentsDemo/index.js:283
 msgid "This is a success notice."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:286
+#: src/wizards/componentsDemo/index.js:284
 msgid "This is a warning notice."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:289
+#: src/wizards/componentsDemo/index.js:287
 msgid "Plugin installer"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:299
+#: src/wizards/componentsDemo/index.js:297
 msgid "Plugin installer (small)"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:310
+#: src/wizards/componentsDemo/index.js:308
 msgid "Example One"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:311
+#: src/wizards/componentsDemo/index.js:309
 msgid "Has an action button."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:318
+#: src/wizards/componentsDemo/index.js:316
 msgid "Example Two"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:319
+#: src/wizards/componentsDemo/index.js:317
 msgid "Has action button and secondary button."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:331
+#: src/wizards/componentsDemo/index.js:329
 msgid "Example Three"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:332
+#: src/wizards/componentsDemo/index.js:330
 msgid "Waiting/in-progress state, no action button."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:337
+#: src/wizards/componentsDemo/index.js:335
 msgid "Example Four"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:338
+#: src/wizards/componentsDemo/index.js:336
 msgid "Error notification"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:351
+#: src/wizards/componentsDemo/index.js:349
 msgid "Example Five"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:352
+#: src/wizards/componentsDemo/index.js:350
 msgid "Warning notification, action button"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:361
+#: src/wizards/componentsDemo/index.js:359
 msgid "Example Six"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:362
+#: src/wizards/componentsDemo/index.js:360
 msgid "Static text, no button"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:366
+#: src/wizards/componentsDemo/index.js:364
 msgid "Example Seven"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:367
+#: src/wizards/componentsDemo/index.js:365
 msgid "Static text, secondary action button."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:376
+#: src/wizards/componentsDemo/index.js:374
 msgid "Example Eight"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:377
+#: src/wizards/componentsDemo/index.js:375
 msgid "Image with link and action button."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:386
+#: src/wizards/componentsDemo/index.js:384
 msgid "Example Nine"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:387
+#: src/wizards/componentsDemo/index.js:385
 msgid "Action Card with Toggle Control."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:397
+#: src/wizards/componentsDemo/index.js:395
 msgid "Example Ten"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:398
+#: src/wizards/componentsDemo/index.js:396
 msgid "An example of an action card with a badge."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:406
+#: src/wizards/componentsDemo/index.js:404
 msgid "Example Eleven"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:407
+#: src/wizards/componentsDemo/index.js:405
 msgid "An example of a small action card."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:408
+#: src/wizards/componentsDemo/index.js:406
 msgid "Installing"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:414
+#: src/wizards/componentsDemo/index.js:412
 msgid "Example Twelve"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:415
+#: src/wizards/componentsDemo/index.js:413
 msgid "Action card with an unchecked checkbox."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:423
+#: src/wizards/componentsDemo/index.js:421
 msgid "Example Thirteen"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:424
+#: src/wizards/componentsDemo/index.js:422
 msgid "Action card with a checked checkbox."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:432
+#: src/wizards/componentsDemo/index.js:430
 msgid "Archived"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:433
+#: src/wizards/componentsDemo/index.js:431
 msgid "Example Fourteen"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:434
+#: src/wizards/componentsDemo/index.js:432
 msgid "An example of an action card with two badges."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:441
+#: src/wizards/componentsDemo/index.js:439
 msgid "It works"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:443
+#: src/wizards/componentsDemo/index.js:441
 msgid "Example Fifteen"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:444
+#: src/wizards/componentsDemo/index.js:442
 msgid "An example of an action card with a success badge."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:451
+#: src/wizards/componentsDemo/index.js:449
 msgid "Uh oh"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:453
+#: src/wizards/componentsDemo/index.js:451
 msgid "Example Sixteen"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:454
+#: src/wizards/componentsDemo/index.js:452
 msgid "An example of an action card with a warning badge."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:461
+#: src/wizards/componentsDemo/index.js:459
 msgid "Oh no"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:463
+#: src/wizards/componentsDemo/index.js:461
 msgid "Example Seventeen"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:464
+#: src/wizards/componentsDemo/index.js:462
 msgid "An example of an action card with an error badge."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:471
+#: src/wizards/componentsDemo/index.js:469
 msgid "Brand awareness"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:473
+#: src/wizards/componentsDemo/index.js:471
 msgid "Example Eighteen"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:474
+#: src/wizards/componentsDemo/index.js:472
 msgid "An example of an action card with a brand-colored badge."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:481
-#: src/wizards/componentsDemo/index.js:487
+#: src/wizards/componentsDemo/index.js:479
+#: src/wizards/componentsDemo/index.js:485
 msgid "Handoff"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:482
+#: src/wizards/componentsDemo/index.js:480
 msgid "An example of an action card with Handoff."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:488
+#: src/wizards/componentsDemo/index.js:486
 msgid " An example of an action card with Handoff and EditLink."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:495
-msgid "Expandable"
+#: src/wizards/componentsDemo/index.js:492
+msgid "Handoff with URL"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:496
-msgid " An example of an action card with expandable inner content."
-msgstr ""
-
-#: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:498
-msgid "Some inner content to display when the card is expanded."
+#: src/wizards/componentsDemo/index.js:493
+msgid "An example of an action card with URL-based Handoff."
 msgstr ""
 
 #: dist/componentsDemo.js:1
 #: src/wizards/componentsDemo/index.js:501
+msgid "Expandable"
+msgstr ""
+
+#: dist/componentsDemo.js:1
+#: src/wizards/componentsDemo/index.js:502
+msgid " An example of an action card with expandable inner content."
+msgstr ""
+
+#: dist/componentsDemo.js:1
+#: src/wizards/componentsDemo/index.js:504
+msgid "Some inner content to display when the card is expanded."
+msgstr ""
+
+#: dist/componentsDemo.js:1
+#: src/wizards/componentsDemo/index.js:507
 msgid "Image Uploader"
 msgstr ""
 
@@ -11984,443 +12384,438 @@ msgstr ""
 #: dist/contribution-meter-block.js:1
 #: src/blocks/contribution-meter/components/InspectorPanel.jsx:46
 #: src/blocks/contribution-meter/components/InspectorPanel.jsx:138
-#: src/wizards/componentsDemo/index.js:512
+#: src/wizards/componentsDemo/index.js:518
 msgid "Progress bar"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:514
-#: src/wizards/componentsDemo/index.js:516
+#: src/wizards/componentsDemo/index.js:520
+#: src/wizards/componentsDemo/index.js:522
 msgid "Progress made"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:519
+#: src/wizards/componentsDemo/index.js:525
 msgid "Select dropdowns"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:522
+#: src/wizards/componentsDemo/index.js:528
 msgid "Label for Select with a preselection"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:527
-#: src/wizards/componentsDemo/index.js:542
-#: src/wizards/componentsDemo/index.js:557
-#: src/wizards/componentsDemo/index.js:572
+#: src/wizards/componentsDemo/index.js:533
+#: src/wizards/componentsDemo/index.js:548
+#: src/wizards/componentsDemo/index.js:563
+#: src/wizards/componentsDemo/index.js:578
 msgid "- Select -"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:530
-#: src/wizards/componentsDemo/index.js:545
-#: src/wizards/componentsDemo/index.js:560
-#: src/wizards/componentsDemo/index.js:575
-#: src/wizards/componentsDemo/index.js:586
+#: src/wizards/componentsDemo/index.js:536
+#: src/wizards/componentsDemo/index.js:551
+#: src/wizards/componentsDemo/index.js:566
+#: src/wizards/componentsDemo/index.js:581
+#: src/wizards/componentsDemo/index.js:592
 msgid "First"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:531
-#: src/wizards/componentsDemo/index.js:546
-#: src/wizards/componentsDemo/index.js:561
-#: src/wizards/componentsDemo/index.js:576
-#: src/wizards/componentsDemo/index.js:587
+#: src/wizards/componentsDemo/index.js:537
+#: src/wizards/componentsDemo/index.js:552
+#: src/wizards/componentsDemo/index.js:567
+#: src/wizards/componentsDemo/index.js:582
+#: src/wizards/componentsDemo/index.js:593
 msgid "Second"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:532
-#: src/wizards/componentsDemo/index.js:547
-#: src/wizards/componentsDemo/index.js:562
-#: src/wizards/componentsDemo/index.js:577
-#: src/wizards/componentsDemo/index.js:588
+#: src/wizards/componentsDemo/index.js:538
+#: src/wizards/componentsDemo/index.js:553
+#: src/wizards/componentsDemo/index.js:568
+#: src/wizards/componentsDemo/index.js:583
+#: src/wizards/componentsDemo/index.js:594
 msgid "Third"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:537
+#: src/wizards/componentsDemo/index.js:543
 msgid "Label for Select with no preselection"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:552
+#: src/wizards/componentsDemo/index.js:558
 msgid "Label for disabled Select"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:583
+#: src/wizards/componentsDemo/index.js:589
 msgid "Multi-select"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:589
+#: src/wizards/componentsDemo/index.js:595
 msgid "Fourth"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:590
+#: src/wizards/componentsDemo/index.js:596
 msgid "Fifth"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:591
+#: src/wizards/componentsDemo/index.js:597
 msgid "Sixth"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:592
+#: src/wizards/componentsDemo/index.js:598
 msgid "Seventh"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:599
+#: src/wizards/componentsDemo/index.js:605
 msgid "Selected:"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:602
+#: src/wizards/componentsDemo/index.js:608
 msgid "none"
-msgstr ""
-
-#: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:609
-msgid "Buttons"
 msgstr ""
 
 #: dist/componentsDemo.js:1
 #: dist/newspack-wizards.642aeeefc1878bb756ec.js:30
 #: dist/setup.js:7
-#: src/wizards/componentsDemo/index.js:615
-#: src/wizards/componentsDemo/index.js:627
+#: src/wizards/componentsDemo/index.js:621
+#: src/wizards/componentsDemo/index.js:633
 msgid "Primary"
 msgstr ""
 
 #: dist/componentsDemo.js:1
 #: dist/newspack-wizards.642aeeefc1878bb756ec.js:30
 #: dist/setup.js:7
-#: src/wizards/componentsDemo/index.js:616
-#: src/wizards/componentsDemo/index.js:630
+#: src/wizards/componentsDemo/index.js:622
+#: src/wizards/componentsDemo/index.js:636
 msgid "Secondary"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:617
-#: src/wizards/componentsDemo/index.js:633
+#: src/wizards/componentsDemo/index.js:623
+#: src/wizards/componentsDemo/index.js:639
 msgid "Tertiary"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:619
-#: src/wizards/componentsDemo/index.js:637
-#: src/wizards/componentsDemo/index.js:656
+#: src/wizards/componentsDemo/index.js:625
+#: src/wizards/componentsDemo/index.js:643
+#: src/wizards/componentsDemo/index.js:662
 msgid "isLink"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:646
+#: src/wizards/componentsDemo/index.js:652
 msgid "isPrimary"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:649
+#: src/wizards/componentsDemo/index.js:655
 msgid "isSecondary"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:652
+#: src/wizards/componentsDemo/index.js:658
 msgid "isTertiary"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:662
+#: src/wizards/componentsDemo/index.js:668
 msgid "Card (experimental Core component)"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:664
+#: src/wizards/componentsDemo/index.js:670
 msgid "By passing the __experimentalCoreCard prop, the card will be rendered using WP Core’s Card component. "
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:669
+#: src/wizards/componentsDemo/index.js:675
 msgid "Component details"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:680
+#: src/wizards/componentsDemo/index.js:686
 msgid "Button card w/ icon"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:681
-#: src/wizards/componentsDemo/index.js:697
+#: src/wizards/componentsDemo/index.js:687
+#: src/wizards/componentsDemo/index.js:703
 msgid "Clickable card using Core's Card component."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:696
+#: src/wizards/componentsDemo/index.js:702
 msgid "Small button card w/ icon + background color + chevron"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:708
+#: src/wizards/componentsDemo/index.js:714
 msgid "Card w/ child components"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:711
+#: src/wizards/componentsDemo/index.js:717
 msgid "Card Footer"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:713
+#: src/wizards/componentsDemo/index.js:719
 msgid "Action Button"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:722
+#: src/wizards/componentsDemo/index.js:728
 msgid "Recommended top-level child components: CardBody, CardMedia, or CardDivider."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:735
+#: src/wizards/componentsDemo/index.js:741
 msgid "CardBody (before CardDivider)"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:739
+#: src/wizards/componentsDemo/index.js:745
 msgid "CardBody (after CardDivider)"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:745
+#: src/wizards/componentsDemo/index.js:751
 msgid "Settings Group Card"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:746
+#: src/wizards/componentsDemo/index.js:752
 msgid "Can be used in lieu of the ActionCard component."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:754
+#: src/wizards/componentsDemo/index.js:760
 msgid "A settings option"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:755
+#: src/wizards/componentsDemo/index.js:761
 msgid "A description of the setting"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:762
+#: src/wizards/componentsDemo/index.js:768
 msgid "A text input"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:763
+#: src/wizards/componentsDemo/index.js:769
 msgid "A description of the input"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:764
+#: src/wizards/componentsDemo/index.js:770
 msgid "A placeholder for the input"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:773
+#: src/wizards/componentsDemo/index.js:779
 msgid "Plugin Settings Section"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:776
+#: src/wizards/componentsDemo/index.js:782
 msgid "Example plugin settings"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:777
+#: src/wizards/componentsDemo/index.js:783
 msgid "Example plugin settings description"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:783
+#: src/wizards/componentsDemo/index.js:789
 msgid "Example Text Field"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:784
+#: src/wizards/componentsDemo/index.js:790
 msgid "Example text field help text"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:785
+#: src/wizards/componentsDemo/index.js:791
 msgid "Example Value"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:790
+#: src/wizards/componentsDemo/index.js:796
 msgid "Example checkbox Field"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:791
+#: src/wizards/componentsDemo/index.js:797
 msgid "Example checkbox field help text"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:797
+#: src/wizards/componentsDemo/index.js:803
 msgid "Example options field"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:798
+#: src/wizards/componentsDemo/index.js:804
 msgid "Example options field help text"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:802
-#: src/wizards/componentsDemo/index.js:819
+#: src/wizards/componentsDemo/index.js:808
+#: src/wizards/componentsDemo/index.js:825
 msgid "Example Value 1"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:806
-#: src/wizards/componentsDemo/index.js:823
+#: src/wizards/componentsDemo/index.js:812
+#: src/wizards/componentsDemo/index.js:829
 msgid "Example Value 2"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:813
+#: src/wizards/componentsDemo/index.js:819
 msgid "Example multiple options field"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:814
+#: src/wizards/componentsDemo/index.js:820
 msgid "Example multiple options field help text"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:837
+#: src/wizards/componentsDemo/index.js:843
 msgid "Draggable Action Cards"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:853
+#: src/wizards/componentsDemo/index.js:859
 msgid "An example of an action card that is draggable."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:859
+#: src/wizards/componentsDemo/index.js:865
 msgid "Box Contrast"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:863
+#: src/wizards/componentsDemo/index.js:869
 msgid "Demo 1:"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:868
+#: src/wizards/componentsDemo/index.js:874
 msgid "Demo 2:"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:873
+#: src/wizards/componentsDemo/index.js:879
 msgid "Demo 3:"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:880
+#: src/wizards/componentsDemo/index.js:886
 msgid "CardFeature"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:882
+#: src/wizards/componentsDemo/index.js:888
 msgid "A state-driven feature card with a predictable action model. The button, dropdown, and badge are all derived from the enabled and requirements props."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:887
+#: src/wizards/componentsDemo/index.js:893
 msgid "States"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:891
-#: src/wizards/componentsDemo/index.js:901
-#: src/wizards/componentsDemo/index.js:915
+#: src/wizards/componentsDemo/index.js:897
+#: src/wizards/componentsDemo/index.js:907
+#: src/wizards/componentsDemo/index.js:921
 msgid "Show a countdown banner letting readers know how many free views they have left."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:911
+#: src/wizards/componentsDemo/index.js:917
 msgid "Interactive toggle"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:927
+#: src/wizards/componentsDemo/index.js:933
 msgid "With a custom icon"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:931
-#: src/wizards/componentsDemo/index.js:939
+#: src/wizards/componentsDemo/index.js:937
+#: src/wizards/componentsDemo/index.js:945
 msgid "Let subscribers share gated articles with non-subscribers."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:947
+#: src/wizards/componentsDemo/index.js:953
 msgid "With custom button labels"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:950
+#: src/wizards/componentsDemo/index.js:956
 msgid "Apple News"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:951
+#: src/wizards/componentsDemo/index.js:957
 msgid "Automatically publish articles to Apple News."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:954
+#: src/wizards/componentsDemo/index.js:960
 msgid "Manage connection"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:965
+#: src/wizards/componentsDemo/index.js:971
 msgid "With a custom badge"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:969
+#: src/wizards/componentsDemo/index.js:975
 msgid "Accept payments via Stripe."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:971
+#: src/wizards/componentsDemo/index.js:977
 msgid "Live mode"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:978
+#: src/wizards/componentsDemo/index.js:984
 msgid "With multiple dropdown controls"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:982
+#: src/wizards/componentsDemo/index.js:988
 msgid "Send newsletters directly from the WordPress editor."
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:995
+#: src/wizards/componentsDemo/index.js:1001
 msgid "Newspack Icons"
 msgstr ""
 
 #: dist/componentsDemo.js:1
-#: src/wizards/componentsDemo/index.js:998
+#: src/wizards/componentsDemo/index.js:1004
 msgid "This is a collection of custom SVG icons for Newspack projects.<br/>They are available in <code>newspack-plugin</code> in the <code>newspack-icons</code> package.<br/>There's also an <link>npm package</link> that you can install to use them in your projects."
 msgstr ""
 
@@ -12842,16 +13237,6 @@ msgstr ""
 #: dist/contribution-meter-block.js:5
 #: src/blocks/contribution-meter/index.js:54
 msgid "Circular"
-msgstr ""
-
-#: dist/handoff-banner.js:1
-#: src/wizards/handoff-banner/index.js:20
-msgid "Return to Newspack after completing configuration"
-msgstr ""
-
-#: dist/handoff-banner.js:1
-#: src/wizards/handoff-banner/index.js:21
-msgid "Back to Newspack"
 msgstr ""
 
 #: dist/indesign-export.js:1
