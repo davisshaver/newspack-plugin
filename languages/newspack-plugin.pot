@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-15T09:44:10+00:00\n"
+"POT-Creation-Date: 2026-04-15T20:02:20+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -2055,75 +2055,75 @@ msgid "Institutions"
 msgstr ""
 
 #. translators: %s: institution name
-#: includes/content-gate/class-ip-access-rule.php:224
+#: includes/content-gate/class-ip-access-rule.php:285
 #, php-format
 msgid "Connected to %s."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:225
-#: includes/content-gate/class-ip-access-rule.php:387
+#: includes/content-gate/class-ip-access-rule.php:286
+#: includes/content-gate/class-ip-access-rule.php:448
 msgid "Connected to your organization."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:235
+#: includes/content-gate/class-ip-access-rule.php:296
 msgid "We couldn't verify your location. Make sure you're on your organization's network and try again."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:321
+#: includes/content-gate/class-ip-access-rule.php:382
 msgid "Verifying access"
 msgstr ""
 
 #. translators: %s: institution name
-#: includes/content-gate/class-ip-access-rule.php:342
+#: includes/content-gate/class-ip-access-rule.php:403
 #, php-format
 msgid "Verifying your access to %s…"
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:344
+#: includes/content-gate/class-ip-access-rule.php:405
 msgid "Verifying your access…"
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:348
+#: includes/content-gate/class-ip-access-rule.php:409
 msgid "You'll be redirected in a few seconds."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:351
+#: includes/content-gate/class-ip-access-rule.php:412
 msgid "Try again"
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:352
+#: includes/content-gate/class-ip-access-rule.php:413
 msgid "Continue to site"
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:368
+#: includes/content-gate/class-ip-access-rule.php:429
 msgid "Verification timed out."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:369
+#: includes/content-gate/class-ip-access-rule.php:430
 msgid "Please check your connection and try again."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:386
+#: includes/content-gate/class-ip-access-rule.php:447
 msgid "Connected to "
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:388
+#: includes/content-gate/class-ip-access-rule.php:449
 msgid "Redirecting…"
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:399
+#: includes/content-gate/class-ip-access-rule.php:460
 msgid "We couldn't verify your location."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:400
+#: includes/content-gate/class-ip-access-rule.php:461
 msgid "Make sure you're on your organization's network and try again."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:407
+#: includes/content-gate/class-ip-access-rule.php:468
 msgid "Verification failed."
 msgstr ""
 
-#: includes/content-gate/class-ip-access-rule.php:408
+#: includes/content-gate/class-ip-access-rule.php:469
 msgid "An error occurred. Please try again."
 msgstr ""
 
