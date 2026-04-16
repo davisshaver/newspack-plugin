@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-16T09:37:40+00:00\n"
+"POT-Creation-Date: 2026-04-16T20:51:55+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -1947,77 +1947,77 @@ msgstr ""
 msgid "Invalid content rule value."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:358
+#: includes/content-gate/class-content-gate.php:359
 #: includes/plugins/wc-memberships/class-memberships.php:149
 #: dist/audience-wizards.f3f76bb9e777b69e7638.js:115
 #: src/wizards/audience/views/setup/content-gating.js:73
 msgid "Content Gate"
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:360
+#: includes/content-gate/class-content-gate.php:361
 msgid "Content Gate published."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:361
+#: includes/content-gate/class-content-gate.php:362
 msgid "Content Gate reverted to draft."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:362
+#: includes/content-gate/class-content-gate.php:363
 msgid "Content Gate updated."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:363
+#: includes/content-gate/class-content-gate.php:364
 msgid "New Content Gate"
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:364
+#: includes/content-gate/class-content-gate.php:365
 msgid "Edit Content Gate"
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:365
+#: includes/content-gate/class-content-gate.php:366
 msgid "View Content Gate"
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:375
-#: includes/content-gate/class-content-gate.php:759
-#: includes/content-gate/class-content-gate.php:889
+#: includes/content-gate/class-content-gate.php:376
+#: includes/content-gate/class-content-gate.php:760
+#: includes/content-gate/class-content-gate.php:890
 msgid "Content Gate Layout"
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:698
-#: includes/content-gate/class-content-gate.php:893
+#: includes/content-gate/class-content-gate.php:699
+#: includes/content-gate/class-content-gate.php:894
 msgid "Registration Access Layout"
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:710
-#: includes/content-gate/class-content-gate.php:896
+#: includes/content-gate/class-content-gate.php:711
+#: includes/content-gate/class-content-gate.php:897
 msgid "Paid Access Layout"
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:830
+#: includes/content-gate/class-content-gate.php:831
 msgid "This article is only available to members."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:875
+#: includes/content-gate/class-content-gate.php:876
 msgid "Gate ID is required."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:880
+#: includes/content-gate/class-content-gate.php:881
 msgid "Gate mode is required."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:885
-#: includes/content-gate/class-content-gate.php:1171
-#: includes/content-gate/class-content-gate.php:1197
-#: includes/content-gate/class-content-gate.php:1247
+#: includes/content-gate/class-content-gate.php:886
+#: includes/content-gate/class-content-gate.php:1172
+#: includes/content-gate/class-content-gate.php:1198
+#: includes/content-gate/class-content-gate.php:1248
 msgid "Gate not found."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:898
+#: includes/content-gate/class-content-gate.php:899
 msgid "Invalid gate mode."
 msgstr ""
 
-#: includes/content-gate/class-content-gate.php:1220
+#: includes/content-gate/class-content-gate.php:1221
 msgid "Invalid gate setting key."
 msgstr ""
 
@@ -6673,6 +6673,7 @@ msgstr ""
 #: includes/wizards/audience/class-audience-content-gates.php:131
 #: dist/audience-wizards.f3f76bb9e777b69e7638.js:133
 #: dist/audience-wizards.f3f76bb9e777b69e7638.js:145
+#: dist/content-gate-block-visibility.js:1
 #: dist/newsletters-wizards.5875c7bbc60bfdf1f67d.js:88
 #: dist/wizards.js:115
 #: src/wizards/audience/views/content-gates/index.js:40
@@ -7504,11 +7505,13 @@ msgid "How often free views reset."
 msgstr ""
 
 #: dist/audience-wizards.f3f76bb9e777b69e7638.js:16
+#: dist/content-gate-block-visibility.js:1
 #: dist/newsletters-wizards.5875c7bbc60bfdf1f67d.js:16
 msgid "Require verification"
 msgstr ""
 
 #: dist/audience-wizards.f3f76bb9e777b69e7638.js:16
+#: dist/content-gate-block-visibility.js:1
 #: dist/newsletters-wizards.5875c7bbc60bfdf1f67d.js:16
 msgid "Readers must verify their account to access."
 msgstr ""
@@ -7524,6 +7527,7 @@ msgid "Failed to load options. The list may be outdated."
 msgstr ""
 
 #: dist/audience-wizards.f3f76bb9e777b69e7638.js:16
+#: dist/content-gate-block-visibility.js:1
 #: dist/newsletters-wizards.5875c7bbc60bfdf1f67d.js:16
 msgid "Separate with commas."
 msgstr ""
@@ -10519,6 +10523,7 @@ msgid "Disconnected from GAM."
 msgstr ""
 
 #: dist/billboard.js:15
+#: dist/content-gate-block-visibility.js:1
 #: dist/newspack-wizards.6f4123bdc4d3e5b469de.js:30
 #: dist/setup.js:7
 #: src/wizards/advertising/components/ad-unit-size-control/index.js:73
@@ -12910,6 +12915,57 @@ msgstr ""
 msgid "This is a collection of custom SVG icons for Newspack projects.<br/>They are available in <code>newspack-plugin</code> in the <code>newspack-icons</code> package.<br/>There's also an <link>npm package</link> that you can install to use them in your projects."
 msgstr ""
 
+#: dist/content-gate-block-visibility.js:1
+msgid "Visible"
+msgstr ""
+
+#: dist/content-gate-block-visibility.js:1
+#: dist/newspack-wizards.6f4123bdc4d3e5b469de.js:30
+msgid "Hidden"
+msgstr ""
+
+#: dist/content-gate-block-visibility.js:1
+msgid "Gates"
+msgstr ""
+
+#: dist/content-gate-block-visibility.js:1
+msgid "Registered readers"
+msgstr ""
+
+#: dist/content-gate-block-visibility.js:1
+msgid "Restrict to logged-in readers."
+msgstr ""
+
+#: dist/content-gate-block-visibility.js:1
+msgid "Access mode"
+msgstr ""
+
+#: dist/content-gate-block-visibility.js:1
+msgid "Control visibility of this block using gates or custom rules."
+msgstr ""
+
+#: dist/content-gate-block-visibility.js:1
+msgid "Gate"
+msgstr ""
+
+#: dist/content-gate-block-visibility.js:1
+msgid "Visibility"
+msgstr ""
+
+#. translators: %s is either 'gates' or 'rules'.
+#: dist/content-gate-block-visibility.js:4
+#, js-format
+msgid "Content visibility for readers who match any of the selected %s."
+msgstr ""
+
+#: dist/content-gate-block-visibility.js:4
+msgid "gates"
+msgstr ""
+
+#: dist/content-gate-block-visibility.js:4
+msgid "rules"
+msgstr ""
+
 #. translators: %s is the list of plans.
 #: dist/content-gate-editor-memberships.js:4
 #: src/content-gate/editor/memberships.js:20
@@ -14418,10 +14474,6 @@ msgstr ""
 
 #: dist/newspack-wizards.6f4123bdc4d3e5b469de.js:30
 msgid "Beside article title"
-msgstr ""
-
-#: dist/newspack-wizards.6f4123bdc4d3e5b469de.js:30
-msgid "Hidden"
 msgstr ""
 
 #: dist/newspack-wizards.6f4123bdc4d3e5b469de.js:30
