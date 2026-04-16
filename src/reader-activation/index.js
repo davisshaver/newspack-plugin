@@ -13,7 +13,7 @@ import setupArticleViewsAggregates from './article-view.js';
 import setupEngagement from './engagement.js';
 import initSubscriptionTiersForm from './subscription-tiers-form.js';
 import { openAuthModal as _openAuthModal } from '../reader-activation-auth/auth-modal.js';
-import { hydrateSession } from './session.js';
+import { getApiNonce, hydrateSession } from './session.js';
 
 /**
  * Reader Activation Library.
@@ -570,9 +570,14 @@ function register( email, integrationId, profileFields = {} ) {
 			if ( token ) {
 				body[ 'g-recaptcha-response' ] = token;
 			}
+			const headers = { 'Content-Type': 'application/json' };
+			const nonce = getApiNonce();
+			if ( nonce ) {
+				headers[ 'X-WP-Nonce' ] = nonce;
+			}
 			return fetch( newspack_ras_config.frontend_registration_url, {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
+				headers,
 				credentials: 'same-origin',
 				body: JSON.stringify( body ),
 			} );
