@@ -7,10 +7,13 @@ import { getPendingCheckout, setPendingCheckout } from './checkout.js';
 import { EVENTS, on, off, emit } from './events.js';
 import { getCookie, setCookie, generateID, debugLog } from './utils.js';
 import overlays from './overlays.js';
+import segments from './segments.js';
 import initAnalytics from './analytics.js';
 import setupArticleViewsAggregates from './article-view.js';
+import setupEngagement from './engagement.js';
 import initSubscriptionTiersForm from './subscription-tiers-form.js';
 import { openAuthModal as _openAuthModal } from '../reader-activation-auth/auth-modal.js';
+import { hydrateSession } from './session.js';
 
 /**
  * Reader Activation Library.
@@ -350,9 +353,16 @@ function pushActivities() {
  * Store the referrer.
  */
 function setReferrer() {
-	const referrer = document.referrer ? new URL( document.referrer ).hostname : '';
-	if ( referrer && referrer !== window.location.hostname ) {
-		store.set( 'referrer', referrer.replace( 'www.', '' ).trim().toLowerCase() );
+	const normalize = hostname =>
+		hostname
+			.trim()
+			.toLowerCase()
+			.replace( /^www\./, '' );
+	const referrer = document.referrer ? normalize( new URL( document.referrer ).hostname ) : '';
+	if ( referrer && referrer !== normalize( window.location.hostname ) ) {
+		store.set( 'referrer', referrer );
+	} else {
+		store.set( 'referrer', '' );
 	}
 }
 
@@ -374,6 +384,7 @@ function attachAuthCookiesListener() {
 			if ( authCookie ) {
 				setReaderEmail( authCookie );
 				setAuthenticated( true );
+				hydrateSession();
 				clearInterval( interval );
 			}
 		}
@@ -430,6 +441,7 @@ function attachNewsletterFormListener() {
 const readerActivation = {
 	store,
 	overlays,
+	segments,
 	on,
 	off,
 	dispatchActivity,
@@ -490,6 +502,7 @@ function init() {
 	initSubscriptionTiersForm( readerActivation );
 	fixClientID();
 	setupArticleViewsAggregates( readerActivation );
+	setupEngagement( readerActivation );
 	attachAuthCookiesListener();
 	attachNewsletterFormListener();
 	pushActivities();
@@ -500,6 +513,10 @@ function init() {
 	window.newspackRAS = window.newspackRAS || [];
 	window.newspackRAS.forEach( arg => handlePush( arg ) );
 	window.newspackRAS.push = handlePush;
+
+	// Rehydrate after all synchronous strategy registrations, including
+	// those from third parties via newspackRAS.push().
+	store.rehydrate();
 
 	window.newspackRASInitialized = true;
 }
