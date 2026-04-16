@@ -244,11 +244,38 @@ final class Reader_Registration {
 	 * @return \WP_REST_Response|\WP_Error
 	 */
 	public static function api_frontend_register_reader( \WP_REST_Request $request ): \WP_REST_Response|\WP_Error {
-		// Step 1: If caller is already logged in, return current reader data.
+
+		// Step 1: Validate integration ID is registered.
+		$integration_id       = $request->get_param( 'integration_id' );
+		$integrations         = self::get_frontend_registration_integrations();
+		$integration_instance = Integrations::get_integration( $integration_id );
+
+		if ( empty( $integration_id ) || ! isset( $integrations[ $integration_id ] ) ) {
+			Logger::log( 'Frontend registration rejected: invalid integration ID "' . $integration_id . '"' );
+			return new \WP_Error(
+				'invalid_integration',
+				__( 'Invalid integration.', 'newspack-plugin' ),
+				[ 'status' => 400 ]
+			);
+		}
+
+		// Step 2: If caller is already logged in, return current reader data.
 		// This makes the API idempotent — integrations don't need to check
 		// authentication state before calling register().
 		if ( \is_user_logged_in() ) {
 			$current_user = \wp_get_current_user();
+
+			/**
+			 * Action triggered when a logged-in user attempts to register via the frontend registration endpoint.
+			 *
+			 * Integrations can hook into this action to handle cases where an existing user attempts to register again via the frontend registration flow. For example, an integration might want to link the existing user account to the integration or log this event for analytics purposes.
+			 *
+			 * @param \WP_User         $current_user         The currently logged-in user.
+			 * @param \WP_REST_Request $request              The original registration request.
+			 * @param Integration|null $integration_instance The integration instance associated with the registration attempt, or null if the integration was registered via filter only.
+			 */
+			do_action( 'newspack_frontend_registration_existing_user', $current_user, $request, $integration_instance );
+
 			return new \WP_REST_Response(
 				[
 					'success' => true,
@@ -259,7 +286,7 @@ final class Reader_Registration {
 			);
 		}
 
-		// Step 2: Check RAS is enabled.
+		// Step 3: Check RAS is enabled.
 		if ( ! Reader_Activation::is_enabled() ) {
 			return new \WP_Error(
 				'reader_activation_disabled',
@@ -268,21 +295,8 @@ final class Reader_Registration {
 			);
 		}
 
-		// Step 3: Validate integration ID is registered.
-		$integration_id = $request->get_param( 'integration_id' );
-		$integrations   = self::get_frontend_registration_integrations();
-		if ( empty( $integration_id ) || ! isset( $integrations[ $integration_id ] ) ) {
-			Logger::log( 'Frontend registration rejected: invalid integration ID "' . $integration_id . '"' );
-			return new \WP_Error(
-				'invalid_integration',
-				__( 'Invalid integration.', 'newspack-plugin' ),
-				[ 'status' => 400 ]
-			);
-		}
-
 		// Step 4: Validate integration key.
-		$integration_key      = $request->get_param( 'integration_key' );
-		$integration_instance = Integrations::get_integration( $integration_id );
+		$integration_key = $request->get_param( 'integration_key' );
 		if ( $integration_instance && $integration_instance->supports_frontend_registration() ) {
 			$key_valid = $integration_instance->validate_registration_request( $integration_key, $request );
 		} else {
