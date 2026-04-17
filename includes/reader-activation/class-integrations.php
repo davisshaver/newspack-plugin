@@ -215,8 +215,10 @@ class Integrations {
 		// Hook for other plugins/code to register their integrations.
 		do_action( 'newspack_reader_activation_register_integrations' );
 
-		// hardcode ESP integration as enabled for now.
-		self::enable( 'esp' );
+		// Auto-enable ESP on first registration only.
+		if ( false === get_option( self::OPTION_NAME ) ) {
+			self::enable( 'esp' );
+		}
 
 		// Let each integration register its data event handlers.
 		foreach ( self::$integrations as $integration ) {
@@ -385,6 +387,8 @@ class Integrations {
 				'name'        => $integration->get_name(),
 				'description' => $integration->get_description(),
 				'enabled'     => self::is_enabled( $id ),
+				'is_set_up'   => $integration->is_set_up(),
+				'setup_url'   => $integration->get_setup_url(),
 				'settings'    => $integration->get_settings_config(),
 			];
 		}
