@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-20T16:31:40+00:00\n"
+"POT-Creation-Date: 2026-04-22T14:39:50+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -131,7 +131,7 @@ msgstr ""
 #: includes/plugins/co-authors-plus/class-nicename-change-ui.php:138
 #: includes/reader-activation/integrations/class-esp.php:367
 #: includes/reader-activation/sync/class-contact-sync-admin.php:180
-#: includes/reader-activation/sync/class-contact-sync.php:503
+#: includes/reader-activation/sync/class-contact-sync.php:542
 msgid "User not found."
 msgstr ""
 
@@ -5759,6 +5759,14 @@ msgstr ""
 msgid "Invalid session."
 msgstr ""
 
+#: includes/reader-activation/integrations/class-contact-cron.php:93
+msgid "Newspack Contact Cron Interval"
+msgstr ""
+
+#: includes/reader-activation/integrations/class-contact-pull.php:86
+msgid "Contact Pull Retry"
+msgstr ""
+
 #: includes/reader-activation/integrations/class-esp.php:32
 msgid "Newsletter ESP"
 msgstr ""
@@ -5902,32 +5910,32 @@ msgid "Contact Sync Retry"
 msgstr ""
 
 #. Translators: %s is the email address of the contact to synced.
-#: includes/reader-activation/sync/class-contact-sync.php:467
+#: includes/reader-activation/sync/class-contact-sync.php:506
 #, php-format
 msgid "Scheduling secondary sync for contact %s."
 msgstr ""
 
 #. Translators: %d is the user ID.
-#: includes/reader-activation/sync/class-contact-sync.php:521
+#: includes/reader-activation/sync/class-contact-sync.php:560
 #, php-format
 msgid "Customer with ID %d does not exist."
 msgstr ""
 
-#: includes/reader-activation/sync/class-contact-sync.php:560
+#: includes/reader-activation/sync/class-contact-sync.php:599
 msgid "Contact email is empty."
 msgstr ""
 
 #. Translators: %1$s is the status and %2$s is the contact's email address.
-#: includes/reader-activation/sync/class-contact-sync.php:568
+#: includes/reader-activation/sync/class-contact-sync.php:607
 #, php-format
 msgid "%1$s contact data for %2$s."
 msgstr ""
 
-#: includes/reader-activation/sync/class-contact-sync.php:569
+#: includes/reader-activation/sync/class-contact-sync.php:608
 msgid "Would sync"
 msgstr ""
 
-#: includes/reader-activation/sync/class-contact-sync.php:569
+#: includes/reader-activation/sync/class-contact-sync.php:608
 #: dist/other-scripts/salesforce.js:1
 #: src/other-scripts/salesforce/index.js:30
 msgid "Synced"
