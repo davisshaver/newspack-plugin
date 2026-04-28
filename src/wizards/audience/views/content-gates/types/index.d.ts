@@ -1,25 +1,73 @@
 declare module '@wordpress/block-editor';
+import type { Icon } from '@wordpress/icons';
 
-type AccessRule = {
-	name: string;
-	description: string;
-	options?: { value: string; label: string }[];
-	is_boolean: boolean;
-	default: string | string[] | boolean;
+type HeaderAction = {
+	type: 'primary' | 'secondary' | 'more';
+	label: string;
+	icon?: Icon | string;
+	disabled?: boolean;
+	destructive?: boolean;
+	action?: () => void;
+	href?: string;
 };
 
+type GateAccessRuleValue = string | string[] | boolean;
+type AccessRule = {
+	name: string;
+	default: GateAccessRuleValue;
+	description?: string;
+	id?: string;
+	is_boolean?: boolean;
+	options?: { value: string; label: string }[];
+	placeholder?: string;
+	value: GateAccessRuleValue;
+};
+
+type GateContentRuleValue = string[];
 type ContentRule = {
 	name: string;
+	default: GateContentRuleValue;
 	description?: string;
+	endpoint?: string;
+	include_only?: boolean;
 	options?: { value: string; label: string }[];
-	value: string[];
-	default: string[];
+	value: GateContentRuleValue;
 };
 
 type Metering = {
 	enabled: boolean;
 	count: number;
 	period: 'week' | 'month';
+};
+
+type GateAccessRuleProps = {
+	config: AccessRule;
+	rule?: GateAccessRule;
+	enabled?: boolean;
+	onToggle?: (slug: string) => void;
+	slug: string;
+	exclusion?: boolean;
+	onChange: (value: GateRuleValue) => void;
+};
+
+type GateContentRuleProps = {
+	config: ContentRule;
+	rule?: GateContentRule;
+	enabled?: boolean;
+	onToggle?: (slug: string) => void;
+	slug: string;
+	onChange: (value: GateContentRuleValue) => void;
+	onChangeExclusion?: (value: boolean) => void;
+	isNewsletter?: boolean;
+};
+
+type GateRuleControlProps = {
+	slug: string;
+	value: GateRuleValue;
+	exclusion?: boolean;
+	onChange: (value: GateRuleValue) => void;
+	onChangeExclusion?: (value: boolean) => void;
+	isStatic?: boolean;
 };
 
 type AccessRules = {
@@ -32,31 +80,13 @@ type ContentRules = {
 
 type GateAccessRule = {
 	slug: string;
-	value: string | string[] | boolean;
-};
-
-type GateAccessRuleValue = string | string[] | boolean;
-
-type GateContentRuleValue = string[];
-
-type GateAccessRuleControlProps = {
-	slug: string;
 	value: GateAccessRuleValue;
-	onChange: (value: GateAccessRuleValue) => void;
 };
 
 type GateContentRule = {
 	slug: string;
-	value: string[];
-	exclusion?: boolean;
-};
-
-type GateContentRuleControlProps = {
-	slug: string;
 	value: GateContentRuleValue;
 	exclusion?: boolean;
-	onChange: (value: GateContentRuleValue) => void;
-	onChangeExclusion?: (value: boolean) => void;
 };
 
 type GateStatus = 'publish' | 'draft' | 'pending' | 'future' | 'private' | 'trash';
@@ -95,8 +125,12 @@ type ContentGiftingConfig = {
 	interval: string;
 	expiration_time: number;
 	expiration_time_unit: string;
+	style: string;
 	cta_label: string;
 	button_label: string;
+	cta_type: string;
+	cta_product_id: number;
+	cta_url: string;
 };
 
 type MeteringCountdownConfig = {
@@ -105,6 +139,8 @@ type MeteringCountdownConfig = {
 	cta_label: string;
 	button_label: string;
 	cta_url: string;
+	cta_type: string;
+	cta_product_id: number;
 };
 
 type GateSettings = {
@@ -114,5 +150,22 @@ type GateSettings = {
 
 type GateConfig = {
 	gates: Gate[];
-	config: GateSettings
+	config: GateSettings;
+};
+
+type Institution = {
+	id: number;
+	title: { raw: string; rendered: string };
+	excerpt: { raw: string; rendered: string };
+	featured_media: number;
+	slug: string;
+	status: string;
+	meta: {
+		np_institution_email_domain: string;
+		np_institution_ip_range: string;
+		np_institution_reader_data: string;
+	};
+	_embedded?: {
+		'wp:featuredmedia'?: Array< { source_url: string } >;
+	};
 };

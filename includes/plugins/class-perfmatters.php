@@ -100,6 +100,7 @@ class Perfmatters {
 			'modules/sharedaddy', // Jetpack's share buttons.
 			'_inc/social-logos', // Jetpack's social logos CSS.
 			'plugins/jetpack/css/jetpack.css', // Jetpack's main CSS.
+			'plugins/jetpack/_inc/blocks/swiper.css', // Jetpack's Swiper CSS.
 			'plugins/the-events-calendar', // The Events Calendar.
 			'plugins/events-calendar-pro', // The Events Calendar Pro.
 			'/themes/newspack-', // Any Newspack theme stylesheet.
@@ -283,6 +284,17 @@ class Perfmatters {
 	 * Should defaults be ignored and not applied?
 	 */
 	private static function should_ignore_defaults() {
+		/**
+		 * Prevents Newspack from applying default Perfmatters settings.
+		 * Use if you want full manual control over Perfmatters configuration.
+		 *
+		 * @constant NEWSPACK_IGNORE_PERFMATTERS_DEFAULTS
+		 * @type     bool
+		 * @default  Newspack applies Perfmatters defaults
+		 * @status   draft
+		 *
+		 * @example define( 'NEWSPACK_IGNORE_PERFMATTERS_DEFAULTS', true );
+		 */
 		return defined( 'NEWSPACK_IGNORE_PERFMATTERS_DEFAULTS' ) && NEWSPACK_IGNORE_PERFMATTERS_DEFAULTS;
 	}
 
@@ -310,7 +322,17 @@ class Perfmatters {
 		if ( self::should_ignore_defaults() ) {
 			return $resolution;
 		}
-		// Use standard-res thumbnails if the constant is not set.
+		/**
+		 * Enables high-resolution YouTube video thumbnails in Perfmatters
+		 * lazy load. May increase page weight slightly.
+		 *
+		 * @constant NEWSPACK_PERFMATTERS_USE_HIGH_RES_YOUTUBE_IMAGES
+		 * @type     bool
+		 * @default  Standard resolution YouTube thumbnails
+		 * @status   draft
+		 *
+		 * @example define( 'NEWSPACK_PERFMATTERS_USE_HIGH_RES_YOUTUBE_IMAGES', true );
+		 */
 		if ( ! defined( 'NEWSPACK_PERFMATTERS_USE_HIGH_RES_YOUTUBE_IMAGES' ) || ! NEWSPACK_PERFMATTERS_USE_HIGH_RES_YOUTUBE_IMAGES ) {
 			return $resolution;
 		}
