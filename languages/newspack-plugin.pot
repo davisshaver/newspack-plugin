@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-04-29T08:34:40+00:00\n"
+"POT-Creation-Date: 2026-04-29T08:45:54+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -2813,17 +2813,17 @@ msgstr ""
 msgid "Test email was not sent."
 msgstr ""
 
-#: includes/experimental-tools/class-experimental-tools.php:116
+#: includes/experimental-tools/class-experimental-tools.php:124
 msgid "You cannot access this resource."
 msgstr ""
 
-#: includes/experimental-tools/class-experimental-tools.php:146
-#: includes/experimental-tools/class-experimental-tools.php:180
+#: includes/experimental-tools/class-experimental-tools.php:154
+#: includes/experimental-tools/class-experimental-tools.php:188
 msgid "Tool not found."
 msgstr ""
 
 #. translators: %s: constant name.
-#: includes/experimental-tools/class-experimental-tools.php:157
+#: includes/experimental-tools/class-experimental-tools.php:165
 #, php-format
 msgid "This tool is controlled by the %s constant and cannot be toggled."
 msgstr ""
