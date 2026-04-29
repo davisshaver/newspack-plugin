@@ -62,6 +62,7 @@ final class Newspack {
 	 */
 	private function define_constants() {
 		define( 'NEWSPACK_VERSION', '0.0.1' );
+		define( 'NEWSPACK_ABSPATH', dirname( NEWSPACK_PLUGIN_FILE ) . '/' );
 
 		/**
 		 * Path to Composer's vendor directory. Override to use a shared vendor directory
