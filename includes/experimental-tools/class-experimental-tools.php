@@ -40,6 +40,14 @@ class Experimental_Tools {
 	const REST_ROUTE = '/experimental-tools';
 
 	/**
+	 * Usage data retention window in days. Used for pruning and as the
+	 * upper bound for usage lookback queries.
+	 *
+	 * @var int
+	 */
+	const USAGE_RETENTION_DAYS = 90;
+
+	/**
 	 * Initialize hooks.
 	 */
 	public static function init() {
@@ -405,8 +413,8 @@ class Experimental_Tools {
 		}
 		$all_settings[ $slug ]['users'][ $user_id ]['daily'][ $today ]++;
 
-		// Prune buckets older than 90 days to keep the option compact.
-		$cutoff = gmdate( 'Y-m-d', time() - 90 * DAY_IN_SECONDS );
+		// Prune buckets older than the retention window to keep the option compact.
+		$cutoff = gmdate( 'Y-m-d', time() - self::USAGE_RETENTION_DAYS * DAY_IN_SECONDS );
 		foreach ( $all_settings[ $slug ]['users'][ $user_id ]['daily'] as $date => $count ) {
 			if ( $date < $cutoff ) {
 				unset( $all_settings[ $slug ]['users'][ $user_id ]['daily'][ $date ] );
@@ -449,16 +457,15 @@ class Experimental_Tools {
 	 * @return int
 	 */
 	public static function get_user_usage_count( $slug, $user_id, $days = 30 ) {
-		$settings = self::get_tool_settings( $slug );
-		$user_key = (string) $user_id;
-		$total    = 0;
-		$cutoff   = gmdate( 'Y-m-d', time() - $days * DAY_IN_SECONDS );
+		$settings  = self::get_tool_settings( $slug );
+		$user_key  = (string) $user_id;
+		$user_data = $settings['users'][ $user_key ] ?? [];
+		$total     = 0;
+		$cutoff    = gmdate( 'Y-m-d', time() - $days * DAY_IN_SECONDS );
 
-		if ( ! empty( $settings['users'][ $user_key ]['daily'] ) ) {
-			foreach ( $settings['users'][ $user_key ]['daily'] as $date => $count ) {
-				if ( $date >= $cutoff ) {
-					$total += (int) $count;
-				}
+		foreach ( $user_data['daily'] ?? [] as $date => $count ) {
+			if ( $date >= $cutoff ) {
+				$total += (int) $count;
 			}
 		}
 		return $total;
