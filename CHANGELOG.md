@@ -1,3 +1,10 @@
+## [6.39.1](https://github.com/Automattic/newspack-plugin/compare/v6.39.0...v6.39.1) (2026-05-05)
+
+
+### Bug Fixes
+
+* **my-account:** remove v1 script dependency ([#4696](https://github.com/Automattic/newspack-plugin/issues/4696)) ([8820e98](https://github.com/Automattic/newspack-plugin/commit/8820e98307a4ff47550450bbfeced4d235799304))
+
 # [6.39.0](https://github.com/Automattic/newspack-plugin/compare/v6.38.2...v6.39.0) (2026-05-05)
 
 
