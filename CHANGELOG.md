@@ -1,3 +1,10 @@
+# [6.39.0](https://github.com/Automattic/newspack-plugin/compare/v6.38.2...v6.39.0) (2026-05-05)
+
+
+### Features
+
+* **co-authors:** support CAP core entity store alongside legacy store ([#4673](https://github.com/Automattic/newspack-plugin/issues/4673)) ([d5d77ca](https://github.com/Automattic/newspack-plugin/commit/d5d77ca7a698639bbb65c3cf333198851da24e98))
+
 ## [6.38.2](https://github.com/Automattic/newspack-plugin/compare/v6.38.1...v6.38.2) (2026-05-04)
 
 
