@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-05-06T18:08:27+00:00\n"
+"POT-Creation-Date: 2026-05-06T20:05:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: newspack-plugin\n"
@@ -329,7 +329,7 @@ msgstr ""
 #: src/blocks/overlay-menu/panel/class-overlay-menu-panel-block.php:111
 #: dist/audience-wizards.28f3eed60a32d756fda6.js:37
 #: dist/blocks.js:6
-#: src/blocks/overlay-menu/panel/edit.js:192
+#: src/blocks/overlay-menu/panel/edit.js:216
 #: src/wizards/audience/components/prompt-action-card/index.js:139
 msgid "Close"
 msgstr ""
@@ -2875,7 +2875,7 @@ msgstr ""
 #: src/blocks/avatar/inspector.jsx:18
 #: src/blocks/byline/inspector.jsx:25
 #: src/blocks/collections/components/InspectorPanel.jsx:63
-#: src/blocks/overlay-menu/panel/edit.js:110
+#: src/blocks/overlay-menu/panel/edit.js:134
 #: src/content-gate/editor/editor.js:114
 #: src/other-scripts/emails/index.js:106
 #: src/wizards/advertising/index.js:154
@@ -7402,8 +7402,8 @@ msgstr ""
 #: src/blocks/overlay-menu/panel/class-overlay-menu-panel-block.php:92
 #: src/blocks/overlay-menu/trigger/class-overlay-menu-trigger-block.php:54
 #: dist/blocks.js:6
-#: src/blocks/overlay-menu/trigger/edit.js:68
-#: src/blocks/overlay-menu/trigger/edit.js:81
+#: src/blocks/overlay-menu/trigger/edit.js:61
+#: src/blocks/overlay-menu/trigger/edit.js:74
 msgid "Menu"
 msgstr ""
 
@@ -10746,7 +10746,7 @@ msgstr ""
 
 #: dist/billboard.js:15
 #: dist/blocks.js:6
-#: src/blocks/overlay-menu/panel/edit.js:130
+#: src/blocks/overlay-menu/panel/edit.js:154
 #: src/wizards/advertising/components/ad-unit-size-control/index.js:92
 #: src/wizards/advertising/views/ad-unit/index.js:118
 msgid "Width"
@@ -11197,7 +11197,7 @@ msgstr ""
 #: src/blocks/author-profile-social/utils.js:14
 #: src/blocks/collections/components/InspectorPanel.jsx:191
 #: src/blocks/contribution-meter/components/InspectorPanel.jsx:169
-#: src/blocks/overlay-menu/panel/edit.js:39
+#: src/blocks/overlay-menu/panel/edit.js:40
 #: src/content-gate/editor/editor.js:34
 #: src/wizards/componentsDemo/index.js:575
 #: src/wizards/componentsDemo/index.js:651
@@ -11216,7 +11216,7 @@ msgstr ""
 #: src/blocks/author-profile-social/utils.js:16
 #: src/blocks/collections/components/InspectorPanel.jsx:201
 #: src/blocks/contribution-meter/components/InspectorPanel.jsx:171
-#: src/blocks/overlay-menu/panel/edit.js:41
+#: src/blocks/overlay-menu/panel/edit.js:42
 #: src/content-gate/editor/editor.js:36
 msgid "Large"
 msgstr ""
@@ -11316,7 +11316,7 @@ msgstr ""
 
 #: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:170
-#: src/blocks/overlay-menu/panel/edit.js:126
+#: src/blocks/overlay-menu/panel/edit.js:150
 msgid "Left"
 msgstr ""
 
@@ -11328,7 +11328,7 @@ msgstr ""
 
 #: dist/blocks.js:6
 #: src/blocks/collections/components/InspectorPanel.jsx:175
-#: src/blocks/overlay-menu/panel/edit.js:127
+#: src/blocks/overlay-menu/panel/edit.js:151
 msgid "Right"
 msgstr ""
 
@@ -11344,7 +11344,7 @@ msgstr ""
 #: dist/setup.js:7
 #: src/blocks/collections/components/InspectorPanel.jsx:189
 #: src/blocks/contribution-meter/components/InspectorPanel.jsx:169
-#: src/blocks/overlay-menu/panel/edit.js:39
+#: src/blocks/overlay-menu/panel/edit.js:40
 msgid "S"
 msgstr ""
 
@@ -11354,7 +11354,7 @@ msgstr ""
 #: dist/setup.js:7
 #: src/blocks/collections/components/InspectorPanel.jsx:194
 #: src/blocks/contribution-meter/components/InspectorPanel.jsx:170
-#: src/blocks/overlay-menu/panel/edit.js:40
+#: src/blocks/overlay-menu/panel/edit.js:41
 msgid "M"
 msgstr ""
 
@@ -11363,7 +11363,7 @@ msgstr ""
 #: dist/contribution-meter-block.js:1
 #: src/blocks/collections/components/InspectorPanel.jsx:196
 #: src/blocks/contribution-meter/components/InspectorPanel.jsx:170
-#: src/blocks/overlay-menu/panel/edit.js:40
+#: src/blocks/overlay-menu/panel/edit.js:41
 #: src/content-gate/editor/editor.js:35
 msgid "Medium"
 msgstr ""
@@ -11374,7 +11374,7 @@ msgstr ""
 #: dist/setup.js:7
 #: src/blocks/collections/components/InspectorPanel.jsx:199
 #: src/blocks/contribution-meter/components/InspectorPanel.jsx:171
-#: src/blocks/overlay-menu/panel/edit.js:41
+#: src/blocks/overlay-menu/panel/edit.js:42
 msgid "L"
 msgstr ""
 
@@ -11601,7 +11601,7 @@ msgstr ""
 #: dist/blocks.js:6
 #: dist/commons.js:18
 #: src/blocks/my-account-button/edit.js:110
-#: src/blocks/overlay-menu/trigger/edit.js:80
+#: src/blocks/overlay-menu/trigger/edit.js:73
 msgid "Button text"
 msgstr ""
 
@@ -11610,24 +11610,24 @@ msgstr ""
 #: dist/newspack-wizards.e386313f64136198a71d.js:30
 #: dist/setup.js:7
 #: src/blocks/contribution-meter/components/InspectorPanel.jsx:168
-#: src/blocks/overlay-menu/panel/edit.js:38
+#: src/blocks/overlay-menu/panel/edit.js:39
 msgid "XS"
 msgstr ""
 
 #: dist/blocks.js:6
-#: src/blocks/overlay-menu/panel/edit.js:38
+#: src/blocks/overlay-menu/panel/edit.js:39
 msgid "Extra small"
 msgstr ""
 
 #: dist/blocks.js:6
 #: dist/newspack-wizards.e386313f64136198a71d.js:30
 #: dist/setup.js:7
-#: src/blocks/overlay-menu/panel/edit.js:42
+#: src/blocks/overlay-menu/panel/edit.js:43
 msgid "XL"
 msgstr ""
 
 #: dist/blocks.js:6
-#: src/blocks/overlay-menu/panel/edit.js:42
+#: src/blocks/overlay-menu/panel/edit.js:43
 msgid "Extra large"
 msgstr ""
 
@@ -11637,43 +11637,43 @@ msgid "Menu Panel"
 msgstr ""
 
 #: dist/blocks.js:6
-#: src/blocks/overlay-menu/panel/edit.js:112
+#: src/blocks/overlay-menu/panel/edit.js:136
 msgid "Full screen"
 msgstr ""
 
 #: dist/blocks.js:6
-#: src/blocks/overlay-menu/panel/edit.js:113
+#: src/blocks/overlay-menu/panel/edit.js:137
 msgid "When enabled, the panel expands to fill the entire viewport."
 msgstr ""
 
 #: dist/blocks.js:6
-#: src/blocks/overlay-menu/panel/edit.js:120
+#: src/blocks/overlay-menu/panel/edit.js:144
 msgid "Slide direction"
 msgstr ""
 
 #: dist/blocks.js:6
-#: src/blocks/overlay-menu/panel/edit.js:121
+#: src/blocks/overlay-menu/panel/edit.js:145
 msgid "Choose which side of the screen the panel slides in from."
 msgstr ""
 
 #: dist/blocks.js:6
-#: src/blocks/overlay-menu/panel/edit.js:131
+#: src/blocks/overlay-menu/panel/edit.js:155
 msgid "Set how wide the panel appears when opened. Use smaller sizes for simple navigation and larger sizes for rich content layouts."
 msgstr ""
 
 #: dist/blocks.js:6
-#: src/blocks/overlay-menu/panel/edit.js:152
+#: src/blocks/overlay-menu/panel/edit.js:176
 msgid "Text"
 msgstr ""
 
 #: dist/blocks.js:6
-#: src/blocks/overlay-menu/panel/edit.js:157
+#: src/blocks/overlay-menu/panel/edit.js:181
 msgid "Background"
 msgstr ""
 
 #: dist/blocks.js:6
 #: dist/content-gate-editor.js:25
-#: src/blocks/overlay-menu/panel/edit.js:162
+#: src/blocks/overlay-menu/panel/edit.js:186
 #: src/content-gate/editor/editor.js:24
 msgid "Overlay"
 msgstr ""
