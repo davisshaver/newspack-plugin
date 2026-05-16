@@ -6,13 +6,6 @@
 	display: none;
 }
 
-.components-base-control {
-	margin-bottom: 16px;
-	&:last-child {
-		margin-bottom: 0;
-	}
-}
-
 .wp-block {
 	.editor-styles-wrapper[data-overlay-size="x-small"] & {
 		max-width: gate.$size__x-small;
@@ -62,6 +55,13 @@
  * Access control block visibility panel.
  */
 .newspack-access-control-block-visibility-panel {
+	.components-base-control {
+		margin-bottom: 16px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
 	.components-base-control,
 	.components-form-token-field {
 		width: 100%;
