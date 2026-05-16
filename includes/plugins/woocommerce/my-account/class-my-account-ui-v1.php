@@ -131,7 +131,7 @@ class My_Account_UI_V1 {
 			\wp_enqueue_script(
 				'newspack-my-account-v1',
 				\Newspack\Newspack::plugin_url() . '/dist/my-account-v1.js',
-				[ 'newspack-my-account' ],
+				[],
 				NEWSPACK_PLUGIN_VERSION,
 				true
 			);
@@ -150,6 +150,22 @@ class My_Account_UI_V1 {
 				NEWSPACK_PLUGIN_VERSION
 			);
 		}
+	}
+
+	/**
+	 * Whether to override WooCommerce notice templates with snackbar versions.
+	 *
+	 * Only applies on My Account pages after the main query has run. Currently
+	 * the same condition governs error, notice, and success templates. If a
+	 * future case needs more granular handling, this is the place to diverge.
+	 *
+	 * @return bool
+	 */
+	private static function should_override_notice_template() {
+		return function_exists( 'is_account_page' )
+			&& function_exists( 'did_action' )
+			&& \did_action( 'wp' )
+			&& \is_account_page();
 	}
 
 	/**
@@ -185,15 +201,19 @@ class My_Account_UI_V1 {
 			case 'order/order-again.php':
 				return __DIR__ . '/templates/v1/order-again.php';
 			case 'notices/error.php':
-				// Only override error notices on My Account pages to avoid breaking checkout validation.
-				// Guard is_account_page() to avoid running before the main query.
-				if ( function_exists( 'is_account_page' ) && function_exists( 'did_action' ) && \did_action( 'wp' ) && \is_account_page() ) {
-					return __DIR__ . '/templates/v1/notices/error.php';
+				if ( ! self::should_override_notice_template() ) {
+					return $template;
 				}
-				return $template;
+				return __DIR__ . '/templates/v1/notices/error.php';
 			case 'notices/notice.php':
+				if ( ! self::should_override_notice_template() ) {
+					return $template;
+				}
 				return __DIR__ . '/templates/v1/notices/notice.php';
 			case 'notices/success.php':
+				if ( ! self::should_override_notice_template() ) {
+					return $template;
+				}
 				return __DIR__ . '/templates/v1/notices/success.php';
 			default:
 				return $template;
